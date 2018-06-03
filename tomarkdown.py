@@ -46,8 +46,14 @@ description_header = ""
 description_footer = ""
 
 # Source code extracts header/footer.
-source_header = "<pre>"
-source_footer = "</pre>"
+source_header = """\
+<div class="codehilite">
+<pre>\
+"""
+source_footer = """\
+</pre>
+</div>\
+"""
 
 # Chapter header/inter/footer.
 chapter_header = """\
@@ -128,12 +134,20 @@ class  HtmlFormatter( Formatter ):
 
         self.columns = 3
 
+    def sluggify( self, name ):
+        '''Sluggify a cross-reference'''
+        name = name.lower().strip()
+        name = name.replace( " ",  "-")
+        return name
+
     def  make_section_url( self, section ):
         return self.file_prefix + section.name + ".md"
 
     def  make_block_url( self, block, name = None ):
         if name == None:
             name = block.name
+
+        name = self.sluggify( name )
 
         try:
             section_url = self.make_section_url( block.section )
@@ -142,11 +156,6 @@ class  HtmlFormatter( Formatter ):
             section_url = self.make_section_url( block )
 
         return section_url + "#" + name
-
-    def sluggify( self, name ):
-        name = name.lower().strip()
-        name = name.replace( " ",  "-")
-        return name
 
     def make_chapter_url( self, chapter ):
         chapter = ' '.join( chapter )
@@ -262,6 +271,11 @@ class  HtmlFormatter( Formatter ):
     def  html_source_quote( self, line, block_name = None ):
         result = ""
         while line:
+            # Escape markdown special characters
+            line = line.replace( "#", "\#" )
+            line = line.replace( " _", " \_" )
+            line = line.replace( " *", " \*" )
+
             m = re_source_crossref.match( line )
             if m:
                 name   = m.group( 2 )
@@ -270,10 +284,10 @@ class  HtmlFormatter( Formatter ):
 
                 if name == block_name:
                     # this is the current block name, if any
-                    result = result + prefix + '**' + name + '**'
+                    result = result + prefix + '<b>' + name + '</b>'
                     # result = result + prefix + name
                 
-                # Auto highlight, we don't need keyword highlighting
+                # Keyword highlighting
                 elif re_source_keywords.match( name ):
                     # this is a C keyword
                     result = ( result + prefix
@@ -293,9 +307,9 @@ class  HtmlFormatter( Formatter ):
                                       id = name
 
                       result = ( result + prefix
-                                 + '<a href="'
+                                 + '[' + name + ']('
                                  + self.make_block_url( block, id )
-                                 + '">' + name + '</a>' )
+                                 + ')' )
                     except:
                       # sections don't have `markups'; however, we don't
                       # want references to sections here anyway
