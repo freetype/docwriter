@@ -1,0 +1,5 @@
+pre.colored { color: blue; }
+
+span.keyword {  text-align: left;
+                white-space: pre;
+                color: darkblue; }
