@@ -265,7 +265,8 @@ class  HtmlFormatter( Formatter ):
 
                 if name == block_name:
                     # this is the current block name, if any
-                    result = result + prefix + '**' + name + '**'
+                    # result = result + prefix + '**' + name + '**'
+                    result = result + prefix + name
                 
                 # Auto highlight, we don't need keyword highlighting
 
@@ -282,10 +283,7 @@ class  HtmlFormatter( Formatter ):
                                   if field.name:
                                       id = name
 
-                      result = ( result + prefix
-                                 + '<a href="'
-                                 + self.make_block_url( block, id )
-                                 + '">' + name + '</a>' )
+                      result = ( result + prefix + name )
                     except:
                       # sections don't have `markups'; however, we don't
                       # want references to sections here anyway
