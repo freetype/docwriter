@@ -46,8 +46,8 @@ description_header = ""
 description_footer = ""
 
 # Source code extracts header/footer.
-source_header = "```c"
-source_footer = "```"
+source_header = "<pre>"
+source_footer = "</pre>"
 
 # Chapter header/inter/footer.
 chapter_header = """\
@@ -62,6 +62,10 @@ md_h4_inter = "</h4>"
 
 code_header = "```"
 code_footer = "```"
+
+# Source language keyword coloration and styling.
+keyword_prefix = '<span class="keyword">'
+keyword_suffix = '</span>'
 
 # Source language keyword coloration and styling.
 
@@ -88,6 +92,7 @@ class  HtmlFormatter( Formatter ):
 
         global code_header, code_footer
         global chapter_header
+        global keyword_prefix, keyword_suffix
 
         if file_prefix:
             file_prefix = file_prefix + "-"
@@ -265,10 +270,14 @@ class  HtmlFormatter( Formatter ):
 
                 if name == block_name:
                     # this is the current block name, if any
-                    # result = result + prefix + '**' + name + '**'
-                    result = result + prefix + name
+                    result = result + prefix + '**' + name + '**'
+                    # result = result + prefix + name
                 
                 # Auto highlight, we don't need keyword highlighting
+                elif re_source_keywords.match( name ):
+                    # this is a C keyword
+                    result = ( result + prefix
+                               + keyword_prefix + name + keyword_suffix )
 
                 elif name in self.identifiers:
                     # this is a known identifier
@@ -283,7 +292,10 @@ class  HtmlFormatter( Formatter ):
                                   if field.name:
                                       id = name
 
-                      result = ( result + prefix + name )
+                      result = ( result + prefix
+                                 + '<a href="'
+                                 + self.make_block_url( block, id )
+                                 + '">' + name + '</a>' )
                     except:
                       # sections don't have `markups'; however, we don't
                       # want references to sections here anyway
