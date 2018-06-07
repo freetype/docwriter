@@ -24,7 +24,7 @@ import time
 md_nav_separator = " &raquo; "
 
 md_header_1 = """\
-[Docs](index.md) &raquo; \
+[Docs](ft2-index.md) &raquo; \
 """
 
 md_line_sep = """
@@ -46,13 +46,11 @@ description_header = ""
 description_footer = ""
 
 # Source code extracts header/footer.
-source_header = """\
-<div class="codehilite">
+source_header = """
 <pre>\
 """
 source_footer = """\
-</pre>
-</div>\
+</pre>\
 """
 
 # Chapter header/inter/footer.
@@ -82,6 +80,12 @@ section_synopsis_footer = ''
 
 
 def  html_quote( line ):
+    '''Change HTML special characters to their codes
+
+    Follows ISO 8859-1  
+    Characters changed:
+    `&`, `<` and `>`.
+    '''
     result = line.replace( "&", "&amp;" )
     result = result.replace( "<", "&lt;"  )
     result = result.replace( ">", "&gt;"  )
@@ -135,25 +139,31 @@ class  HtmlFormatter( Formatter ):
         self.columns = 3
 
     def sluggify( self, name ):
-        '''Sluggify a cross-reference'''
+        '''Sluggify a cross-reference
+        
+        Python markdown uses a similar approach to process links
+        so we need to do this in order to have valid cross-references
+        '''
         name = name.lower().strip()
         name = name.replace( " ",  "-")
         return name
 
-    def  make_section_url( self, section ):
+    def  make_section_url( self, section, code = False ):
+        if code:
+            return "../" + self.file_prefix + section.name + "/"
         return self.file_prefix + section.name + ".md"
 
-    def  make_block_url( self, block, name = None ):
+    def  make_block_url( self, block, name = None, code = False ):
         if name == None:
             name = block.name
 
         name = self.sluggify( name )
 
         try:
-            section_url = self.make_section_url( block.section )
+            section_url = self.make_section_url( block.section, code )
         except:
             # we already have a section
-            section_url = self.make_section_url( block )
+            section_url = self.make_section_url( block, code )
 
         return section_url + "#" + name
 
@@ -174,22 +184,31 @@ class  HtmlFormatter( Formatter ):
                 name = m.group( 'name' )
                 rest = m.group( 'rest' )
                 block = self.identifiers[name]
-                url   = self.make_block_url( block )
+                url   = self.make_block_url( block, code = True )
                 # display `foo[bar]' as `foo'
                 name = re.sub( r'\[.*\]', '', name )
                 # normalize url, following RFC 3986
                 url = url.replace( "[", "(" )
                 url = url.replace( "]", ")" )
-
                 try:
                     # for sections, display title
-                    url = ( '[' + block.title + "]" 
-                            + '(' + url + ')'
+                    url = ( '&lsquo;<a href="' + url + '">'
+                            + block.title + '</a>&rsquo;'
                             + rest )
                 except:
-                    url = ( '[' + name + ']'
-                            + '(' + url + ')'
+                    url = ( '<a href="' + url + '">'
+                            + name + '</a>'
                             + rest )
+                # NOTE Commented due to problems with field links
+                # try:
+                #     # for sections, display title
+                #     url = ( '[' + block.title + "]" 
+                #             + '(' + url + ')'
+                #             + rest )
+                # except:
+                #     url = ( '[' + name + ']'
+                #             + '(' + url + ')'
+                #             + rest )
 
                 return url
             except:
@@ -223,7 +242,7 @@ class  HtmlFormatter( Formatter ):
             for word in words[1:]:
                 line = line + " " + self.make_html_word( word )
             # handle hyperlinks
-            line = re_url.sub( r'(\1)[\1]', line )
+            line = re_url.sub( r'<\1>', line )
             # convert `...' quotations into real left and right single quotes
             line = re.sub( r"(^|\W)`(.*?)'(\W|$)",
                            r'\1&lsquo;\2&rsquo;\3',
@@ -271,11 +290,6 @@ class  HtmlFormatter( Formatter ):
     def  html_source_quote( self, line, block_name = None ):
         result = ""
         while line:
-            # Escape markdown special characters
-            line = line.replace( "#", "\#" )
-            line = line.replace( " _", " \_" )
-            line = line.replace( " *", " \*" )
-
             m = re_source_crossref.match( line )
             if m:
                 name   = m.group( 2 )
@@ -307,9 +321,9 @@ class  HtmlFormatter( Formatter ):
                                       id = name
 
                       result = ( result + prefix
-                                 + '[' + name + ']('
-                                 + self.make_block_url( block, id )
-                                 + ')' )
+                                 + '<a href="'
+                                 + self.make_block_url( block, id, code = True )
+                                 + '">' + name + '</a>' )
                     except:
                       # sections don't have `markups'; however, we don't
                       # want references to sections here anyway
@@ -328,7 +342,7 @@ class  HtmlFormatter( Formatter ):
     def  print_html_field_list( self, fields ):
         print( '<table class="fields">' )
         for field in fields:
-            print( '<tr><td class="val" id="' + field.name + '">'
+            print( '<tr><td class="val" id="' + self.sluggify(field.name) + '">'
                    + field.name
                    + '</td><td class="desc">' )
             self.print_html_items( field.items )
@@ -535,7 +549,7 @@ class  HtmlFormatter( Formatter ):
             url = url.replace( "[", "(" )
             url = url.replace( "]", ")" )
             # print( '<h3 id="' + url + '">' + name + '</h3>' )
-            print( '### ' + name + md_newline )
+            print( '## ' + name + md_newline )
 
         # dump the block C source lines now
         if block.code:
@@ -579,6 +593,7 @@ class  HtmlFormatter( Formatter ):
         #        + block_footer_middle + self.file_prefix + "toc.html"
         #        + block_footer_end )
         pass
+        print("<hr />\n")
 
     def  section_exit( self, section ):
         # NOTE not required

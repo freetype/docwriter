@@ -29,7 +29,7 @@
 #
 
 
-import fileinput, re
+import fileinput, re, string
 
 
 ################################################################
@@ -55,7 +55,32 @@ class  SourceBlockFormat:
         self.column = re.compile( column, re.VERBOSE )
         self.end    = re.compile( end, re.VERBOSE )
 
-# NOTE: FORMAT 1 HAS BEEN REMOVED
+
+#
+# Format 1 documentation comment blocks.
+#
+#    /************************************/ (at least 2 asterisks)
+#    /*                                  */
+#    /*                                  */
+#    /*                                  */
+#    /************************************/ (at least 2 asterisks)
+#
+start = r'''
+  \s*      # any number of whitespace
+  /\*{2,}/ # followed by '/' and at least two asterisks then '/'
+  \s*$     # probably followed by whitespace
+'''
+
+column = r'''
+  \s*      # any number of whitespace
+  /\*{1}   # followed by '/' and precisely one asterisk
+  ([^*].*) # followed by anything (group 1)
+  \*{1}/   # followed by one asterisk and a '/'
+  \s*$     # probably followed by whitespace
+'''
+
+re_source_block_format1 = SourceBlockFormat( 1, start, column, start )
+
 
 #
 # Format 2 documentation comment blocks.
@@ -90,7 +115,7 @@ re_source_block_format2 = SourceBlockFormat( 2, start, column, end )
 # The list of supported documentation block formats.  We could add new ones
 # quite easily.
 #
-re_source_block_formats = [re_source_block_format2]
+re_source_block_formats = [re_source_block_format1, re_source_block_format2]
 
 
 #
@@ -102,14 +127,13 @@ re_source_block_formats = [re_source_block_format2]
 #
 # Notice that a markup tag _must_ begin a new paragraph.
 #
-
-# NOTE: Markup tag 1 removed
+re_markup_tag1 = re.compile( r'''\s*<((?:\w|-)*)>''' )  # <xxxx> format
 re_markup_tag2 = re.compile( r'''\s*@((?:\w|-)*):''' )  # @xxxx: format
 
 #
 # The list of supported markup tags.  We could add new ones quite easily.
 #
-re_markup_tags = [re_markup_tag2]
+re_markup_tags = [re_markup_tag1, re_markup_tag2]
 
 
 #
@@ -259,7 +283,7 @@ class  SourceBlock:
 
         # now, look for a markup tag
         for l in lines:
-            l = l.strip( )
+            l = string.strip( l )
             if len( l ) > 0:
                 for tag in re_markup_tags:
                     if tag.match( l ):
@@ -301,7 +325,6 @@ class  SourceBlock:
 ##    - Normal sources lines, including comments.
 ##
 ##
-
 class  SourceProcessor:
 
     def  __init__( self ):
