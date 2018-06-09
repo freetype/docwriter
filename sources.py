@@ -233,14 +233,14 @@ re_source_keywords = re.compile( '''\\b ( typedef   |
                                           void      |
                                           signed    |
                                           unsigned  |
-                                          \#include |
-                                          \#define  |
-                                          \#undef   |
-                                          \#if      |
-                                          \#ifdef   |
-                                          \#ifndef  |
-                                          \#else    |
-                                          \#endif   ) \\b''', re.VERBOSE )
+                                          include   |
+                                          define    |
+                                          undef     |
+                                          if        |
+                                          ifdef     |
+                                          ifndef    |
+                                          else      |
+                                          endif   ) \\b''', re.VERBOSE )
 
 
 ################################################################
