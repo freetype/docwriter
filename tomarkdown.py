@@ -47,10 +47,12 @@ description_footer = ""
 
 # Source code extracts header/footer.
 source_header = """
+<div class = "codehilite">
 <pre>\
 """
 source_footer = """\
-</pre>\
+</pre>
+</div>\
 """
 
 # Chapter header/inter/footer.
@@ -66,6 +68,10 @@ md_h4_inter = "</h4>"
 
 code_header = "```"
 code_footer = "```"
+
+# Paragraph header and footer.
+para_header = "<p>"
+para_footer = "</p>"
 
 # Source language keyword coloration and styling.
 keyword_prefix = '<span class="keyword">'
@@ -133,7 +139,7 @@ class  HtmlFormatter( Formatter ):
           
         self.html_footer = (
             '<div class="timestamp">generated on '
-            + time.asctime( time.localtime( time.time() ) )
+            + time.asctime( time.gmtime() ) + " UTC"
             + "</div>" )
 
         self.columns = 3
@@ -233,7 +239,7 @@ class  HtmlFormatter( Formatter ):
 
         return html_quote( word )
 
-    def  make_html_para( self, words ):
+    def  make_html_para( self, words, in_html = False ):
         """Convert words of a paragraph into tagged Markdown text.  Also handle
            cross references."""
         line = ""
@@ -247,9 +253,13 @@ class  HtmlFormatter( Formatter ):
             line = re.sub( r"(^|\W)`(.*?)'(\W|$)",
                            r'\1&lsquo;\2&rsquo;\3',
                            line )
-            # convert tilde into non-breakable space
+            # convert tilde into non-breaking space
             line = line.replace( "~", "&nbsp;" )
-
+        # Return
+        if in_html:
+            # If we are in an HTML tag, return with HTML tags
+            return para_header + line + para_footer
+        # Otherwise return a Markdown paragraph
         return md_newline + line
 
     def  make_html_code( self, lines ):
@@ -262,19 +272,19 @@ class  HtmlFormatter( Formatter ):
 
         return line + code_footer
 
-    def  make_html_items( self, items ):
+    def  make_html_items( self, items, in_html = False ):
         """Convert a field's content into HTML."""
         lines = []
         for item in items:
             if item.lines:
                 lines.append( self.make_html_code( item.lines ) )
             else:
-                lines.append( self.make_html_para( item.words ) )
+                lines.append( self.make_html_para( item.words, in_html ) )
 
         return '\n'.join( lines )
 
-    def  print_html_items( self, items ):
-        print( self.make_html_items( items ) )
+    def  print_html_items( self, items, in_html = False ):
+        print( self.make_html_items( items, in_html ) )
 
     def  print_html_field( self, field ):
         if field.name:
@@ -345,7 +355,7 @@ class  HtmlFormatter( Formatter ):
             print( '<tr><td class="val" id="' + self.sluggify(field.name) + '">'
                    + field.name
                    + '</td><td class="desc">' )
-            self.print_html_items( field.items )
+            self.print_html_items( field.items, in_html = True )
             print( "</td></tr>" )
         print( "</table>" )
 
@@ -376,7 +386,7 @@ class  HtmlFormatter( Formatter ):
 
     def  index_name_enter( self, name ):
         block = self.identifiers[name]
-        url   = self.make_block_url( block )
+        url   = self.make_block_url( block, code = True )
         self.index_items[name] = url
 
     def  index_exit( self ):
@@ -430,15 +440,14 @@ class  HtmlFormatter( Formatter ):
         print( "# Table of Contents" )
 
     def  toc_chapter_enter( self, chapter ):
-        print( chapter_header + " ".join( chapter.title ) )
+        print( chapter_header + " ".join( chapter.title ) + md_newline )
         print( '<table class="toc">' )
 
     def  toc_section_enter( self, section ):
         print( '<tr><td class="link">'
-               + '[' + section.title + ']'
-               + '(' + self.make_section_url( section )
-               + ')</td><td class="desc">' )
-        print( self.make_html_para( section.abstract ) )
+               + '<a href="' + self.make_section_url( section, code = True ) + '">'
+               + section.title + '</a></td><td class="desc">' )
+        print( self.make_html_para( section.abstract, in_html = True ) )
 
     def  toc_section_exit( self, section ):
         print( "</td></tr>" )
