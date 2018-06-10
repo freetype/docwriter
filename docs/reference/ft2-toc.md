@@ -6,220 +6,180 @@
 
 # Table of Contents
 ## General Remarks
+
 <table class="toc">
-<tr><td class="link">[FreeType's header inclusion scheme](ft2-header_inclusion.md)</td><td class="desc">
-
-How client applications should include FreeType header files.
+<tr><td class="link"><a href="../ft2-header_inclusion/">FreeType's header inclusion scheme</a></td><td class="desc">
+<p>How client applications should include FreeType header files.</p>
 </td></tr>
-<tr><td class="link">[User allocation](ft2-user_allocation.md)</td><td class="desc">
-
-How client applications should allocate FreeType data structures.
+<tr><td class="link"><a href="../ft2-user_allocation/">User allocation</a></td><td class="desc">
+<p>How client applications should allocate FreeType data structures.</p>
 </td></tr>
 </table>
 ## Core API
+
 <table class="toc">
-<tr><td class="link">[FreeType Version](ft2-version.md)</td><td class="desc">
-
-Functions and macros related to FreeType versions.
+<tr><td class="link"><a href="../ft2-version/">FreeType Version</a></td><td class="desc">
+<p>Functions and macros related to FreeType versions.</p>
 </td></tr>
-<tr><td class="link">[Basic Data Types](ft2-basic_types.md)</td><td class="desc">
-
-The basic data types defined by the library.
+<tr><td class="link"><a href="../ft2-basic_types/">Basic Data Types</a></td><td class="desc">
+<p>The basic data types defined by the library.</p>
 </td></tr>
-<tr><td class="link">[Base Interface](ft2-base_interface.md)</td><td class="desc">
-
-The FreeType&nbsp;2 base font interface.
+<tr><td class="link"><a href="../ft2-base_interface/">Base Interface</a></td><td class="desc">
+<p>The FreeType&nbsp;2 base font interface.</p>
 </td></tr>
-<tr><td class="link">[Unicode Variation Sequences](ft2-glyph_variants.md)</td><td class="desc">
-
-The FreeType&nbsp;2 interface to Unicode Variation Sequences (UVS), using the SFNT cmap format&nbsp;14.
+<tr><td class="link"><a href="../ft2-glyph_variants/">Unicode Variation Sequences</a></td><td class="desc">
+<p>The FreeType&nbsp;2 interface to Unicode Variation Sequences (UVS), using the SFNT cmap format&nbsp;14.</p>
 </td></tr>
-<tr><td class="link">[Glyph Management](ft2-glyph_management.md)</td><td class="desc">
-
-Generic interface to manage individual glyph data.
+<tr><td class="link"><a href="../ft2-glyph_management/">Glyph Management</a></td><td class="desc">
+<p>Generic interface to manage individual glyph data.</p>
 </td></tr>
-<tr><td class="link">[Mac Specific Interface](ft2-mac_specific.md)</td><td class="desc">
-
-Only available on the Macintosh.
+<tr><td class="link"><a href="../ft2-mac_specific/">Mac Specific Interface</a></td><td class="desc">
+<p>Only available on the Macintosh.</p>
 </td></tr>
-<tr><td class="link">[Size Management](ft2-sizes_management.md)</td><td class="desc">
-
-Managing multiple sizes per face.
+<tr><td class="link"><a href="../ft2-sizes_management/">Size Management</a></td><td class="desc">
+<p>Managing multiple sizes per face.</p>
 </td></tr>
-<tr><td class="link">[Header File Macros](ft2-header_file_macros.md)</td><td class="desc">
-
-Macro definitions used to #include specific header files.
+<tr><td class="link"><a href="../ft2-header_file_macros/">Header File Macros</a></td><td class="desc">
+<p>Macro definitions used to #include specific header files.</p>
 </td></tr>
 </table>
 ## Format-Specific API
+
 <table class="toc">
-<tr><td class="link">[Multiple Masters](ft2-multiple_masters.md)</td><td class="desc">
-
-How to manage Multiple Masters fonts.
+<tr><td class="link"><a href="../ft2-multiple_masters/">Multiple Masters</a></td><td class="desc">
+<p>How to manage Multiple Masters fonts.</p>
 </td></tr>
-<tr><td class="link">[TrueType Tables](ft2-truetype_tables.md)</td><td class="desc">
-
-TrueType specific table types and functions.
+<tr><td class="link"><a href="../ft2-truetype_tables/">TrueType Tables</a></td><td class="desc">
+<p>TrueType specific table types and functions.</p>
 </td></tr>
-<tr><td class="link">[Type 1 Tables](ft2-type1_tables.md)</td><td class="desc">
-
-Type&nbsp;1 (PostScript) specific font tables.
+<tr><td class="link"><a href="../ft2-type1_tables/">Type 1 Tables</a></td><td class="desc">
+<p>Type&nbsp;1 (PostScript) specific font tables.</p>
 </td></tr>
-<tr><td class="link">[SFNT Names](ft2-sfnt_names.md)</td><td class="desc">
-
-Access the names embedded in TrueType and OpenType files.
+<tr><td class="link"><a href="../ft2-sfnt_names/">SFNT Names</a></td><td class="desc">
+<p>Access the names embedded in TrueType and OpenType files.</p>
 </td></tr>
-<tr><td class="link">[BDF and PCF Files](ft2-bdf_fonts.md)</td><td class="desc">
-
-BDF and PCF specific API.
+<tr><td class="link"><a href="../ft2-bdf_fonts/">BDF and PCF Files</a></td><td class="desc">
+<p>BDF and PCF specific API.</p>
 </td></tr>
-<tr><td class="link">[CID Fonts](ft2-cid_fonts.md)</td><td class="desc">
-
-CID-keyed font specific API.
+<tr><td class="link"><a href="../ft2-cid_fonts/">CID Fonts</a></td><td class="desc">
+<p>CID-keyed font specific API.</p>
 </td></tr>
-<tr><td class="link">[PFR Fonts](ft2-pfr_fonts.md)</td><td class="desc">
-
-PFR/TrueDoc specific API.
+<tr><td class="link"><a href="../ft2-pfr_fonts/">PFR Fonts</a></td><td class="desc">
+<p>PFR/TrueDoc specific API.</p>
 </td></tr>
-<tr><td class="link">[Window FNT Files](ft2-winfnt_fonts.md)</td><td class="desc">
-
-Windows FNT specific API.
+<tr><td class="link"><a href="../ft2-winfnt_fonts/">Window FNT Files</a></td><td class="desc">
+<p>Windows FNT specific API.</p>
 </td></tr>
-<tr><td class="link">[Font Formats](ft2-font_formats.md)</td><td class="desc">
-
-Getting the font format.
+<tr><td class="link"><a href="../ft2-font_formats/">Font Formats</a></td><td class="desc">
+<p>Getting the font format.</p>
 </td></tr>
-<tr><td class="link">[Gasp Table](ft2-gasp_table.md)</td><td class="desc">
-
-Retrieving TrueType &lsquo;gasp&rsquo; table entries.
+<tr><td class="link"><a href="../ft2-gasp_table/">Gasp Table</a></td><td class="desc">
+<p>Retrieving TrueType &lsquo;gasp&rsquo; table entries.</p>
 </td></tr>
 </table>
 ## Controlling FreeType Modules
+
 <table class="toc">
-<tr><td class="link">[The auto-hinter](ft2-auto_hinter.md)</td><td class="desc">
-
-Controlling the auto-hinting module.
+<tr><td class="link"><a href="../ft2-auto_hinter/">The auto-hinter</a></td><td class="desc">
+<p>Controlling the auto-hinting module.</p>
 </td></tr>
-<tr><td class="link">[The CFF driver](ft2-cff_driver.md)</td><td class="desc">
-
-Controlling the CFF driver module.
+<tr><td class="link"><a href="../ft2-cff_driver/">The CFF driver</a></td><td class="desc">
+<p>Controlling the CFF driver module.</p>
 </td></tr>
-<tr><td class="link">[The Type 1 and CID drivers](ft2-t1_cid_driver.md)</td><td class="desc">
-
-Controlling the Type&nbsp;1 and CID driver modules.
+<tr><td class="link"><a href="../ft2-t1_cid_driver/">The Type 1 and CID drivers</a></td><td class="desc">
+<p>Controlling the Type&nbsp;1 and CID driver modules.</p>
 </td></tr>
-<tr><td class="link">[The TrueType driver](ft2-tt_driver.md)</td><td class="desc">
-
-Controlling the TrueType driver module.
+<tr><td class="link"><a href="../ft2-tt_driver/">The TrueType driver</a></td><td class="desc">
+<p>Controlling the TrueType driver module.</p>
 </td></tr>
-<tr><td class="link">[The PCF driver](ft2-pcf_driver.md)</td><td class="desc">
-
-Controlling the PCF driver module.
+<tr><td class="link"><a href="../ft2-pcf_driver/">The PCF driver</a></td><td class="desc">
+<p>Controlling the PCF driver module.</p>
 </td></tr>
-<tr><td class="link">[Driver properties](ft2-properties.md)</td><td class="desc">
-
-Controlling driver modules.
+<tr><td class="link"><a href="../ft2-properties/">Driver properties</a></td><td class="desc">
+<p>Controlling driver modules.</p>
 </td></tr>
-<tr><td class="link">[Parameter Tags](ft2-parameter_tags.md)</td><td class="desc">
-
-Macros for driver property and font loading parameter tags.
+<tr><td class="link"><a href="../ft2-parameter_tags/">Parameter Tags</a></td><td class="desc">
+<p>Macros for driver property and font loading parameter tags.</p>
 </td></tr>
 </table>
 ## Cache Sub-System
-<table class="toc">
-<tr><td class="link">[Cache Sub-System](ft2-cache_subsystem.md)</td><td class="desc">
 
-How to cache face, size, and glyph data with FreeType&nbsp;2.
+<table class="toc">
+<tr><td class="link"><a href="../ft2-cache_subsystem/">Cache Sub-System</a></td><td class="desc">
+<p>How to cache face, size, and glyph data with FreeType&nbsp;2.</p>
 </td></tr>
 </table>
 ## Support API
+
 <table class="toc">
-<tr><td class="link">[Computations](ft2-computations.md)</td><td class="desc">
-
-Crunching fixed numbers and vectors.
+<tr><td class="link"><a href="../ft2-computations/">Computations</a></td><td class="desc">
+<p>Crunching fixed numbers and vectors.</p>
 </td></tr>
-<tr><td class="link">[List Processing](ft2-list_processing.md)</td><td class="desc">
-
-Simple management of lists.
+<tr><td class="link"><a href="../ft2-list_processing/">List Processing</a></td><td class="desc">
+<p>Simple management of lists.</p>
 </td></tr>
-<tr><td class="link">[Outline Processing](ft2-outline_processing.md)</td><td class="desc">
-
-Functions to create, transform, and render vectorial glyph images.
+<tr><td class="link"><a href="../ft2-outline_processing/">Outline Processing</a></td><td class="desc">
+<p>Functions to create, transform, and render vectorial glyph images.</p>
 </td></tr>
-<tr><td class="link">[Quick retrieval of advance values](ft2-quick_advance.md)</td><td class="desc">
-
-Retrieve horizontal and vertical advance values without processing glyph outlines, if possible.
+<tr><td class="link"><a href="../ft2-quick_advance/">Quick retrieval of advance values</a></td><td class="desc">
+<p>Retrieve horizontal and vertical advance values without processing glyph outlines, if possible.</p>
 </td></tr>
-<tr><td class="link">[Bitmap Handling](ft2-bitmap_handling.md)</td><td class="desc">
-
-Handling FT_Bitmap objects.
+<tr><td class="link"><a href="../ft2-bitmap_handling/">Bitmap Handling</a></td><td class="desc">
+<p>Handling FT_Bitmap objects.</p>
 </td></tr>
-<tr><td class="link">[Scanline Converter](ft2-raster.md)</td><td class="desc">
-
-How vectorial outlines are converted into bitmaps and pixmaps.
+<tr><td class="link"><a href="../ft2-raster/">Scanline Converter</a></td><td class="desc">
+<p>How vectorial outlines are converted into bitmaps and pixmaps.</p>
 </td></tr>
-<tr><td class="link">[Glyph Stroker](ft2-glyph_stroker.md)</td><td class="desc">
-
-Generating bordered and stroked glyphs.
+<tr><td class="link"><a href="../ft2-glyph_stroker/">Glyph Stroker</a></td><td class="desc">
+<p>Generating bordered and stroked glyphs.</p>
 </td></tr>
-<tr><td class="link">[System Interface](ft2-system_interface.md)</td><td class="desc">
-
-How FreeType manages memory and i/o.
+<tr><td class="link"><a href="../ft2-system_interface/">System Interface</a></td><td class="desc">
+<p>How FreeType manages memory and i/o.</p>
 </td></tr>
-<tr><td class="link">[Module Management](ft2-module_management.md)</td><td class="desc">
-
-How to add, upgrade, remove, and control modules from FreeType.
+<tr><td class="link"><a href="../ft2-module_management/">Module Management</a></td><td class="desc">
+<p>How to add, upgrade, remove, and control modules from FreeType.</p>
 </td></tr>
-<tr><td class="link">[GZIP Streams](ft2-gzip.md)</td><td class="desc">
-
-Using gzip-compressed font files.
+<tr><td class="link"><a href="../ft2-gzip/">GZIP Streams</a></td><td class="desc">
+<p>Using gzip-compressed font files.</p>
 </td></tr>
-<tr><td class="link">[LZW Streams](ft2-lzw.md)</td><td class="desc">
-
-Using LZW-compressed font files.
+<tr><td class="link"><a href="../ft2-lzw/">LZW Streams</a></td><td class="desc">
+<p>Using LZW-compressed font files.</p>
 </td></tr>
-<tr><td class="link">[BZIP2 Streams](ft2-bzip2.md)</td><td class="desc">
-
-Using bzip2-compressed font files.
+<tr><td class="link"><a href="../ft2-bzip2/">BZIP2 Streams</a></td><td class="desc">
+<p>Using bzip2-compressed font files.</p>
 </td></tr>
-<tr><td class="link">[LCD Filtering](ft2-lcd_filtering.md)</td><td class="desc">
-
-Remove color fringes of subpixel-rendered bitmaps.
+<tr><td class="link"><a href="../ft2-lcd_rendering/">Subpixel Rendering</a></td><td class="desc">
+<p>API to control subpixel rendering.</p>
 </td></tr>
 </table>
 ## Error Codes
+
 <table class="toc">
-<tr><td class="link">[Error Enumerations](ft2-error_enumerations.md)</td><td class="desc">
-
-How to handle errors and error strings.
+<tr><td class="link"><a href="../ft2-error_enumerations/">Error Enumerations</a></td><td class="desc">
+<p>How to handle errors and error strings.</p>
 </td></tr>
-<tr><td class="link">[Error Code Values](ft2-error_code_values.md)</td><td class="desc">
-
-All possible error codes returned by FreeType functions.
+<tr><td class="link"><a href="../ft2-error_code_values/">Error Code Values</a></td><td class="desc">
+<p>All possible error codes returned by FreeType functions.</p>
 </td></tr>
 </table>
 ## Miscellaneous
+
 <table class="toc">
-<tr><td class="link">[OpenType Validation](ft2-ot_validation.md)</td><td class="desc">
-
-An API to validate OpenType tables.
+<tr><td class="link"><a href="../ft2-ot_validation/">OpenType Validation</a></td><td class="desc">
+<p>An API to validate OpenType tables.</p>
 </td></tr>
-<tr><td class="link">[Incremental Loading](ft2-incremental.md)</td><td class="desc">
-
-Custom Glyph Loading.
+<tr><td class="link"><a href="../ft2-incremental/">Incremental Loading</a></td><td class="desc">
+<p>Custom Glyph Loading.</p>
 </td></tr>
-<tr><td class="link">[The TrueType Engine](ft2-truetype_engine.md)</td><td class="desc">
-
-TrueType bytecode support.
+<tr><td class="link"><a href="../ft2-truetype_engine/">The TrueType Engine</a></td><td class="desc">
+<p>TrueType bytecode support.</p>
 </td></tr>
-<tr><td class="link">[Glyph Color Management](ft2-color_management.md)</td><td class="desc">
-
-Retrieving and manipulating OpenType's &lsquo;CPAL&rsquo; table entries.
+<tr><td class="link"><a href="../ft2-color_management/">Glyph Color Management</a></td><td class="desc">
+<p>Retrieving and manipulating OpenType's &lsquo;CPAL&rsquo; table data.</p>
 </td></tr>
-<tr><td class="link">[TrueTypeGX/AAT Validation](ft2-gx_validation.md)</td><td class="desc">
-
-An API to validate TrueTypeGX/AAT tables.
+<tr><td class="link"><a href="../ft2-gx_validation/">TrueTypeGX/AAT Validation</a></td><td class="desc">
+<p>An API to validate TrueTypeGX/AAT tables.</p>
 </td></tr>
 </table>
 ## [Global Index](ft2-index.md)
-<div class="timestamp">generated on Thu Jun  7 18:44:12 2018</div>
+<div class="timestamp">generated on Sun Jun 10 18:20:16 2018 UTC</div>

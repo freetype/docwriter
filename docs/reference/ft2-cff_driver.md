@@ -11,7 +11,7 @@ The CFF driver's module name is &lsquo;cff&rsquo;.
 
 Available properties are <a href="../ft2-properties/#hinting-engine">hinting-engine</a>, <a href="../ft2-properties/#no-stem-darkening">no-stem-darkening</a>, <a href="../ft2-properties/#darkening-parameters">darkening-parameters</a>, and <a href="../ft2-properties/#random-seed">random-seed</a>, as documented in the &lsquo;<a href="../ft2-properties/#properties">Driver properties</a>&rsquo; section.
 
-*Hinting* *and* *antialiasing* *principles* *of* *the* *new* *engine*
+**Hinting and antialiasing principles of the new engine**
 
 The rasterizer is positioning horizontal features (e.g., ascender height &amp; x-height, or crossbars) on the pixel grid and minimizing the amount of antialiasing applied to them, while placing vertical features (vertical stems) on the pixel grid without hinting, thus representing the stem position and weight accurately. Sometimes the vertical stems may be only partially black. In this context, &lsquo;antialiasing&rsquo; means that stems are not positioned exactly on pixel borders, causing a fuzzy appearance.
 

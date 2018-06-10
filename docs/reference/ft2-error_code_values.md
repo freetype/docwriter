@@ -9,13 +9,14 @@
 
 The list below is taken verbatim from the file &lsquo;fterrdef.h&rsquo; (loaded automatically by including &lsquo;FT_FREETYPE_H&rsquo;). The first argument of the &lsquo;FT_ERROR_DEF_&rsquo; macro is the error label; by default, the prefix &lsquo;FT_Err_&rsquo; gets added so that you get error names like &lsquo;FT_Err_Cannot_Open_Resource&rsquo;. The second argument is the error code, and the last argument an error string, which is not used by FreeType.
 
-Within your application you should *only* use error names and *never* its numeric values! The latter might (and actually do) change in forthcoming FreeType versions.
+Within your application you should **only** use error names and **never** its numeric values! The latter might (and actually do) change in forthcoming FreeType versions.
 
 Macro &lsquo;FT_NOERRORDEF_&rsquo; defines &lsquo;FT_Err_Ok&rsquo;, which is always zero. See the &lsquo;Error Enumerations&rsquo; subsection how to automatically generate a list of error strings.
 
 ## FT_Err_XXX
 
 
+<div class = "codehilite">
 <pre>
   /* generic errors */
 
@@ -237,5 +238,6 @@ Macro &lsquo;FT_NOERRORDEF_&rsquo; defines &lsquo;FT_Err_Ok&rsquo;, which is alw
   FT_ERRORDEF_( Corrupted_Font_Glyphs,                       0xBA,
                 "Font glyphs corrupted or missing fields" )
 </pre>
+</div>
 <hr />
 

@@ -13,9 +13,11 @@ This section contains definitions used to manage glyph data through generic FT_G
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span> FT_GlyphRec_*  <b>FT_Glyph</b>;
 </pre>
+</div>
 
 
 Handle to an object used to model generic glyph images. It is a pointer to the <a href="../ft2-glyph_management/#ft_glyphrec">FT_GlyphRec</a> structure and can contain a glyph bitmap or pointer.
@@ -30,6 +32,7 @@ Glyph objects are not owned by the library. You must thus release them manually 
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  FT_GlyphRec_
   {
@@ -40,6 +43,7 @@ Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
   } <b>FT_GlyphRec</b>;
 </pre>
+</div>
 
 
 The root glyph structure contains a given glyph image plus its advance width in 16.16 fixed-point format.
@@ -47,20 +51,16 @@ The root glyph structure contains a given glyph image plus its advance width in 
 <h4>fields</h4>
 <table class="fields">
 <tr><td class="val" id="library">library</td><td class="desc">
-
-A handle to the FreeType library object.
+<p>A handle to the FreeType library object.</p>
 </td></tr>
 <tr><td class="val" id="clazz">clazz</td><td class="desc">
-
-A pointer to the glyph's class. Private.
+<p>A pointer to the glyph's class. Private.</p>
 </td></tr>
 <tr><td class="val" id="format">format</td><td class="desc">
-
-The format of the glyph's image.
+<p>The format of the glyph's image.</p>
 </td></tr>
 <tr><td class="val" id="advance">advance</td><td class="desc">
-
-A 16.16 vector that gives the glyph's advance width.
+<p>A 16.16 vector that gives the glyph's advance width.</p>
 </td></tr>
 </table>
 
@@ -70,9 +70,11 @@ A 16.16 vector that gives the glyph's advance width.
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span> FT_BitmapGlyphRec_*  <b>FT_BitmapGlyph</b>;
 </pre>
+</div>
 
 
 A handle to an object used to model a bitmap glyph image. This is a sub-class of <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>, and a pointer to <a href="../ft2-glyph_management/#ft_bitmapglyphrec">FT_BitmapGlyphRec</a>.
@@ -83,6 +85,7 @@ A handle to an object used to model a bitmap glyph image. This is a sub-class of
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  FT_BitmapGlyphRec_
   {
@@ -93,6 +96,7 @@ Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
   } <b>FT_BitmapGlyphRec</b>;
 </pre>
+</div>
 
 
 A structure used for bitmap glyph images. This really is a &lsquo;sub-class&rsquo; of <a href="../ft2-glyph_management/#ft_glyphrec">FT_GlyphRec</a>.
@@ -100,20 +104,16 @@ A structure used for bitmap glyph images. This really is a &lsquo;sub-class&rsqu
 <h4>fields</h4>
 <table class="fields">
 <tr><td class="val" id="root">root</td><td class="desc">
-
-The root <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a> fields.
+<p>The root <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a> fields.</p>
 </td></tr>
 <tr><td class="val" id="left">left</td><td class="desc">
-
-The left-side bearing, i.e., the horizontal distance from the current pen position to the left border of the glyph bitmap.
+<p>The left-side bearing, i.e., the horizontal distance from the current pen position to the left border of the glyph bitmap.</p>
 </td></tr>
 <tr><td class="val" id="top">top</td><td class="desc">
-
-The top-side bearing, i.e., the vertical distance from the current pen position to the top border of the glyph bitmap. This distance is positive for upwards&nbsp;y!
+<p>The top-side bearing, i.e., the vertical distance from the current pen position to the top border of the glyph bitmap. This distance is positive for upwards&nbsp;y!</p>
 </td></tr>
 <tr><td class="val" id="bitmap">bitmap</td><td class="desc">
-
-A descriptor for the bitmap.
+<p>A descriptor for the bitmap.</p>
 </td></tr>
 </table>
 
@@ -129,9 +129,11 @@ The corresponding pixel buffer is always owned by <a href="../ft2-glyph_manageme
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span> FT_OutlineGlyphRec_*  <b>FT_OutlineGlyph</b>;
 </pre>
+</div>
 
 
 A handle to an object used to model an outline glyph image. This is a sub-class of <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>, and a pointer to <a href="../ft2-glyph_management/#ft_outlineglyphrec">FT_OutlineGlyphRec</a>.
@@ -142,6 +144,7 @@ A handle to an object used to model an outline glyph image. This is a sub-class 
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  FT_OutlineGlyphRec_
   {
@@ -150,6 +153,7 @@ Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
   } <b>FT_OutlineGlyphRec</b>;
 </pre>
+</div>
 
 
 A structure used for outline (vectorial) glyph images. This really is a &lsquo;sub-class&rsquo; of <a href="../ft2-glyph_management/#ft_glyphrec">FT_GlyphRec</a>.
@@ -157,12 +161,10 @@ A structure used for outline (vectorial) glyph images. This really is a &lsquo;s
 <h4>fields</h4>
 <table class="fields">
 <tr><td class="val" id="root">root</td><td class="desc">
-
-The root <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a> fields.
+<p>The root <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a> fields.</p>
 </td></tr>
 <tr><td class="val" id="outline">outline</td><td class="desc">
-
-A descriptor for the outline.
+<p>A descriptor for the outline.</p>
 </td></tr>
 </table>
 
@@ -180,11 +182,13 @@ The outline's tables are always owned by the object and are destroyed with it.
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Get_Glyph</b>( <a href="../ft2-base_interface/#ft_glyphslot">FT_GlyphSlot</a>  slot,
                 <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>     *aglyph );
 </pre>
+</div>
 
 
 A function used to extract a glyph image from a slot. Note that the created <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a> object must be released with <a href="../ft2-glyph_management/#ft_done_glyph">FT_Done_Glyph</a>.
@@ -192,16 +196,14 @@ A function used to extract a glyph image from a slot. Note that the created <a h
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="slot">slot</td><td class="desc">
-
-A handle to the source glyph slot.
+<p>A handle to the source glyph slot.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="aglyph">aglyph</td><td class="desc">
-
-A handle to the glyph object.
+<p>A handle to the glyph object.</p>
 </td></tr>
 </table>
 
@@ -219,11 +221,13 @@ Because &lsquo;*aglyph-&gt;advance.x&rsquo; and '*aglyph-&gt;advance.y' are 16.1
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Glyph_Copy</b>( <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>   source,
                  <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>  *target );
 </pre>
+</div>
 
 
 A function used to copy a glyph image. Note that the created <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a> object must be released with <a href="../ft2-glyph_management/#ft_done_glyph">FT_Done_Glyph</a>.
@@ -231,16 +235,14 @@ A function used to copy a glyph image. Note that the created <a href="../ft2-gly
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="source">source</td><td class="desc">
-
-A handle to the source glyph object.
+<p>A handle to the source glyph object.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="target">target</td><td class="desc">
-
-A handle to the target glyph object. 0&nbsp;in case of error.
+<p>A handle to the target glyph object. 0&nbsp;in case of error.</p>
 </td></tr>
 </table>
 
@@ -254,12 +256,14 @@ FreeType error code. 0&nbsp;means success.
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Glyph_Transform</b>( <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>    glyph,
                       <a href="../ft2-basic_types/#ft_matrix">FT_Matrix</a>*  matrix,
                       <a href="../ft2-basic_types/#ft_vector">FT_Vector</a>*  delta );
 </pre>
+</div>
 
 
 Transform a glyph image if its format is scalable.
@@ -267,20 +271,17 @@ Transform a glyph image if its format is scalable.
 <h4>inout</h4>
 <table class="fields">
 <tr><td class="val" id="glyph">glyph</td><td class="desc">
-
-A handle to the target glyph object.
+<p>A handle to the target glyph object.</p>
 </td></tr>
 </table>
 
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="matrix">matrix</td><td class="desc">
-
-A pointer to a 2x2 matrix to apply.
+<p>A pointer to a 2x2 matrix to apply.</p>
 </td></tr>
 <tr><td class="val" id="delta">delta</td><td class="desc">
-
-A pointer to a 2d vector to apply. Coordinates are expressed in 1/64th of a pixel.
+<p>A pointer to a 2d vector to apply. Coordinates are expressed in 1/64th of a pixel.</p>
 </td></tr>
 </table>
 
@@ -298,6 +299,7 @@ The 2x2 transformation matrix is also applied to the glyph's advance vector.
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">enum</span>  FT_Glyph_BBox_Mode_
   {
@@ -312,12 +314,13 @@ Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
   /* these constants are deprecated; use the corresponding */
   /* `<b>FT_Glyph_BBox_Mode</b>' values instead                   */
-#define ft_glyph_bbox_unscaled   <a href="../ft2-glyph_management/#ft_glyph_bbox_unscaled">FT_GLYPH_BBOX_UNSCALED</a>
-#define ft_glyph_bbox_subpixels  <a href="../ft2-glyph_management/#ft_glyph_bbox_subpixels">FT_GLYPH_BBOX_SUBPIXELS</a>
-#define ft_glyph_bbox_gridfit    <a href="../ft2-glyph_management/#ft_glyph_bbox_gridfit">FT_GLYPH_BBOX_GRIDFIT</a>
-#define ft_glyph_bbox_truncate   <a href="../ft2-glyph_management/#ft_glyph_bbox_truncate">FT_GLYPH_BBOX_TRUNCATE</a>
-#define ft_glyph_bbox_pixels     <a href="../ft2-glyph_management/#ft_glyph_bbox_pixels">FT_GLYPH_BBOX_PIXELS</a>
+#<span class="keyword">define</span> ft_glyph_bbox_unscaled   <a href="../ft2-glyph_management/#ft_glyph_bbox_unscaled">FT_GLYPH_BBOX_UNSCALED</a>
+#<span class="keyword">define</span> ft_glyph_bbox_subpixels  <a href="../ft2-glyph_management/#ft_glyph_bbox_subpixels">FT_GLYPH_BBOX_SUBPIXELS</a>
+#<span class="keyword">define</span> ft_glyph_bbox_gridfit    <a href="../ft2-glyph_management/#ft_glyph_bbox_gridfit">FT_GLYPH_BBOX_GRIDFIT</a>
+#<span class="keyword">define</span> ft_glyph_bbox_truncate   <a href="../ft2-glyph_management/#ft_glyph_bbox_truncate">FT_GLYPH_BBOX_TRUNCATE</a>
+#<span class="keyword">define</span> ft_glyph_bbox_pixels     <a href="../ft2-glyph_management/#ft_glyph_bbox_pixels">FT_GLYPH_BBOX_PIXELS</a>
 </pre>
+</div>
 
 
 The mode how the values of <a href="../ft2-glyph_management/#ft_glyph_get_cbox">FT_Glyph_Get_CBox</a> are returned.
@@ -325,24 +328,19 @@ The mode how the values of <a href="../ft2-glyph_management/#ft_glyph_get_cbox">
 <h4>values</h4>
 <table class="fields">
 <tr><td class="val" id="ft_glyph_bbox_unscaled">FT_GLYPH_BBOX_UNSCALED</td><td class="desc">
-
-Return unscaled font units.
+<p>Return unscaled font units.</p>
 </td></tr>
 <tr><td class="val" id="ft_glyph_bbox_subpixels">FT_GLYPH_BBOX_SUBPIXELS</td><td class="desc">
-
-Return unfitted 26.6 coordinates.
+<p>Return unfitted 26.6 coordinates.</p>
 </td></tr>
 <tr><td class="val" id="ft_glyph_bbox_gridfit">FT_GLYPH_BBOX_GRIDFIT</td><td class="desc">
-
-Return grid-fitted 26.6 coordinates.
+<p>Return grid-fitted 26.6 coordinates.</p>
 </td></tr>
 <tr><td class="val" id="ft_glyph_bbox_truncate">FT_GLYPH_BBOX_TRUNCATE</td><td class="desc">
-
-Return coordinates in integer pixels.
+<p>Return coordinates in integer pixels.</p>
 </td></tr>
 <tr><td class="val" id="ft_glyph_bbox_pixels">FT_GLYPH_BBOX_PIXELS</td><td class="desc">
-
-Return grid-fitted pixel coordinates.
+<p>Return grid-fitted pixel coordinates.</p>
 </td></tr>
 </table>
 
@@ -352,12 +350,14 @@ Return grid-fitted pixel coordinates.
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <span class="keyword">void</span> )
   <b>FT_Glyph_Get_CBox</b>( <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>  glyph,
                      <a href="../ft2-basic_types/#ft_uint">FT_UInt</a>   bbox_mode,
                      <a href="../ft2-basic_types/#ft_bbox">FT_BBox</a>  *acbox );
 </pre>
+</div>
 
 
 Return a glyph's &lsquo;control box&rsquo;. The control box encloses all the outline's points, including Bezier control points. Though it coincides with the exact bounding box for most glyphs, it can be slightly larger in some situations (like when rotating an outline that contains Bezier outside arcs).
@@ -367,20 +367,17 @@ Computing the control box is very fast, while getting the bounding box can take 
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="glyph">glyph</td><td class="desc">
-
-A handle to the source glyph object.
+<p>A handle to the source glyph object.</p>
 </td></tr>
 <tr><td class="val" id="mode">mode</td><td class="desc">
-
-The mode that indicates how to interpret the returned bounding box values.
+<p>The mode that indicates how to interpret the returned bounding box values.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="acbox">acbox</td><td class="desc">
-
-The glyph coordinate bounding box. Coordinates are expressed in 1/64th of pixels if it is grid-fitted.
+<p>The glyph coordinate bounding box. Coordinates are expressed in 1/64th of pixels if it is grid-fitted.</p>
 </td></tr>
 </table>
 
@@ -416,6 +413,7 @@ To get the bbox in grid-fitted pixel coordinates, set &lsquo;bbox_mode&rsquo; to
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Glyph_To_Bitmap</b>( <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>*       the_glyph,
@@ -423,6 +421,7 @@ Defined in FT_GLYPH_H (freetype/ftglyph.h).
                       <a href="../ft2-basic_types/#ft_vector">FT_Vector</a>*      origin,
                       <a href="../ft2-basic_types/#ft_bool">FT_Bool</a>         destroy );
 </pre>
+</div>
 
 
 Convert a given glyph object to a bitmap glyph object.
@@ -430,24 +429,20 @@ Convert a given glyph object to a bitmap glyph object.
 <h4>inout</h4>
 <table class="fields">
 <tr><td class="val" id="the_glyph">the_glyph</td><td class="desc">
-
-A pointer to a handle to the target glyph.
+<p>A pointer to a handle to the target glyph.</p>
 </td></tr>
 </table>
 
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="render_mode">render_mode</td><td class="desc">
-
-An enumeration that describes how the data is rendered.
+<p>An enumeration that describes how the data is rendered.</p>
 </td></tr>
 <tr><td class="val" id="origin">origin</td><td class="desc">
-
-A pointer to a vector used to translate the glyph image before rendering. Can be&nbsp;0 (if no translation). The origin is expressed in 26.6 pixels.
+<p>A pointer to a vector used to translate the glyph image before rendering. Can be&nbsp;0 (if no translation). The origin is expressed in 26.6 pixels.</p>
 </td></tr>
 <tr><td class="val" id="destroy">destroy</td><td class="desc">
-
-A boolean that indicates that the original glyph image should be destroyed by this function. It is never destroyed in case of error.
+<p>A boolean that indicates that the original glyph image should be destroyed by this function. It is never destroyed in case of error.</p>
 </td></tr>
 </table>
 
@@ -539,10 +534,12 @@ Here another example, again without error handling:
 
 Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <span class="keyword">void</span> )
   <b>FT_Done_Glyph</b>( <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>  glyph );
 </pre>
+</div>
 
 
 Destroy a given glyph.
@@ -550,8 +547,7 @@ Destroy a given glyph.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="glyph">glyph</td><td class="desc">
-
-A handle to the target glyph object.
+<p>A handle to the target glyph object.</p>
 </td></tr>
 </table>
 

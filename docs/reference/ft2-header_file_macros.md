@@ -21,11 +21,13 @@ The second reason is that it allows for more flexibility in the way FreeType&nbs
 ## FT_CONFIG_CONFIG_H
 
 
+<div class = "codehilite">
 <pre>
-#ifndef <b>FT_CONFIG_CONFIG_H</b>
-#define <b>FT_CONFIG_CONFIG_H</b>  &lt;freetype/config/ftconfig.h&gt;
-#endif
+#<span class="keyword">ifndef</span> <b>FT_CONFIG_CONFIG_H</b>
+#<span class="keyword">define</span> <b>FT_CONFIG_CONFIG_H</b>  &lt;freetype/config/ftconfig.h&gt;
+#<span class="keyword">endif</span>
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing FreeType&nbsp;2 configuration data.
@@ -35,11 +37,13 @@ A macro used in #include statements to name the file containing FreeType&nbsp;2 
 ## FT_CONFIG_STANDARD_LIBRARY_H
 
 
+<div class = "codehilite">
 <pre>
-#ifndef <b>FT_CONFIG_STANDARD_LIBRARY_H</b>
-#define <b>FT_CONFIG_STANDARD_LIBRARY_H</b>  &lt;freetype/config/ftstdlib.h&gt;
-#endif
+#<span class="keyword">ifndef</span> <b>FT_CONFIG_STANDARD_LIBRARY_H</b>
+#<span class="keyword">define</span> <b>FT_CONFIG_STANDARD_LIBRARY_H</b>  &lt;freetype/config/ftstdlib.h&gt;
+#<span class="keyword">endif</span>
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing FreeType&nbsp;2 interface to the standard C library functions.
@@ -49,11 +53,13 @@ A macro used in #include statements to name the file containing FreeType&nbsp;2 
 ## FT_CONFIG_OPTIONS_H
 
 
+<div class = "codehilite">
 <pre>
-#ifndef <b>FT_CONFIG_OPTIONS_H</b>
-#define <b>FT_CONFIG_OPTIONS_H</b>  &lt;freetype/config/ftoption.h&gt;
-#endif
+#<span class="keyword">ifndef</span> <b>FT_CONFIG_OPTIONS_H</b>
+#<span class="keyword">define</span> <b>FT_CONFIG_OPTIONS_H</b>  &lt;freetype/config/ftoption.h&gt;
+#<span class="keyword">endif</span>
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing FreeType&nbsp;2 project-specific configuration options.
@@ -63,11 +69,13 @@ A macro used in #include statements to name the file containing FreeType&nbsp;2 
 ## FT_CONFIG_MODULES_H
 
 
+<div class = "codehilite">
 <pre>
-#ifndef <b>FT_CONFIG_MODULES_H</b>
-#define <b>FT_CONFIG_MODULES_H</b>  &lt;freetype/config/ftmodule.h&gt;
-#endif
+#<span class="keyword">ifndef</span> <b>FT_CONFIG_MODULES_H</b>
+#<span class="keyword">define</span> <b>FT_CONFIG_MODULES_H</b>  &lt;freetype/config/ftmodule.h&gt;
+#<span class="keyword">endif</span>
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the list of FreeType&nbsp;2 modules that are statically linked to new library instances in <a href="../ft2-base_interface/#ft_init_freetype">FT_Init_FreeType</a>.
@@ -77,9 +85,11 @@ A macro used in #include statements to name the file containing the list of Free
 ## FT_FREETYPE_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_FREETYPE_H</b>  &lt;freetype/freetype.h&gt;
+#<span class="keyword">define</span> <b>FT_FREETYPE_H</b>  &lt;freetype/freetype.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the base FreeType&nbsp;2 API.
@@ -89,9 +99,11 @@ A macro used in #include statements to name the file containing the base FreeTyp
 ## FT_ERRORS_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_ERRORS_H</b>  &lt;freetype/fterrors.h&gt;
+#<span class="keyword">define</span> <b>FT_ERRORS_H</b>  &lt;freetype/fterrors.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the list of FreeType&nbsp;2 error codes (and messages).
@@ -103,9 +115,11 @@ It is included by <a href="../ft2-header_file_macros/#ft_freetype_h">FT_FREETYPE
 ## FT_MODULE_ERRORS_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_MODULE_ERRORS_H</b>  &lt;freetype/ftmoderr.h&gt;
+#<span class="keyword">define</span> <b>FT_MODULE_ERRORS_H</b>  &lt;freetype/ftmoderr.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the list of FreeType&nbsp;2 module error offsets (and messages).
@@ -115,9 +129,11 @@ A macro used in #include statements to name the file containing the list of Free
 ## FT_SYSTEM_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_SYSTEM_H</b>  &lt;freetype/ftsystem.h&gt;
+#<span class="keyword">define</span> <b>FT_SYSTEM_H</b>  &lt;freetype/ftsystem.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 interface to low-level operations (i.e., memory management and stream i/o).
@@ -129,9 +145,11 @@ It is included by <a href="../ft2-header_file_macros/#ft_freetype_h">FT_FREETYPE
 ## FT_IMAGE_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_IMAGE_H</b>  &lt;freetype/ftimage.h&gt;
+#<span class="keyword">define</span> <b>FT_IMAGE_H</b>  &lt;freetype/ftimage.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing type definitions related to glyph images (i.e., bitmaps, outlines, scan-converter parameters).
@@ -143,9 +161,11 @@ It is included by <a href="../ft2-header_file_macros/#ft_freetype_h">FT_FREETYPE
 ## FT_TYPES_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_TYPES_H</b>  &lt;freetype/fttypes.h&gt;
+#<span class="keyword">define</span> <b>FT_TYPES_H</b>  &lt;freetype/fttypes.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the basic data types defined by FreeType&nbsp;2.
@@ -157,9 +177,11 @@ It is included by <a href="../ft2-header_file_macros/#ft_freetype_h">FT_FREETYPE
 ## FT_LIST_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_LIST_H</b>  &lt;freetype/ftlist.h&gt;
+#<span class="keyword">define</span> <b>FT_LIST_H</b>  &lt;freetype/ftlist.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the list management API of FreeType&nbsp;2.
@@ -171,9 +193,11 @@ A macro used in #include statements to name the file containing the list managem
 ## FT_OUTLINE_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_OUTLINE_H</b>  &lt;freetype/ftoutln.h&gt;
+#<span class="keyword">define</span> <b>FT_OUTLINE_H</b>  &lt;freetype/ftoutln.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the scalable outline management API of FreeType&nbsp;2.
@@ -183,9 +207,11 @@ A macro used in #include statements to name the file containing the scalable out
 ## FT_SIZES_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_SIZES_H</b>  &lt;freetype/ftsizes.h&gt;
+#<span class="keyword">define</span> <b>FT_SIZES_H</b>  &lt;freetype/ftsizes.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the API which manages multiple <a href="../ft2-base_interface/#ft_size">FT_Size</a> objects per face.
@@ -195,9 +221,11 @@ A macro used in #include statements to name the file containing the API which ma
 ## FT_MODULE_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_MODULE_H</b>  &lt;freetype/ftmodapi.h&gt;
+#<span class="keyword">define</span> <b>FT_MODULE_H</b>  &lt;freetype/ftmodapi.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the module management API of FreeType&nbsp;2.
@@ -207,9 +235,11 @@ A macro used in #include statements to name the file containing the module manag
 ## FT_RENDER_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_RENDER_H</b>  &lt;freetype/ftrender.h&gt;
+#<span class="keyword">define</span> <b>FT_RENDER_H</b>  &lt;freetype/ftrender.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the renderer module management API of FreeType&nbsp;2.
@@ -219,9 +249,11 @@ A macro used in #include statements to name the file containing the renderer mod
 ## FT_DRIVER_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_DRIVER_H</b>  &lt;freetype/ftdriver.h&gt;
+#<span class="keyword">define</span> <b>FT_DRIVER_H</b>  &lt;freetype/ftdriver.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing structures and macros related to the driver modules.
@@ -231,9 +263,11 @@ A macro used in #include statements to name the file containing structures and m
 ## FT_AUTOHINTER_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_AUTOHINTER_H</b>  <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a>
+#<span class="keyword">define</span> <b>FT_AUTOHINTER_H</b>  <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a>
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing structures and macros related to the auto-hinting module.
@@ -245,9 +279,11 @@ Deprecated since version 2.9; use <a href="../ft2-header_file_macros/#ft_driver_
 ## FT_CFF_DRIVER_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_CFF_DRIVER_H</b>  <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a>
+#<span class="keyword">define</span> <b>FT_CFF_DRIVER_H</b>  <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a>
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing structures and macros related to the CFF driver module.
@@ -259,9 +295,11 @@ Deprecated since version 2.9; use <a href="../ft2-header_file_macros/#ft_driver_
 ## FT_TRUETYPE_DRIVER_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_TRUETYPE_DRIVER_H</b>  <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a>
+#<span class="keyword">define</span> <b>FT_TRUETYPE_DRIVER_H</b>  <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a>
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing structures and macros related to the TrueType driver module.
@@ -273,9 +311,11 @@ Deprecated since version 2.9; use <a href="../ft2-header_file_macros/#ft_driver_
 ## FT_PCF_DRIVER_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_PCF_DRIVER_H</b>  <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a>
+#<span class="keyword">define</span> <b>FT_PCF_DRIVER_H</b>  <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a>
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing structures and macros related to the PCF driver module.
@@ -287,9 +327,11 @@ Deprecated since version 2.9; use <a href="../ft2-header_file_macros/#ft_driver_
 ## FT_TYPE1_TABLES_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_TYPE1_TABLES_H</b>  &lt;freetype/t1tables.h&gt;
+#<span class="keyword">define</span> <b>FT_TYPE1_TABLES_H</b>  &lt;freetype/t1tables.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the types and API specific to the Type&nbsp;1 format.
@@ -299,9 +341,11 @@ A macro used in #include statements to name the file containing the types and AP
 ## FT_TRUETYPE_IDS_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_TRUETYPE_IDS_H</b>  &lt;freetype/ttnameid.h&gt;
+#<span class="keyword">define</span> <b>FT_TRUETYPE_IDS_H</b>  &lt;freetype/ttnameid.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the enumeration values which identify name strings, languages, encodings, etc. This file really contains a _large_ set of constant macro definitions, taken from the TrueType and OpenType specifications.
@@ -311,9 +355,11 @@ A macro used in #include statements to name the file containing the enumeration 
 ## FT_TRUETYPE_TABLES_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_TRUETYPE_TABLES_H</b>  &lt;freetype/tttables.h&gt;
+#<span class="keyword">define</span> <b>FT_TRUETYPE_TABLES_H</b>  &lt;freetype/tttables.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the types and API specific to the TrueType (as well as OpenType) format.
@@ -323,9 +369,11 @@ A macro used in #include statements to name the file containing the types and AP
 ## FT_TRUETYPE_TAGS_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_TRUETYPE_TAGS_H</b>  &lt;freetype/tttags.h&gt;
+#<span class="keyword">define</span> <b>FT_TRUETYPE_TAGS_H</b>  &lt;freetype/tttags.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the definitions of TrueType four-byte &lsquo;tags&rsquo; which identify blocks in SFNT-based font formats (i.e., TrueType and OpenType).
@@ -335,9 +383,11 @@ A macro used in #include statements to name the file containing the definitions 
 ## FT_BDF_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_BDF_H</b>  &lt;freetype/ftbdf.h&gt;
+#<span class="keyword">define</span> <b>FT_BDF_H</b>  &lt;freetype/ftbdf.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the definitions of an API which accesses BDF-specific strings from a face.
@@ -347,9 +397,11 @@ A macro used in #include statements to name the file containing the definitions 
 ## FT_CID_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_CID_H</b>  &lt;freetype/ftcid.h&gt;
+#<span class="keyword">define</span> <b>FT_CID_H</b>  &lt;freetype/ftcid.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the definitions of an API which access CID font information from a face.
@@ -359,9 +411,11 @@ A macro used in #include statements to name the file containing the definitions 
 ## FT_GZIP_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_GZIP_H</b>  &lt;freetype/ftgzip.h&gt;
+#<span class="keyword">define</span> <b>FT_GZIP_H</b>  &lt;freetype/ftgzip.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the definitions of an API which supports gzip-compressed files.
@@ -371,9 +425,11 @@ A macro used in #include statements to name the file containing the definitions 
 ## FT_LZW_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_LZW_H</b>  &lt;freetype/ftlzw.h&gt;
+#<span class="keyword">define</span> <b>FT_LZW_H</b>  &lt;freetype/ftlzw.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the definitions of an API which supports LZW-compressed files.
@@ -383,9 +439,11 @@ A macro used in #include statements to name the file containing the definitions 
 ## FT_BZIP2_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_BZIP2_H</b>  &lt;freetype/ftbzip2.h&gt;
+#<span class="keyword">define</span> <b>FT_BZIP2_H</b>  &lt;freetype/ftbzip2.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the definitions of an API which supports bzip2-compressed files.
@@ -395,9 +453,11 @@ A macro used in #include statements to name the file containing the definitions 
 ## FT_WINFONTS_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_WINFONTS_H</b>   &lt;freetype/ftwinfnt.h&gt;
+#<span class="keyword">define</span> <b>FT_WINFONTS_H</b>   &lt;freetype/ftwinfnt.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the definitions of an API which supports Windows FNT files.
@@ -407,9 +467,11 @@ A macro used in #include statements to name the file containing the definitions 
 ## FT_GLYPH_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_GLYPH_H</b>  &lt;freetype/ftglyph.h&gt;
+#<span class="keyword">define</span> <b>FT_GLYPH_H</b>  &lt;freetype/ftglyph.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the API of the optional glyph management component.
@@ -419,9 +481,11 @@ A macro used in #include statements to name the file containing the API of the o
 ## FT_BITMAP_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_BITMAP_H</b>  &lt;freetype/ftbitmap.h&gt;
+#<span class="keyword">define</span> <b>FT_BITMAP_H</b>  &lt;freetype/ftbitmap.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the API of the optional bitmap conversion component.
@@ -431,9 +495,11 @@ A macro used in #include statements to name the file containing the API of the o
 ## FT_BBOX_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_BBOX_H</b>  &lt;freetype/ftbbox.h&gt;
+#<span class="keyword">define</span> <b>FT_BBOX_H</b>  &lt;freetype/ftbbox.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the API of the optional exact bounding box computation routines.
@@ -443,9 +509,11 @@ A macro used in #include statements to name the file containing the API of the o
 ## FT_CACHE_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_CACHE_H</b>  &lt;freetype/ftcache.h&gt;
+#<span class="keyword">define</span> <b>FT_CACHE_H</b>  &lt;freetype/ftcache.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the API of the optional FreeType&nbsp;2 cache sub-system.
@@ -455,9 +523,11 @@ A macro used in #include statements to name the file containing the API of the o
 ## FT_MAC_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_MAC_H</b>  &lt;freetype/ftmac.h&gt;
+#<span class="keyword">define</span> <b>FT_MAC_H</b>  &lt;freetype/ftmac.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the Macintosh-specific FreeType&nbsp;2 API. The latter is used to access fonts embedded in resource forks.
@@ -469,9 +539,11 @@ This header file must be explicitly included by client applications compiled on 
 ## FT_MULTIPLE_MASTERS_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_MULTIPLE_MASTERS_H</b>  &lt;freetype/ftmm.h&gt;
+#<span class="keyword">define</span> <b>FT_MULTIPLE_MASTERS_H</b>  &lt;freetype/ftmm.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the optional multiple-masters management API of FreeType&nbsp;2.
@@ -481,9 +553,11 @@ A macro used in #include statements to name the file containing the optional mul
 ## FT_SFNT_NAMES_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_SFNT_NAMES_H</b>  &lt;freetype/ftsnames.h&gt;
+#<span class="keyword">define</span> <b>FT_SFNT_NAMES_H</b>  &lt;freetype/ftsnames.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the optional FreeType&nbsp;2 API which accesses embedded &lsquo;name&rsquo; strings in SFNT-based font formats (i.e., TrueType and OpenType).
@@ -493,9 +567,11 @@ A macro used in #include statements to name the file containing the optional Fre
 ## FT_OPENTYPE_VALIDATE_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_OPENTYPE_VALIDATE_H</b>  &lt;freetype/ftotval.h&gt;
+#<span class="keyword">define</span> <b>FT_OPENTYPE_VALIDATE_H</b>  &lt;freetype/ftotval.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the optional FreeType&nbsp;2 API which validates OpenType tables (BASE, GDEF, GPOS, GSUB, JSTF).
@@ -505,9 +581,11 @@ A macro used in #include statements to name the file containing the optional Fre
 ## FT_GX_VALIDATE_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_GX_VALIDATE_H</b>  &lt;freetype/ftgxval.h&gt;
+#<span class="keyword">define</span> <b>FT_GX_VALIDATE_H</b>  &lt;freetype/ftgxval.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the optional FreeType&nbsp;2 API which validates TrueTypeGX/AAT tables (feat, mort, morx, bsln, just, kern, opbd, trak, prop).
@@ -517,9 +595,11 @@ A macro used in #include statements to name the file containing the optional Fre
 ## FT_PFR_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_PFR_H</b>  &lt;freetype/ftpfr.h&gt;
+#<span class="keyword">define</span> <b>FT_PFR_H</b>  &lt;freetype/ftpfr.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which accesses PFR-specific data.
@@ -529,9 +609,11 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 ## FT_STROKER_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_STROKER_H</b>  &lt;freetype/ftstroke.h&gt;
+#<span class="keyword">define</span> <b>FT_STROKER_H</b>  &lt;freetype/ftstroke.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which provides functions to stroke outline paths.
@@ -541,9 +623,11 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 ## FT_SYNTHESIS_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_SYNTHESIS_H</b>  &lt;freetype/ftsynth.h&gt;
+#<span class="keyword">define</span> <b>FT_SYNTHESIS_H</b>  &lt;freetype/ftsynth.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which performs artificial obliquing and emboldening.
@@ -553,12 +637,14 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 ## FT_FONT_FORMATS_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_FONT_FORMATS_H</b>  &lt;freetype/ftfntfmt.h&gt;
+#<span class="keyword">define</span> <b>FT_FONT_FORMATS_H</b>  &lt;freetype/ftfntfmt.h&gt;
 
   /* deprecated */
-#define FT_XFREE86_H  <b>FT_FONT_FORMATS_H</b>
+#<span class="keyword">define</span> FT_XFREE86_H  <b>FT_FONT_FORMATS_H</b>
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which provides functions specific to font formats.
@@ -568,9 +654,11 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 ## FT_TRIGONOMETRY_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_TRIGONOMETRY_H</b>  &lt;freetype/fttrigon.h&gt;
+#<span class="keyword">define</span> <b>FT_TRIGONOMETRY_H</b>  &lt;freetype/fttrigon.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which performs trigonometric computations (e.g., cosines and arc tangents).
@@ -580,9 +668,11 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 ## FT_LCD_FILTER_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_LCD_FILTER_H</b>  &lt;freetype/ftlcdfil.h&gt;
+#<span class="keyword">define</span> <b>FT_LCD_FILTER_H</b>  &lt;freetype/ftlcdfil.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which performs color filtering for subpixel rendering.
@@ -592,9 +682,11 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 ## FT_INCREMENTAL_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_INCREMENTAL_H</b>  &lt;freetype/ftincrem.h&gt;
+#<span class="keyword">define</span> <b>FT_INCREMENTAL_H</b>  &lt;freetype/ftincrem.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which performs incremental glyph loading.
@@ -604,9 +696,11 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 ## FT_GASP_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_GASP_H</b>  &lt;freetype/ftgasp.h&gt;
+#<span class="keyword">define</span> <b>FT_GASP_H</b>  &lt;freetype/ftgasp.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which returns entries from the TrueType GASP table.
@@ -616,9 +710,11 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 ## FT_ADVANCES_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_ADVANCES_H</b>  &lt;freetype/ftadvanc.h&gt;
+#<span class="keyword">define</span> <b>FT_ADVANCES_H</b>  &lt;freetype/ftadvanc.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which returns individual and ranged glyph advances.
@@ -628,9 +724,11 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 ## FT_COLOR_H
 
 
+<div class = "codehilite">
 <pre>
-#define <b>FT_COLOR_H</b>  &lt;freetype/ftcolor.h&gt;
+#<span class="keyword">define</span> <b>FT_COLOR_H</b>  &lt;freetype/ftcolor.h&gt;
 </pre>
+</div>
 
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which handles the OpenType CPAL table.

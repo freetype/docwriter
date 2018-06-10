@@ -13,6 +13,7 @@ This section contains the declaration of PFR-specific functions.
 
 Defined in FT_PFR_H (freetype/ftpfr.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Get_PFR_Metrics</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>    face,
@@ -21,6 +22,7 @@ Defined in FT_PFR_H (freetype/ftpfr.h).
                       <a href="../ft2-basic_types/#ft_fixed">FT_Fixed</a>  *ametrics_x_scale,
                       <a href="../ft2-basic_types/#ft_fixed">FT_Fixed</a>  *ametrics_y_scale );
 </pre>
+</div>
 
 
 Return the outline and metrics resolutions of a given PFR face.
@@ -28,28 +30,23 @@ Return the outline and metrics resolutions of a given PFR face.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-Handle to the input face. It can be a non-PFR face.
+<p>Handle to the input face. It can be a non-PFR face.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="aoutline_resolution">aoutline_resolution</td><td class="desc">
-
-Outline resolution. This is equivalent to &lsquo;face-&gt;units_per_EM&rsquo; for non-PFR fonts. Optional (parameter can be NULL).
+<p>Outline resolution. This is equivalent to &lsquo;face-&gt;units_per_EM&rsquo; for non-PFR fonts. Optional (parameter can be NULL).</p>
 </td></tr>
 <tr><td class="val" id="ametrics_resolution">ametrics_resolution</td><td class="desc">
-
-Metrics resolution. This is equivalent to &lsquo;outline_resolution&rsquo; for non-PFR fonts. Optional (parameter can be NULL).
+<p>Metrics resolution. This is equivalent to &lsquo;outline_resolution&rsquo; for non-PFR fonts. Optional (parameter can be NULL).</p>
 </td></tr>
 <tr><td class="val" id="ametrics_x_scale">ametrics_x_scale</td><td class="desc">
-
-A 16.16 fixed-point number used to scale distance expressed in metrics units to device subpixels. This is equivalent to &lsquo;face-&gt;size-&gt;x_scale&rsquo;, but for metrics only. Optional (parameter can be NULL).
+<p>A 16.16 fixed-point number used to scale distance expressed in metrics units to device subpixels. This is equivalent to &lsquo;face-&gt;size-&gt;x_scale&rsquo;, but for metrics only. Optional (parameter can be NULL).</p>
 </td></tr>
 <tr><td class="val" id="ametrics_y_scale">ametrics_y_scale</td><td class="desc">
-
-Same as &lsquo;ametrics_x_scale&rsquo; but for the vertical direction. optional (parameter can be NULL).
+<p>Same as &lsquo;ametrics_x_scale&rsquo; but for the vertical direction. optional (parameter can be NULL).</p>
 </td></tr>
 </table>
 
@@ -67,6 +64,7 @@ If the input face is not a PFR, this function will return an error. However, in 
 
 Defined in FT_PFR_H (freetype/ftpfr.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Get_PFR_Kerning</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>     face,
@@ -74,6 +72,7 @@ Defined in FT_PFR_H (freetype/ftpfr.h).
                       <a href="../ft2-basic_types/#ft_uint">FT_UInt</a>     right,
                       <a href="../ft2-basic_types/#ft_vector">FT_Vector</a>  *avector );
 </pre>
+</div>
 
 
 Return the kerning pair corresponding to two glyphs in a PFR face. The distance is expressed in metrics units, unlike the result of <a href="../ft2-base_interface/#ft_get_kerning">FT_Get_Kerning</a>.
@@ -81,24 +80,20 @@ Return the kerning pair corresponding to two glyphs in a PFR face. The distance 
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-A handle to the input face.
+<p>A handle to the input face.</p>
 </td></tr>
 <tr><td class="val" id="left">left</td><td class="desc">
-
-Index of the left glyph.
+<p>Index of the left glyph.</p>
 </td></tr>
 <tr><td class="val" id="right">right</td><td class="desc">
-
-Index of the right glyph.
+<p>Index of the right glyph.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="avector">avector</td><td class="desc">
-
-A kerning vector.
+<p>A kerning vector.</p>
 </td></tr>
 </table>
 
@@ -118,12 +113,14 @@ You can use the value of the &lsquo;x_scale&rsquo; and &lsquo;y_scale&rsquo; par
 
 Defined in FT_PFR_H (freetype/ftpfr.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Get_PFR_Advance</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>   face,
                       <a href="../ft2-basic_types/#ft_uint">FT_UInt</a>   gindex,
                       <a href="../ft2-basic_types/#ft_pos">FT_Pos</a>   *aadvance );
 </pre>
+</div>
 
 
 Return a given glyph advance, expressed in original metrics units, from a PFR font.
@@ -131,20 +128,17 @@ Return a given glyph advance, expressed in original metrics units, from a PFR fo
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-A handle to the input face.
+<p>A handle to the input face.</p>
 </td></tr>
 <tr><td class="val" id="gindex">gindex</td><td class="desc">
-
-The glyph index.
+<p>The glyph index.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="aadvance">aadvance</td><td class="desc">
-
-The glyph advance in metrics units.
+<p>The glyph advance in metrics units.</p>
 </td></tr>
 </table>
 

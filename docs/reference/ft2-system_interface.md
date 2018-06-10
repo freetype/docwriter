@@ -13,9 +13,11 @@ This section contains various definitions related to memory management and i/o a
 
 Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span> FT_MemoryRec_*  <b>FT_Memory</b>;
 </pre>
+</div>
 
 
 A handle to a given memory manager object, defined with an <a href="../ft2-system_interface/#ft_memoryrec">FT_MemoryRec</a> structure.
@@ -26,11 +28,13 @@ A handle to a given memory manager object, defined with an <a href="../ft2-syste
 
 Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">void</span>*
   (*<b>FT_Alloc_Func</b>)( <a href="../ft2-system_interface/#ft_memory">FT_Memory</a>  memory,
                     <span class="keyword">long</span>       size );
 </pre>
+</div>
 
 
 A function used to allocate &lsquo;size&rsquo; bytes from &lsquo;memory&rsquo;.
@@ -38,12 +42,10 @@ A function used to allocate &lsquo;size&rsquo; bytes from &lsquo;memory&rsquo;.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="memory">memory</td><td class="desc">
-
-A handle to the source memory manager.
+<p>A handle to the source memory manager.</p>
 </td></tr>
 <tr><td class="val" id="size">size</td><td class="desc">
-
-The size in bytes to allocate.
+<p>The size in bytes to allocate.</p>
 </td></tr>
 </table>
 
@@ -57,11 +59,13 @@ Address of new memory block. 0&nbsp;in case of failure.
 
 Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">void</span>
   (*<b>FT_Free_Func</b>)( <a href="../ft2-system_interface/#ft_memory">FT_Memory</a>  memory,
                    <span class="keyword">void</span>*      block );
 </pre>
+</div>
 
 
 A function used to release a given block of memory.
@@ -69,12 +73,10 @@ A function used to release a given block of memory.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="memory">memory</td><td class="desc">
-
-A handle to the source memory manager.
+<p>A handle to the source memory manager.</p>
 </td></tr>
 <tr><td class="val" id="block">block</td><td class="desc">
-
-The address of the target memory block.
+<p>The address of the target memory block.</p>
 </td></tr>
 </table>
 
@@ -84,6 +86,7 @@ The address of the target memory block.
 
 Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">void</span>*
   (*<b>FT_Realloc_Func</b>)( <a href="../ft2-system_interface/#ft_memory">FT_Memory</a>  memory,
@@ -91,6 +94,7 @@ Defined in FT_SYSTEM_H (freetype/ftsystem.h).
                       <span class="keyword">long</span>       new_size,
                       <span class="keyword">void</span>*      block );
 </pre>
+</div>
 
 
 A function used to re-allocate a given block of memory.
@@ -98,20 +102,16 @@ A function used to re-allocate a given block of memory.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="memory">memory</td><td class="desc">
-
-A handle to the source memory manager.
+<p>A handle to the source memory manager.</p>
 </td></tr>
 <tr><td class="val" id="cur_size">cur_size</td><td class="desc">
-
-The block's current size in bytes.
+<p>The block's current size in bytes.</p>
 </td></tr>
 <tr><td class="val" id="new_size">new_size</td><td class="desc">
-
-The block's requested new size.
+<p>The block's requested new size.</p>
 </td></tr>
 <tr><td class="val" id="block">block</td><td class="desc">
-
-The block's current address.
+<p>The block's current address.</p>
 </td></tr>
 </table>
 
@@ -129,6 +129,7 @@ In case of error, the old block must still be available.
 
 Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">struct</span>  FT_MemoryRec_
   {
@@ -138,6 +139,7 @@ Defined in FT_SYSTEM_H (freetype/ftsystem.h).
     <a href="../ft2-system_interface/#ft_realloc_func">FT_Realloc_Func</a>  realloc;
   };
 </pre>
+</div>
 
 
 A structure used to describe a given memory manager to FreeType&nbsp;2.
@@ -145,20 +147,16 @@ A structure used to describe a given memory manager to FreeType&nbsp;2.
 <h4>fields</h4>
 <table class="fields">
 <tr><td class="val" id="user">user</td><td class="desc">
-
-A generic typeless pointer for user data.
+<p>A generic typeless pointer for user data.</p>
 </td></tr>
 <tr><td class="val" id="alloc">alloc</td><td class="desc">
-
-A pointer type to an allocation function.
+<p>A pointer type to an allocation function.</p>
 </td></tr>
 <tr><td class="val" id="free">free</td><td class="desc">
-
-A pointer type to an memory freeing function.
+<p>A pointer type to an memory freeing function.</p>
 </td></tr>
 <tr><td class="val" id="realloc">realloc</td><td class="desc">
-
-A pointer type to a reallocation function.
+<p>A pointer type to a reallocation function.</p>
 </td></tr>
 </table>
 
@@ -168,9 +166,11 @@ A pointer type to a reallocation function.
 
 Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span> FT_StreamRec_*  <b>FT_Stream</b>;
 </pre>
+</div>
 
 
 A handle to an input stream.
@@ -185,6 +185,7 @@ See <a href="../ft2-system_interface/#ft_streamrec">FT_StreamRec</a> for the pub
 
 Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">union</span>  FT_StreamDesc_
   {
@@ -193,6 +194,7 @@ Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
   } <b>FT_StreamDesc</b>;
 </pre>
+</div>
 
 
 A union type used to store either a long or a pointer. This is used to store a file descriptor or a &lsquo;FILE*&rsquo; in an input stream.
@@ -203,6 +205,7 @@ A union type used to store either a long or a pointer. This is used to store a f
 
 Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span>
   (*<b>FT_Stream_IoFunc</b>)( <a href="../ft2-system_interface/#ft_stream">FT_Stream</a>       stream,
@@ -210,6 +213,7 @@ Defined in FT_SYSTEM_H (freetype/ftsystem.h).
                        <span class="keyword">unsigned</span> <span class="keyword">char</span>*  buffer,
                        <span class="keyword">unsigned</span> <span class="keyword">long</span>   count );
 </pre>
+</div>
 
 
 A function used to seek and read data from a given input stream.
@@ -217,20 +221,16 @@ A function used to seek and read data from a given input stream.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="stream">stream</td><td class="desc">
-
-A handle to the source stream.
+<p>A handle to the source stream.</p>
 </td></tr>
 <tr><td class="val" id="offset">offset</td><td class="desc">
-
-The offset of read in stream (always from start).
+<p>The offset of read in stream (always from start).</p>
 </td></tr>
 <tr><td class="val" id="buffer">buffer</td><td class="desc">
-
-The address of the read buffer.
+<p>The address of the read buffer.</p>
 </td></tr>
 <tr><td class="val" id="count">count</td><td class="desc">
-
-The number of bytes to read from the stream.
+<p>The number of bytes to read from the stream.</p>
 </td></tr>
 </table>
 
@@ -248,10 +248,12 @@ This function might be called to perform a seek or skip operation with a &lsquo;
 
 Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">void</span>
   (*<b>FT_Stream_CloseFunc</b>)( <a href="../ft2-system_interface/#ft_stream">FT_Stream</a>  stream );
 </pre>
+</div>
 
 
 A function used to close a given input stream.
@@ -259,8 +261,7 @@ A function used to close a given input stream.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="stream">stream</td><td class="desc">
-
-A handle to the target stream.
+<p>A handle to the target stream.</p>
 </td></tr>
 </table>
 
@@ -270,6 +271,7 @@ A handle to the target stream.
 
 Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  FT_StreamRec_
   {
@@ -288,6 +290,7 @@ Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
   } <b>FT_StreamRec</b>;
 </pre>
+</div>
 
 
 A structure used to describe an input stream.
@@ -295,46 +298,35 @@ A structure used to describe an input stream.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="base">base</td><td class="desc">
-
-For memory-based streams, this is the address of the first stream byte in memory. This field should always be set to NULL for disk-based streams.
+<p>For memory-based streams, this is the address of the first stream byte in memory. This field should always be set to NULL for disk-based streams.</p>
 </td></tr>
 <tr><td class="val" id="size">size</td><td class="desc">
-
-The stream size in bytes.
-
-In case of compressed streams where the size is unknown before actually doing the decompression, the value is set to 0x7FFFFFFF. (Note that this size value can occur for normal streams also; it is thus just a hint.)
+<p>The stream size in bytes.</p>
+<p>In case of compressed streams where the size is unknown before actually doing the decompression, the value is set to 0x7FFFFFFF. (Note that this size value can occur for normal streams also; it is thus just a hint.)</p>
 </td></tr>
 <tr><td class="val" id="pos">pos</td><td class="desc">
-
-The current position within the stream.
+<p>The current position within the stream.</p>
 </td></tr>
 <tr><td class="val" id="descriptor">descriptor</td><td class="desc">
-
-This field is a union that can hold an integer or a pointer. It is used by stream implementations to store file descriptors or &lsquo;FILE*&rsquo; pointers.
+<p>This field is a union that can hold an integer or a pointer. It is used by stream implementations to store file descriptors or &lsquo;FILE*&rsquo; pointers.</p>
 </td></tr>
 <tr><td class="val" id="pathname">pathname</td><td class="desc">
-
-This field is completely ignored by FreeType. However, it is often useful during debugging to use it to store the stream's filename (where available).
+<p>This field is completely ignored by FreeType. However, it is often useful during debugging to use it to store the stream's filename (where available).</p>
 </td></tr>
 <tr><td class="val" id="read">read</td><td class="desc">
-
-The stream's input function.
+<p>The stream's input function.</p>
 </td></tr>
 <tr><td class="val" id="close">close</td><td class="desc">
-
-The stream's close function.
+<p>The stream's close function.</p>
 </td></tr>
 <tr><td class="val" id="memory">memory</td><td class="desc">
-
-The memory manager to use to preload frames. This is set internally by FreeType and shouldn't be touched by stream implementations.
+<p>The memory manager to use to preload frames. This is set internally by FreeType and shouldn't be touched by stream implementations.</p>
 </td></tr>
 <tr><td class="val" id="cursor">cursor</td><td class="desc">
-
-This field is set and used internally by FreeType when parsing frames.
+<p>This field is set and used internally by FreeType when parsing frames.</p>
 </td></tr>
 <tr><td class="val" id="limit">limit</td><td class="desc">
-
-This field is set and used internally by FreeType when parsing frames.
+<p>This field is set and used internally by FreeType when parsing frames.</p>
 </td></tr>
 </table>
 

@@ -27,12 +27,14 @@ A variation may be either &lsquo;default&rsquo; or &lsquo;non-default&rsquo; for
 
 Defined in FT_FREETYPE_H (freetype/freetype.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_uint">FT_UInt</a> )
   <b>FT_Face_GetCharVariantIndex</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>   face,
                                <a href="../ft2-basic_types/#ft_ulong">FT_ULong</a>  charcode,
                                <a href="../ft2-basic_types/#ft_ulong">FT_ULong</a>  variantSelector );
 </pre>
+</div>
 
 
 Return the glyph index of a given character code as modified by the variation selector.
@@ -40,16 +42,13 @@ Return the glyph index of a given character code as modified by the variation se
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-A handle to the source face object.
+<p>A handle to the source face object.</p>
 </td></tr>
 <tr><td class="val" id="charcode">charcode</td><td class="desc">
-
-The character code point in Unicode.
+<p>The character code point in Unicode.</p>
 </td></tr>
 <tr><td class="val" id="variantselector">variantSelector</td><td class="desc">
-
-The Unicode code point of the variation selector.
+<p>The Unicode code point of the variation selector.</p>
 </td></tr>
 </table>
 
@@ -73,12 +72,14 @@ This function is only meaningful if a) the font has a variation selector cmap su
 
 Defined in FT_FREETYPE_H (freetype/freetype.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_int">FT_Int</a> )
   <b>FT_Face_GetCharVariantIsDefault</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>   face,
                                    <a href="../ft2-basic_types/#ft_ulong">FT_ULong</a>  charcode,
                                    <a href="../ft2-basic_types/#ft_ulong">FT_ULong</a>  variantSelector );
 </pre>
+</div>
 
 
 Check whether this variation of this Unicode character is the one to be found in the &lsquo;cmap&rsquo;.
@@ -86,16 +87,13 @@ Check whether this variation of this Unicode character is the one to be found in
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-A handle to the source face object.
+<p>A handle to the source face object.</p>
 </td></tr>
 <tr><td class="val" id="charcode">charcode</td><td class="desc">
-
-The character codepoint in Unicode.
+<p>The character codepoint in Unicode.</p>
 </td></tr>
 <tr><td class="val" id="variantselector">variantSelector</td><td class="desc">
-
-The Unicode codepoint of the variation selector.
+<p>The Unicode codepoint of the variation selector.</p>
 </td></tr>
 </table>
 
@@ -117,10 +115,12 @@ This function is only meaningful if the font has a variation selector cmap subta
 
 Defined in FT_FREETYPE_H (freetype/freetype.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_uint32">FT_UInt32</a>* )
   <b>FT_Face_GetVariantSelectors</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>  face );
 </pre>
+</div>
 
 
 Return a zero-terminated list of Unicode variation selectors found in the font.
@@ -128,8 +128,7 @@ Return a zero-terminated list of Unicode variation selectors found in the font.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-A handle to the source face object.
+<p>A handle to the source face object.</p>
 </td></tr>
 </table>
 
@@ -151,11 +150,13 @@ The last item in the array is&nbsp;0; the array is owned by the <a href="../ft2-
 
 Defined in FT_FREETYPE_H (freetype/freetype.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_uint32">FT_UInt32</a>* )
   <b>FT_Face_GetVariantsOfChar</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>   face,
                              <a href="../ft2-basic_types/#ft_ulong">FT_ULong</a>  charcode );
 </pre>
+</div>
 
 
 Return a zero-terminated list of Unicode variation selectors found for the specified character code.
@@ -163,12 +164,10 @@ Return a zero-terminated list of Unicode variation selectors found for the speci
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-A handle to the source face object.
+<p>A handle to the source face object.</p>
 </td></tr>
 <tr><td class="val" id="charcode">charcode</td><td class="desc">
-
-The character codepoint in Unicode.
+<p>The character codepoint in Unicode.</p>
 </td></tr>
 </table>
 
@@ -190,11 +189,13 @@ The last item in the array is&nbsp;0; the array is owned by the <a href="../ft2-
 
 Defined in FT_FREETYPE_H (freetype/freetype.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_uint32">FT_UInt32</a>* )
   <b>FT_Face_GetCharsOfVariant</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>   face,
                              <a href="../ft2-basic_types/#ft_ulong">FT_ULong</a>  variantSelector );
 </pre>
+</div>
 
 
 Return a zero-terminated list of Unicode character codes found for the specified variation selector.
@@ -202,12 +203,10 @@ Return a zero-terminated list of Unicode character codes found for the specified
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-A handle to the source face object.
+<p>A handle to the source face object.</p>
 </td></tr>
 <tr><td class="val" id="variantselector">variantSelector</td><td class="desc">
-
-The variation selector code point in Unicode.
+<p>The variation selector code point in Unicode.</p>
 </td></tr>
 </table>
 

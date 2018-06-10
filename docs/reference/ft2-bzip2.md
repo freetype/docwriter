@@ -13,11 +13,13 @@ This section contains the declaration of Bzip2-specific functions.
 
 Defined in FT_BZIP2_H (freetype/ftbzip2.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Stream_OpenBzip2</b>( <a href="../ft2-system_interface/#ft_stream">FT_Stream</a>  stream,
                        <a href="../ft2-system_interface/#ft_stream">FT_Stream</a>  source );
 </pre>
+</div>
 
 
 Open a new stream to parse bzip2-compressed font files. This is mainly used to support the compressed &lsquo;*.pcf.bz2&rsquo; fonts that come with XFree86.
@@ -25,12 +27,10 @@ Open a new stream to parse bzip2-compressed font files. This is mainly used to s
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="stream">stream</td><td class="desc">
-
-The target embedding stream.
+<p>The target embedding stream.</p>
 </td></tr>
 <tr><td class="val" id="source">source</td><td class="desc">
-
-The source stream.
+<p>The source stream.</p>
 </td></tr>
 </table>
 
@@ -42,7 +42,7 @@ FreeType error code. 0&nbsp;means success.
 
 The source stream must be opened _before_ calling this function.
 
-Calling the internal function &lsquo;FT_Stream_Close&rsquo; on the new stream will *not* call &lsquo;FT_Stream_Close&rsquo; on the source stream. None of the stream objects will be released to the heap.
+Calling the internal function &lsquo;FT_Stream_Close&rsquo; on the new stream will **not** call &lsquo;FT_Stream_Close&rsquo; on the source stream. None of the stream objects will be released to the heap.
 
 The stream implementation is very basic and resets the decompression process each time seeking backwards is needed within the stream.
 

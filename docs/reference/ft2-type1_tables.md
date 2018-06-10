@@ -13,6 +13,7 @@ This section contains the definition of Type 1-specific tables, including struct
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  PS_FontInfoRec_
   {
@@ -28,6 +29,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
   } <b>PS_FontInfoRec</b>;
 </pre>
+</div>
 
 
 A structure used to model a Type&nbsp;1 or Type&nbsp;2 FontInfo dictionary. Note that for Multiple Master fonts, each instance has its own FontInfo dictionary.
@@ -38,9 +40,11 @@ A structure used to model a Type&nbsp;1 or Type&nbsp;2 FontInfo dictionary. Note
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span> PS_FontInfoRec_*  <b>PS_FontInfo</b>;
 </pre>
+</div>
 
 
 A handle to a <a href="../ft2-type1_tables/#ps_fontinforec">PS_FontInfoRec</a> structure.
@@ -51,6 +55,7 @@ A handle to a <a href="../ft2-type1_tables/#ps_fontinforec">PS_FontInfoRec</a> s
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  PS_PrivateRec_
   {
@@ -92,6 +97,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
   } <b>PS_PrivateRec</b>;
 </pre>
+</div>
 
 
 A structure used to model a Type&nbsp;1 or Type&nbsp;2 private dictionary. Note that for Multiple Master fonts, each instance has its own Private dictionary.
@@ -102,9 +108,11 @@ A structure used to model a Type&nbsp;1 or Type&nbsp;2 private dictionary. Note 
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span> PS_PrivateRec_*  <b>PS_Private</b>;
 </pre>
+</div>
 
 
 A handle to a <a href="../ft2-type1_tables/#ps_privaterec">PS_PrivateRec</a> structure.
@@ -115,6 +123,7 @@ A handle to a <a href="../ft2-type1_tables/#ps_privaterec">PS_PrivateRec</a> str
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  CID_FaceDictRec_
   {
@@ -136,6 +145,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
   } <b>CID_FaceDictRec</b>;
 </pre>
+</div>
 
 
 A structure used to represent data in a CID top-level dictionary.
@@ -146,9 +156,11 @@ A structure used to represent data in a CID top-level dictionary.
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span> CID_FaceDictRec_*  <b>CID_FaceDict</b>;
 </pre>
+</div>
 
 
 A handle to a <a href="../ft2-type1_tables/#cid_facedictrec">CID_FaceDictRec</a> structure.
@@ -159,6 +171,7 @@ A handle to a <a href="../ft2-type1_tables/#cid_facedictrec">CID_FaceDictRec</a>
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  CID_FaceInfoRec_
   {
@@ -189,6 +202,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
   } <b>CID_FaceInfoRec</b>;
 </pre>
+</div>
 
 
 A structure used to represent CID Face information.
@@ -199,9 +213,11 @@ A structure used to represent CID Face information.
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span> CID_FaceInfoRec_*  <b>CID_FaceInfo</b>;
 </pre>
+</div>
 
 
 A handle to a <a href="../ft2-type1_tables/#cid_faceinforec">CID_FaceInfoRec</a> structure.
@@ -212,10 +228,12 @@ A handle to a <a href="../ft2-type1_tables/#cid_faceinforec">CID_FaceInfoRec</a>
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_int">FT_Int</a> )
   <b>FT_Has_PS_Glyph_Names</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>  face );
 </pre>
+</div>
 
 
 Return true if a given face provides reliable PostScript glyph names. This is similar to using the <a href="../ft2-base_interface/#ft_has_glyph_names">FT_HAS_GLYPH_NAMES</a> macro, except that certain fonts (mostly TrueType) contain incorrect glyph name tables.
@@ -225,8 +243,7 @@ When this function returns true, the caller is sure that the glyph names returne
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-face handle
+<p>face handle</p>
 </td></tr>
 </table>
 
@@ -240,11 +257,13 @@ Boolean. True if glyph names are reliable.
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Get_PS_Font_Info</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>      face,
                        <a href="../ft2-type1_tables/#ps_fontinfo">PS_FontInfo</a>  afont_info );
 </pre>
+</div>
 
 
 Retrieve the <a href="../ft2-type1_tables/#ps_fontinforec">PS_FontInfoRec</a> structure corresponding to a given PostScript font.
@@ -252,16 +271,14 @@ Retrieve the <a href="../ft2-type1_tables/#ps_fontinforec">PS_FontInfoRec</a> st
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-PostScript face handle.
+<p>PostScript face handle.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="afont_info">afont_info</td><td class="desc">
-
-Output font info structure pointer.
+<p>Output font info structure pointer.</p>
 </td></tr>
 </table>
 
@@ -281,11 +298,13 @@ If the font's format is not PostScript-based, this function will return the &lsq
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Get_PS_Font_Private</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>     face,
                           <a href="../ft2-type1_tables/#ps_private">PS_Private</a>  afont_private );
 </pre>
+</div>
 
 
 Retrieve the <a href="../ft2-type1_tables/#ps_privaterec">PS_PrivateRec</a> structure corresponding to a given PostScript font.
@@ -293,16 +312,14 @@ Retrieve the <a href="../ft2-type1_tables/#ps_privaterec">PS_PrivateRec</a> stru
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-PostScript face handle.
+<p>PostScript face handle.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="afont_private">afont_private</td><td class="desc">
-
-Output private dictionary structure pointer.
+<p>Output private dictionary structure pointer.</p>
 </td></tr>
 </table>
 
@@ -322,6 +339,7 @@ If the font's format is not PostScript-based, this function returns the &lsquo;F
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_long">FT_Long</a> )
   <b>FT_Get_PS_Font_Value</b>( <a href="../ft2-base_interface/#ft_face">FT_Face</a>       face,
@@ -330,6 +348,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
                         <span class="keyword">void</span>         *value,
                         <a href="../ft2-basic_types/#ft_long">FT_Long</a>       value_len );
 </pre>
+</div>
 
 
 Retrieve the value for the supplied key from a PostScript font.
@@ -337,32 +356,26 @@ Retrieve the value for the supplied key from a PostScript font.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="face">face</td><td class="desc">
-
-PostScript face handle.
+<p>PostScript face handle.</p>
 </td></tr>
 <tr><td class="val" id="key">key</td><td class="desc">
-
-An enumeration value representing the dictionary key to retrieve.
+<p>An enumeration value representing the dictionary key to retrieve.</p>
 </td></tr>
 <tr><td class="val" id="idx">idx</td><td class="desc">
-
-For array values, this specifies the index to be returned.
+<p>For array values, this specifies the index to be returned.</p>
 </td></tr>
 <tr><td class="val" id="value">value</td><td class="desc">
-
-A pointer to memory into which to write the value.
+<p>A pointer to memory into which to write the value.</p>
 </td></tr>
 <tr><td class="val" id="valen_len">valen_len</td><td class="desc">
-
-The size, in bytes, of the memory supplied for the value.
+<p>The size, in bytes, of the memory supplied for the value.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="value">value</td><td class="desc">
-
-The value matching the above key, if it exists.
+<p>The value matching the above key, if it exists.</p>
 </td></tr>
 </table>
 
@@ -396,6 +409,7 @@ If the font's format is not PostScript-based, this function returns the &lsquo;F
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">enum</span>  T1_Blend_Flags_
   {
@@ -424,22 +438,23 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
   /* these constants are deprecated; use the corresponding */
   /* `<b>T1_Blend_Flags</b>' values instead                       */
-#define t1_blend_underline_position   <a href="../ft2-type1_tables/#t1_blend_underline_position">T1_BLEND_UNDERLINE_POSITION</a>
-#define t1_blend_underline_thickness  <a href="../ft2-type1_tables/#t1_blend_underline_thickness">T1_BLEND_UNDERLINE_THICKNESS</a>
-#define t1_blend_italic_angle         <a href="../ft2-type1_tables/#t1_blend_italic_angle">T1_BLEND_ITALIC_ANGLE</a>
-#define t1_blend_blue_values          <a href="../ft2-type1_tables/#t1_blend_blue_values">T1_BLEND_BLUE_VALUES</a>
-#define t1_blend_other_blues          <a href="../ft2-type1_tables/#t1_blend_other_blues">T1_BLEND_OTHER_BLUES</a>
-#define t1_blend_standard_widths      <a href="../ft2-type1_tables/#t1_blend_standard_width">T1_BLEND_STANDARD_WIDTH</a>
-#define t1_blend_standard_height      <a href="../ft2-type1_tables/#t1_blend_standard_height">T1_BLEND_STANDARD_HEIGHT</a>
-#define t1_blend_stem_snap_widths     <a href="../ft2-type1_tables/#t1_blend_stem_snap_widths">T1_BLEND_STEM_SNAP_WIDTHS</a>
-#define t1_blend_stem_snap_heights    <a href="../ft2-type1_tables/#t1_blend_stem_snap_heights">T1_BLEND_STEM_SNAP_HEIGHTS</a>
-#define t1_blend_blue_scale           <a href="../ft2-type1_tables/#t1_blend_blue_scale">T1_BLEND_BLUE_SCALE</a>
-#define t1_blend_blue_shift           <a href="../ft2-type1_tables/#t1_blend_blue_shift">T1_BLEND_BLUE_SHIFT</a>
-#define t1_blend_family_blues         <a href="../ft2-type1_tables/#t1_blend_family_blues">T1_BLEND_FAMILY_BLUES</a>
-#define t1_blend_family_other_blues   <a href="../ft2-type1_tables/#t1_blend_family_other_blues">T1_BLEND_FAMILY_OTHER_BLUES</a>
-#define t1_blend_force_bold           <a href="../ft2-type1_tables/#t1_blend_force_bold">T1_BLEND_FORCE_BOLD</a>
-#define t1_blend_max                  T1_BLEND_MAX
+#<span class="keyword">define</span> t1_blend_underline_position   <a href="../ft2-type1_tables/#t1_blend_underline_position">T1_BLEND_UNDERLINE_POSITION</a>
+#<span class="keyword">define</span> t1_blend_underline_thickness  <a href="../ft2-type1_tables/#t1_blend_underline_thickness">T1_BLEND_UNDERLINE_THICKNESS</a>
+#<span class="keyword">define</span> t1_blend_italic_angle         <a href="../ft2-type1_tables/#t1_blend_italic_angle">T1_BLEND_ITALIC_ANGLE</a>
+#<span class="keyword">define</span> t1_blend_blue_values          <a href="../ft2-type1_tables/#t1_blend_blue_values">T1_BLEND_BLUE_VALUES</a>
+#<span class="keyword">define</span> t1_blend_other_blues          <a href="../ft2-type1_tables/#t1_blend_other_blues">T1_BLEND_OTHER_BLUES</a>
+#<span class="keyword">define</span> t1_blend_standard_widths      <a href="../ft2-type1_tables/#t1_blend_standard_width">T1_BLEND_STANDARD_WIDTH</a>
+#<span class="keyword">define</span> t1_blend_standard_height      <a href="../ft2-type1_tables/#t1_blend_standard_height">T1_BLEND_STANDARD_HEIGHT</a>
+#<span class="keyword">define</span> t1_blend_stem_snap_widths     <a href="../ft2-type1_tables/#t1_blend_stem_snap_widths">T1_BLEND_STEM_SNAP_WIDTHS</a>
+#<span class="keyword">define</span> t1_blend_stem_snap_heights    <a href="../ft2-type1_tables/#t1_blend_stem_snap_heights">T1_BLEND_STEM_SNAP_HEIGHTS</a>
+#<span class="keyword">define</span> t1_blend_blue_scale           <a href="../ft2-type1_tables/#t1_blend_blue_scale">T1_BLEND_BLUE_SCALE</a>
+#<span class="keyword">define</span> t1_blend_blue_shift           <a href="../ft2-type1_tables/#t1_blend_blue_shift">T1_BLEND_BLUE_SHIFT</a>
+#<span class="keyword">define</span> t1_blend_family_blues         <a href="../ft2-type1_tables/#t1_blend_family_blues">T1_BLEND_FAMILY_BLUES</a>
+#<span class="keyword">define</span> t1_blend_family_other_blues   <a href="../ft2-type1_tables/#t1_blend_family_other_blues">T1_BLEND_FAMILY_OTHER_BLUES</a>
+#<span class="keyword">define</span> t1_blend_force_bold           <a href="../ft2-type1_tables/#t1_blend_force_bold">T1_BLEND_FORCE_BOLD</a>
+#<span class="keyword">define</span> t1_blend_max                  T1_BLEND_MAX
 </pre>
+</div>
 
 
 A set of flags used to indicate which fields are present in a given blend dictionary (font info or private). Used to support Multiple Masters fonts.
@@ -448,58 +463,44 @@ A set of flags used to indicate which fields are present in a given blend dictio
 <table class="fields">
 <tr><td class="val" id="t1_blend_underline_position">T1_BLEND_UNDERLINE_POSITION</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="t1_blend_underline_thickness">T1_BLEND_UNDERLINE_THICKNESS</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="t1_blend_italic_angle">T1_BLEND_ITALIC_ANGLE</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="t1_blend_blue_values">T1_BLEND_BLUE_VALUES</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="t1_blend_other_blues">T1_BLEND_OTHER_BLUES</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="t1_blend_standard_width">T1_BLEND_STANDARD_WIDTH</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="t1_blend_standard_height">T1_BLEND_STANDARD_HEIGHT</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="t1_blend_stem_snap_widths">T1_BLEND_STEM_SNAP_WIDTHS</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="t1_blend_stem_snap_heights">T1_BLEND_STEM_SNAP_HEIGHTS</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="t1_blend_blue_scale">T1_BLEND_BLUE_SCALE</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="t1_blend_blue_shift">T1_BLEND_BLUE_SHIFT</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="t1_blend_family_blues">T1_BLEND_FAMILY_BLUES</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="t1_blend_family_other_blues">T1_BLEND_FAMILY_OTHER_BLUES</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="t1_blend_force_bold">T1_BLEND_FORCE_BOLD</td><td class="desc">
-
 
 </td></tr>
 </table>
@@ -510,6 +511,7 @@ A set of flags used to indicate which fields are present in a given blend dictio
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">enum</span>  T1_EncodingType_
   {
@@ -521,6 +523,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
   } <b>T1_EncodingType</b>;
 </pre>
+</div>
 
 
 An enumeration describing the &lsquo;Encoding&rsquo; entry in a Type 1 dictionary.
@@ -529,22 +532,17 @@ An enumeration describing the &lsquo;Encoding&rsquo; entry in a Type 1 dictionar
 <table class="fields">
 <tr><td class="val" id="t1_encoding_type_none">T1_ENCODING_TYPE_NONE</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="t1_encoding_type_array">T1_ENCODING_TYPE_ARRAY</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="t1_encoding_type_standard">T1_ENCODING_TYPE_STANDARD</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="t1_encoding_type_isolatin1">T1_ENCODING_TYPE_ISOLATIN1</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="t1_encoding_type_expert">T1_ENCODING_TYPE_EXPERT</td><td class="desc">
-
 
 </td></tr>
 </table>
@@ -559,6 +557,7 @@ An enumeration describing the &lsquo;Encoding&rsquo; entry in a Type 1 dictionar
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">enum</span>  PS_Dict_Keys_
   {
@@ -618,6 +617,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
   } <b>PS_Dict_Keys</b>;
 </pre>
+</div>
 
 
 An enumeration used in calls to <a href="../ft2-type1_tables/#ft_get_ps_font_value">FT_Get_PS_Font_Value</a> to identify the Type&nbsp;1 dictionary entry to retrieve.
@@ -626,186 +626,140 @@ An enumeration used in calls to <a href="../ft2-type1_tables/#ft_get_ps_font_val
 <table class="fields">
 <tr><td class="val" id="ps_dict_font_type">PS_DICT_FONT_TYPE</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_font_matrix">PS_DICT_FONT_MATRIX</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_font_bbox">PS_DICT_FONT_BBOX</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_paint_type">PS_DICT_PAINT_TYPE</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_font_name">PS_DICT_FONT_NAME</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_unique_id">PS_DICT_UNIQUE_ID</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_num_char_strings">PS_DICT_NUM_CHAR_STRINGS</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_char_string_key">PS_DICT_CHAR_STRING_KEY</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_char_string">PS_DICT_CHAR_STRING</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_encoding_type">PS_DICT_ENCODING_TYPE</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_encoding_entry">PS_DICT_ENCODING_ENTRY</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_num_subrs">PS_DICT_NUM_SUBRS</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_subr">PS_DICT_SUBR</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_std_hw">PS_DICT_STD_HW</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_std_vw">PS_DICT_STD_VW</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_num_blue_values">PS_DICT_NUM_BLUE_VALUES</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_blue_value">PS_DICT_BLUE_VALUE</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_blue_fuzz">PS_DICT_BLUE_FUZZ</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_num_other_blues">PS_DICT_NUM_OTHER_BLUES</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_other_blue">PS_DICT_OTHER_BLUE</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_num_family_blues">PS_DICT_NUM_FAMILY_BLUES</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_family_blue">PS_DICT_FAMILY_BLUE</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_num_family_other_blues">PS_DICT_NUM_FAMILY_OTHER_BLUES</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_family_other_blue">PS_DICT_FAMILY_OTHER_BLUE</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_blue_scale">PS_DICT_BLUE_SCALE</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_blue_shift">PS_DICT_BLUE_SHIFT</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_num_stem_snap_h">PS_DICT_NUM_STEM_SNAP_H</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_stem_snap_h">PS_DICT_STEM_SNAP_H</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_num_stem_snap_v">PS_DICT_NUM_STEM_SNAP_V</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_stem_snap_v">PS_DICT_STEM_SNAP_V</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_force_bold">PS_DICT_FORCE_BOLD</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_rnd_stem_up">PS_DICT_RND_STEM_UP</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_min_feature">PS_DICT_MIN_FEATURE</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_len_iv">PS_DICT_LEN_IV</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_password">PS_DICT_PASSWORD</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_language_group">PS_DICT_LANGUAGE_GROUP</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_version">PS_DICT_VERSION</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_notice">PS_DICT_NOTICE</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_full_name">PS_DICT_FULL_NAME</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_family_name">PS_DICT_FAMILY_NAME</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_weight">PS_DICT_WEIGHT</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_is_fixed_pitch">PS_DICT_IS_FIXED_PITCH</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_underline_position">PS_DICT_UNDERLINE_POSITION</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_underline_thickness">PS_DICT_UNDERLINE_THICKNESS</td><td class="desc">
-
 
 </td></tr>
 <tr><td class="val" id="ps_dict_fs_type">PS_DICT_FS_TYPE</td><td class="desc">
 
-
 </td></tr>
 <tr><td class="val" id="ps_dict_italic_angle">PS_DICT_ITALIC_ANGLE</td><td class="desc">
-
 
 </td></tr>
 </table>
@@ -820,9 +774,11 @@ An enumeration used in calls to <a href="../ft2-type1_tables/#ft_get_ps_font_val
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <a href="../ft2-type1_tables/#ps_fontinforec">PS_FontInfoRec</a>  <b>T1_FontInfo</b>;
 </pre>
+</div>
 
 
 This type is equivalent to <a href="../ft2-type1_tables/#ps_fontinforec">PS_FontInfoRec</a>. It is deprecated but kept to maintain source compatibility between various versions of FreeType.
@@ -833,9 +789,11 @@ This type is equivalent to <a href="../ft2-type1_tables/#ps_fontinforec">PS_Font
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <a href="../ft2-type1_tables/#ps_privaterec">PS_PrivateRec</a>  <b>T1_Private</b>;
 </pre>
+</div>
 
 
 This type is equivalent to <a href="../ft2-type1_tables/#ps_privaterec">PS_PrivateRec</a>. It is deprecated but kept to maintain source compatibility between various versions of FreeType.
@@ -846,9 +804,11 @@ This type is equivalent to <a href="../ft2-type1_tables/#ps_privaterec">PS_Priva
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <a href="../ft2-type1_tables/#cid_facedictrec">CID_FaceDictRec</a>  <b>CID_FontDict</b>;
 </pre>
+</div>
 
 
 This type is equivalent to <a href="../ft2-type1_tables/#cid_facedictrec">CID_FaceDictRec</a>. It is deprecated but kept to maintain source compatibility between various versions of FreeType.
@@ -859,9 +819,11 @@ This type is equivalent to <a href="../ft2-type1_tables/#cid_facedictrec">CID_Fa
 
 Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <a href="../ft2-type1_tables/#cid_faceinforec">CID_FaceInfoRec</a>  <b>CID_Info</b>;
 </pre>
+</div>
 
 
 This type is equivalent to <a href="../ft2-type1_tables/#cid_faceinforec">CID_FaceInfoRec</a>. It is deprecated but kept to maintain source compatibility between various versions of FreeType.

@@ -1,3 +1,8 @@
+[Docs](ft2-index.md) &raquo; [Miscellaneous](ft2-toc.md#miscellaneous) &raquo; Incremental Loading
+
+-------------------------------
+
+
 # Incremental Loading
 
 ## Synopsis
@@ -12,9 +17,11 @@ To enable this mode, you must use <a href="../ft2-base_interface/#ft_open_face">
 
 Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span> FT_IncrementalRec_*  <b>FT_Incremental</b>;
 </pre>
+</div>
 
 
 An opaque type describing a user-provided object used to implement &lsquo;incremental&rsquo; glyph loading within FreeType. This is used to support embedded fonts in certain environments (e.g., PostScript interpreters), where the glyph data isn't in the font file, or must be overridden by different values.
@@ -31,6 +38,7 @@ See the description of <a href="../ft2-incremental/#ft_incremental_interfacerec"
 
 Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  FT_Incremental_MetricsRec_
   {
@@ -41,6 +49,7 @@ Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
   } <b>FT_Incremental_MetricsRec</b>;
 </pre>
+</div>
 
 
 A small structure used to contain the basic glyph metrics returned by the <a href="../ft2-incremental/#ft_incremental_getglyphmetricsfunc">FT_Incremental_GetGlyphMetricsFunc</a> method.
@@ -48,20 +57,16 @@ A small structure used to contain the basic glyph metrics returned by the <a hre
 <h4>fields</h4>
 <table class="fields">
 <tr><td class="val" id="bearing_x">bearing_x</td><td class="desc">
-
-Left bearing, in font units.
+<p>Left bearing, in font units.</p>
 </td></tr>
 <tr><td class="val" id="bearing_y">bearing_y</td><td class="desc">
-
-Top bearing, in font units.
+<p>Top bearing, in font units.</p>
 </td></tr>
 <tr><td class="val" id="advance">advance</td><td class="desc">
-
-Horizontal component of glyph advance, in font units.
+<p>Horizontal component of glyph advance, in font units.</p>
 </td></tr>
 <tr><td class="val" id="advance_v">advance_v</td><td class="desc">
-
-Vertical component of glyph advance, in font units.
+<p>Vertical component of glyph advance, in font units.</p>
 </td></tr>
 </table>
 
@@ -75,9 +80,11 @@ These correspond to horizontal or vertical metrics depending on the value of the
 
 Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
+<div class = "codehilite">
 <pre>
    <span class="keyword">typedef</span> <span class="keyword">struct</span> FT_Incremental_MetricsRec_*  <b>FT_Incremental_Metrics</b>;
 </pre>
+</div>
 
 
 A handle to an <a href="../ft2-incremental/#ft_incremental_metricsrec">FT_Incremental_MetricsRec</a> structure.
@@ -88,35 +95,34 @@ A handle to an <a href="../ft2-incremental/#ft_incremental_metricsrec">FT_Increm
 
 Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <a href="../ft2-basic_types/#ft_error">FT_Error</a>
   (*<b>FT_Incremental_GetGlyphDataFunc</b>)( <a href="../ft2-incremental/#ft_incremental">FT_Incremental</a>  incremental,
                                       <a href="../ft2-basic_types/#ft_uint">FT_UInt</a>         glyph_index,
                                       <a href="../ft2-basic_types/#ft_data">FT_Data</a>*        adata );
 </pre>
+</div>
 
 
 A function called by FreeType to access a given glyph's data bytes during <a href="../ft2-base_interface/#ft_load_glyph">FT_Load_Glyph</a> or <a href="../ft2-base_interface/#ft_load_char">FT_Load_Char</a> if incremental loading is enabled.
 
-Note that the format of the glyph's data bytes depends on the font file format. For TrueType, it must correspond to the raw bytes within the &lsquo;glyf&rsquo; table. For PostScript formats, it must correspond to the *unencrypted* charstring bytes, without any &lsquo;lenIV&rsquo; header. It is undefined for any other format.
+Note that the format of the glyph's data bytes depends on the font file format. For TrueType, it must correspond to the raw bytes within the &lsquo;glyf&rsquo; table. For PostScript formats, it must correspond to the **unencrypted** charstring bytes, without any &lsquo;lenIV&rsquo; header. It is undefined for any other format.
 
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="incremental">incremental</td><td class="desc">
-
-Handle to an opaque <a href="../ft2-incremental/#ft_incremental">FT_Incremental</a> handle provided by the client application.
+<p>Handle to an opaque <a href="../ft2-incremental/#ft_incremental">FT_Incremental</a> handle provided by the client application.</p>
 </td></tr>
 <tr><td class="val" id="glyph_index">glyph_index</td><td class="desc">
-
-Index of relevant glyph.
+<p>Index of relevant glyph.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="adata">adata</td><td class="desc">
-
-A structure describing the returned glyph data bytes (which will be accessed as a read-only byte block).
+<p>A structure describing the returned glyph data bytes (which will be accessed as a read-only byte block).</p>
 </td></tr>
 </table>
 
@@ -136,11 +142,13 @@ Nested calls to <a href="../ft2-incremental/#ft_incremental_getglyphdatafunc">FT
 
 Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">void</span>
   (*<b>FT_Incremental_FreeGlyphDataFunc</b>)( <a href="../ft2-incremental/#ft_incremental">FT_Incremental</a>  incremental,
                                        <a href="../ft2-basic_types/#ft_data">FT_Data</a>*        data );
 </pre>
+</div>
 
 
 A function used to release the glyph data bytes returned by a successful call to <a href="../ft2-incremental/#ft_incremental_getglyphdatafunc">FT_Incremental_GetGlyphDataFunc</a>.
@@ -148,12 +156,10 @@ A function used to release the glyph data bytes returned by a successful call to
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="incremental">incremental</td><td class="desc">
-
-A handle to an opaque <a href="../ft2-incremental/#ft_incremental">FT_Incremental</a> handle provided by the client application.
+<p>A handle to an opaque <a href="../ft2-incremental/#ft_incremental">FT_Incremental</a> handle provided by the client application.</p>
 </td></tr>
 <tr><td class="val" id="data">data</td><td class="desc">
-
-A structure describing the glyph data bytes (which will be accessed as a read-only byte block).
+<p>A structure describing the glyph data bytes (which will be accessed as a read-only byte block).</p>
 </td></tr>
 </table>
 
@@ -163,6 +169,7 @@ A structure describing the glyph data bytes (which will be accessed as a read-on
 
 Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <a href="../ft2-basic_types/#ft_error">FT_Error</a>
   (*<b>FT_Incremental_GetGlyphMetricsFunc</b>)
@@ -171,6 +178,7 @@ Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
                         <a href="../ft2-basic_types/#ft_bool">FT_Bool</a>                     vertical,
                         <a href="../ft2-incremental/#ft_incremental_metricsrec">FT_Incremental_MetricsRec</a>  *ametrics );
 </pre>
+</div>
 
 
 A function used to retrieve the basic metrics of a given glyph index before accessing its data. This is necessary because, in certain formats like TrueType, the metrics are stored in a different place from the glyph images proper.
@@ -178,28 +186,23 @@ A function used to retrieve the basic metrics of a given glyph index before acce
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="incremental">incremental</td><td class="desc">
-
-A handle to an opaque <a href="../ft2-incremental/#ft_incremental">FT_Incremental</a> handle provided by the client application.
+<p>A handle to an opaque <a href="../ft2-incremental/#ft_incremental">FT_Incremental</a> handle provided by the client application.</p>
 </td></tr>
 <tr><td class="val" id="glyph_index">glyph_index</td><td class="desc">
-
-Index of relevant glyph.
+<p>Index of relevant glyph.</p>
 </td></tr>
 <tr><td class="val" id="vertical">vertical</td><td class="desc">
-
-If true, return vertical metrics.
+<p>If true, return vertical metrics.</p>
 </td></tr>
 <tr><td class="val" id="ametrics">ametrics</td><td class="desc">
-
-This parameter is used for both input and output. The original glyph metrics, if any, in font units. If metrics are not available all the values must be set to zero.
+<p>This parameter is used for both input and output. The original glyph metrics, if any, in font units. If metrics are not available all the values must be set to zero.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="ametrics">ametrics</td><td class="desc">
-
-The replacement glyph metrics in font units.
+<p>The replacement glyph metrics in font units.</p>
 </td></tr>
 </table>
 
@@ -209,6 +212,7 @@ The replacement glyph metrics in font units.
 
 Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  FT_Incremental_FuncsRec_
   {
@@ -218,6 +222,7 @@ Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
   } <b>FT_Incremental_FuncsRec</b>;
 </pre>
+</div>
 
 
 A table of functions for accessing fonts that load data incrementally. Used in <a href="../ft2-incremental/#ft_incremental_interfacerec">FT_Incremental_InterfaceRec</a>.
@@ -225,16 +230,13 @@ A table of functions for accessing fonts that load data incrementally. Used in <
 <h4>fields</h4>
 <table class="fields">
 <tr><td class="val" id="get_glyph_data">get_glyph_data</td><td class="desc">
-
-The function to get glyph data. Must not be null.
+<p>The function to get glyph data. Must not be null.</p>
 </td></tr>
 <tr><td class="val" id="free_glyph_data">free_glyph_data</td><td class="desc">
-
-The function to release glyph data. Must not be null.
+<p>The function to release glyph data. Must not be null.</p>
 </td></tr>
 <tr><td class="val" id="get_glyph_metrics">get_glyph_metrics</td><td class="desc">
-
-The function to get glyph metrics. May be null if the font does not provide overriding glyph metrics.
+<p>The function to get glyph metrics. May be null if the font does not provide overriding glyph metrics.</p>
 </td></tr>
 </table>
 
@@ -244,6 +246,7 @@ The function to get glyph metrics. May be null if the font does not provide over
 
 Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <span class="keyword">struct</span>  FT_Incremental_InterfaceRec_
   {
@@ -252,6 +255,7 @@ Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
   } <b>FT_Incremental_InterfaceRec</b>;
 </pre>
+</div>
 
 
 A structure to be used with <a href="../ft2-base_interface/#ft_open_face">FT_Open_Face</a> to indicate that the user wants to support incremental glyph loading. You should use it with <a href="../ft2-parameter_tags/#ft_param_tag_incremental">FT_PARAM_TAG_INCREMENTAL</a> as in the following example:
@@ -286,9 +290,11 @@ A structure to be used with <a href="../ft2-base_interface/#ft_open_face">FT_Ope
 
 Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
+<div class = "codehilite">
 <pre>
   <span class="keyword">typedef</span> <a href="../ft2-incremental/#ft_incremental_interfacerec">FT_Incremental_InterfaceRec</a>*   <b>FT_Incremental_Interface</b>;
 </pre>
+</div>
 
 
 A pointer to an <a href="../ft2-incremental/#ft_incremental_interfacerec">FT_Incremental_InterfaceRec</a> structure.

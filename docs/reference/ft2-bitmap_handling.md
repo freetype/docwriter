@@ -13,6 +13,7 @@ This section contains functions for handling <a href="../ft2-basic_types/#ft_bit
 
 Defined in FT_BITMAP_H (freetype/ftbitmap.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <span class="keyword">void</span> )
   <b>FT_Bitmap_Init</b>( <a href="../ft2-basic_types/#ft_bitmap">FT_Bitmap</a>  *abitmap );
@@ -22,6 +23,7 @@ Defined in FT_BITMAP_H (freetype/ftbitmap.h).
   FT_EXPORT( <span class="keyword">void</span> )
   FT_Bitmap_New( <a href="../ft2-basic_types/#ft_bitmap">FT_Bitmap</a>  *abitmap );
 </pre>
+</div>
 
 
 Initialize a pointer to an <a href="../ft2-basic_types/#ft_bitmap">FT_Bitmap</a> structure.
@@ -29,8 +31,7 @@ Initialize a pointer to an <a href="../ft2-basic_types/#ft_bitmap">FT_Bitmap</a>
 <h4>inout</h4>
 <table class="fields">
 <tr><td class="val" id="abitmap">abitmap</td><td class="desc">
-
-A pointer to the bitmap structure.
+<p>A pointer to the bitmap structure.</p>
 </td></tr>
 </table>
 
@@ -44,12 +45,14 @@ A deprecated name for the same function is &lsquo;FT_Bitmap_New&rsquo;.
 
 Defined in FT_BITMAP_H (freetype/ftbitmap.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Bitmap_Copy</b>( <a href="../ft2-base_interface/#ft_library">FT_Library</a>        library,
                   <span class="keyword">const</span> <a href="../ft2-basic_types/#ft_bitmap">FT_Bitmap</a>  *source,
                   <a href="../ft2-basic_types/#ft_bitmap">FT_Bitmap</a>        *target );
 </pre>
+</div>
 
 
 Copy a bitmap into another one.
@@ -57,20 +60,17 @@ Copy a bitmap into another one.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="library">library</td><td class="desc">
-
-A handle to a library object.
+<p>A handle to a library object.</p>
 </td></tr>
 <tr><td class="val" id="source">source</td><td class="desc">
-
-A handle to the source bitmap.
+<p>A handle to the source bitmap.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="target">target</td><td class="desc">
-
-A handle to the target bitmap.
+<p>A handle to the target bitmap.</p>
 </td></tr>
 </table>
 
@@ -84,6 +84,7 @@ FreeType error code. 0&nbsp;means success.
 
 Defined in FT_BITMAP_H (freetype/ftbitmap.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Bitmap_Embolden</b>( <a href="../ft2-base_interface/#ft_library">FT_Library</a>  library,
@@ -91,6 +92,7 @@ Defined in FT_BITMAP_H (freetype/ftbitmap.h).
                       <a href="../ft2-basic_types/#ft_pos">FT_Pos</a>      xStrength,
                       <a href="../ft2-basic_types/#ft_pos">FT_Pos</a>      yStrength );
 </pre>
+</div>
 
 
 Embolden a bitmap. The new bitmap will be about &lsquo;xStrength&rsquo; pixels wider and &lsquo;yStrength&rsquo; pixels higher. The left and bottom borders are kept unchanged.
@@ -98,24 +100,20 @@ Embolden a bitmap. The new bitmap will be about &lsquo;xStrength&rsquo; pixels w
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="library">library</td><td class="desc">
-
-A handle to a library object.
+<p>A handle to a library object.</p>
 </td></tr>
 <tr><td class="val" id="xstrength">xStrength</td><td class="desc">
-
-How strong the glyph is emboldened horizontally. Expressed in 26.6 pixel format.
+<p>How strong the glyph is emboldened horizontally. Expressed in 26.6 pixel format.</p>
 </td></tr>
 <tr><td class="val" id="ystrength">yStrength</td><td class="desc">
-
-How strong the glyph is emboldened vertically. Expressed in 26.6 pixel format.
+<p>How strong the glyph is emboldened vertically. Expressed in 26.6 pixel format.</p>
 </td></tr>
 </table>
 
 <h4>inout</h4>
 <table class="fields">
 <tr><td class="val" id="bitmap">bitmap</td><td class="desc">
-
-A handle to the target bitmap.
+<p>A handle to the target bitmap.</p>
 </td></tr>
 </table>
 
@@ -137,6 +135,7 @@ Bitmaps in <a href="../ft2-basic_types/#ft_pixel_mode">FT_PIXEL_MODE_GRAY2</a> a
 
 Defined in FT_BITMAP_H (freetype/ftbitmap.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Bitmap_Convert</b>( <a href="../ft2-base_interface/#ft_library">FT_Library</a>        library,
@@ -144,6 +143,7 @@ Defined in FT_BITMAP_H (freetype/ftbitmap.h).
                      <a href="../ft2-basic_types/#ft_bitmap">FT_Bitmap</a>        *target,
                      <a href="../ft2-basic_types/#ft_int">FT_Int</a>            alignment );
 </pre>
+</div>
 
 
 Convert a bitmap object with depth 1bpp, 2bpp, 4bpp, 8bpp or 32bpp to a bitmap object with depth 8bpp, making the number of used bytes per line (a.k.a. the &lsquo;pitch&rsquo;) a multiple of &lsquo;alignment&rsquo;.
@@ -151,24 +151,20 @@ Convert a bitmap object with depth 1bpp, 2bpp, 4bpp, 8bpp or 32bpp to a bitmap o
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="library">library</td><td class="desc">
-
-A handle to a library object.
+<p>A handle to a library object.</p>
 </td></tr>
 <tr><td class="val" id="source">source</td><td class="desc">
-
-The source bitmap.
+<p>The source bitmap.</p>
 </td></tr>
 <tr><td class="val" id="alignment">alignment</td><td class="desc">
-
-The pitch of the bitmap is a multiple of this argument. Common values are 1, 2, or 4.
+<p>The pitch of the bitmap is a multiple of this argument. Common values are 1, 2, or 4.</p>
 </td></tr>
 </table>
 
 <h4>output</h4>
 <table class="fields">
 <tr><td class="val" id="target">target</td><td class="desc">
-
-The target bitmap.
+<p>The target bitmap.</p>
 </td></tr>
 </table>
 
@@ -190,10 +186,12 @@ The &lsquo;library&rsquo; argument is taken to have access to FreeType's memory 
 
 Defined in FT_BITMAP_H (freetype/ftbitmap.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_GlyphSlot_Own_Bitmap</b>( <a href="../ft2-base_interface/#ft_glyphslot">FT_GlyphSlot</a>  slot );
 </pre>
+</div>
 
 
 Make sure that a glyph slot owns &lsquo;slot-&gt;bitmap&rsquo;.
@@ -201,8 +199,7 @@ Make sure that a glyph slot owns &lsquo;slot-&gt;bitmap&rsquo;.
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="slot">slot</td><td class="desc">
-
-The glyph slot.
+<p>The glyph slot.</p>
 </td></tr>
 </table>
 
@@ -220,11 +217,13 @@ This function is to be used in combination with <a href="../ft2-bitmap_handling/
 
 Defined in FT_BITMAP_H (freetype/ftbitmap.h).
 
+<div class = "codehilite">
 <pre>
   FT_EXPORT( <a href="../ft2-basic_types/#ft_error">FT_Error</a> )
   <b>FT_Bitmap_Done</b>( <a href="../ft2-base_interface/#ft_library">FT_Library</a>  library,
                   <a href="../ft2-basic_types/#ft_bitmap">FT_Bitmap</a>  *bitmap );
 </pre>
+</div>
 
 
 Destroy a bitmap object initialized with <a href="../ft2-bitmap_handling/#ft_bitmap_init">FT_Bitmap_Init</a>.
@@ -232,12 +231,10 @@ Destroy a bitmap object initialized with <a href="../ft2-bitmap_handling/#ft_bit
 <h4>input</h4>
 <table class="fields">
 <tr><td class="val" id="library">library</td><td class="desc">
-
-A handle to a library object.
+<p>A handle to a library object.</p>
 </td></tr>
 <tr><td class="val" id="bitmap">bitmap</td><td class="desc">
-
-The bitmap object to be freed.
+<p>The bitmap object to be freed.</p>
 </td></tr>
 </table>
 
