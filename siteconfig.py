@@ -12,9 +12,10 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
+from __future__ import print_function
 import sys
 import utils
-from collections import OrderedDict
+
 try:
     import yaml
 except ImportError:
@@ -34,7 +35,7 @@ site_description = "API Reference documentation for FreeType"
 site_author = "FreeType Contributors"
 
 # Theme configuration default values
-theme_conf = OrderedDict()
+theme_conf = {}
 theme_conf['name'] = "material"
 theme_conf['logo'] = "images/favico.ico"
 theme_conf['language'] = "en"
@@ -103,7 +104,7 @@ class SiteConfig:
     supplied and default values.
     '''
     def __init__( self ):
-        self.site_config = OrderedDict()
+        self.site_config = {}
         self.pages = []
         self.chapter = None
         self.sections = []
@@ -196,6 +197,20 @@ class SiteConfig:
             print( yaml.dump( self.site_config, default_flow_style=False ) )
             self.site_config.clear()
 
+    def write_config_order( self, name, order ):
+        '''Write all values in site_config to output stream in order'''
+        if self.site_config != {}:
+            print( "# " + name )
+            for key in order:
+                if key in self.site_config:
+                    temp_config = {}
+                    temp_config[key] = self.site_config[key]
+                    print( yaml.dump( temp_config, default_flow_style=False ).rstrip() )
+
+            # print an empty line
+            print()
+            self.site_config.clear()
+
     def build_config( self ):
         '''Build the YAML configuration'''
         # End chapter if started
@@ -206,27 +221,28 @@ class SiteConfig:
 
         # Build basic site info
         self.build_site_config()
-        self.write_config("Project information")
+        order = ['site_name', 'site_author', 'docs_dir', 'site_dir']
+        self.write_config_order( "Project information", order )
 
         # Build theme configuration
         self.build_theme_config()
-        self.write_config("Configuration")
+        self.write_config( "Configuration" )
 
         # Build pages
         self.build_pages()
-        self.write_config("Pages")
+        self.write_config( "Pages" )
 
         # Add extra CSS and Javascript
         self.populate_config( yml_extra )
-        self.write_config("Customization")
+        self.write_config( "Customization" )
 
         # Add Markdown extensions
         self.populate_config( markdown_extensions )
-        self.write_config("Extensions")
+        self.write_config( "Extensions" )
 
         # Add other options
         self.populate_config( yml_other )
-        self.write_config("Other Options")
+        self.write_config( "Other Options" )
 
         # Close the file
-        utils.close_output(output)
+        utils.close_output( output )
