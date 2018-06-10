@@ -184,7 +184,7 @@ any  = "%(ltrs)s%(gunk)s%(punc)s" % { 'ltrs' : ltrs,
                                       'punc' : punc }
 url  = r"""
          (
-           \b                    # start at word boundary
+           \b(?![<])             # start at word boundary ignore if < found
            %(urls)s :            # need resource and a colon
            [%(any)s] +?          # followed by one or more of any valid
                                  # character, but be conservative and
