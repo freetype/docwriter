@@ -21,6 +21,8 @@ from formatter import *
 
 import time
 
+import mistune
+
 md_nav_separator = " &raquo; "
 
 md_header_1 = """\
@@ -118,7 +120,8 @@ class  HtmlFormatter( Formatter ):
         self.headers       = processor.headers
         self.project_title = project_title
         self.file_prefix   = file_prefix
-        self.toc_filename     = self.file_prefix + "toc.md"
+        self.toc_filename  = self.file_prefix + "toc.md"
+        self.markdown      = mistune.Markdown()
 
         self.html_header = (
             md_header_1 + "Global Index"
@@ -205,16 +208,6 @@ class  HtmlFormatter( Formatter ):
                     url = ( '<a href="' + url + '">'
                             + name + '</a>'
                             + rest )
-                # NOTE Commented due to problems with field links
-                # try:
-                #     # for sections, display title
-                #     url = ( '[' + block.title + "]" 
-                #             + '(' + url + ')'
-                #             + rest )
-                # except:
-                #     url = ( '[' + name + ']'
-                #             + '(' + url + ')'
-                #             + rest )
 
                 return url
             except:
@@ -257,8 +250,12 @@ class  HtmlFormatter( Formatter ):
             line = line.replace( "~", "&nbsp;" )
         # Return
         if in_html:
+            # Parse markdown in HTML blocks
+            # separately using Mistune, a
+            # Python markdown parser
+            line = self.markdown(line).rstrip()
             # If we are in an HTML tag, return with HTML tags
-            return para_header + line + para_footer
+            return line
         # Otherwise return a Markdown paragraph
         return md_newline + line
 
@@ -488,7 +485,7 @@ class  HtmlFormatter( Formatter ):
                +  md_nav_separator + section.title 
                + md_line_sep )
         except:
-            sys.stderr.write("No chapter name for Section '" + section.title + "'\n")
+            sys.stderr.write("WARNING: No chapter name for Section '" + section.title + "'\n")
         print( md_h1 + section.title )
 
         maxwidth = 0
