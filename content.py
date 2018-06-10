@@ -546,6 +546,9 @@ class  ContentProcessor:
         #
         if others:
             chap = DocChapter( None )
+            # Assign the chapter to all sections
+            for section in others:
+                section.chapter = chap
             chap.sections = others
             self.chapters.append( chap )
 

@@ -480,12 +480,13 @@ class  HtmlFormatter( Formatter ):
     # formatting sections
     #
     def  section_enter( self, section ):
-        try:
+        if section.chapter:
             print( md_header_1 +  self.make_chapter_url( section.chapter.title )
                +  md_nav_separator + section.title 
                + md_line_sep )
-        except:
+        else:
             sys.stderr.write("WARNING: No chapter name for Section '" + section.title + "'\n")
+
         print( md_h1 + section.title )
 
         maxwidth = 0
