@@ -169,6 +169,7 @@ class  HtmlFormatter( Formatter ):
         name = self.sluggify( name )
 
         try:
+            # if it is a field def, link to its parent section
             section_url = self.make_section_url( block.section, code )
         except:
             # we already have a section
