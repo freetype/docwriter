@@ -14,6 +14,7 @@
 
 import sys
 import utils
+from collections import OrderedDict
 try:
     import yaml
 except ImportError:
@@ -33,9 +34,9 @@ site_description = "API Reference documentation for FreeType"
 site_author = "FreeType Contributors"
 
 # Theme configuration default values
-theme_conf = {}
+theme_conf = OrderedDict()
 theme_conf['name'] = "material"
-theme_conf['logo'] = ""
+theme_conf['logo'] = "images/favico.ico"
 theme_conf['language'] = "en"
 
 # Markdown extensions
@@ -60,7 +61,9 @@ extra_javascript:
 
 # Other config
 other_config = '''\
-copyright: Copyright 2018 <a href = "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/LICENSE.TXT">The FreeType Project</a>.
+copyright: Copyright 2018 \
+<a href = "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/LICENSE.TXT">\
+The FreeType Project</a>.
 '''
 
 def add_config( yml_string, config_name ):
@@ -100,7 +103,7 @@ class SiteConfig:
     supplied and default values.
     '''
     def __init__( self ):
-        self.site_config = {}
+        self.site_config = OrderedDict()
         self.pages = []
         self.chapter = None
         self.sections = []
@@ -190,8 +193,8 @@ class SiteConfig:
         '''Write all values in site_config to output stream'''
         if self.site_config != {}:
             print( "# " + name )
-            print( yaml.dump( self.site_config ) )
-            self.site_config = {}
+            print( yaml.dump( self.site_config, default_flow_style=False ) )
+            self.site_config.clear()
 
     def build_config( self ):
         '''Build the YAML configuration'''
