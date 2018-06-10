@@ -41,8 +41,8 @@ import string, re
 # brace must be exactly the same.  The code sequence itself should have a
 # larger indentation than the surrounding braces.
 #
-re_code_start = re.compile( r"(\s*){\s*$" )
-re_code_end   = re.compile( r"(\s*)}\s*$" )
+re_code_start = re.compile( r"(\s*)```\s*$" )
+re_code_end   = re.compile( r"(\s*)```\s*$" )
 
 
 #
