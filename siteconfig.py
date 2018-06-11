@@ -19,8 +19,8 @@ import utils
 try:
     import yaml
 except ImportError:
-    sys.stderr.write("Error: Could not find module 'pyyaml'. Please run \
-                      'pip install -r requirements.txt' to install.")
+    sys.stderr.write("Error: Could not find module 'pyyaml'. Please run"
+                     + "'pip install -r requirements.txt' to install.")
 
 # Config file name
 config_filename = "mkdocs.yml"
@@ -76,9 +76,9 @@ def add_config( yml_string, config_name ):
     return config
 
 # Parse all configurations and save as Python objects
-markdown_extensions = add_config( md_extensions, "markdown_extensions" )
-yml_extra           = add_config( extra_scripts, "extra scripts" )
-yml_other           = add_config( other_config, "other" )
+md_extensions = add_config( md_extensions, "markdown_extensions" )
+yml_extra     = add_config( extra_scripts, "extra scripts" )
+yml_other     = add_config( other_config, "other" )
 
 
 class Chapter:
@@ -104,32 +104,35 @@ class SiteConfig:
     supplied and default values.
     '''
     def __init__( self ):
-        self.site_config = {}
-        self.pages = []
-        self.chapter = None
-        self.sections = []
-        self.markdown_extensions = []
+        self.site_config   = {}
+        self.pages         = []
+        self.chapter       = None
+        self.sections      = []
+        self.md_extensions = []
 
         global site_name, site_description, site_author
         global docs_dir, site_dir
         global theme_conf
 
-        self.site_name = site_name
-        self.site_description = site_description
+        # Set configurations
+        self.site_name   = site_name
+        self.site_desc   = site_description
         self.site_author = site_author
-        self.docs_dir = docs_dir
-        self.site_dir = site_dir
-        self.theme_conf = theme_conf
+        self.docs_dir    = docs_dir
+        self.site_dir    = site_dir
+        self.theme_conf  = theme_conf
 
     def set_site_info( self, name, description = None, author = None ):
         '''Set the basic site information'''
         if name:
             self.site_name = name
         else:
-            sys.stderr.write("WARNING: Site name not specified, reverting to default.\n")
+            # Site name is required, throw warning and revert to default
+            sys.stderr.write("WARNING: Site name not specified,"
+                             + " reverting to default.\n")
 
         if description:
-            self.site_description = description
+            self.site_desc = description
         if author:
             self.site_author = author
 
@@ -143,11 +146,13 @@ class SiteConfig:
         '''Add a page to a chapter.
 
         Chapter must be set first using `start_chapter()`
+        If not set, `add_single_page()` will be called internally
         '''
         if self.chapter:
             self.chapter.add_page( section_title, filename )
         else:
-            sys.stderr.write("WARNING: Section '"+ section_title + "' added without starting chapter.\n")
+            sys.stderr.write("WARNING: Section '"+ section_title
+                             + "' added without starting chapter.\n")
             self.add_single_page( section_title, filename )
 
     def start_chapter( self, chap ):
@@ -169,7 +174,7 @@ class SiteConfig:
         '''Add basic Project information to config'''
         self.site_config['site_name'] = self.site_name
         if site_description:
-            self.site_config['site_description'] = self.site_description
+            self.site_config['site_description'] = self.site_desc
         if site_author:
             self.site_config['site_author'] = self.site_author
         if docs_dir:
@@ -178,15 +183,17 @@ class SiteConfig:
             self.site_config['site_dir'] = self.site_dir
 
     def build_theme_config( self ):
+        # internal: build theme config
         if theme_conf != {}:
             self.site_config['theme'] = self.theme_conf
 
     def build_pages( self ):
+        # internal: build pages config
         if self.pages != []:
             self.site_config['pages'] = self.pages
 
     def populate_config( self, data ):
-        '''Add a given not None object to site_config'''
+        # internal: Add a given not None object to site_config
         if data:
             self.site_config.update( data )
 
@@ -237,7 +244,7 @@ class SiteConfig:
         self.write_config( "Customization" )
 
         # Add Markdown extensions
-        self.populate_config( markdown_extensions )
+        self.populate_config( md_extensions )
         self.write_config( "Extensions" )
 
         # Add other options
@@ -246,3 +253,5 @@ class SiteConfig:
 
         # Close the file
         utils.close_output( output )
+
+# eof
