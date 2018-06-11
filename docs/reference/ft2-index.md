@@ -1,7 +1,6 @@
 [Docs](ft2-index.md) &raquo; Global Index
 
 -------------------------------
-
 # FreeType-2.9.1 API Reference
 
 <table class="index">
@@ -279,4 +278,4 @@
 <tr><td><a href="../ft2-base_interface/#ft_is_variation">FT_IS_VARIATION</a></td><td><a href="../ft2-system_interface/#ft_streamrec">FT_StreamRec</a></td><td></td></tr>
 <tr><td><a href="../ft2-base_interface/#ft_kerning_mode">FT_KERNING_DEFAULT</a></td><td><a href="../ft2-basic_types/#ft_string">FT_String</a></td><td></td></tr>
 </table>
-<div class="timestamp">generated on Sun Jun 10 18:20:16 2018 UTC</div>
+<div class="timestamp">generated on Mon Jun 11 11:26:05 2018 UTC</div>

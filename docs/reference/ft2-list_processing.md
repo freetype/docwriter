@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # List Processing
 
 ## Synopsis
@@ -22,7 +21,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A handle to a list record (see <a href="../ft2-list_processing/#ft_listrec">FT_ListRec</a>).
 
-<hr />
+<hr>
 
 ## FT_ListNode
 
@@ -37,7 +36,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 Many elements and objects in FreeType are listed through an <a href="../ft2-list_processing/#ft_list">FT_List</a> record (see <a href="../ft2-list_processing/#ft_listrec">FT_ListRec</a>). As its name suggests, an FT_ListNode is a handle to a single list element.
 
-<hr />
+<hr>
 
 ## FT_ListRec
 
@@ -67,7 +66,7 @@ A structure used to hold a simple doubly-linked list. These are used in many par
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_ListNodeRec
 
@@ -101,7 +100,7 @@ A structure used to hold a single list element.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_List_Add
 
@@ -128,7 +127,7 @@ Append an element to the end of a list.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_List_Insert
 
@@ -155,7 +154,7 @@ Insert an element at the head of a list.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_List_Find
 
@@ -186,7 +185,7 @@ Find the list node for a given listed object.
 
 List node. NULL if it wasn't found.
 
-<hr />
+<hr>
 
 ## FT_List_Remove
 
@@ -217,7 +216,7 @@ Remove a node from a list. This function doesn't check whether the node is in th
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_List_Up
 
@@ -244,7 +243,7 @@ Move a node to the head/top of a list. Used to maintain LRU lists.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_List_Iterate
 
@@ -279,7 +278,7 @@ Parse a list and calls a given iterator function on each element. Note that pars
 
 The result (a FreeType error code) of the last iterator call.
 
-<hr />
+<hr>
 
 ## FT_List_Iterator
 
@@ -306,7 +305,7 @@ An FT_List iterator function that is called during a list parse by <a href="../f
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_List_Finalize
 
@@ -345,7 +344,7 @@ Destroy all elements in the list as well as the list itself.
 
 This function expects that all nodes added by <a href="../ft2-list_processing/#ft_list_add">FT_List_Add</a> or <a href="../ft2-list_processing/#ft_list_insert">FT_List_Insert</a> have been dynamically allocated.
 
-<hr />
+<hr>
 
 ## FT_List_Destructor
 
@@ -376,5 +375,5 @@ An <a href="../ft2-list_processing/#ft_list">FT_List</a> iterator function that 
 </td></tr>
 </table>
 
-<hr />
+<hr>
 

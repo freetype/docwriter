@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Module Management
 
 ## Synopsis
@@ -46,7 +45,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A handle to a given FreeType module object. A module can be a font driver, a renderer, or anything else that provides services to the former.
 
-<hr />
+<hr>
 
 ## FT_Module_Constructor
 
@@ -69,7 +68,7 @@ A function used to initialize (not create) a new module object.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Module_Destructor
 
@@ -92,7 +91,7 @@ A function used to finalize (not destroy) a given module object.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Module_Requester
 
@@ -119,7 +118,7 @@ A function used to query a given module for a specific interface.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Module_Class
 
@@ -176,7 +175,7 @@ The module class descriptor.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Add_Module
 
@@ -215,7 +214,7 @@ FreeType error code. 0&nbsp;means success.
 
 An error will be returned if a module already exists by that name, or if the module requires a version of FreeType that is too great.
 
-<hr />
+<hr>
 
 ## FT_Get_Module
 
@@ -250,7 +249,7 @@ A module handle. 0&nbsp;if none was found.
 
 FreeType's internal modules aren't documented very well, and you should look up the source code for details.
 
-<hr />
+<hr>
 
 ## FT_Remove_Module
 
@@ -289,7 +288,7 @@ FreeType error code. 0&nbsp;means success.
 
 The module object is destroyed by the function in case of success.
 
-<hr />
+<hr>
 
 ## FT_Add_Default_Modules
 
@@ -312,7 +311,7 @@ Add the set of default drivers to a given library object. This is only useful wh
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Property_Set
 
@@ -373,7 +372,7 @@ It is not possible to set properties of the FreeType Cache sub-system itself wit
 
 2.4.11
 
-<hr />
+<hr>
 
 ## FT_Property_Get
 
@@ -441,7 +440,7 @@ It is not possible to retrieve properties of the FreeType Cache sub-system with 
 
 2.4.11
 
-<hr />
+<hr>
 
 ## FT_Set_Default_Properties
 
@@ -488,7 +487,7 @@ Example:
 
 2.8
 
-<hr />
+<hr>
 
 ## FT_New_Library
 
@@ -531,7 +530,7 @@ FreeType error code. 0&nbsp;means success.
 
 See the discussion of reference counters in the description of <a href="../ft2-module_management/#ft_reference_library">FT_Reference_Library</a>.
 
-<hr />
+<hr>
 
 ## FT_Done_Library
 
@@ -562,7 +561,7 @@ FreeType error code. 0&nbsp;means success.
 
 See the discussion of reference counters in the description of <a href="../ft2-module_management/#ft_reference_library">FT_Reference_Library</a>.
 
-<hr />
+<hr>
 
 ## FT_Reference_Library
 
@@ -595,7 +594,7 @@ FreeType error code. 0&nbsp;means success.
 
 2.4.2
 
-<hr />
+<hr>
 
 ## FT_Renderer
 
@@ -610,7 +609,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A handle to a given FreeType renderer. A renderer is a module in charge of converting a glyph's outline image to a bitmap. It supports a single glyph image format, and one or more target surface depths.
 
-<hr />
+<hr>
 
 ## FT_Renderer_Class
 
@@ -663,7 +662,7 @@ The renderer module class descriptor.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Get_Renderer
 
@@ -700,7 +699,7 @@ An error will be returned if a module already exists by that name, or if the mod
 
 To add a new renderer, simply use <a href="../ft2-module_management/#ft_add_module">FT_Add_Module</a>. To retrieve a renderer by its name, use <a href="../ft2-module_management/#ft_get_module">FT_Get_Module</a>.
 
-<hr />
+<hr>
 
 ## FT_Set_Renderer
 
@@ -751,7 +750,7 @@ This doesn't change the current renderer for other formats.
 
 Currently, no FreeType renderer module uses &lsquo;parameters&rsquo;; you should thus always pass NULL as the value.
 
-<hr />
+<hr>
 
 ## FT_Set_Debug_Hook
 
@@ -792,7 +791,7 @@ Currently, four debug hook slots are available, but only two (for the TrueType a
 
 Since the internal headers of FreeType are no longer installed, the symbol &lsquo;FT_DEBUG_HOOK_TRUETYPE&rsquo; isn't available publicly. This is a bug and will be fixed in a forthcoming release.
 
-<hr />
+<hr>
 
 ## FT_Driver
 
@@ -807,5 +806,5 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A handle to a given FreeType font driver object. A font driver is a module capable of creating faces from font files.
 
-<hr />
+<hr>
 

@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # OpenType Validation
 
 ## Synopsis
@@ -68,7 +67,7 @@ This function only works with OpenType fonts, returning an error otherwise.
 
 After use, the application should deallocate the five tables with <a href="../ft2-ot_validation/#ft_opentype_free">FT_OpenType_Free</a>. A NULL value indicates that the table either doesn't exist in the font, or the application hasn't asked for validation.
 
-<hr />
+<hr>
 
 ## FT_OpenType_Free
 
@@ -99,7 +98,7 @@ Free the buffer allocated by OpenType validator.
 
 This function must be used to free the buffer allocated by <a href="../ft2-ot_validation/#ft_opentype_validate">FT_OpenType_Validate</a> only.
 
-<hr />
+<hr>
 
 ## FT_VALIDATE_OTXXX
 
@@ -151,5 +150,5 @@ A list of bit-field constants used with <a href="../ft2-ot_validation/#ft_openty
 </td></tr>
 </table>
 
-<hr />
+<hr>
 

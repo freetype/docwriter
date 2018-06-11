@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # BDF and PCF Files
 
 ## Synopsis
@@ -45,7 +44,7 @@ A list of BDF property types.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## BDF_Property
 
@@ -60,7 +59,7 @@ Defined in FT_BDF_H (freetype/ftbdf.h).
 
 A handle to a <a href="../ft2-bdf_fonts/#bdf_propertyrec">BDF_PropertyRec</a> structure to model a given BDF/PCF property.
 
-<hr />
+<hr>
 
 ## BDF_PropertyRec
 
@@ -101,7 +100,7 @@ This structure models a given BDF/PCF property.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Get_BDF_Charset_ID
 
@@ -144,7 +143,7 @@ FreeType error code. 0&nbsp;means success.
 
 This function only works with BDF faces, returning an error otherwise.
 
-<hr />
+<hr>
 
 ## FT_Get_BDF_Property
 
@@ -193,5 +192,5 @@ Integer properties are always stored as &lsquo;signed&rsquo; within PCF fonts; c
 
 In case of error, &lsquo;aproperty-&gt;type&rsquo; is always set to <a href="../ft2-bdf_fonts/#bdf_propertytype">BDF_PROPERTY_TYPE_NONE</a>.
 
-<hr />
+<hr>
 

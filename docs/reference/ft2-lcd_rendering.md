@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Subpixel Rendering
 
 ## Synopsis
@@ -81,7 +80,7 @@ A list of values to identify various types of LCD filters.
 
 2.3.0 (&lsquo;FT_LCD_FILTER_LEGACY1&rsquo; since 2.6.2)
 
-<hr />
+<hr>
 
 ## FT_Library_SetLcdFilter
 
@@ -123,7 +122,7 @@ Due to **PATENTS** covering subpixel rendering, this function doesn't do anythin
 
 2.3.0
 
-<hr />
+<hr>
 
 ## FT_Library_SetLcdFilterWeights
 
@@ -164,7 +163,7 @@ LCD filter weights can also be set per face using <a href="../ft2-base_interface
 
 2.4.0
 
-<hr />
+<hr>
 
 ## FT_LcdFiveTapFilter
 
@@ -185,7 +184,7 @@ A typedef for passing the five LCD filter weights to <a href="../ft2-base_interf
 
 2.8
 
-<hr />
+<hr>
 
 ## FT_Library_SetLcdGeometry
 
@@ -234,5 +233,5 @@ This function does nothing and returns &lsquo;FT_Err_Unimplemented_Feature&rsquo
 
 2.10.0
 
-<hr />
+<hr>
 

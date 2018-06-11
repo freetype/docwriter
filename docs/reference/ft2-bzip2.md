@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # BZIP2 Streams
 
 ## Synopsis
@@ -50,5 +49,5 @@ In certain builds of the library, bzip2 compression recognition is automatically
 
 This function may return &lsquo;FT_Err_Unimplemented_Feature&rsquo; if your build of FreeType was not compiled with bzip2 support.
 
-<hr />
+<hr>
 

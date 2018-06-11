@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Quick retrieval of advance values
 
 ## Synopsis
@@ -57,7 +56,7 @@ This function may fail if you use <a href="../ft2-quick_advance/#ft_advance_flag
 
 A scaled advance is returned in 16.16 format but isn't transformed by the affine transformation specified by <a href="../ft2-base_interface/#ft_set_transform">FT_Set_Transform</a>.
 
-<hr />
+<hr>
 
 ## FT_Get_Advances
 
@@ -112,7 +111,7 @@ This function may fail if you use <a href="../ft2-quick_advance/#ft_advance_flag
 
 Scaled advances are returned in 16.16 format but aren't transformed by the affine transformation specified by <a href="../ft2-base_interface/#ft_set_transform">FT_Set_Transform</a>.
 
-<hr />
+<hr>
 
 ## FT_ADVANCE_FLAG_FAST_ONLY
 
@@ -133,5 +132,5 @@ Typically, glyphs that are either unscaled, unhinted, bitmapped, or light-hinted
 
 Normal and bytecode hinted modes that require loading, scaling, and hinting of the glyph outline, are extremely slow by comparison.
 
-<hr />
+<hr>
 

@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Mac Specific Interface
 
 ## Synopsis
@@ -63,7 +62,7 @@ This function can be used to create <a href="../ft2-base_interface/#ft_face">FT_
   error = FT_New_Face_From_FOND( library, fond, 0, &face );
 ```
 
-<hr />
+<hr>
 
 ## FT_GetFile_From_Mac_Name
 
@@ -103,7 +102,7 @@ Return an FSSpec for the disk file containing the named font.
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_GetFile_From_Mac_ATS_Name
 
@@ -143,7 +142,7 @@ Return an FSSpec for the disk file containing the named font.
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_GetFilePath_From_Mac_ATS_Name
 
@@ -187,7 +186,7 @@ Return a pathname of the disk file and face index for given font name that is ha
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_New_Face_From_FSSpec
 
@@ -239,7 +238,7 @@ FreeType error code. 0&nbsp;means success.
 
 <a href="../ft2-mac_specific/#ft_new_face_from_fsspec">FT_New_Face_From_FSSpec</a> is identical to <a href="../ft2-base_interface/#ft_new_face">FT_New_Face</a> except it accepts an FSSpec instead of a path.
 
-<hr />
+<hr>
 
 ## FT_New_Face_From_FSRef
 
@@ -291,5 +290,5 @@ FreeType error code. 0&nbsp;means success.
 
 <a href="../ft2-mac_specific/#ft_new_face_from_fsref">FT_New_Face_From_FSRef</a> is identical to <a href="../ft2-base_interface/#ft_new_face">FT_New_Face</a> except it accepts an FSRef instead of a path.
 
-<hr />
+<hr>
 

@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # LZW Streams
 
 ## Synopsis
@@ -50,5 +49,5 @@ In certain builds of the library, LZW compression recognition is automatically h
 
 This function may return &lsquo;FT_Err_Unimplemented_Feature&rsquo; if your build of FreeType was not compiled with LZW support.
 
-<hr />
+<hr>
 

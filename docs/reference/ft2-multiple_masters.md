@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Multiple Masters
 
 ## Synopsis
@@ -45,7 +44,7 @@ This structure can't be used for TrueType GX or OpenType variation fonts.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Multi_Master
 
@@ -81,7 +80,7 @@ This structure can't be used for TrueType GX or OpenType variation fonts.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Var_Axis
 
@@ -133,7 +132,7 @@ A structure to model a given axis in design space for Multiple Masters, TrueType
 
 The fields &lsquo;minimum&rsquo;, &lsquo;def&rsquo;, and &lsquo;maximum&rsquo; are 16.16 fractional values for TrueType GX and OpenType variation fonts. For Adobe MM fonts, the values are integers.
 
-<hr />
+<hr>
 
 ## FT_Var_Named_Style
 
@@ -169,7 +168,7 @@ This structure can't be used for Adobe MM fonts.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_MM_Var
 
@@ -214,7 +213,7 @@ Some fields are specific to one format and not to the others.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Get_Multi_Master
 
@@ -251,7 +250,7 @@ This function can't be used with TrueType GX or OpenType variation fonts.
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Get_MM_Var
 
@@ -288,7 +287,7 @@ This function works with all supported variation formats.
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Done_MM_Var
 
@@ -316,7 +315,7 @@ Free the memory allocated by <a href="../ft2-multiple_masters/#ft_get_mm_var">FT
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Set_MM_Design_Coordinates
 
@@ -363,7 +362,7 @@ FreeType error code. 0&nbsp;means success.
 
 [Since 2.9] If &lsquo;num_coords&rsquo; is larger than zero, this function sets the <a href="../ft2-base_interface/#ft_face_flag_xxx">FT_FACE_FLAG_VARIATION</a> bit in <a href="../ft2-base_interface/#ft_face">FT_Face</a>'s &lsquo;face_flags&rsquo; field (i.e., <a href="../ft2-base_interface/#ft_is_variation">FT_IS_VARIATION</a> will return true). If &lsquo;num_coords&rsquo; is zero, this bit flag gets unset.
 
-<hr />
+<hr>
 
 ## FT_Set_Var_Design_Coordinates
 
@@ -410,7 +409,7 @@ FreeType error code. 0&nbsp;means success.
 
 [Since 2.9] If &lsquo;num_coords&rsquo; is larger than zero, this function sets the <a href="../ft2-base_interface/#ft_face_flag_xxx">FT_FACE_FLAG_VARIATION</a> bit in <a href="../ft2-base_interface/#ft_face">FT_Face</a>'s &lsquo;face_flags&rsquo; field (i.e., <a href="../ft2-base_interface/#ft_is_variation">FT_IS_VARIATION</a> will return true). If &lsquo;num_coords&rsquo; is zero, this bit flag gets unset.
 
-<hr />
+<hr>
 
 ## FT_Get_Var_Design_Coordinates
 
@@ -455,7 +454,7 @@ FreeType error code. 0&nbsp;means success.
 
 2.7.1
 
-<hr />
+<hr>
 
 ## FT_Set_MM_Blend_Coordinates
 
@@ -502,7 +501,7 @@ FreeType error code. 0&nbsp;means success.
 
 [Since 2.9] If &lsquo;num_coords&rsquo; is larger than zero, this function sets the <a href="../ft2-base_interface/#ft_face_flag_xxx">FT_FACE_FLAG_VARIATION</a> bit in <a href="../ft2-base_interface/#ft_face">FT_Face</a>'s &lsquo;face_flags&rsquo; field (i.e., <a href="../ft2-base_interface/#ft_is_variation">FT_IS_VARIATION</a> will return true). If &lsquo;num_coords&rsquo; is zero, this bit flag gets unset.
 
-<hr />
+<hr>
 
 ## FT_Get_MM_Blend_Coordinates
 
@@ -547,7 +546,7 @@ FreeType error code. 0&nbsp;means success.
 
 2.7.1
 
-<hr />
+<hr>
 
 ## FT_Set_Var_Blend_Coordinates
 
@@ -565,7 +564,7 @@ Defined in FT_MULTIPLE_MASTERS_H (freetype/ftmm.h).
 
 This is another name of <a href="../ft2-multiple_masters/#ft_set_mm_blend_coordinates">FT_Set_MM_Blend_Coordinates</a>.
 
-<hr />
+<hr>
 
 ## FT_Get_Var_Blend_Coordinates
 
@@ -587,7 +586,7 @@ This is another name of <a href="../ft2-multiple_masters/#ft_get_mm_blend_coordi
 
 2.7.1
 
-<hr />
+<hr>
 
 ## FT_VAR_AXIS_FLAG_XXX
 
@@ -613,7 +612,7 @@ A list of bit flags used in the return value of <a href="../ft2-multiple_masters
 
 2.8.1
 
-<hr />
+<hr>
 
 ## FT_Get_Var_Axis_Flags
 
@@ -658,7 +657,7 @@ FreeType error code. 0&nbsp;means success.
 
 2.8.1
 
-<hr />
+<hr>
 
 ## FT_Set_Named_Instance
 
@@ -699,5 +698,5 @@ For Adobe MM fonts (which don't have named instances) this function simply reset
 
 2.9
 
-<hr />
+<hr>
 

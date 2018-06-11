@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Window FNT Files
 
 ## Synopsis
@@ -107,7 +106,7 @@ A list of valid values for the &lsquo;charset&rsquo; byte in <a href="../ft2-win
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_WinFNT_HeaderRec
 
@@ -161,7 +160,7 @@ Defined in FT_WINFONTS_H (freetype/ftwinfnt.h).
 
 Windows FNT Header info.
 
-<hr />
+<hr>
 
 ## FT_WinFNT_Header
 
@@ -176,7 +175,7 @@ Defined in FT_WINFONTS_H (freetype/ftwinfnt.h).
 
 A handle to an <a href="../ft2-winfnt_fonts/#ft_winfnt_headerrec">FT_WinFNT_HeaderRec</a> structure.
 
-<hr />
+<hr>
 
 ## FT_Get_WinFNT_Header
 
@@ -215,5 +214,5 @@ FreeType error code. 0&nbsp;means success.
 
 This function only works with Windows FNT faces, returning an error otherwise.
 
-<hr />
+<hr>
 

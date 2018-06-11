@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Driver properties
 
 ## Synopsis
@@ -41,7 +40,7 @@ A list of constants used for the <a href="../ft2-properties/#hinting-engine">hin
 
 2.9
 
-<hr />
+<hr>
 
 ## hinting-engine
 
@@ -79,7 +78,7 @@ This property can be set via the &lsquo;FREETYPE_PROPERTIES&rsquo; environment v
 
 2.9 (for &lsquo;type1&rsquo; and &lsquo;t1cid&rsquo; modules)
 
-<hr />
+<hr>
 
 ## no-stem-darkening
 
@@ -121,7 +120,7 @@ This property can be set via the &lsquo;FREETYPE_PROPERTIES&rsquo; environment v
 
 2.9 (for &lsquo;type1&rsquo; and &lsquo;t1cid&rsquo; modules)
 
-<hr />
+<hr>
 
 ## darkening-parameters
 
@@ -172,7 +171,7 @@ This property can be set via the &lsquo;FREETYPE_PROPERTIES&rsquo; environment v
 
 2.9 (for &lsquo;type1&rsquo; and &lsquo;t1cid&rsquo; modules)
 
-<hr />
+<hr>
 
 ## random-seed
 
@@ -192,7 +191,7 @@ This property can be set via the &lsquo;FREETYPE_PROPERTIES&rsquo; environment v
 
 2.9 (for &lsquo;type1&rsquo; and &lsquo;t1cid&rsquo; modules)
 
-<hr />
+<hr>
 
 ## no-long-family-names
 
@@ -225,7 +224,7 @@ This property can be set via the &lsquo;FREETYPE_PROPERTIES&rsquo; environment v
 
 2.8
 
-<hr />
+<hr>
 
 ## TT_INTERPRETER_VERSION_XXX
 
@@ -312,7 +311,7 @@ Note that &lsquo;Gray ClearType&rsquo; is essentially the same as v1.6's graysca
 
 Keep in mind that the features of the above interpreter versions might not map exactly to FreeType features or behavior because it is a fundamentally different library with different internals.
 
-<hr />
+<hr>
 
 ## interpreter-version
 
@@ -348,7 +347,7 @@ This property can be set via the &lsquo;FREETYPE_PROPERTIES&rsquo; environment v
 
 2.5
 
-<hr />
+<hr>
 
 ## glyph-to-script-map
 
@@ -386,7 +385,7 @@ The following example code demonstrates how to access it (omitting the error han
 
 2.4.11
 
-<hr />
+<hr>
 
 ## FT_AUTOHINTER_SCRIPT_XXX
 
@@ -505,7 +504,7 @@ U+11800 - U+118DF // Sharada
 
 2.4.11
 
-<hr />
+<hr>
 
 ## FT_Prop_GlyphToScriptMap
 
@@ -531,7 +530,7 @@ The data exchange structure for the <a href="../ft2-properties/#glyph-to-script-
 
 2.4.11
 
-<hr />
+<hr>
 
 ## fallback-script
 
@@ -561,7 +560,7 @@ It's important to use the right timing for changing this value: The creation of 
 
 2.4.11
 
-<hr />
+<hr>
 
 ## default-script
 
@@ -593,7 +592,7 @@ It's important to use the right timing for changing this value: The creation of 
 
 2.5.3
 
-<hr />
+<hr>
 
 ## increase-x-height
 
@@ -627,7 +626,7 @@ Set this value right after calling <a href="../ft2-base_interface/#ft_set_char_s
 
 2.4.11
 
-<hr />
+<hr>
 
 ## FT_Prop_IncreaseXHeight
 
@@ -647,7 +646,7 @@ Defined in FT_DRIVER_H (freetype/ftdriver.h).
 
 The data exchange structure for the <a href="../ft2-properties/#increase-x-height">increase-x-height</a> property.
 
-<hr />
+<hr>
 
 ## warping
 
@@ -685,5 +684,5 @@ Since warping is a global property of the auto-hinter it is best to change its v
 
 2.6
 
-<hr />
+<hr>
 

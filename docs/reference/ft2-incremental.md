@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Incremental Loading
 
 ## Synopsis
@@ -32,7 +31,7 @@ It is up to client applications to create and implement <a href="../ft2-incremen
 
 See the description of <a href="../ft2-incremental/#ft_incremental_interfacerec">FT_Incremental_InterfaceRec</a> to understand how to use incremental objects with FreeType.
 
-<hr />
+<hr>
 
 ## FT_Incremental_MetricsRec
 
@@ -74,7 +73,7 @@ A small structure used to contain the basic glyph metrics returned by the <a hre
 
 These correspond to horizontal or vertical metrics depending on the value of the &lsquo;vertical&rsquo; argument to the function <a href="../ft2-incremental/#ft_incremental_getglyphmetricsfunc">FT_Incremental_GetGlyphMetricsFunc</a>.
 
-<hr />
+<hr>
 
 ## FT_Incremental_Metrics
 
@@ -89,7 +88,7 @@ Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
 A handle to an <a href="../ft2-incremental/#ft_incremental_metricsrec">FT_Incremental_MetricsRec</a> structure.
 
-<hr />
+<hr>
 
 ## FT_Incremental_GetGlyphDataFunc
 
@@ -136,7 +135,7 @@ If this function returns successfully the method <a href="../ft2-incremental/#ft
 
 Nested calls to <a href="../ft2-incremental/#ft_incremental_getglyphdatafunc">FT_Incremental_GetGlyphDataFunc</a> can happen for compound glyphs.
 
-<hr />
+<hr>
 
 ## FT_Incremental_FreeGlyphDataFunc
 
@@ -163,7 +162,7 @@ A function used to release the glyph data bytes returned by a successful call to
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Incremental_GetGlyphMetricsFunc
 
@@ -206,7 +205,7 @@ A function used to retrieve the basic metrics of a given glyph index before acce
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Incremental_FuncsRec
 
@@ -240,7 +239,7 @@ A table of functions for accessing fonts that load data incrementally. Used in <
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Incremental_InterfaceRec
 
@@ -284,7 +283,7 @@ A structure to be used with <a href="../ft2-base_interface/#ft_open_face">FT_Ope
   ...
 ```
 
-<hr />
+<hr>
 
 ## FT_Incremental_Interface
 
@@ -299,5 +298,5 @@ Defined in FT_INCREMENTAL_H (freetype/ftincrem.h).
 
 A pointer to an <a href="../ft2-incremental/#ft_incremental_interfacerec">FT_Incremental_InterfaceRec</a> structure.
 
-<hr />
+<hr>
 

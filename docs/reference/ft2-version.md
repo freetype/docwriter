@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # FreeType Version
 
 ## Synopsis
@@ -52,7 +51,7 @@ The reason why this function takes a &lsquo;library&rsquo; argument is because c
 
 In such cases, the library version might not be available before the library object has been created.
 
-<hr />
+<hr>
 
 ## FT_Face_CheckTrueTypePatents
 
@@ -87,7 +86,7 @@ Since May 2010, TrueType hinting is no longer patented.
 
 2.3.5
 
-<hr />
+<hr>
 
 ## FT_Face_SetUnpatentedHinting
 
@@ -126,7 +125,7 @@ Since May 2010, TrueType hinting is no longer patented.
 
 2.3.5
 
-<hr />
+<hr>
 
 ## FREETYPE_XXX
 
@@ -160,5 +159,5 @@ These three macros identify the FreeType source code version. Use <a href="../ft
 
 The version number of FreeType if built as a dynamic link library with the &lsquo;libtool&rsquo; package is _not_ controlled by these three macros.
 
-<hr />
+<hr>
 

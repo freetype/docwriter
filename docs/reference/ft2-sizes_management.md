@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Size Management
 
 ## Synopsis
@@ -52,7 +51,7 @@ FreeType error code. 0&nbsp;means success.
 
 You need to call <a href="../ft2-sizes_management/#ft_activate_size">FT_Activate_Size</a> in order to select the new size for upcoming calls to <a href="../ft2-base_interface/#ft_set_pixel_sizes">FT_Set_Pixel_Sizes</a>, <a href="../ft2-base_interface/#ft_set_char_size">FT_Set_Char_Size</a>, <a href="../ft2-base_interface/#ft_load_glyph">FT_Load_Glyph</a>, <a href="../ft2-base_interface/#ft_load_char">FT_Load_Char</a>, etc.
 
-<hr />
+<hr>
 
 ## FT_Done_Size
 
@@ -79,7 +78,7 @@ Discard a given size object. Note that <a href="../ft2-base_interface/#ft_done_f
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Activate_Size
 
@@ -112,5 +111,5 @@ FreeType error code. 0&nbsp;means success.
 
 If &lsquo;face&rsquo; is the size's parent face object, this function changes the value of &lsquo;face-&gt;size&rsquo; to the input size handle.
 
-<hr />
+<hr>
 

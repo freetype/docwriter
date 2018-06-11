@@ -2,8 +2,9 @@
 
 -------------------------------
 
-
 # Error Enumerations
+
+## Synopsis
 
 The header file &lsquo;fterrors.h&rsquo; (which is automatically included by &lsquo;freetype.h&rsquo; defines the handling of FreeType's enumeration constants. It can also be used to generate error message strings with a small macro trick explained below.
 

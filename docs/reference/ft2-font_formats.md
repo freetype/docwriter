@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Font Formats
 
 ## Synopsis
@@ -45,5 +44,5 @@ Font format string. NULL in case of error.
 
 A deprecated name for the same function is &lsquo;FT_Get_X11_Font_Format&rsquo;.
 
-<hr />
+<hr>
 

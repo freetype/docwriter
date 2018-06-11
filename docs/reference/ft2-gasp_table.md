@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Gasp Table
 
 ## Synopsis
@@ -55,7 +54,7 @@ The bit-flags &lsquo;FT_GASP_DO_GRIDFIT&rsquo; and &lsquo;FT_GASP_DO_GRAY&rsquo;
 
 2.3.0
 
-<hr />
+<hr>
 
 ## FT_Get_Gasp
 
@@ -94,5 +93,5 @@ If you want to use the MM functionality of OpenType variation fonts (i.e., using
 
 2.3.0
 
-<hr />
+<hr>
 

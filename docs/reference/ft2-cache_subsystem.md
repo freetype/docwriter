@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Cache Sub-System
 
 ## Synopsis
@@ -52,7 +51,7 @@ The manager is also used to cache &lsquo;nodes&rsquo; of various types while lim
 
 All limitations are enforced by keeping lists of managed objects in most-recently-used order, and flushing old nodes to make room for new ones.
 
-<hr />
+<hr>
 
 ## FTC_FaceID
 
@@ -79,7 +78,7 @@ If the content of a given face ID changes at runtime, or if the value becomes in
 
 Failure to do so will result in incorrect behaviour or even memory leaks and crashes.
 
-<hr />
+<hr>
 
 ## FTC_Face_Requester
 
@@ -128,7 +127,7 @@ The third parameter &lsquo;req_data&rsquo; is the same as the one passed by the 
 
 The face requester should not perform funny things on the returned face object, like creating a new <a href="../ft2-base_interface/#ft_size">FT_Size</a> for it, or setting a transformation through <a href="../ft2-base_interface/#ft_set_transform">FT_Set_Transform</a>!
 
-<hr />
+<hr>
 
 ## FTC_Manager_New
 
@@ -183,7 +182,7 @@ Create a new cache manager.
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FTC_Manager_Reset
 
@@ -206,7 +205,7 @@ Empty a given cache manager. This simply gets rid of all the currently cached <a
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FTC_Manager_Done
 
@@ -229,7 +228,7 @@ Destroy a given manager after emptying it.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FTC_Manager_LookupFace
 
@@ -280,7 +279,7 @@ When you perform a lookup, out-of-memory errors are detected _within_ the lookup
 
 If a lookup fails with &lsquo;FT_Err_Out_Of_Memory&rsquo; the cache has already been completely flushed, and still no memory was available for the operation.
 
-<hr />
+<hr>
 
 ## FTC_Manager_LookupSize
 
@@ -331,7 +330,7 @@ When you perform a lookup, out-of-memory errors are detected _within_ the lookup
 
 If a lookup fails with &lsquo;FT_Err_Out_Of_Memory&rsquo; the cache has already been completely flushed, and still no memory is available for the operation.
 
-<hr />
+<hr>
 
 ## FTC_Manager_RemoveFaceID
 
@@ -364,7 +363,7 @@ This function flushes all nodes from the cache corresponding to this &lsquo;face
 
 Such nodes are however modified internally so as to never appear in later lookups with the same &lsquo;face_id&rsquo; value, and to be immediately destroyed when released by all their users.
 
-<hr />
+<hr>
 
 ## FTC_Node
 
@@ -383,7 +382,7 @@ If you look up nodes, you have the ability to &lsquo;acquire&rsquo; them, i.e., 
 
 See also <a href="../ft2-cache_subsystem/#ftc_sbitcache_lookup">FTC_SBitCache_Lookup</a> and <a href="../ft2-cache_subsystem/#ftc_imagecache_lookup">FTC_ImageCache_Lookup</a>.
 
-<hr />
+<hr>
 
 ## FTC_Node_Unref
 
@@ -410,7 +409,7 @@ Decrement a cache node's internal reference count. When the count reaches 0, it 
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FTC_ImageCache
 
@@ -425,7 +424,7 @@ Defined in FT_CACHE_H (freetype/ftcache.h).
 
 A handle to a glyph image cache object. They are designed to hold many distinct glyph images while not exceeding a certain memory threshold.
 
-<hr />
+<hr>
 
 ## FTC_ImageCache_New
 
@@ -460,7 +459,7 @@ Create a new glyph image cache.
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FTC_ImageCache_Lookup
 
@@ -515,7 +514,7 @@ If &lsquo;anode&rsquo; is _not_ NULL, it receives the address of the cache node 
 
 If &lsquo;anode&rsquo; is NULL, the cache node is left unchanged, which means that the <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a> could be flushed out of the cache on the next call to one of the caching sub-system APIs. Don't assume that it is persistent!
 
-<hr />
+<hr>
 
 ## FTC_SBit
 
@@ -530,7 +529,7 @@ Defined in FT_CACHE_H (freetype/ftcache.h).
 
 A handle to a small bitmap descriptor. See the <a href="../ft2-cache_subsystem/#ftc_sbitrec">FTC_SBitRec</a> structure for details.
 
-<hr />
+<hr>
 
 ## FTC_SBitCache
 
@@ -545,7 +544,7 @@ Defined in FT_CACHE_H (freetype/ftcache.h).
 
 A handle to a small bitmap cache. These are special cache objects used to store small glyph bitmaps (and anti-aliased pixmaps) in a much more efficient way than the traditional glyph image cache implemented by <a href="../ft2-cache_subsystem/#ftc_imagecache">FTC_ImageCache</a>.
 
-<hr />
+<hr>
 
 ## FTC_SBitCache_New
 
@@ -580,7 +579,7 @@ Create a new cache to store small glyph bitmaps.
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FTC_SBitCache_Lookup
 
@@ -637,7 +636,7 @@ If &lsquo;anode&rsquo; is _not_ NULL, it receives the address of the cache node 
 
 If &lsquo;anode&rsquo; is NULL, the cache node is left unchanged, which means that the bitmap could be flushed out of the cache on the next call to one of the caching sub-system APIs. Don't assume that it is persistent!
 
-<hr />
+<hr>
 
 ## FTC_CMapCache
 
@@ -652,7 +651,7 @@ Defined in FT_CACHE_H (freetype/ftcache.h).
 
 An opaque handle used to model a charmap cache. This cache is to hold character codes -&gt; glyph indices mappings.
 
-<hr />
+<hr>
 
 ## FTC_CMapCache_New
 
@@ -691,7 +690,7 @@ FreeType error code. 0&nbsp;means success.
 
 Like all other caches, this one will be destroyed with the cache manager.
 
-<hr />
+<hr>
 
 ## FTC_CMapCache_Lookup
 
@@ -730,7 +729,7 @@ Translate a character code into a glyph index, using the charmap cache.
 
 Glyph index. 0&nbsp;means &lsquo;no glyph&rsquo;.
 
-<hr />
+<hr>
 
 ## FTC_ScalerRec
 
@@ -780,7 +779,7 @@ A structure used to describe a given character size in either pixels or points t
 
 This type is mainly used to retrieve <a href="../ft2-base_interface/#ft_size">FT_Size</a> objects through the cache manager.
 
-<hr />
+<hr>
 
 ## FTC_Scaler
 
@@ -795,7 +794,7 @@ Defined in FT_CACHE_H (freetype/ftcache.h).
 
 A handle to an <a href="../ft2-cache_subsystem/#ftc_scalerrec">FTC_ScalerRec</a> structure.
 
-<hr />
+<hr>
 
 ## FTC_ImageTypeRec
 
@@ -833,7 +832,7 @@ A structure used to model the type of images in a glyph cache.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FTC_ImageType
 
@@ -848,7 +847,7 @@ Defined in FT_CACHE_H (freetype/ftcache.h).
 
 A handle to an <a href="../ft2-cache_subsystem/#ftc_imagetyperec">FTC_ImageTypeRec</a> structure.
 
-<hr />
+<hr>
 
 ## FTC_ImageCache_LookupScaler
 
@@ -909,7 +908,7 @@ If &lsquo;anode&rsquo; is NULL, the cache node is left unchanged, which means th
 
 Calls to <a href="../ft2-base_interface/#ft_set_char_size">FT_Set_Char_Size</a> and friends have no effect on cached glyphs; you should always use the FreeType cache API instead.
 
-<hr />
+<hr>
 
 ## FTC_SBitRec
 
@@ -973,7 +972,7 @@ A very compact structure used to describe a small glyph bitmap.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FTC_SBitCache_LookupScaler
 
@@ -1034,5 +1033,5 @@ If &lsquo;anode&rsquo; is _not_ NULL, it receives the address of the cache node 
 
 If &lsquo;anode&rsquo; is NULL, the cache node is left unchanged, which means that the bitmap could be flushed out of the cache on the next call to one of the caching sub-system APIs. Don't assume that it is persistent!
 
-<hr />
+<hr>
 

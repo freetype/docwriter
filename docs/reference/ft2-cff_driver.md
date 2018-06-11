@@ -2,8 +2,9 @@
 
 -------------------------------
 
-
 # The CFF driver
+
+## Synopsis
 
 While FreeType's CFF driver doesn't expose API functions by itself, it is possible to control its behaviour with <a href="../ft2-module_management/#ft_property_set">FT_Property_Set</a> and <a href="../ft2-module_management/#ft_property_get">FT_Property_Get</a>.
 

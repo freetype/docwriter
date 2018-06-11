@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Glyph Color Management
 
 ## Synopsis
@@ -51,7 +50,7 @@ The used color space is sRGB; the colors are not pre-multiplied, and alpha value
 
 2.10
 
-<hr />
+<hr>
 
 ## FT_PALETTE_XXX
 
@@ -81,7 +80,7 @@ A list of bit field constants used in the &lsquo;palette_types&rsquo; array of t
 
 2.10
 
-<hr />
+<hr>
 
 ## FT_Palette
 
@@ -136,7 +135,7 @@ Use function <a href="../ft2-sfnt_names/#ft_get_sfnt_name">FT_Get_Sfnt_Name</a> 
 
 2.10
 
-<hr />
+<hr>
 
 ## FT_Palette_Get
 
@@ -181,7 +180,7 @@ This function always returns an error if the config macro &lsquo;TT_CONFIG_OPTIO
 
 2.10
 
-<hr />
+<hr>
 
 ## FT_Palette_Select
 
@@ -238,7 +237,7 @@ This function always returns an error if the config macro &lsquo;TT_CONFIG_OPTIO
 
 2.10
 
-<hr />
+<hr>
 
 ## FT_Palette_Set_Foreground_Color
 
@@ -279,5 +278,5 @@ This function always returns an error if the config macro &lsquo;TT_CONFIG_OPTIO
 
 2.10
 
-<hr />
+<hr>
 

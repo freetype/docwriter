@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Outline Processing
 
 ## Synopsis
@@ -63,7 +62,7 @@ This structure is used to describe an outline to the scan-line converter.
 
 The B/W rasterizer only checks bit&nbsp;2 in the &lsquo;tags&rsquo; array for the first point of each contour. The drop-out mode as given with <a href="../ft2-outline_processing/#ft_outline_xxx">FT_OUTLINE_IGNORE_DROPOUTS</a>, <a href="../ft2-outline_processing/#ft_outline_xxx">FT_OUTLINE_SMART_DROPOUTS</a>, and <a href="../ft2-outline_processing/#ft_outline_xxx">FT_OUTLINE_INCLUDE_STUBS</a> in &lsquo;flags&rsquo; is then overridden.
 
-<hr />
+<hr>
 
 ## FT_Outline_New
 
@@ -117,7 +116,7 @@ FreeType error code. 0&nbsp;means success.
 
 The reason why this function takes a &lsquo;library&rsquo; parameter is simply to use the library's memory allocator.
 
-<hr />
+<hr>
 
 ## FT_Outline_Done
 
@@ -157,7 +156,7 @@ FreeType error code. 0&nbsp;means success.
 
 If the outline's &lsquo;owner&rsquo; field is not set, only the outline descriptor will be released.
 
-<hr />
+<hr>
 
 ## FT_Outline_Copy
 
@@ -192,7 +191,7 @@ Copy an outline into another one. Both objects must have the same sizes (number 
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Outline_Translate
 
@@ -227,7 +226,7 @@ Apply a simple translation to the points of an outline.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Outline_Transform
 
@@ -262,7 +261,7 @@ Apply a simple 2x2 matrix to all of an outline's points. Useful for applying rot
 
 You can use <a href="../ft2-outline_processing/#ft_outline_translate">FT_Outline_Translate</a> if you need to translate the outline's points.
 
-<hr />
+<hr>
 
 ## FT_Outline_Embolden
 
@@ -314,7 +313,7 @@ Example call:
 
 To get meaningful results, font scaling values must be set with functions like <a href="../ft2-base_interface/#ft_set_char_size">FT_Set_Char_Size</a> before calling FT_Render_Glyph.
 
-<hr />
+<hr>
 
 ## FT_Outline_EmboldenXY
 
@@ -336,7 +335,7 @@ Embolden an outline. The new outline will be &lsquo;xstrength&rsquo; pixels wide
 
 2.4.10
 
-<hr />
+<hr>
 
 ## FT_Outline_Reverse
 
@@ -365,7 +364,7 @@ This function toggles the bit flag <a href="../ft2-outline_processing/#ft_outlin
 
 It shouldn't be used by a normal client application, unless it knows what it is doing.
 
-<hr />
+<hr>
 
 ## FT_Outline_Check
 
@@ -396,7 +395,7 @@ FreeType error code. 0&nbsp;means success.
 
 An empty outline, or an outline with a single point only is also valid.
 
-<hr />
+<hr>
 
 ## FT_Outline_Get_CBox
 
@@ -433,7 +432,7 @@ Computing the control box is very fast, while getting the bounding box can take 
 
 See <a href="../ft2-glyph_management/#ft_glyph_get_cbox">FT_Glyph_Get_CBox</a> for a discussion of tricky fonts.
 
-<hr />
+<hr>
 
 ## FT_Outline_Get_BBox
 
@@ -472,7 +471,7 @@ FreeType error code. 0&nbsp;means success.
 
 If the font is tricky and the glyph has been loaded with <a href="../ft2-base_interface/#ft_load_xxx">FT_LOAD_NO_SCALE</a>, the resulting BBox is meaningless. To get reasonable values for the BBox it is necessary to load the glyph at a large ppem value (so that the hinting instructions can properly shift and scale the subglyphs), then extracting the BBox, which can be eventually converted back to font units.
 
-<hr />
+<hr>
 
 ## FT_Outline_Get_Bitmap
 
@@ -519,7 +518,7 @@ It will use the raster corresponding to the default glyph format.
 
 The value of the &lsquo;num_grays&rsquo; field in &lsquo;abitmap&rsquo; is ignored. If you select the gray-level rasterizer, and you want less than 256 gray levels, you have to use <a href="../ft2-outline_processing/#ft_outline_render">FT_Outline_Render</a> directly.
 
-<hr />
+<hr>
 
 ## FT_Outline_Render
 
@@ -566,7 +565,7 @@ The field &lsquo;params.source&rsquo; will be set to &lsquo;outline&rsquo; befor
 
 The gray-level rasterizer always uses 256 gray levels. If you want less gray levels, you have to provide your own span callback. See the <a href="../ft2-raster/#ft_raster_flag_xxx">FT_RASTER_FLAG_DIRECT</a> value of the &lsquo;flags&rsquo; field in the <a href="../ft2-raster/#ft_raster_params">FT_Raster_Params</a> structure for more details.
 
-<hr />
+<hr>
 
 ## FT_Outline_Decompose
 
@@ -611,7 +610,7 @@ A contour that contains a single point only is represented by a &lsquo;move to&r
 
 Similarly, the function returns success for an empty outline also (doing nothing, this is, not calling any emitter); if necessary, you should filter this out, too.
 
-<hr />
+<hr>
 
 ## FT_Outline_Funcs
 
@@ -668,7 +667,7 @@ The point coordinates sent to the emitters are the transformed version of the or
 
 Set the values of &lsquo;shift&rsquo; and &lsquo;delta&rsquo; to&nbsp;0 to get the original point coordinates.
 
-<hr />
+<hr>
 
 ## FT_Outline_MoveToFunc
 
@@ -703,7 +702,7 @@ A &lsquo;move to&rsquo; is emitted to start a new contour in an outline.
 
 Error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Outline_LineToFunc
 
@@ -738,7 +737,7 @@ A &lsquo;line to&rsquo; is emitted to indicate a segment in the outline.
 
 Error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Outline_ConicToFunc
 
@@ -777,7 +776,7 @@ A &lsquo;conic to&rsquo; is emitted to indicate a second-order Bezier arc in the
 
 Error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Outline_CubicToFunc
 
@@ -820,7 +819,7 @@ A &lsquo;cubic to&rsquo; is emitted to indicate a third-order Bezier arc.
 
 Error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Orientation
 
@@ -864,7 +863,7 @@ The TrueType and PostScript specifications use different conventions to determin
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Outline_Get_Orientation
 
@@ -893,7 +892,7 @@ Note that this will return <a href="../ft2-outline_processing/#ft_orientation">F
 
 The orientation.
 
-<hr />
+<hr>
 
 ## FT_OUTLINE_XXX
 
@@ -967,5 +966,5 @@ There exists a second mechanism to pass the drop-out mode to the B/W rasterizer;
 
 Please refer to the description of the &lsquo;SCANTYPE&rsquo; instruction in the OpenType specification (in file &lsquo;ttinst1.doc&rsquo;) how simple drop-outs, smart drop-outs, and stubs are defined.
 
-<hr />
+<hr>
 

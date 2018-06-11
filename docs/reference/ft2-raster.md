@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Scanline Converter
 
 ## Synopsis
@@ -22,7 +21,7 @@ Defined in FT_IMAGE_H (freetype/ftimage.h).
 
 An opaque handle (pointer) to a raster object. Each object can be used independently to convert an outline into a bitmap or pixmap.
 
-<hr />
+<hr>
 
 ## FT_Span
 
@@ -62,7 +61,7 @@ This structure is used by the span drawing callback type named <a href="../ft2-r
 
 The coverage value is always between 0 and 255. If you want less gray values, the callback function has to reduce them.
 
-<hr />
+<hr>
 
 ## FT_SpanFunc
 
@@ -105,7 +104,7 @@ This callback allows client applications to directly render the gray spans of th
 
 This can be used to write anti-aliased outlines directly to a given background bitmap, and even perform translucency.
 
-<hr />
+<hr>
 
 ## FT_Raster_Params
 
@@ -169,7 +168,7 @@ An anti-aliased glyph bitmap is drawn if the <a href="../ft2-raster/#ft_raster_f
 
 If the <a href="../ft2-raster/#ft_raster_flag_xxx">FT_RASTER_FLAG_DIRECT</a> bit flag is set in &lsquo;flags&rsquo;, the raster will call the &lsquo;gray_spans&rsquo; callback to draw gray pixel spans. This allows direct composition over a pre-existing bitmap through user-provided callbacks to perform the span drawing and composition. Not supported by the monochrome rasterizer.
 
-<hr />
+<hr>
 
 ## FT_RASTER_FLAG_XXX
 
@@ -212,7 +211,7 @@ A list of bit flag constants as used in the &lsquo;flags&rsquo; field of a <a hr
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Raster_NewFunc
 
@@ -253,7 +252,7 @@ Error code. 0&nbsp;means success.
 
 The &lsquo;memory&rsquo; parameter is a typeless pointer in order to avoid un-wanted dependencies on the rest of the FreeType code. In practice, it is an <a href="../ft2-system_interface/#ft_memory">FT_Memory</a> object, i.e., a handle to the standard FreeType memory allocator. However, this field can be completely ignored by a given raster implementation.
 
-<hr />
+<hr>
 
 ## FT_Raster_DoneFunc
 
@@ -278,7 +277,7 @@ A function used to destroy a given raster object.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Raster_ResetFunc
 
@@ -317,7 +316,7 @@ This function is called after a new raster object is created.
 
 Rasterizers should rely on dynamic or stack allocation if they want to (a handle to the memory allocator is passed to the rasterizer constructor).
 
-<hr />
+<hr>
 
 ## FT_Raster_SetModeFunc
 
@@ -350,7 +349,7 @@ This function is a generic facility to change modes or attributes in a given ras
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Raster_RenderFunc
 
@@ -391,7 +390,7 @@ Note also that the render function can fail and return a &lsquo;FT_Err_Unimpleme
 
 XXX: For now, the standard raster doesn't support direct composition but this should change for the final release (see the files &lsquo;demos/src/ftgrays.c&rsquo; and &lsquo;demos/src/ftgrays2.c&rsquo; for examples of distinct implementations that support direct composition).
 
-<hr />
+<hr>
 
 ## FT_Raster_Funcs
 
@@ -435,7 +434,7 @@ A structure used to describe a given raster class to the library.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Raster_BitTest_Func
 
@@ -453,7 +452,7 @@ Defined in FT_IMAGE_H (freetype/ftimage.h).
 
 Deprecated, unimplemented.
 
-<hr />
+<hr>
 
 ## FT_Raster_BitSet_Func
 
@@ -471,5 +470,5 @@ Defined in FT_IMAGE_H (freetype/ftimage.h).
 
 Deprecated, unimplemented.
 
-<hr />
+<hr>
 

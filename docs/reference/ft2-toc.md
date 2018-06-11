@@ -1,7 +1,6 @@
 [Docs](ft2-index.md) &raquo; Table of Contents
 
 -------------------------------
-
 # FreeType-2.9.1 API Reference
 
 # Table of Contents
@@ -182,4 +181,4 @@
 </td></tr>
 </table>
 ## [Global Index](ft2-index.md)
-<div class="timestamp">generated on Sun Jun 10 18:20:16 2018 UTC</div>
+<div class="timestamp">generated on Mon Jun 11 11:26:05 2018 UTC</div>

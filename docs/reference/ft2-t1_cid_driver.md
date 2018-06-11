@@ -2,8 +2,9 @@
 
 -------------------------------
 
-
 # The Type 1 and CID drivers
+
+## Synopsis
 
 It is possible to control the behaviour of FreeType's Type&nbsp;1 and Type&nbsp;1 CID drivers with <a href="../ft2-module_management/#ft_property_set">FT_Property_Set</a> and <a href="../ft2-module_management/#ft_property_get">FT_Property_Get</a>.
 

@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Header File Macros
 
 ## Synopsis
@@ -32,7 +31,7 @@ The second reason is that it allows for more flexibility in the way FreeType&nbs
 
 A macro used in #include statements to name the file containing FreeType&nbsp;2 configuration data.
 
-<hr />
+<hr>
 
 ## FT_CONFIG_STANDARD_LIBRARY_H
 
@@ -48,7 +47,7 @@ A macro used in #include statements to name the file containing FreeType&nbsp;2 
 
 A macro used in #include statements to name the file containing FreeType&nbsp;2 interface to the standard C library functions.
 
-<hr />
+<hr>
 
 ## FT_CONFIG_OPTIONS_H
 
@@ -64,7 +63,7 @@ A macro used in #include statements to name the file containing FreeType&nbsp;2 
 
 A macro used in #include statements to name the file containing FreeType&nbsp;2 project-specific configuration options.
 
-<hr />
+<hr>
 
 ## FT_CONFIG_MODULES_H
 
@@ -80,7 +79,7 @@ A macro used in #include statements to name the file containing FreeType&nbsp;2 
 
 A macro used in #include statements to name the file containing the list of FreeType&nbsp;2 modules that are statically linked to new library instances in <a href="../ft2-base_interface/#ft_init_freetype">FT_Init_FreeType</a>.
 
-<hr />
+<hr>
 
 ## FT_FREETYPE_H
 
@@ -94,7 +93,7 @@ A macro used in #include statements to name the file containing the list of Free
 
 A macro used in #include statements to name the file containing the base FreeType&nbsp;2 API.
 
-<hr />
+<hr>
 
 ## FT_ERRORS_H
 
@@ -110,7 +109,7 @@ A macro used in #include statements to name the file containing the list of Free
 
 It is included by <a href="../ft2-header_file_macros/#ft_freetype_h">FT_FREETYPE_H</a>.
 
-<hr />
+<hr>
 
 ## FT_MODULE_ERRORS_H
 
@@ -124,7 +123,7 @@ It is included by <a href="../ft2-header_file_macros/#ft_freetype_h">FT_FREETYPE
 
 A macro used in #include statements to name the file containing the list of FreeType&nbsp;2 module error offsets (and messages).
 
-<hr />
+<hr>
 
 ## FT_SYSTEM_H
 
@@ -140,7 +139,7 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 
 It is included by <a href="../ft2-header_file_macros/#ft_freetype_h">FT_FREETYPE_H</a>.
 
-<hr />
+<hr>
 
 ## FT_IMAGE_H
 
@@ -156,7 +155,7 @@ A macro used in #include statements to name the file containing type definitions
 
 It is included by <a href="../ft2-header_file_macros/#ft_freetype_h">FT_FREETYPE_H</a>.
 
-<hr />
+<hr>
 
 ## FT_TYPES_H
 
@@ -172,7 +171,7 @@ A macro used in #include statements to name the file containing the basic data t
 
 It is included by <a href="../ft2-header_file_macros/#ft_freetype_h">FT_FREETYPE_H</a>.
 
-<hr />
+<hr>
 
 ## FT_LIST_H
 
@@ -188,7 +187,7 @@ A macro used in #include statements to name the file containing the list managem
 
 (Most applications will never need to include this file.)
 
-<hr />
+<hr>
 
 ## FT_OUTLINE_H
 
@@ -202,7 +201,7 @@ A macro used in #include statements to name the file containing the list managem
 
 A macro used in #include statements to name the file containing the scalable outline management API of FreeType&nbsp;2.
 
-<hr />
+<hr>
 
 ## FT_SIZES_H
 
@@ -216,7 +215,7 @@ A macro used in #include statements to name the file containing the scalable out
 
 A macro used in #include statements to name the file containing the API which manages multiple <a href="../ft2-base_interface/#ft_size">FT_Size</a> objects per face.
 
-<hr />
+<hr>
 
 ## FT_MODULE_H
 
@@ -230,7 +229,7 @@ A macro used in #include statements to name the file containing the API which ma
 
 A macro used in #include statements to name the file containing the module management API of FreeType&nbsp;2.
 
-<hr />
+<hr>
 
 ## FT_RENDER_H
 
@@ -244,7 +243,7 @@ A macro used in #include statements to name the file containing the module manag
 
 A macro used in #include statements to name the file containing the renderer module management API of FreeType&nbsp;2.
 
-<hr />
+<hr>
 
 ## FT_DRIVER_H
 
@@ -258,7 +257,7 @@ A macro used in #include statements to name the file containing the renderer mod
 
 A macro used in #include statements to name the file containing structures and macros related to the driver modules.
 
-<hr />
+<hr>
 
 ## FT_AUTOHINTER_H
 
@@ -274,7 +273,7 @@ A macro used in #include statements to name the file containing structures and m
 
 Deprecated since version 2.9; use <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a> instead.
 
-<hr />
+<hr>
 
 ## FT_CFF_DRIVER_H
 
@@ -290,7 +289,7 @@ A macro used in #include statements to name the file containing structures and m
 
 Deprecated since version 2.9; use <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a> instead.
 
-<hr />
+<hr>
 
 ## FT_TRUETYPE_DRIVER_H
 
@@ -306,7 +305,7 @@ A macro used in #include statements to name the file containing structures and m
 
 Deprecated since version 2.9; use <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a> instead.
 
-<hr />
+<hr>
 
 ## FT_PCF_DRIVER_H
 
@@ -322,7 +321,7 @@ A macro used in #include statements to name the file containing structures and m
 
 Deprecated since version 2.9; use <a href="../ft2-header_file_macros/#ft_driver_h">FT_DRIVER_H</a> instead.
 
-<hr />
+<hr>
 
 ## FT_TYPE1_TABLES_H
 
@@ -336,7 +335,7 @@ Deprecated since version 2.9; use <a href="../ft2-header_file_macros/#ft_driver_
 
 A macro used in #include statements to name the file containing the types and API specific to the Type&nbsp;1 format.
 
-<hr />
+<hr>
 
 ## FT_TRUETYPE_IDS_H
 
@@ -350,7 +349,7 @@ A macro used in #include statements to name the file containing the types and AP
 
 A macro used in #include statements to name the file containing the enumeration values which identify name strings, languages, encodings, etc. This file really contains a _large_ set of constant macro definitions, taken from the TrueType and OpenType specifications.
 
-<hr />
+<hr>
 
 ## FT_TRUETYPE_TABLES_H
 
@@ -364,7 +363,7 @@ A macro used in #include statements to name the file containing the enumeration 
 
 A macro used in #include statements to name the file containing the types and API specific to the TrueType (as well as OpenType) format.
 
-<hr />
+<hr>
 
 ## FT_TRUETYPE_TAGS_H
 
@@ -378,7 +377,7 @@ A macro used in #include statements to name the file containing the types and AP
 
 A macro used in #include statements to name the file containing the definitions of TrueType four-byte &lsquo;tags&rsquo; which identify blocks in SFNT-based font formats (i.e., TrueType and OpenType).
 
-<hr />
+<hr>
 
 ## FT_BDF_H
 
@@ -392,7 +391,7 @@ A macro used in #include statements to name the file containing the definitions 
 
 A macro used in #include statements to name the file containing the definitions of an API which accesses BDF-specific strings from a face.
 
-<hr />
+<hr>
 
 ## FT_CID_H
 
@@ -406,7 +405,7 @@ A macro used in #include statements to name the file containing the definitions 
 
 A macro used in #include statements to name the file containing the definitions of an API which access CID font information from a face.
 
-<hr />
+<hr>
 
 ## FT_GZIP_H
 
@@ -420,7 +419,7 @@ A macro used in #include statements to name the file containing the definitions 
 
 A macro used in #include statements to name the file containing the definitions of an API which supports gzip-compressed files.
 
-<hr />
+<hr>
 
 ## FT_LZW_H
 
@@ -434,7 +433,7 @@ A macro used in #include statements to name the file containing the definitions 
 
 A macro used in #include statements to name the file containing the definitions of an API which supports LZW-compressed files.
 
-<hr />
+<hr>
 
 ## FT_BZIP2_H
 
@@ -448,7 +447,7 @@ A macro used in #include statements to name the file containing the definitions 
 
 A macro used in #include statements to name the file containing the definitions of an API which supports bzip2-compressed files.
 
-<hr />
+<hr>
 
 ## FT_WINFONTS_H
 
@@ -462,7 +461,7 @@ A macro used in #include statements to name the file containing the definitions 
 
 A macro used in #include statements to name the file containing the definitions of an API which supports Windows FNT files.
 
-<hr />
+<hr>
 
 ## FT_GLYPH_H
 
@@ -476,7 +475,7 @@ A macro used in #include statements to name the file containing the definitions 
 
 A macro used in #include statements to name the file containing the API of the optional glyph management component.
 
-<hr />
+<hr>
 
 ## FT_BITMAP_H
 
@@ -490,7 +489,7 @@ A macro used in #include statements to name the file containing the API of the o
 
 A macro used in #include statements to name the file containing the API of the optional bitmap conversion component.
 
-<hr />
+<hr>
 
 ## FT_BBOX_H
 
@@ -504,7 +503,7 @@ A macro used in #include statements to name the file containing the API of the o
 
 A macro used in #include statements to name the file containing the API of the optional exact bounding box computation routines.
 
-<hr />
+<hr>
 
 ## FT_CACHE_H
 
@@ -518,7 +517,7 @@ A macro used in #include statements to name the file containing the API of the o
 
 A macro used in #include statements to name the file containing the API of the optional FreeType&nbsp;2 cache sub-system.
 
-<hr />
+<hr>
 
 ## FT_MAC_H
 
@@ -534,7 +533,7 @@ A macro used in #include statements to name the file containing the Macintosh-sp
 
 This header file must be explicitly included by client applications compiled on the Mac (note that the base API still works though).
 
-<hr />
+<hr>
 
 ## FT_MULTIPLE_MASTERS_H
 
@@ -548,7 +547,7 @@ This header file must be explicitly included by client applications compiled on 
 
 A macro used in #include statements to name the file containing the optional multiple-masters management API of FreeType&nbsp;2.
 
-<hr />
+<hr>
 
 ## FT_SFNT_NAMES_H
 
@@ -562,7 +561,7 @@ A macro used in #include statements to name the file containing the optional mul
 
 A macro used in #include statements to name the file containing the optional FreeType&nbsp;2 API which accesses embedded &lsquo;name&rsquo; strings in SFNT-based font formats (i.e., TrueType and OpenType).
 
-<hr />
+<hr>
 
 ## FT_OPENTYPE_VALIDATE_H
 
@@ -576,7 +575,7 @@ A macro used in #include statements to name the file containing the optional Fre
 
 A macro used in #include statements to name the file containing the optional FreeType&nbsp;2 API which validates OpenType tables (BASE, GDEF, GPOS, GSUB, JSTF).
 
-<hr />
+<hr>
 
 ## FT_GX_VALIDATE_H
 
@@ -590,7 +589,7 @@ A macro used in #include statements to name the file containing the optional Fre
 
 A macro used in #include statements to name the file containing the optional FreeType&nbsp;2 API which validates TrueTypeGX/AAT tables (feat, mort, morx, bsln, just, kern, opbd, trak, prop).
 
-<hr />
+<hr>
 
 ## FT_PFR_H
 
@@ -604,7 +603,7 @@ A macro used in #include statements to name the file containing the optional Fre
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which accesses PFR-specific data.
 
-<hr />
+<hr>
 
 ## FT_STROKER_H
 
@@ -618,7 +617,7 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which provides functions to stroke outline paths.
 
-<hr />
+<hr>
 
 ## FT_SYNTHESIS_H
 
@@ -632,7 +631,7 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which performs artificial obliquing and emboldening.
 
-<hr />
+<hr>
 
 ## FT_FONT_FORMATS_H
 
@@ -649,7 +648,7 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which provides functions specific to font formats.
 
-<hr />
+<hr>
 
 ## FT_TRIGONOMETRY_H
 
@@ -663,7 +662,7 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which performs trigonometric computations (e.g., cosines and arc tangents).
 
-<hr />
+<hr>
 
 ## FT_LCD_FILTER_H
 
@@ -677,7 +676,7 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which performs color filtering for subpixel rendering.
 
-<hr />
+<hr>
 
 ## FT_INCREMENTAL_H
 
@@ -691,7 +690,7 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which performs incremental glyph loading.
 
-<hr />
+<hr>
 
 ## FT_GASP_H
 
@@ -705,7 +704,7 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which returns entries from the TrueType GASP table.
 
-<hr />
+<hr>
 
 ## FT_ADVANCES_H
 
@@ -719,7 +718,7 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which returns individual and ranged glyph advances.
 
-<hr />
+<hr>
 
 ## FT_COLOR_H
 
@@ -733,5 +732,5 @@ A macro used in #include statements to name the file containing the FreeType&nbs
 
 A macro used in #include statements to name the file containing the FreeType&nbsp;2 API which handles the OpenType CPAL table.
 
-<hr />
+<hr>
 

@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Glyph Stroker
 
 ## Synopsis
@@ -24,7 +23,7 @@ Defined in FT_STROKER_H (freetype/ftstroke.h).
 
 Opaque handle to a path stroker object.
 
-<hr />
+<hr>
 
 ## FT_Stroker_LineJoin
 
@@ -66,7 +65,7 @@ These values determine how two joining lines are rendered in a stroker.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Stroker_LineCap
 
@@ -100,7 +99,7 @@ These values determine how the end of opened sub-paths are rendered in a stroke.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_StrokerBorder
 
@@ -136,7 +135,7 @@ Applications are generally interested in the &lsquo;inside&rsquo; and &lsquo;out
 
 You can however use <a href="../ft2-glyph_stroker/#ft_outline_getinsideborder">FT_Outline_GetInsideBorder</a> and <a href="../ft2-glyph_stroker/#ft_outline_getoutsideborder">FT_Outline_GetOutsideBorder</a> to get these.
 
-<hr />
+<hr>
 
 ## FT_Outline_GetInsideBorder
 
@@ -163,7 +162,7 @@ Retrieve the <a href="../ft2-glyph_stroker/#ft_strokerborder">FT_StrokerBorder</
 
 The border index. <a href="../ft2-glyph_stroker/#ft_strokerborder">FT_STROKER_BORDER_RIGHT</a> for empty or invalid outlines.
 
-<hr />
+<hr>
 
 ## FT_Outline_GetOutsideBorder
 
@@ -190,7 +189,7 @@ Retrieve the <a href="../ft2-glyph_stroker/#ft_strokerborder">FT_StrokerBorder</
 
 The border index. <a href="../ft2-glyph_stroker/#ft_strokerborder">FT_STROKER_BORDER_LEFT</a> for empty or invalid outlines.
 
-<hr />
+<hr>
 
 ## FT_Glyph_Stroke
 
@@ -235,7 +234,7 @@ The source glyph is untouched in case of error.
 
 Adding stroke may yield a significantly wider and taller glyph depending on how large of a radius was used to stroke the glyph. You may need to manually adjust horizontal and vertical advance amounts to account for this added size.
 
-<hr />
+<hr>
 
 ## FT_Glyph_StrokeBorder
 
@@ -284,7 +283,7 @@ The source glyph is untouched in case of error.
 
 Adding stroke may yield a significantly wider and taller glyph depending on how large of a radius was used to stroke the glyph. You may need to manually adjust horizontal and vertical advance amounts to account for this added size.
 
-<hr />
+<hr>
 
 ## FT_Stroker_New
 
@@ -319,7 +318,7 @@ Create a new stroker object.
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Stroker_Set
 
@@ -364,7 +363,7 @@ The radius is expressed in the same units as the outline coordinates.
 
 This function calls <a href="../ft2-glyph_stroker/#ft_stroker_rewind">FT_Stroker_Rewind</a> automatically.
 
-<hr />
+<hr>
 
 ## FT_Stroker_Rewind
 
@@ -387,7 +386,7 @@ Reset a stroker object without changing its attributes. You should call this fun
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Stroker_ParseOutline
 
@@ -430,7 +429,7 @@ If &lsquo;opened&rsquo; is&nbsp;1, the outline is processed as an open path, and
 
 This function calls <a href="../ft2-glyph_stroker/#ft_stroker_rewind">FT_Stroker_Rewind</a> automatically.
 
-<hr />
+<hr>
 
 ## FT_Stroker_Done
 
@@ -453,7 +452,7 @@ Destroy a stroker object.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Stroker_BeginSubPath
 
@@ -492,7 +491,7 @@ FreeType error code. 0&nbsp;means success.
 
 This function is useful when you need to stroke a path that is not stored as an <a href="../ft2-outline_processing/#ft_outline">FT_Outline</a> object.
 
-<hr />
+<hr>
 
 ## FT_Stroker_EndSubPath
 
@@ -523,7 +522,7 @@ FreeType error code. 0&nbsp;means success.
 
 You should call this function after <a href="../ft2-glyph_stroker/#ft_stroker_beginsubpath">FT_Stroker_BeginSubPath</a>. If the subpath was not &lsquo;opened&rsquo;, this function &lsquo;draws&rsquo; a single line segment to the start position when needed.
 
-<hr />
+<hr>
 
 ## FT_Stroker_LineTo
 
@@ -558,7 +557,7 @@ FreeType error code. 0&nbsp;means success.
 
 You should call this function between <a href="../ft2-glyph_stroker/#ft_stroker_beginsubpath">FT_Stroker_BeginSubPath</a> and <a href="../ft2-glyph_stroker/#ft_stroker_endsubpath">FT_Stroker_EndSubPath</a>.
 
-<hr />
+<hr>
 
 ## FT_Stroker_ConicTo
 
@@ -597,7 +596,7 @@ FreeType error code. 0&nbsp;means success.
 
 You should call this function between <a href="../ft2-glyph_stroker/#ft_stroker_beginsubpath">FT_Stroker_BeginSubPath</a> and <a href="../ft2-glyph_stroker/#ft_stroker_endsubpath">FT_Stroker_EndSubPath</a>.
 
-<hr />
+<hr>
 
 ## FT_Stroker_CubicTo
 
@@ -640,7 +639,7 @@ FreeType error code. 0&nbsp;means success.
 
 You should call this function between <a href="../ft2-glyph_stroker/#ft_stroker_beginsubpath">FT_Stroker_BeginSubPath</a> and <a href="../ft2-glyph_stroker/#ft_stroker_endsubpath">FT_Stroker_EndSubPath</a>.
 
-<hr />
+<hr>
 
 ## FT_Stroker_GetBorderCounts
 
@@ -691,7 +690,7 @@ When the outline, or a sub-path, is &lsquo;opened&rsquo;, the stroker merges the
 
 Use the function <a href="../ft2-glyph_stroker/#ft_stroker_getcounts">FT_Stroker_GetCounts</a> instead if you want to retrieve the counts associated to both borders.
 
-<hr />
+<hr>
 
 ## FT_Stroker_ExportBorder
 
@@ -734,7 +733,7 @@ When the outline, or a sub-path, is &lsquo;opened&rsquo;, the stroker merges the
 
 Use the function <a href="../ft2-glyph_stroker/#ft_stroker_export">FT_Stroker_Export</a> instead if you want to retrieve all borders at once.
 
-<hr />
+<hr>
 
 ## FT_Stroker_GetCounts
 
@@ -773,7 +772,7 @@ Call this function once you have finished parsing your paths with the stroker. I
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Stroker_Export
 
@@ -802,5 +801,5 @@ Note that this function appends the border points and contours to your outline, 
 </td></tr>
 </table>
 
-<hr />
+<hr>
 

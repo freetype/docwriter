@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # The TrueType Engine
 
 ## Synopsis
@@ -45,7 +44,7 @@ A list of values describing which kind of TrueType bytecode engine is implemente
 
 2.2
 
-<hr />
+<hr>
 
 ## FT_Get_TrueType_Engine_Type
 
@@ -76,5 +75,5 @@ A value indicating which level is supported.
 
 2.2
 
-<hr />
+<hr>
 

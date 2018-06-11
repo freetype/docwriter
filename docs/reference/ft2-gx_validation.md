@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # TrueTypeGX/AAT Validation
 
 ## Synopsis
@@ -56,7 +55,7 @@ This function only works with TrueTypeGX fonts, returning an error otherwise.
 
 After use, the application should deallocate the buffers pointed to by each &lsquo;tables&rsquo; element, by calling <a href="../ft2-gx_validation/#ft_truetypegx_free">FT_TrueTypeGX_Free</a>. A NULL value indicates that the table either doesn't exist in the font, the application hasn't asked for validation, or the validator doesn't have the ability to validate the sfnt table.
 
-<hr />
+<hr>
 
 ## FT_TrueTypeGX_Free
 
@@ -87,7 +86,7 @@ Free the buffer allocated by TrueTypeGX validator.
 
 This function must be used to free the buffer allocated by <a href="../ft2-gx_validation/#ft_truetypegx_validate">FT_TrueTypeGX_Validate</a> only.
 
-<hr />
+<hr>
 
 ## FT_ClassicKern_Validate
 
@@ -132,7 +131,7 @@ FreeType error code. 0&nbsp;means success.
 
 After use, the application should deallocate the buffers pointed to by &lsquo;ckern_table&rsquo;, by calling <a href="../ft2-gx_validation/#ft_classickern_free">FT_ClassicKern_Free</a>. A NULL value indicates that the table doesn't exist in the font.
 
-<hr />
+<hr>
 
 ## FT_ClassicKern_Free
 
@@ -163,7 +162,7 @@ Free the buffer allocated by classic Kern validator.
 
 This function must be used to free the buffer allocated by <a href="../ft2-gx_validation/#ft_classickern_validate">FT_ClassicKern_Validate</a> only.
 
-<hr />
+<hr>
 
 ## FT_VALIDATE_GX_LENGTH
 
@@ -178,7 +177,7 @@ Defined in FT_GX_VALIDATE_H (freetype/ftgxval.h).
 
 The number of tables checked in this module. Use it as a parameter for the &lsquo;table-length&rsquo; argument of function <a href="../ft2-gx_validation/#ft_truetypegx_validate">FT_TrueTypeGX_Validate</a>.
 
-<hr />
+<hr>
 
 ## FT_VALIDATE_GXXXX
 
@@ -250,7 +249,7 @@ A list of bit-field constants used with <a href="../ft2-gx_validation/#ft_truety
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_VALIDATE_CKERNXXX
 
@@ -281,5 +280,5 @@ A list of bit-field constants used with <a href="../ft2-gx_validation/#ft_classi
 </td></tr>
 </table>
 
-<hr />
+<hr>
 

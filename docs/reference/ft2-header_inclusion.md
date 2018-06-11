@@ -2,8 +2,9 @@
 
 -------------------------------
 
-
 # FreeType's header inclusion scheme
+
+## Synopsis
 
 To be as flexible as possible (and for historical reasons), FreeType uses a very special inclusion scheme to load header files, for example
 ```

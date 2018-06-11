@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Bitmap Handling
 
 ## Synopsis
@@ -39,7 +38,7 @@ Initialize a pointer to an <a href="../ft2-basic_types/#ft_bitmap">FT_Bitmap</a>
 
 A deprecated name for the same function is &lsquo;FT_Bitmap_New&rsquo;.
 
-<hr />
+<hr>
 
 ## FT_Bitmap_Copy
 
@@ -78,7 +77,7 @@ Copy a bitmap into another one.
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Bitmap_Embolden
 
@@ -129,7 +128,7 @@ If you want to embolden the bitmap owned by a <a href="../ft2-base_interface/#ft
 
 Bitmaps in <a href="../ft2-basic_types/#ft_pixel_mode">FT_PIXEL_MODE_GRAY2</a> and <a href="../ft2-basic_types/#ft_pixel_mode">FT_PIXEL_MODE_GRAY</a>@ format are converted to <a href="../ft2-basic_types/#ft_pixel_mode">FT_PIXEL_MODE_GRAY</a> format (i.e., 8bpp).
 
-<hr />
+<hr>
 
 ## FT_Bitmap_Convert
 
@@ -180,7 +179,7 @@ Use <a href="../ft2-bitmap_handling/#ft_bitmap_done">FT_Bitmap_Done</a> to final
 
 The &lsquo;library&rsquo; argument is taken to have access to FreeType's memory handling functions.
 
-<hr />
+<hr>
 
 ## FT_GlyphSlot_Own_Bitmap
 
@@ -211,7 +210,7 @@ FreeType error code. 0&nbsp;means success.
 
 This function is to be used in combination with <a href="../ft2-bitmap_handling/#ft_bitmap_embolden">FT_Bitmap_Embolden</a>.
 
-<hr />
+<hr>
 
 ## FT_Bitmap_Done
 
@@ -246,5 +245,5 @@ FreeType error code. 0&nbsp;means success.
 
 The &lsquo;library&rsquo; argument is taken to have access to FreeType's memory handling functions.
 
-<hr />
+<hr>
 

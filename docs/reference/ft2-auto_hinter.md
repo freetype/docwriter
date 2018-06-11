@@ -2,8 +2,9 @@
 
 -------------------------------
 
-
 # The auto-hinter
+
+## Synopsis
 
 While FreeType's auto-hinter doesn't expose API functions by itself, it is possible to control its behaviour with <a href="../ft2-module_management/#ft_property_set">FT_Property_Set</a> and <a href="../ft2-module_management/#ft_property_get">FT_Property_Get</a>. The following lists the available properties together with the necessary macros and structures.
 

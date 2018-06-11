@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Type 1 Tables
 
 ## Synopsis
@@ -34,7 +33,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 A structure used to model a Type&nbsp;1 or Type&nbsp;2 FontInfo dictionary. Note that for Multiple Master fonts, each instance has its own FontInfo dictionary.
 
-<hr />
+<hr>
 
 ## PS_FontInfo
 
@@ -49,7 +48,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 A handle to a <a href="../ft2-type1_tables/#ps_fontinforec">PS_FontInfoRec</a> structure.
 
-<hr />
+<hr>
 
 ## PS_PrivateRec
 
@@ -102,7 +101,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 A structure used to model a Type&nbsp;1 or Type&nbsp;2 private dictionary. Note that for Multiple Master fonts, each instance has its own Private dictionary.
 
-<hr />
+<hr>
 
 ## PS_Private
 
@@ -117,7 +116,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 A handle to a <a href="../ft2-type1_tables/#ps_privaterec">PS_PrivateRec</a> structure.
 
-<hr />
+<hr>
 
 ## CID_FaceDictRec
 
@@ -150,7 +149,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 A structure used to represent data in a CID top-level dictionary.
 
-<hr />
+<hr>
 
 ## CID_FaceDict
 
@@ -165,7 +164,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 A handle to a <a href="../ft2-type1_tables/#cid_facedictrec">CID_FaceDictRec</a> structure.
 
-<hr />
+<hr>
 
 ## CID_FaceInfoRec
 
@@ -207,7 +206,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 A structure used to represent CID Face information.
 
-<hr />
+<hr>
 
 ## CID_FaceInfo
 
@@ -222,7 +221,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 A handle to a <a href="../ft2-type1_tables/#cid_faceinforec">CID_FaceInfoRec</a> structure.
 
-<hr />
+<hr>
 
 ## FT_Has_PS_Glyph_Names
 
@@ -251,7 +250,7 @@ When this function returns true, the caller is sure that the glyph names returne
 
 Boolean. True if glyph names are reliable.
 
-<hr />
+<hr>
 
 ## FT_Get_PS_Font_Info
 
@@ -292,7 +291,7 @@ String pointers within the <a href="../ft2-type1_tables/#ps_fontinforec">PS_Font
 
 If the font's format is not PostScript-based, this function will return the &lsquo;FT_Err_Invalid_Argument&rsquo; error code.
 
-<hr />
+<hr>
 
 ## FT_Get_PS_Font_Private
 
@@ -333,7 +332,7 @@ The string pointers within the <a href="../ft2-type1_tables/#ps_privaterec">PS_P
 
 If the font's format is not PostScript-based, this function returns the &lsquo;FT_Err_Invalid_Argument&rsquo; error code.
 
-<hr />
+<hr>
 
 ## FT_Get_PS_Font_Value
 
@@ -403,7 +402,7 @@ If the font's format is not PostScript-based, this function returns the &lsquo;F
 
 2.4.8
 
-<hr />
+<hr>
 
 ## T1_Blend_Flags
 
@@ -505,7 +504,7 @@ A set of flags used to indicate which fields are present in a given blend dictio
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## T1_EncodingType
 
@@ -551,7 +550,7 @@ An enumeration describing the &lsquo;Encoding&rsquo; entry in a Type 1 dictionar
 
 2.4.8
 
-<hr />
+<hr>
 
 ## PS_Dict_Keys
 
@@ -768,7 +767,7 @@ An enumeration used in calls to <a href="../ft2-type1_tables/#ft_get_ps_font_val
 
 2.4.8
 
-<hr />
+<hr>
 
 ## T1_FontInfo
 
@@ -783,7 +782,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 This type is equivalent to <a href="../ft2-type1_tables/#ps_fontinforec">PS_FontInfoRec</a>. It is deprecated but kept to maintain source compatibility between various versions of FreeType.
 
-<hr />
+<hr>
 
 ## T1_Private
 
@@ -798,7 +797,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 This type is equivalent to <a href="../ft2-type1_tables/#ps_privaterec">PS_PrivateRec</a>. It is deprecated but kept to maintain source compatibility between various versions of FreeType.
 
-<hr />
+<hr>
 
 ## CID_FontDict
 
@@ -813,7 +812,7 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 This type is equivalent to <a href="../ft2-type1_tables/#cid_facedictrec">CID_FaceDictRec</a>. It is deprecated but kept to maintain source compatibility between various versions of FreeType.
 
-<hr />
+<hr>
 
 ## CID_Info
 
@@ -828,5 +827,5 @@ Defined in FT_TYPE1_TABLES_H (freetype/t1tables.h).
 
 This type is equivalent to <a href="../ft2-type1_tables/#cid_faceinforec">CID_FaceInfoRec</a>. It is deprecated but kept to maintain source compatibility between various versions of FreeType.
 
-<hr />
+<hr>
 

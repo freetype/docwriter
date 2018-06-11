@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # SFNT Names
 
 ## Synopsis
@@ -63,7 +62,7 @@ A structure used to model an SFNT &lsquo;name&rsquo; table entry.
 
 Please refer to the TrueType or OpenType specification for more details.
 
-<hr />
+<hr>
 
 ## FT_Get_Sfnt_Name_Count
 
@@ -94,7 +93,7 @@ The number of strings in the &lsquo;name&rsquo; table.
 
 This function always returns an error if the config macro &lsquo;TT_CONFIG_OPTION_SFNT_NAMES&rsquo; is not defined in &lsquo;ftoption.h&rsquo;.
 
-<hr />
+<hr>
 
 ## FT_Get_Sfnt_Name
 
@@ -143,7 +142,7 @@ Use <a href="../ft2-sfnt_names/#ft_get_sfnt_name_count">FT_Get_Sfnt_Name_Count</
 
 This function always returns an error if the config macro &lsquo;TT_CONFIG_OPTION_SFNT_NAMES&rsquo; is not defined in &lsquo;ftoption.h&rsquo;.
 
-<hr />
+<hr>
 
 ## FT_SfntLangTag
 
@@ -181,7 +180,7 @@ Please refer to the TrueType or OpenType specification for more details.
 
 2.8
 
-<hr />
+<hr>
 
 ## FT_Get_Sfnt_LangTag
 
@@ -232,5 +231,5 @@ This function always returns an error if the config macro &lsquo;TT_CONFIG_OPTIO
 
 2.8
 
-<hr />
+<hr>
 

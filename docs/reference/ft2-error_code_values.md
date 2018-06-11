@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Error Code Values
 
 ## Synopsis
@@ -239,5 +238,5 @@ Macro &lsquo;FT_NOERRORDEF_&rsquo; defines &lsquo;FT_Err_Ok&rsquo;, which is alw
                 "Font glyphs corrupted or missing fields" )
 </pre>
 </div>
-<hr />
+<hr>
 

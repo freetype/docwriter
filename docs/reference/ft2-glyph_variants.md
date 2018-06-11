@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Unicode Variation Sequences
 
 ## Synopsis
@@ -66,7 +65,7 @@ This function is only meaningful if a) the font has a variation selector cmap su
 
 2.3.6
 
-<hr />
+<hr>
 
 ## FT_Face_GetCharVariantIsDefault
 
@@ -109,7 +108,7 @@ This function is only meaningful if the font has a variation selector cmap subta
 
 2.3.6
 
-<hr />
+<hr>
 
 ## FT_Face_GetVariantSelectors
 
@@ -144,7 +143,7 @@ The last item in the array is&nbsp;0; the array is owned by the <a href="../ft2-
 
 2.3.6
 
-<hr />
+<hr>
 
 ## FT_Face_GetVariantsOfChar
 
@@ -183,7 +182,7 @@ The last item in the array is&nbsp;0; the array is owned by the <a href="../ft2-
 
 2.3.6
 
-<hr />
+<hr>
 
 ## FT_Face_GetCharsOfVariant
 
@@ -222,5 +221,5 @@ The last item in the array is&nbsp;0; the array is owned by the <a href="../ft2-
 
 2.3.6
 
-<hr />
+<hr>
 

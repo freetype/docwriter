@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # System Interface
 
 ## Synopsis
@@ -22,7 +21,7 @@ Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
 A handle to a given memory manager object, defined with an <a href="../ft2-system_interface/#ft_memoryrec">FT_MemoryRec</a> structure.
 
-<hr />
+<hr>
 
 ## FT_Alloc_Func
 
@@ -53,7 +52,7 @@ A function used to allocate &lsquo;size&rsquo; bytes from &lsquo;memory&rsquo;.
 
 Address of new memory block. 0&nbsp;in case of failure.
 
-<hr />
+<hr>
 
 ## FT_Free_Func
 
@@ -80,7 +79,7 @@ A function used to release a given block of memory.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Realloc_Func
 
@@ -123,7 +122,7 @@ New block address. 0&nbsp;in case of memory shortage.
 
 In case of error, the old block must still be available.
 
-<hr />
+<hr>
 
 ## FT_MemoryRec
 
@@ -160,7 +159,7 @@ A structure used to describe a given memory manager to FreeType&nbsp;2.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Stream
 
@@ -179,7 +178,7 @@ A handle to an input stream.
 
 See <a href="../ft2-system_interface/#ft_streamrec">FT_StreamRec</a> for the publicly accessible fields of a given stream object.
 
-<hr />
+<hr>
 
 ## FT_StreamDesc
 
@@ -199,7 +198,7 @@ Defined in FT_SYSTEM_H (freetype/ftsystem.h).
 
 A union type used to store either a long or a pointer. This is used to store a file descriptor or a &lsquo;FILE*&rsquo; in an input stream.
 
-<hr />
+<hr>
 
 ## FT_Stream_IoFunc
 
@@ -242,7 +241,7 @@ The number of bytes effectively read by the stream.
 
 This function might be called to perform a seek or skip operation with a &lsquo;count&rsquo; of&nbsp;0. A non-zero return value then indicates an error.
 
-<hr />
+<hr>
 
 ## FT_Stream_CloseFunc
 
@@ -265,7 +264,7 @@ A function used to close a given input stream.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_StreamRec
 
@@ -330,5 +329,5 @@ A structure used to describe an input stream.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 

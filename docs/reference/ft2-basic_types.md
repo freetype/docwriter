@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Basic Data Types
 
 ## Synopsis
@@ -22,7 +21,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A simple typedef for the _unsigned_ char type.
 
-<hr />
+<hr>
 
 ## FT_Bytes
 
@@ -37,7 +36,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A typedef for constant memory areas.
 
-<hr />
+<hr>
 
 ## FT_Char
 
@@ -52,7 +51,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A simple typedef for the _signed_ char type.
 
-<hr />
+<hr>
 
 ## FT_Int
 
@@ -67,7 +66,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A typedef for the int type.
 
-<hr />
+<hr>
 
 ## FT_UInt
 
@@ -82,7 +81,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A typedef for the unsigned int type.
 
-<hr />
+<hr>
 
 ## FT_Int16
 
@@ -97,7 +96,7 @@ Defined in FT_CONFIG_CONFIG_H (freetype/config/ftconfig.h).
 
 A typedef for a 16bit signed integer type.
 
-<hr />
+<hr>
 
 ## FT_UInt16
 
@@ -112,7 +111,7 @@ Defined in FT_CONFIG_CONFIG_H (freetype/config/ftconfig.h).
 
 A typedef for a 16bit unsigned integer type.
 
-<hr />
+<hr>
 
 ## FT_Int32
 
@@ -127,7 +126,7 @@ Defined in FT_CONFIG_CONFIG_H (freetype/config/ftconfig.h).
 
 A typedef for a 32bit signed integer type. The size depends on the configuration.
 
-<hr />
+<hr>
 
 ## FT_UInt32
 
@@ -138,7 +137,7 @@ Defined in FT_CONFIG_CONFIG_H (freetype/config/ftconfig.h).
   <span class="keyword">typedef</span> <span class="keyword">unsigned</span> XXX  <b>FT_UInt32</b>;
 </pre>
 </div>
-<hr />
+<hr>
 
 ## FT_Int64
 
@@ -149,7 +148,7 @@ Defined in FT_CONFIG_CONFIG_H (freetype/config/ftconfig.h).
   <span class="keyword">typedef</span> <span class="keyword">signed</span> XXX  <b>FT_Int64</b>;
 </pre>
 </div>
-<hr />
+<hr>
 
 ## FT_UInt64
 
@@ -160,7 +159,7 @@ Defined in FT_CONFIG_CONFIG_H (freetype/config/ftconfig.h).
   <span class="keyword">typedef</span> <span class="keyword">unsigned</span> XXX  <b>FT_UInt64</b>;
 </pre>
 </div>
-<hr />
+<hr>
 
 ## FT_Short
 
@@ -175,7 +174,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A typedef for signed short.
 
-<hr />
+<hr>
 
 ## FT_UShort
 
@@ -190,7 +189,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A typedef for unsigned short.
 
-<hr />
+<hr>
 
 ## FT_Long
 
@@ -205,7 +204,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A typedef for signed long.
 
-<hr />
+<hr>
 
 ## FT_ULong
 
@@ -220,7 +219,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A typedef for unsigned long.
 
-<hr />
+<hr>
 
 ## FT_Bool
 
@@ -235,7 +234,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A typedef of unsigned char, used for simple booleans. As usual, values 1 and&nbsp;0 represent true and false, respectively.
 
-<hr />
+<hr>
 
 ## FT_Offset
 
@@ -250,7 +249,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 This is equivalent to the ANSI&nbsp;C &lsquo;size_t&rsquo; type, i.e., the largest _unsigned_ integer type used to express a file size or position, or a memory block size.
 
-<hr />
+<hr>
 
 ## FT_PtrDist
 
@@ -265,7 +264,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 This is equivalent to the ANSI&nbsp;C &lsquo;ptrdiff_t&rsquo; type, i.e., the largest _signed_ integer type used to express the distance between two pointers.
 
-<hr />
+<hr>
 
 ## FT_String
 
@@ -280,7 +279,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A simple typedef for the char type, usually used for strings.
 
-<hr />
+<hr>
 
 ## FT_Tag
 
@@ -295,7 +294,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A typedef for 32-bit tags (as used in the SFNT format).
 
-<hr />
+<hr>
 
 ## FT_Error
 
@@ -310,7 +309,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 The FreeType error code type. A value of&nbsp;0 is always interpreted as a successful operation.
 
-<hr />
+<hr>
 
 ## FT_Fixed
 
@@ -325,7 +324,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 This type is used to store 16.16 fixed-point values, like scaling values or matrix coefficients.
 
-<hr />
+<hr>
 
 ## FT_Pointer
 
@@ -340,7 +339,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A simple typedef for a typeless pointer.
 
-<hr />
+<hr>
 
 ## FT_Pos
 
@@ -355,7 +354,7 @@ Defined in FT_IMAGE_H (freetype/ftimage.h).
 
 The type FT_Pos is used to store vectorial coordinates. Depending on the context, these can represent distances in integer font units, or 16.16, or 26.6 fixed-point pixel coordinates.
 
-<hr />
+<hr>
 
 ## FT_Vector
 
@@ -385,7 +384,7 @@ A simple structure used to store a 2D vector; coordinates are of the FT_Pos type
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_BBox
 
@@ -429,7 +428,7 @@ If &lsquo;yMin&rsquo; is negative, this value gives the glyph's descender. Other
 
 &lsquo;xMin&rsquo; gives the horizontal distance from the glyph's origin to the left edge of the glyph's bounding box. If &lsquo;xMin&rsquo; is negative, the glyph extends to the left of the origin.
 
-<hr />
+<hr>
 
 ## FT_Matrix
 
@@ -469,7 +468,7 @@ A simple structure used to store a 2x2 matrix. Coefficients are in 16.16 fixed-p
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_FWord
 
@@ -484,7 +483,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A signed 16-bit integer used to store a distance in original font units.
 
-<hr />
+<hr>
 
 ## FT_UFWord
 
@@ -499,7 +498,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 An unsigned 16-bit integer used to store a distance in original font units.
 
-<hr />
+<hr>
 
 ## FT_F2Dot14
 
@@ -514,7 +513,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A signed 2.14 fixed-point type used for unit vectors.
 
-<hr />
+<hr>
 
 ## FT_UnitVector
 
@@ -544,7 +543,7 @@ A simple structure used to store a 2D vector unit vector. Uses FT_F2Dot14 types.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_F26Dot6
 
@@ -559,7 +558,7 @@ Defined in FT_TYPES_H (freetype/fttypes.h).
 
 A signed 26.6 fixed-point type used for vectorial pixel coordinates.
 
-<hr />
+<hr>
 
 ## FT_Data
 
@@ -589,7 +588,7 @@ Read-only binary data represented as a pointer and a length.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_MAKE_TAG
 
@@ -613,7 +612,7 @@ This macro converts four-letter tags that are used to label TrueType tables into
 
 The produced values **must** be 32-bit integers. Don't redefine this macro.
 
-<hr />
+<hr>
 
 ## FT_Generic
 
@@ -647,7 +646,7 @@ It can be used to store a pointer to client-specific data, as well as the addres
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Generic_Finalizer
 
@@ -666,7 +665,7 @@ Describe a function used to destroy the &lsquo;client&rsquo; data of any FreeTyp
 
 The address of the FreeType object that is under finalization. Its client data is accessed through its &lsquo;generic&rsquo; field.
 
-<hr />
+<hr>
 
 ## FT_Bitmap
 
@@ -723,7 +722,7 @@ A structure used to describe a bitmap or pixmap to the raster. Note that we now 
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Pixel_Mode
 
@@ -788,7 +787,7 @@ An enumeration type used to describe the format of pixels in a given bitmap. Not
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Glyph_Format
 
@@ -840,7 +839,7 @@ An enumeration type used to describe the format of a given glyph image. Note tha
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_IMAGE_TAG
 
@@ -870,5 +869,5 @@ Since many 16-bit compilers don't like 32-bit enumerations, you should redefine 
 
 to get a simple enumeration without assigning special numbers.
 
-<hr />
+<hr>
 

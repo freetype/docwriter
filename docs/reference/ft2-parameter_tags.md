@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Parameter Tags
 
 ## Synopsis
@@ -31,7 +30,7 @@ A tag for <a href="../ft2-base_interface/#ft_parameter">FT_Parameter</a> to make
 
 2.8
 
-<hr />
+<hr>
 
 ## FT_PARAM_TAG_IGNORE_TYPOGRAPHIC_SUBFAMILY
 
@@ -55,7 +54,7 @@ A tag for <a href="../ft2-base_interface/#ft_parameter">FT_Parameter</a> to make
 
 2.8
 
-<hr />
+<hr>
 
 ## FT_PARAM_TAG_INCREMENTAL
 
@@ -70,7 +69,7 @@ A tag for <a href="../ft2-base_interface/#ft_parameter">FT_Parameter</a> to make
 
 An <a href="../ft2-base_interface/#ft_parameter">FT_Parameter</a> tag to be used with <a href="../ft2-base_interface/#ft_open_face">FT_Open_Face</a> to indicate incremental glyph loading.
 
-<hr />
+<hr>
 
 ## FT_PARAM_TAG_LCD_FILTER_WEIGHTS
 
@@ -89,7 +88,7 @@ An <a href="../ft2-base_interface/#ft_parameter">FT_Parameter</a> tag to be used
 
 2.8
 
-<hr />
+<hr>
 
 ## FT_PARAM_TAG_RANDOM_SEED
 
@@ -108,7 +107,7 @@ An <a href="../ft2-base_interface/#ft_parameter">FT_Parameter</a> tag to be used
 
 2.8
 
-<hr />
+<hr>
 
 ## FT_PARAM_TAG_STEM_DARKENING
 
@@ -129,7 +128,7 @@ This is a passive setting that only takes effect if the font driver or autohinte
 
 2.8
 
-<hr />
+<hr>
 
 ## FT_PARAM_TAG_UNPATENTED_HINTING
 
@@ -146,5 +145,5 @@ Deprecated, no effect.
 
 Previously: A constant used as the tag of an <a href="../ft2-base_interface/#ft_parameter">FT_Parameter</a> structure to indicate that unpatented methods only should be used by the TrueType bytecode interpreter for a typeface opened by <a href="../ft2-base_interface/#ft_open_face">FT_Open_Face</a>.
 
-<hr />
+<hr>
 

@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Computations
 
 ## Synopsis
@@ -44,7 +43,7 @@ This function isn't necessarily as fast as some processor specific operations, b
 
 The result of &lsquo;(a*b)/c&rsquo;. This function never traps when trying to divide by zero; it simply returns &lsquo;MaxInt&rsquo; or &lsquo;MinInt&rsquo; depending on the signs of &lsquo;a&rsquo; and &lsquo;b&rsquo;.
 
-<hr />
+<hr>
 
 ## FT_MulFix
 
@@ -81,7 +80,7 @@ This function has been optimized for the case where the absolute value of &lsquo
 
 As a conclusion, always try to place a 16.16 factor as the _second_ argument of this function; this can make a great difference.
 
-<hr />
+<hr>
 
 ## FT_DivFix
 
@@ -112,7 +111,7 @@ Compute &lsquo;(a*0x10000)/b&rsquo; with maximum accuracy. Its main use is to di
 
 The result of &lsquo;(a*0x10000)/b&rsquo;.
 
-<hr />
+<hr>
 
 ## FT_RoundFix
 
@@ -143,7 +142,7 @@ Round a 16.16 fixed number.
 
 The function uses wrap-around arithmetic.
 
-<hr />
+<hr>
 
 ## FT_CeilFix
 
@@ -174,7 +173,7 @@ Compute the smallest following integer of a 16.16 fixed number.
 
 The function uses wrap-around arithmetic.
 
-<hr />
+<hr>
 
 ## FT_FloorFix
 
@@ -201,7 +200,7 @@ Compute the largest previous integer of a 16.16 fixed number.
 
 &lsquo;a&rsquo; rounded towards minus infinity.
 
-<hr />
+<hr>
 
 ## FT_Vector_Transform
 
@@ -236,7 +235,7 @@ Transform a single vector through a 2x2 matrix.
 
 The result is undefined if either &lsquo;vector&rsquo; or &lsquo;matrix&rsquo; is invalid.
 
-<hr />
+<hr>
 
 ## FT_Matrix_Multiply
 
@@ -273,7 +272,7 @@ The result is undefined if either &lsquo;a&rsquo; or &lsquo;b&rsquo; is zero.
 
 Since the function uses wrap-around arithmetic, results become meaningless if the arguments are very large.
 
-<hr />
+<hr>
 
 ## FT_Matrix_Invert
 
@@ -300,7 +299,7 @@ Invert a 2x2 matrix. Return an error if it can't be inverted.
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Angle
 
@@ -315,7 +314,7 @@ Defined in FT_TRIGONOMETRY_H (freetype/fttrigon.h).
 
 This type is used to model angle values in FreeType. Note that the angle is a 16.16 fixed-point value expressed in degrees.
 
-<hr />
+<hr>
 
 ## FT_ANGLE_PI
 
@@ -330,7 +329,7 @@ Defined in FT_TRIGONOMETRY_H (freetype/fttrigon.h).
 
 The angle pi expressed in <a href="../ft2-computations/#ft_angle">FT_Angle</a> units.
 
-<hr />
+<hr>
 
 ## FT_ANGLE_2PI
 
@@ -345,7 +344,7 @@ Defined in FT_TRIGONOMETRY_H (freetype/fttrigon.h).
 
 The angle 2*pi expressed in <a href="../ft2-computations/#ft_angle">FT_Angle</a> units.
 
-<hr />
+<hr>
 
 ## FT_ANGLE_PI2
 
@@ -360,7 +359,7 @@ Defined in FT_TRIGONOMETRY_H (freetype/fttrigon.h).
 
 The angle pi/2 expressed in <a href="../ft2-computations/#ft_angle">FT_Angle</a> units.
 
-<hr />
+<hr>
 
 ## FT_ANGLE_PI4
 
@@ -375,7 +374,7 @@ Defined in FT_TRIGONOMETRY_H (freetype/fttrigon.h).
 
 The angle pi/4 expressed in <a href="../ft2-computations/#ft_angle">FT_Angle</a> units.
 
-<hr />
+<hr>
 
 ## FT_Sin
 
@@ -406,7 +405,7 @@ The sinus value.
 
 If you need both the sinus and cosinus for a given angle, use the function <a href="../ft2-computations/#ft_vector_unit">FT_Vector_Unit</a>.
 
-<hr />
+<hr>
 
 ## FT_Cos
 
@@ -437,7 +436,7 @@ The cosinus value.
 
 If you need both the sinus and cosinus for a given angle, use the function <a href="../ft2-computations/#ft_vector_unit">FT_Vector_Unit</a>.
 
-<hr />
+<hr>
 
 ## FT_Tan
 
@@ -464,7 +463,7 @@ Return the tangent of a given angle in fixed-point format.
 
 The tangent value.
 
-<hr />
+<hr>
 
 ## FT_Atan2
 
@@ -495,7 +494,7 @@ Return the arc-tangent corresponding to a given vector (x,y) in the 2d plane.
 
 The arc-tangent value (i.e. angle).
 
-<hr />
+<hr>
 
 ## FT_Angle_Diff
 
@@ -526,7 +525,7 @@ Return the difference between two angles. The result is always constrained to th
 
 Constrained value of &lsquo;value2-value1&rsquo;.
 
-<hr />
+<hr>
 
 ## FT_Vector_Unit
 
@@ -559,7 +558,7 @@ This function is useful to retrieve both the sinus and cosinus of a given angle 
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Vector_Rotate
 
@@ -590,7 +589,7 @@ Rotate a vector by a given angle.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Vector_Length
 
@@ -617,7 +616,7 @@ Return the length of a given vector.
 
 The vector length, expressed in the same units that the original vector coordinates.
 
-<hr />
+<hr>
 
 ## FT_Vector_Polarize
 
@@ -652,7 +651,7 @@ Compute both the length and angle of a given vector.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Vector_From_Polar
 
@@ -687,5 +686,5 @@ Compute vector coordinates from a length and angle.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 

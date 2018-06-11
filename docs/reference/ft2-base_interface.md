@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Base Interface
 
 ## Synopsis
@@ -30,7 +29,7 @@ In multi-threaded applications it is easiest to use one &lsquo;FT_Library&rsquo;
 
 Library objects are normally created by <a href="../ft2-base_interface/#ft_init_freetype">FT_Init_FreeType</a>, and destroyed with <a href="../ft2-base_interface/#ft_done_freetype">FT_Done_FreeType</a>. If you need reference-counting (cf. <a href="../ft2-module_management/#ft_reference_library">FT_Reference_Library</a>), use <a href="../ft2-module_management/#ft_new_library">FT_New_Library</a> and <a href="../ft2-module_management/#ft_done_library">FT_Done_Library</a>.
 
-<hr />
+<hr>
 
 ## FT_Face
 
@@ -59,7 +58,7 @@ An &lsquo;FT_Face&rsquo; object can only be safely used from one thread at a tim
 
 See <a href="../ft2-base_interface/#ft_facerec">FT_FaceRec</a> for the publicly accessible fields of a given face object.
 
-<hr />
+<hr>
 
 ## FT_Size
 
@@ -86,7 +85,7 @@ You can use <a href="../ft2-sizes_management/#ft_new_size">FT_New_Size</a> to cr
 
 See <a href="../ft2-base_interface/#ft_sizerec">FT_SizeRec</a> for the publicly accessible fields of a given size object.
 
-<hr />
+<hr>
 
 ## FT_GlyphSlot
 
@@ -107,7 +106,7 @@ In other words, each time you call <a href="../ft2-base_interface/#ft_load_glyph
 
 See <a href="../ft2-base_interface/#ft_glyphslotrec">FT_GlyphSlotRec</a> for the publicly accessible glyph fields.
 
-<hr />
+<hr>
 
 ## FT_CharMap
 
@@ -136,7 +135,7 @@ When a new face is created (either through <a href="../ft2-base_interface/#ft_ne
 
 See <a href="../ft2-base_interface/#ft_charmaprec">FT_CharMapRec</a> for the publicly accessible fields of a given character map.
 
-<hr />
+<hr>
 
 ## FT_Encoding
 
@@ -285,7 +284,7 @@ If &lsquo;platform_id&rsquo; is <a href="../ft2-truetype_tables/#tt_platform_xxx
 
 to get an idea how to do that. Basically, if the language ID is&nbsp;0, don't use it, otherwise subtract 1 from the language ID. Then examine &lsquo;encoding_id&rsquo;. If, for example, &lsquo;encoding_id&rsquo; is &lsquo;TT_MAC_ID_ROMAN&rsquo; and the language ID (minus&nbsp;1) is &lsquo;TT_MAC_LANGID_GREEK&rsquo;, it is the Greek encoding, not Roman. &lsquo;TT_MAC_ID_ARABIC&rsquo; with &lsquo;TT_MAC_LANGID_FARSI&rsquo; means the Farsi variant the Arabic encoding.
 
-<hr />
+<hr>
 
 ## FT_ENC_TAG
 
@@ -316,7 +315,7 @@ Since many 16-bit compilers don't like 32-bit enumerations, you should redefine 
 
 to get a simple enumeration without assigning special numbers.
 
-<hr />
+<hr>
 
 ## FT_FaceRec
 
@@ -480,7 +479,7 @@ For an OpenType variation font, the values of the following fields can change af
 
 Especially for TrueType fonts see also the documentation for <a href="../ft2-base_interface/#ft_size_metrics">FT_Size_Metrics</a>.
 
-<hr />
+<hr>
 
 ## FT_HAS_HORIZONTAL
 
@@ -500,7 +499,7 @@ A macro that returns true whenever a face object contains horizontal metrics (th
 
 <a href="../ft2-base_interface/#ft_has_vertical">FT_HAS_VERTICAL</a> can be used to check for vertical metrics.
 
-<hr />
+<hr>
 
 ## FT_HAS_VERTICAL
 
@@ -516,7 +515,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A macro that returns true whenever a face object contains real vertical metrics (and not only synthesized ones).
 
-<hr />
+<hr>
 
 ## FT_HAS_KERNING
 
@@ -532,7 +531,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A macro that returns true whenever a face object contains kerning data that can be accessed with <a href="../ft2-base_interface/#ft_get_kerning">FT_Get_Kerning</a>.
 
-<hr />
+<hr>
 
 ## FT_HAS_FIXED_SIZES
 
@@ -548,7 +547,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A macro that returns true whenever a face object contains some embedded bitmaps. See the &lsquo;available_sizes&rsquo; field of the <a href="../ft2-base_interface/#ft_facerec">FT_FaceRec</a> structure.
 
-<hr />
+<hr>
 
 ## FT_HAS_GLYPH_NAMES
 
@@ -564,7 +563,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A macro that returns true whenever a face object contains some glyph names that can be accessed through <a href="../ft2-base_interface/#ft_get_glyph_name">FT_Get_Glyph_Name</a>.
 
-<hr />
+<hr>
 
 ## FT_HAS_COLOR
 
@@ -584,7 +583,7 @@ A macro that returns true whenever a face object contains tables for color glyph
 
 2.5.1
 
-<hr />
+<hr>
 
 ## FT_HAS_MULTIPLE_MASTERS
 
@@ -600,7 +599,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A macro that returns true whenever a face object contains some multiple masters. The functions provided by <a href="../ft2-header_file_macros/#ft_multiple_masters_h">FT_MULTIPLE_MASTERS_H</a> are then available to choose the exact design you want.
 
-<hr />
+<hr>
 
 ## FT_IS_SFNT
 
@@ -618,7 +617,7 @@ A macro that returns true whenever a face object contains a font whose format is
 
 If this macro is true, all functions defined in <a href="../ft2-header_file_macros/#ft_sfnt_names_h">FT_SFNT_NAMES_H</a> and <a href="../ft2-header_file_macros/#ft_truetype_tables_h">FT_TRUETYPE_TABLES_H</a> are available.
 
-<hr />
+<hr>
 
 ## FT_IS_SCALABLE
 
@@ -634,7 +633,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A macro that returns true whenever a face object contains a scalable font face (true for TrueType, Type&nbsp;1, Type&nbsp;42, CID, OpenType/CFF, and PFR font formats).
 
-<hr />
+<hr>
 
 ## FT_IS_FIXED_WIDTH
 
@@ -650,7 +649,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A macro that returns true whenever a face object contains a font face that contains fixed-width (or &lsquo;monospace&rsquo;, &lsquo;fixed-pitch&rsquo;, etc.) glyphs.
 
-<hr />
+<hr>
 
 ## FT_IS_CID_KEYED
 
@@ -668,7 +667,7 @@ A macro that returns true whenever a face object contains a CID-keyed font. See 
 
 If this macro is true, all functions defined in <a href="../ft2-header_file_macros/#ft_cid_h">FT_CID_H</a> are available.
 
-<hr />
+<hr>
 
 ## FT_IS_TRICKY
 
@@ -684,7 +683,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A macro that returns true whenever a face represents a &lsquo;tricky&rsquo; font. See the discussion of <a href="../ft2-base_interface/#ft_face_flag_xxx">FT_FACE_FLAG_TRICKY</a> for more details.
 
-<hr />
+<hr>
 
 ## FT_IS_NAMED_INSTANCE
 
@@ -706,7 +705,7 @@ A macro that returns true whenever a face object is a named instance of a GX or 
 
 2.7
 
-<hr />
+<hr>
 
 ## FT_IS_VARIATION
 
@@ -726,7 +725,7 @@ A macro that returns true whenever a face object has been altered by <a href="..
 
 2.9
 
-<hr />
+<hr>
 
 ## FT_SizeRec
 
@@ -761,7 +760,7 @@ FreeType root size class structure. A size object models a face object at a give
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Size_Metrics
 
@@ -859,7 +858,7 @@ Here is some pseudo code that illustrates a possible solution.
   max_advance = size_metrics->max_advance;
 ```
 
-<hr />
+<hr>
 
 ## FT_GlyphSlotRec
 
@@ -1032,7 +1031,7 @@ Here is another small pseudo code fragment that shows how to use &lsquo;lsb_delt
 
 If you use strong auto-hinting, you **must** apply these delta values! Otherwise you will experience far too large inter-glyph spacing at small rendering sizes in most cases. Note that it doesn't harm to use the above code for other hinting modes also, since the delta values are zero then.
 
-<hr />
+<hr>
 
 ## FT_Glyph_Metrics
 
@@ -1096,7 +1095,7 @@ Stroking a glyph with an outside border does not increase &lsquo;horiAdvance&rsq
 
 FreeType doesn't use the &lsquo;VORG&rsquo; table data for CFF fonts because it doesn't have an interface to quickly retrieve the glyph height. The y&nbsp;coordinate of the vertical origin can be simply computed as &lsquo;vertBearingY + height&rsquo; after loading a glyph.
 
-<hr />
+<hr>
 
 ## FT_SubGlyph
 
@@ -1117,7 +1116,7 @@ The subglyph implementation is not part of the high-level API, hence the forward
 
 You can however retrieve subglyph information with <a href="../ft2-base_interface/#ft_get_subglyph_info">FT_Get_SubGlyph_Info</a>.
 
-<hr />
+<hr>
 
 ## FT_Bitmap_Size
 
@@ -1167,7 +1166,7 @@ Windows FNT: The nominal size given in a FNT font is not reliable. If the driver
 
 TrueType embedded bitmaps: &lsquo;size&rsquo;, &lsquo;width&rsquo;, and &lsquo;height&rsquo; values are not contained in the bitmap strike itself. They are computed from the global font parameters.
 
-<hr />
+<hr>
 
 ## FT_Init_FreeType
 
@@ -1204,7 +1203,7 @@ If you need reference-counting (cf. <a href="../ft2-module_management/#ft_refere
 
 If compilation option FT_CONFIG_OPTION_ENVIRONMENT_PROPERTIES is set, this function reads the &lsquo;FREETYPE_PROPERTIES&rsquo; environment variable to control driver properties. See section &lsquo;<a href="../ft2-properties/#properties">Driver properties</a>&rsquo; for more.
 
-<hr />
+<hr>
 
 ## FT_Done_FreeType
 
@@ -1231,7 +1230,7 @@ Destroy a given FreeType library object and all of its children, including resou
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_New_Face
 
@@ -1282,7 +1281,7 @@ FreeType error code. 0&nbsp;means success.
 
 Use <a href="../ft2-base_interface/#ft_done_face">FT_Done_Face</a> to destroy the created <a href="../ft2-base_interface/#ft_face">FT_Face</a> object (along with its slot and sizes).
 
-<hr />
+<hr>
 
 ## FT_Done_Face
 
@@ -1313,7 +1312,7 @@ FreeType error code. 0&nbsp;means success.
 
 See the discussion of reference counters in the description of <a href="../ft2-base_interface/#ft_reference_face">FT_Reference_Face</a>.
 
-<hr />
+<hr>
 
 ## FT_Reference_Face
 
@@ -1346,7 +1345,7 @@ FreeType error code. 0&nbsp;means success.
 
 2.4.2
 
-<hr />
+<hr>
 
 ## FT_New_Memory_Face
 
@@ -1401,7 +1400,7 @@ FreeType error code. 0&nbsp;means success.
 
 You must not deallocate the memory before calling <a href="../ft2-base_interface/#ft_done_face">FT_Done_Face</a>.
 
-<hr />
+<hr>
 
 ## FT_Face_Properties
 
@@ -1492,7 +1491,7 @@ The next example resets a single property to its default value.
 
 2.8
 
-<hr />
+<hr>
 
 ## FT_Open_Face
 
@@ -1612,7 +1611,7 @@ To loop over all valid values for &lsquo;face_index&rsquo;, use something simila
   } while ( face_idx < num_faces )
 ```
 
-<hr />
+<hr>
 
 ## FT_Open_Args
 
@@ -1682,7 +1681,7 @@ If the <a href="../ft2-base_interface/#ft_open_xxx">FT_OPEN_PARAMS</a> bit is se
 
 Ideally, both the &lsquo;pathname&rsquo; and &lsquo;params&rsquo; fields should be tagged as &lsquo;const&rsquo;; this is missing for API backward compatibility. In other words, applications should treat them as read-only.
 
-<hr />
+<hr>
 
 ## FT_Parameter
 
@@ -1716,7 +1715,7 @@ A simple structure to pass more or less generic parameters to <a href="../ft2-ba
 
 The ID and function of parameters are driver-specific. See section &lsquo;<a href="../ft2-parameter_tags/#parameter_tags">Parameter Tags</a>&rsquo; for more information.
 
-<hr />
+<hr>
 
 ## FT_Attach_File
 
@@ -1751,7 +1750,7 @@ Call <a href="../ft2-base_interface/#ft_attach_stream">FT_Attach_Stream</a> to a
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Attach_Stream
 
@@ -1792,7 +1791,7 @@ The meaning of the &lsquo;attach&rsquo; (i.e., what really happens when the new 
 
 Client applications are expected to know what they are doing when invoking this function. Most drivers simply do not implement file or stream attachments.
 
-<hr />
+<hr>
 
 ## FT_Set_Char_Size
 
@@ -1851,7 +1850,7 @@ A character width or height smaller than 1pt is set to 1pt; if both resolution v
 
 Don't use this function if you are using the FreeType cache API.
 
-<hr />
+<hr>
 
 ## FT_Set_Pixel_Sizes
 
@@ -1896,7 +1895,7 @@ You should not rely on the resulting glyphs matching or being constrained to thi
 
 Don't use this function if you are using the FreeType cache API.
 
-<hr />
+<hr>
 
 ## FT_Request_Size
 
@@ -1941,7 +1940,7 @@ Contrary to <a href="../ft2-base_interface/#ft_set_char_size">FT_Set_Char_Size</
 
 Don't use this function if you are using the FreeType cache API.
 
-<hr />
+<hr>
 
 ## FT_Select_Size
 
@@ -1984,7 +1983,7 @@ For GX and OpenType variation fonts, a bitmap strike makes sense only if the def
 
 Don't use this function if you are using the FreeType cache API.
 
-<hr />
+<hr>
 
 ## FT_Size_Request_Type
 
@@ -2035,7 +2034,7 @@ The above descriptions only apply to scalable formats. For bitmap formats, the b
 
 See the note section of <a href="../ft2-base_interface/#ft_size_metrics">FT_Size_Metrics</a> if you wonder how size requesting relates to scaling values.
 
-<hr />
+<hr>
 
 ## FT_Size_RequestRec
 
@@ -2083,7 +2082,7 @@ If &lsquo;width&rsquo; is zero, the horizontal scaling value is set equal to the
 
 If &lsquo;type&rsquo; is FT_SIZE_REQUEST_TYPE_SCALES, &lsquo;width&rsquo; and &lsquo;height&rsquo; are interpreted directly as 16.16 fractional scaling values, without any further modification, and both &lsquo;horiResolution&rsquo; and &lsquo;vertResolution&rsquo; are ignored.
 
-<hr />
+<hr>
 
 ## FT_Size_Request
 
@@ -2098,7 +2097,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A handle to a size request structure.
 
-<hr />
+<hr>
 
 ## FT_Set_Transform
 
@@ -2139,7 +2138,7 @@ The transformation is only applied to scalable image formats after the glyph has
 
 Note that this also transforms the &lsquo;face.glyph.advance&rsquo; field, but **not** the values in &lsquo;face.glyph.metrics&rsquo;.
 
-<hr />
+<hr>
 
 ## FT_Load_Glyph
 
@@ -2186,7 +2185,7 @@ For subsetted CID-keyed fonts, &lsquo;FT_Err_Invalid_Argument&rsquo; is returned
 
 If you receive &lsquo;FT_Err_Glyph_Too_Big&rsquo;, try getting the glyph outline at EM size, then scale it manually and fill it as a graphics operation.
 
-<hr />
+<hr>
 
 ## FT_Get_Char_Index
 
@@ -2221,7 +2220,7 @@ The glyph index. 0&nbsp;means &lsquo;undefined character code&rsquo;.
 
 If you use FreeType to manipulate the contents of font files directly, be aware that the glyph index returned by this function doesn't always correspond to the internal indices used within the file. This is done to ensure that value&nbsp;0 always corresponds to the &lsquo;missing glyph&rsquo;. If the first glyph is not named &lsquo;.notdef&rsquo;, then for Type&nbsp;1 and Type&nbsp;42 fonts, &lsquo;.notdef&rsquo; will be moved into the glyph ID&nbsp;0 position, and whatever was there will be moved to the position &lsquo;.notdef&rsquo; had. For Type&nbsp;1 fonts, if there is no &lsquo;.notdef&rsquo; glyph at all, then one will be created at index&nbsp;0 and whatever was there will be moved to the last index -- Type&nbsp;42 fonts are considered invalid under this condition.
 
-<hr />
+<hr>
 
 ## FT_Get_First_Char
 
@@ -2277,7 +2276,7 @@ Be aware that character codes can have values up to 0xFFFFFFFF; this might happe
 
 Note that &lsquo;*agindex&rsquo; is set to&nbsp;0 if the charmap is empty. The result itself can be&nbsp;0 in two cases: if the charmap is empty or if the value&nbsp;0 is the first valid character code.
 
-<hr />
+<hr>
 
 ## FT_Get_Next_Char
 
@@ -2322,7 +2321,7 @@ You should use this function with <a href="../ft2-base_interface/#ft_get_first_c
 
 Note that &lsquo;*agindex&rsquo; is set to&nbsp;0 when there are no more codes in the charmap.
 
-<hr />
+<hr>
 
 ## FT_Get_Name_Index
 
@@ -2353,7 +2352,7 @@ Return the glyph index of a given glyph name.
 
 The glyph index. 0&nbsp;means &lsquo;undefined character code&rsquo;.
 
-<hr />
+<hr>
 
 ## FT_Load_Char
 
@@ -2400,7 +2399,7 @@ Many fonts contain glyphs that can't be loaded by this function since its glyph 
 
 If no active cmap is set up (i.e., &lsquo;face-&gt;charmap&rsquo; is zero), the call to <a href="../ft2-base_interface/#ft_get_char_index">FT_Get_Char_Index</a> is omitted, and the function behaves identically to <a href="../ft2-base_interface/#ft_load_glyph">FT_Load_Glyph</a>.
 
-<hr />
+<hr>
 
 ## FT_LOAD_TARGET_MODE
 
@@ -2415,7 +2414,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 Return the <a href="../ft2-base_interface/#ft_render_mode">FT_Render_Mode</a> corresponding to a given <a href="../ft2-base_interface/#ft_load_target_xxx">FT_LOAD_TARGET_XXX</a> value.
 
-<hr />
+<hr>
 
 ## FT_Render_Glyph
 
@@ -2482,7 +2481,7 @@ This process can cost performance. There is an approximation that does not need 
 
 **ATTENTION**: Linear blending is even more important when dealing with subpixel-rendered glyphs to prevent color-fringing! A subpixel-rendered glyph must first be filtered with a filter that gives equal weight to the three color primaries and does not exceed a sum of 0x100, see section &lsquo;<a href="../ft2-lcd_rendering/#lcd_rendering">Subpixel Rendering</a>&rsquo;. Then the only difference to gray linear blending is that subpixel-rendered linear blending is done 3&nbsp;times per pixel: red foreground subpixel to red background subpixel and so on for green and blue.
 
-<hr />
+<hr>
 
 ## FT_Render_Mode
 
@@ -2542,7 +2541,7 @@ Should you define FT_CONFIG_OPTION_SUBPIXEL_RENDERING in your &lsquo;ftoption.h&
 
 The selected render mode only affects vector glyphs of a font. Embedded bitmaps often have a different pixel mode like <a href="../ft2-basic_types/#ft_pixel_mode">FT_PIXEL_MODE_MONO</a>. You can use <a href="../ft2-bitmap_handling/#ft_bitmap_convert">FT_Bitmap_Convert</a> to transform them into 8-bit pixmaps.
 
-<hr />
+<hr>
 
 ## FT_Get_Kerning
 
@@ -2595,7 +2594,7 @@ Only horizontal layouts (left-to-right &amp; right-to-left) are supported by thi
 
 Kerning for OpenType fonts implemented in a &lsquo;GPOS&rsquo; table is not supported; use <a href="../ft2-base_interface/#ft_has_kerning">FT_HAS_KERNING</a> to find out whether a font has data that can be extracted with &lsquo;FT_Get_Kerning&rsquo;.
 
-<hr />
+<hr>
 
 ## FT_Kerning_Mode
 
@@ -2642,7 +2641,7 @@ FT_KERNING_DEFAULT returns full pixel values; it also makes FreeType heuristical
 
 Both FT_KERNING_DEFAULT and FT_KERNING_UNFITTED use the current horizontal scaling factor (as set e.g. with <a href="../ft2-base_interface/#ft_set_char_size">FT_Set_Char_Size</a>) to convert font units to pixels.
 
-<hr />
+<hr>
 
 ## FT_Get_Track_Kerning
 
@@ -2691,7 +2690,7 @@ Currently, only the Type&nbsp;1 font driver supports track kerning, using data f
 
 Only very few AFM files come with track kerning data; please refer to Adobe's AFM specification for more details.
 
-<hr />
+<hr>
 
 ## FT_Get_Glyph_Name
 
@@ -2744,7 +2743,7 @@ Be aware that FreeType reorders glyph indices internally so that glyph index&nbs
 
 This function always returns an error if the config macro &lsquo;FT_CONFIG_OPTION_NO_GLYPH_NAMES&rsquo; is not defined in &lsquo;ftoption.h&rsquo;.
 
-<hr />
+<hr>
 
 ## FT_Get_Postscript_Name
 
@@ -2781,7 +2780,7 @@ For variation fonts, this string changes if you select a different instance, and
 
 [Since 2.9] Special PostScript names for named instances are only returned if the named instance is set with <a href="../ft2-multiple_masters/#ft_set_named_instance">FT_Set_Named_Instance</a> (and the font has corresponding entries in its &lsquo;fvar&rsquo; table). If <a href="../ft2-base_interface/#ft_is_variation">FT_IS_VARIATION</a> returns true, the algorithmically derived PostScript name is provided, not looking up special entries for named instances.
 
-<hr />
+<hr>
 
 ## FT_CharMapRec
 
@@ -2819,7 +2818,7 @@ The base charmap structure.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Select_Charmap
 
@@ -2860,7 +2859,7 @@ This function returns an error if no charmap in the face corresponds to the enco
 
 Because many fonts contain more than a single cmap for Unicode encoding, this function has some special code to select the one that covers Unicode best (&lsquo;best&rsquo; in the sense that a UCS-4 cmap is preferred to a UCS-2 cmap). It is thus preferable to <a href="../ft2-base_interface/#ft_set_charmap">FT_Set_Charmap</a> in this case.
 
-<hr />
+<hr>
 
 ## FT_Set_Charmap
 
@@ -2901,7 +2900,7 @@ This function returns an error if the charmap is not part of the face (i.e., if 
 
 It also fails if an OpenType type&nbsp;14 charmap is selected (which doesn't map character codes to glyph indices at all).
 
-<hr />
+<hr>
 
 ## FT_Get_Charmap_Index
 
@@ -2928,7 +2927,7 @@ Retrieve index of a given charmap.
 
 The index into the array of character maps within the face to which &lsquo;charmap&rsquo; belongs. If an error occurs, -1 is returned.
 
-<hr />
+<hr>
 
 ## FT_Get_FSType_Flags
 
@@ -2963,7 +2962,7 @@ Use this function rather than directly reading the &lsquo;fs_type&rsquo; field i
 
 2.3.8
 
-<hr />
+<hr>
 
 ## FT_Get_SubGlyph_Info
 
@@ -3022,7 +3021,7 @@ FreeType error code. 0&nbsp;means success.
 
 The values of &lsquo;*p_arg1&rsquo;, &lsquo;*p_arg2&rsquo;, and &lsquo;*p_transform&rsquo; must be interpreted depending on the flags returned in &lsquo;*p_flags&rsquo;. See the OpenType specification for details.
 
-<hr />
+<hr>
 
 ## FT_Face_Internal
 
@@ -3039,7 +3038,7 @@ An opaque handle to an &lsquo;FT_Face_InternalRec&rsquo; structure that models t
 
 This structure might change between releases of FreeType&nbsp;2 and is not generally available to client applications.
 
-<hr />
+<hr>
 
 ## FT_Size_Internal
 
@@ -3054,7 +3053,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 An opaque handle to an &lsquo;FT_Size_InternalRec&rsquo; structure, used to model private data of a given <a href="../ft2-base_interface/#ft_size">FT_Size</a> object.
 
-<hr />
+<hr>
 
 ## FT_Slot_Internal
 
@@ -3069,7 +3068,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 An opaque handle to an &lsquo;FT_Slot_InternalRec&rsquo; structure, used to model private data of a given <a href="../ft2-base_interface/#ft_glyphslot">FT_GlyphSlot</a> object.
 
-<hr />
+<hr>
 
 ## FT_FACE_FLAG_XXX
 
@@ -3155,7 +3154,7 @@ A list of bit flags used in the &lsquo;face_flags&rsquo; field of the <a href=".
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_STYLE_FLAG_XXX
 
@@ -3185,7 +3184,7 @@ A list of bit flags to indicate the style of a given face. These are used in the
 
 The style information as provided by FreeType is very basic. More details are beyond the scope and should be done on a higher level (for example, by analyzing various fields of the &lsquo;OS/2&rsquo; table in SFNT based fonts).
 
-<hr />
+<hr>
 
 ## FT_OPEN_XXX
 
@@ -3236,7 +3235,7 @@ A list of bit field constants used within the &lsquo;flags&rsquo; field of the <
 
 The &lsquo;FT_OPEN_MEMORY&rsquo;, &lsquo;FT_OPEN_STREAM&rsquo;, and &lsquo;FT_OPEN_PATHNAME&rsquo; flags are mutually exclusive.
 
-<hr />
+<hr>
 
 ## FT_LOAD_XXX
 
@@ -3357,7 +3356,7 @@ Besides deciding which hinter to use, you can also decide which hinting algorith
 
 Note that the auto-hinter needs a valid Unicode cmap (either a native one or synthesized by FreeType) for producing correct results. If a font provides an incorrect mapping (for example, assigning the character code U+005A, LATIN CAPITAL LETTER Z, to a glyph depicting a mathematical integral sign), the auto-hinter might produce useless results.
 
-<hr />
+<hr>
 
 ## FT_LOAD_TARGET_XXX
 
@@ -3417,7 +3416,7 @@ You can use a hinting algorithm that doesn't correspond to the same rendering mo
 
 In general, you should stick with one rendering mode. For example, switching between <a href="../ft2-base_interface/#ft_load_target_xxx">FT_LOAD_TARGET_NORMAL</a> and <a href="../ft2-base_interface/#ft_load_target_xxx">FT_LOAD_TARGET_MONO</a> enforces a lot of recomputation for TrueType fonts, which is slow. Another reason is caching: Selecting a different mode usually causes changes in both the outlines and the rasterized bitmaps; it is thus necessary to empty the cache after a mode switch to avoid false hits.
 
-<hr />
+<hr>
 
 ## FT_SUBGLYPH_FLAG_XXX
 
@@ -3463,7 +3462,7 @@ A list of constants describing subglyphs. Please refer to the &lsquo;glyf&rsquo;
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_FSTYPE_XXX
 
@@ -3513,7 +3512,7 @@ The flags are ORed together, thus more than a single value can be returned.
 
 While the &lsquo;fsType&rsquo; flags can indicate that a font may be embedded, a license with the font vendor may be separately required to use the font in this way.
 
-<hr />
+<hr>
 
 ## FT_HAS_FAST_GLYPHS
 
@@ -3528,7 +3527,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 Deprecated.
 
-<hr />
+<hr>
 
 ## FT_Glyph_Layer
 
@@ -3543,7 +3542,7 @@ Defined in FT_FREETYPE_H (freetype/freetype.h).
 
 A handle to an <a href="../ft2-base_interface/#ft_glyph_layerrec">FT_Glyph_LayerRec</a> structure to model a given colored glyph layer.
 
-<hr />
+<hr>
 
 ## FT_Glyph_LayerRec
 
@@ -3573,7 +3572,7 @@ This structure models a given colored glyph layer as defined in the OpenType &ls
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Get_GlyphLayers
 
@@ -3625,5 +3624,5 @@ This function is necessary if you want to handle glyph layers by yourself. In pa
 
 <a href="../ft2-base_interface/#ft_render_glyph">FT_Render_Glyph</a>, however, handles colored glyph layers automatically if the <a href="../ft2-base_interface/#ft_load_xxx">FT_LOAD_COLOR</a> flag is passed to it.
 
-<hr />
+<hr>
 

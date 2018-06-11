@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # CID Fonts
 
 ## Synopsis
@@ -58,7 +57,7 @@ This function only works with CID faces, returning an error otherwise.
 
 2.3.6
 
-<hr />
+<hr>
 
 ## FT_Get_CID_Is_Internally_CID_Keyed
 
@@ -101,7 +100,7 @@ This function only works with CID faces and OpenType fonts, returning an error o
 
 2.3.9
 
-<hr />
+<hr>
 
 ## FT_Get_CID_From_Glyph_Index
 
@@ -148,5 +147,5 @@ This function only works with CID faces and OpenType fonts, returning an error o
 
 2.3.9
 
-<hr />
+<hr>
 

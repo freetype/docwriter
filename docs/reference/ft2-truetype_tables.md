@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # TrueType Tables
 
 ## Synopsis
@@ -48,7 +47,7 @@ Defined in FT_TRUETYPE_TABLES_H (freetype/tttables.h).
 
 A structure to model a TrueType font header table. All fields follow the OpenType specification.
 
-<hr />
+<hr>
 
 ## TT_HoriHeader
 
@@ -151,7 +150,7 @@ A structure to model a TrueType horizontal header, the &lsquo;hhea&rsquo; table,
 
 For an OpenType variation font, the values of the following fields can change after a call to <a href="../ft2-multiple_masters/#ft_set_var_design_coordinates">FT_Set_Var_Design_Coordinates</a> (and friends) if the font contains an &lsquo;MVAR&rsquo; table: &lsquo;caret_Slope_Rise&rsquo;, &lsquo;caret_Slope_Run&rsquo;, and &lsquo;caret_Offset&rsquo;.
 
-<hr />
+<hr>
 
 ## TT_VertHeader
 
@@ -254,7 +253,7 @@ A structure used to model a TrueType vertical header, the &lsquo;vhea&rsquo; tab
 
 For an OpenType variation font, the values of the following fields can change after a call to <a href="../ft2-multiple_masters/#ft_set_var_design_coordinates">FT_Set_Var_Design_Coordinates</a> (and friends) if the font contains an &lsquo;MVAR&rsquo; table: &lsquo;Ascender&rsquo;, &lsquo;Descender&rsquo;, &lsquo;Line_Gap&rsquo;, &lsquo;caret_Slope_Rise&rsquo;, &lsquo;caret_Slope_Run&rsquo;, and &lsquo;caret_Offset&rsquo;.
 
-<hr />
+<hr>
 
 ## TT_OS2
 
@@ -332,7 +331,7 @@ For an OpenType variation font, the values of the following fields can change af
 
 Possible values for bits in the &lsquo;ulUnicodeRangeX&rsquo; fields are given by the <a href="../ft2-truetype_tables/#tt_ucr_xxx">TT_UCR_XXX</a> macros.
 
-<hr />
+<hr>
 
 ## TT_Postscript
 
@@ -366,7 +365,7 @@ A structure to model a TrueType &lsquo;post&rsquo; table. All fields comply to t
 
 For an OpenType variation font, the values of the following fields can change after a call to <a href="../ft2-multiple_masters/#ft_set_var_design_coordinates">FT_Set_Var_Design_Coordinates</a> (and friends) if the font contains an &lsquo;MVAR&rsquo; table: &lsquo;underlinePosition&rsquo; and &lsquo;underlineThickness&rsquo;.
 
-<hr />
+<hr>
 
 ## TT_PCLT
 
@@ -399,7 +398,7 @@ Defined in FT_TRUETYPE_TABLES_H (freetype/tttables.h).
 
 A structure to model a TrueType &lsquo;PCLT&rsquo; table. All fields comply to the OpenType specification.
 
-<hr />
+<hr>
 
 ## TT_MaxProfile
 
@@ -485,7 +484,7 @@ The maximum profile (&lsquo;maxp&rsquo;) table contains many max values, which c
 
 This structure is only used during font loading.
 
-<hr />
+<hr>
 
 ## FT_Sfnt_Tag
 
@@ -547,7 +546,7 @@ An enumeration to specify indices of SFNT tables loaded and parsed by FreeType d
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Get_Sfnt_Table
 
@@ -595,7 +594,7 @@ Here an example how to access the &lsquo;vhea&rsquo; table:
     (TT_VertHeader*)FT_Get_Sfnt_Table( face, FT_SFNT_VHEA );
 ```
 
-<hr />
+<hr>
 
 ## FT_Load_Sfnt_Table
 
@@ -667,7 +666,7 @@ If you need to determine the table's length you should first call this function 
 
 Note that structures like <a href="../ft2-truetype_tables/#tt_header">TT_Header</a> or <a href="../ft2-truetype_tables/#tt_os2">TT_OS2</a> can't be used with this function; they are limited to <a href="../ft2-truetype_tables/#ft_get_sfnt_table">FT_Get_Sfnt_Table</a>. Reason is that those structures depend on the processor architecture, with varying size (e.g. 32bit vs. 64bit) or order (big endian vs. little endian).
 
-<hr />
+<hr>
 
 ## FT_Sfnt_Table_Info
 
@@ -718,7 +717,7 @@ FreeType error code. 0&nbsp;means success.
 
 While parsing fonts, FreeType handles SFNT tables with length zero as missing.
 
-<hr />
+<hr>
 
 ## FT_Get_CMap_Language_ID
 
@@ -747,7 +746,7 @@ The language ID of &lsquo;charmap&rsquo;. If &lsquo;charmap&rsquo; doesn't belon
 
 For a format&nbsp;14 cmap (to access Unicode IVS), the return value is 0xFFFFFFFF.
 
-<hr />
+<hr>
 
 ## FT_Get_CMap_Format
 
@@ -774,7 +773,7 @@ Return the format of an SFNT &lsquo;cmap&rsquo; table.
 
 The format of &lsquo;charmap&rsquo;. If &lsquo;charmap&rsquo; doesn't belong to an SFNT face, return -1.
 
-<hr />
+<hr>
 
 ## FT_PARAM_TAG_UNPATENTED_HINTING
 
@@ -791,7 +790,7 @@ Deprecated, no effect.
 
 Previously: A constant used as the tag of an <a href="../ft2-base_interface/#ft_parameter">FT_Parameter</a> structure to indicate that unpatented methods only should be used by the TrueType bytecode interpreter for a typeface opened by <a href="../ft2-base_interface/#ft_open_face">FT_Open_Face</a>.
 
-<hr />
+<hr>
 
 ## TT_PLATFORM_XXX
 
@@ -833,7 +832,7 @@ A list of valid values for the &lsquo;platform_id&rsquo; identifier code in <a h
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## TT_APPLE_ID_XXX
 
@@ -879,7 +878,7 @@ A list of valid values for the &lsquo;encoding_id&rsquo; for <a href="../ft2-tru
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## TT_MAC_ID_XXX
 
@@ -927,7 +926,7 @@ Defined in FT_TRUETYPE_IDS_H (freetype/ttnameid.h).
 
 A list of valid values for the &lsquo;encoding_id&rsquo; for <a href="../ft2-truetype_tables/#tt_platform_xxx">TT_PLATFORM_MACINTOSH</a> charmaps and name entries.
 
-<hr />
+<hr>
 
 ## TT_ISO_ID_XXX
 
@@ -959,7 +958,7 @@ Their use is now deprecated.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## TT_MS_ID_XXX
 
@@ -1012,7 +1011,7 @@ A list of valid values for the &lsquo;encoding_id&rsquo; for <a href="../ft2-tru
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## TT_ADOBE_ID_XXX
 
@@ -1046,7 +1045,7 @@ A list of valid values for the &lsquo;encoding_id&rsquo; for <a href="../ft2-tru
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## TT_MAC_LANGID_XXX
 
@@ -1186,7 +1185,7 @@ The canonical source for Apple's IDs is
 
 <https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6name.html>
 
-<hr />
+<hr>
 
 ## TT_MS_LANGID_XXX
 
@@ -1413,7 +1412,7 @@ however, we only provide macros for language identifiers present in the OpenType
 
 More legacy values not listed in the reference can be found in the <a href="../ft2-header_file_macros/#ft_truetype_ids_h">FT_TRUETYPE_IDS_H</a> header file.
 
-<hr />
+<hr>
 
 ## TT_NAME_ID_XXX
 
@@ -1469,7 +1468,7 @@ Defined in FT_TRUETYPE_IDS_H (freetype/ttnameid.h).
 
 Possible values of the &lsquo;name&rsquo; identifier field in the name records of an SFNT &lsquo;name&rsquo; table. These values are platform independent.
 
-<hr />
+<hr>
 
 ## TT_UCR_XXX
 
@@ -1852,5 +1851,5 @@ Defined in FT_TRUETYPE_IDS_H (freetype/ttnameid.h).
 
 Possible bit mask values for the &lsquo;ulUnicodeRangeX&rsquo; fields in an SFNT &lsquo;OS/2&rsquo; table.
 
-<hr />
+<hr>
 

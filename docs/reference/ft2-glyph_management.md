@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # Glyph Management
 
 ## Synopsis
@@ -26,7 +25,7 @@ Handle to an object used to model generic glyph images. It is a pointer to the <
 
 Glyph objects are not owned by the library. You must thus release them manually (through <a href="../ft2-glyph_management/#ft_done_glyph">FT_Done_Glyph</a>) _before_ calling <a href="../ft2-base_interface/#ft_done_freetype">FT_Done_FreeType</a>.
 
-<hr />
+<hr>
 
 ## FT_GlyphRec
 
@@ -64,7 +63,7 @@ The root glyph structure contains a given glyph image plus its advance width in 
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_BitmapGlyph
 
@@ -79,7 +78,7 @@ Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
 A handle to an object used to model a bitmap glyph image. This is a sub-class of <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>, and a pointer to <a href="../ft2-glyph_management/#ft_bitmapglyphrec">FT_BitmapGlyphRec</a>.
 
-<hr />
+<hr>
 
 ## FT_BitmapGlyphRec
 
@@ -123,7 +122,7 @@ You can typecast an <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a> to 
 
 The corresponding pixel buffer is always owned by <a href="../ft2-glyph_management/#ft_bitmapglyph">FT_BitmapGlyph</a> and is thus created and destroyed with it.
 
-<hr />
+<hr>
 
 ## FT_OutlineGlyph
 
@@ -138,7 +137,7 @@ Defined in FT_GLYPH_H (freetype/ftglyph.h).
 
 A handle to an object used to model an outline glyph image. This is a sub-class of <a href="../ft2-glyph_management/#ft_glyph">FT_Glyph</a>, and a pointer to <a href="../ft2-glyph_management/#ft_outlineglyphrec">FT_OutlineGlyphRec</a>.
 
-<hr />
+<hr>
 
 ## FT_OutlineGlyphRec
 
@@ -176,7 +175,7 @@ As the outline is extracted from a glyph slot, its coordinates are expressed nor
 
 The outline's tables are always owned by the object and are destroyed with it.
 
-<hr />
+<hr>
 
 ## FT_Get_Glyph
 
@@ -215,7 +214,7 @@ FreeType error code. 0&nbsp;means success.
 
 Because &lsquo;*aglyph-&gt;advance.x&rsquo; and '*aglyph-&gt;advance.y' are 16.16 fixed-point numbers, &lsquo;slot-&gt;advance.x&rsquo; and &lsquo;slot-&gt;advance.y&rsquo; (which are in 26.6 fixed-point format) must be in the range ]-32768;32768[.
 
-<hr />
+<hr>
 
 ## FT_Glyph_Copy
 
@@ -250,7 +249,7 @@ A function used to copy a glyph image. Note that the created <a href="../ft2-gly
 
 FreeType error code. 0&nbsp;means success.
 
-<hr />
+<hr>
 
 ## FT_Glyph_Transform
 
@@ -293,7 +292,7 @@ FreeType error code (if not 0, the glyph format is not scalable).
 
 The 2x2 transformation matrix is also applied to the glyph's advance vector.
 
-<hr />
+<hr>
 
 ## FT_Glyph_BBox_Mode
 
@@ -344,7 +343,7 @@ The mode how the values of <a href="../ft2-glyph_management/#ft_glyph_get_cbox">
 </td></tr>
 </table>
 
-<hr />
+<hr>
 
 ## FT_Glyph_Get_CBox
 
@@ -407,7 +406,7 @@ To get the bbox in pixel coordinates, set &lsquo;bbox_mode&rsquo; to <a href="..
 
 To get the bbox in grid-fitted pixel coordinates, set &lsquo;bbox_mode&rsquo; to <a href="../ft2-glyph_management/#ft_glyph_bbox_mode">FT_GLYPH_BBOX_PIXELS</a>.
 
-<hr />
+<hr>
 
 ## FT_Glyph_To_Bitmap
 
@@ -528,7 +527,7 @@ Here another example, again without error handling:
     FT_Done_Glyph( glyphs[idx] );
 ```
 
-<hr />
+<hr>
 
 ## FT_Done_Glyph
 
@@ -551,5 +550,5 @@ Destroy a given glyph.
 </td></tr>
 </table>
 
-<hr />
+<hr>
 

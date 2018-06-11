@@ -2,7 +2,6 @@
 
 -------------------------------
 
-
 # PFR Fonts
 
 ## Synopsis
@@ -58,7 +57,7 @@ FreeType error code. 0&nbsp;means success.
 
 If the input face is not a PFR, this function will return an error. However, in all cases, it will return valid values.
 
-<hr />
+<hr>
 
 ## FT_Get_PFR_Kerning
 
@@ -107,7 +106,7 @@ This function always return distances in original PFR metrics units. This is unl
 
 You can use the value of the &lsquo;x_scale&rsquo; and &lsquo;y_scale&rsquo; parameters returned by <a href="../ft2-pfr_fonts/#ft_get_pfr_metrics">FT_Get_PFR_Metrics</a> to scale these to device subpixels.
 
-<hr />
+<hr>
 
 ## FT_Get_PFR_Advance
 
@@ -150,5 +149,5 @@ FreeType error code. 0&nbsp;means success.
 
 You can use the &lsquo;x_scale&rsquo; or &lsquo;y_scale&rsquo; results of <a href="../ft2-pfr_fonts/#ft_get_pfr_metrics">FT_Get_PFR_Metrics</a> to convert the advance to device subpixels (i.e., 1/64th of pixels).
 
-<hr />
+<hr>
 
