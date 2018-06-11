@@ -18,12 +18,24 @@
 from sources import *
 from content import *
 from formatter import *
+import siteconfig
 
-import time
+import time, sys
+try:
+    import mistune
+except ImportError:
+    sys.stderr.write("Error: Could not find module 'mistune'. Please run"
+                     + "'pip install -r requirements.txt' to install.")
 
-import mistune
+#---------------------------------------------------------------
+# Begin initial configuration
 
-md_nav_separator = " &raquo; "
+# Docs Config.
+api_ref_text = "API Reference"
+docs_author  = "FreeType Contributors"
+
+# Breadcrumbs Navigation config.
+md_crumbs_separator = " &raquo; "
 
 md_header_1 = """\
 [Docs](ft2-index.md) &raquo; \
@@ -31,17 +43,27 @@ md_header_1 = """\
 
 md_line_sep = """
 
--------------------------------
+-------------------------------\
 
 """
 
-md_newline = "\n"
-
+# Heading Default Text.
 md_api_ref = """\
  API Reference
 """
 
+# Chapter header/inter/footer.
+chapter_header = """\
+## \
+"""
 
+chapter_footer = ''
+
+# Synopsis text
+section_synopsis_header = '''
+## Synopsis\
+'''
+section_synopsis_footer = ''
 
 # Description header/footer.
 description_header = ""
@@ -57,35 +79,32 @@ source_footer = """\
 </div>\
 """
 
-# Chapter header/inter/footer.
-chapter_header = """\
-## \
-"""
-
-md_h1 = "# "
-md_h2 = "## "
-md_h3 = "### "
-md_h4 = "<h4>"
-md_h4_inter = "</h4>"
-
-code_header = "```"
-code_footer = "```"
-
-# Paragraph header and footer.
-para_header = "<p>"
-para_footer = "</p>"
+code_header   = "```"
+code_header_c = "```c"
+code_footer   = "```"
 
 # Source language keyword coloration and styling.
 keyword_prefix = '<span class="keyword">'
 keyword_suffix = '</span>'
 
-# Source language keyword coloration and styling.
+# HTML paragraph header and footer.
+para_header = "<p>"
+para_footer = "</p>"
 
-section_synopsis_header = '''
-## Synopsis\
-'''
-section_synopsis_footer = ''
+# General Markdown.
+md_newline  = "\n"
+md_h1       = "# "
+md_h2       = "## "
+md_h3       = "### "
+md_h4       = "<h4>"
+md_h4_inter = "</h4>"
 
+md_hr = """\
+<hr>
+"""
+
+# End of initial configuration
+#---------------------------------------------------------------
 
 def  html_quote( line ):
     '''Change HTML special characters to their codes
@@ -108,20 +127,18 @@ class  HtmlFormatter( Formatter ):
     def  __init__( self, processor, project_title, file_prefix ):
         Formatter.__init__( self, processor )
 
-        global code_header, code_footer
-        global chapter_header
-        global keyword_prefix, keyword_suffix
-
         if file_prefix:
             file_prefix = file_prefix + "-"
         else:
             file_prefix = ""
 
-        self.headers       = processor.headers
-        self.project_title = project_title
-        self.file_prefix   = file_prefix
-        self.toc_filename  = self.file_prefix + "toc.md"
-        self.markdown      = mistune.Markdown()
+        self.headers        = processor.headers
+        self.project_title  = project_title
+        self.file_prefix    = file_prefix
+        self.toc_filename   = self.file_prefix + "toc.md"
+        self.index_filename = self.file_prefix + "index.md"
+        self.markdown       = mistune.Markdown()
+        self.config         = siteconfig.SiteConfig()
 
         self.html_header = (
             md_header_1 + "Global Index"
@@ -140,12 +157,29 @@ class  HtmlFormatter( Formatter ):
             + project_title + md_api_ref
         )
           
-        self.html_footer = (
+        self.time_footer = (
             '<div class="timestamp">generated on '
             + time.asctime( time.gmtime() ) + " UTC"
             + "</div>" )
 
         self.columns = 3
+
+        self.site_name        = project_title + " " + api_ref_text
+        self.site_description = api_ref_text + " Documentation for " + project_title
+        self.site_author      = docs_author
+
+        # Set site config
+        self.config.set_site_info( self.site_name, self.site_description,
+                                   self.site_author )
+        # Add toc and index
+        self.config.add_single_page( "TOC", self.toc_filename )
+        self.config.add_single_page( "Index", self.index_filename )
+
+    def normalize_url( self, url ):
+        # normalize url, following RFC 3986
+        url = url.replace( "[", "(" )
+        url = url.replace( "]", ")" )
+        return url
 
     def sluggify( self, name ):
         '''Sluggify a cross-reference
@@ -197,9 +231,8 @@ class  HtmlFormatter( Formatter ):
                 url   = self.make_block_url( block, code = True )
                 # display `foo[bar]' as `foo'
                 name = re.sub( r'\[.*\]', '', name )
-                # normalize url, following RFC 3986
-                url = url.replace( "[", "(" )
-                url = url.replace( "]", ")" )
+                # normalize url
+                url = self.normalize_url( url )
                 try:
                     # for sections, display title
                     url = ( '&lsquo;<a href="' + url + '">'
@@ -216,20 +249,6 @@ class  HtmlFormatter( Formatter ):
                 sys.stderr.write( "WARNING: undefined cross reference"
                                   + " '" + name + "'.\n" )
                 return '?' + name + '?' + rest
-
-        # handle markup for italic and bold
-        # NOTE Not required
-        # m = re_italic.match( word )
-        # if m:
-        #     name = m.group( 1 )
-        #     rest = m.group( 2 )
-        #     return '<i>' + name + '</i>' + rest
-
-        # m = re_bold.match( word )
-        # if m:
-        #     name = m.group( 1 )
-        #     rest = m.group( 2 )
-        #     return '<b>' + name + '</b>' + rest
 
         return html_quote( word )
 
@@ -295,7 +314,7 @@ class  HtmlFormatter( Formatter ):
         if field.name:
             print( "</td></tr></table>" )
 
-    def  html_source_quote( self, line, block_name = None ):
+    def  source_quote( self, line, block_name = None ):
         result = ""
         while line:
             m = re_source_crossref.match( line )
@@ -403,9 +422,8 @@ class  HtmlFormatter( Formatter ):
                     # display `foo[bar]' as `foo (bar)'
                     bname = bname.replace( "[", " (" )
                     bname = bname.replace( "]", ")"  )
-                    # normalize url, following RFC 3986
-                    url = url.replace( "[", "(" )
-                    url = url.replace( "]", ")" )
+                    # normalize url
+                    url = self.normalize_url( url )
                     line  = ( line + '<td><a href="' + url + '">'
                               + bname + '</a></td>' )
                 else:
@@ -415,12 +433,7 @@ class  HtmlFormatter( Formatter ):
 
         print( "</table>" )
 
-        # NOTE Not needed
-        # print( index_footer_start
-        #        + self.file_prefix + "toc.html"
-        #        + index_footer_end )
-
-        print( self.html_footer )
+        print( self.time_footer )
 
         self.index_items = {}
 
@@ -431,7 +444,8 @@ class  HtmlFormatter( Formatter ):
         Formatter.index_dump( self, index_filename )
 
     #
-    # formatting the table of contents
+    # Formatting the table of contents and
+    # config file for MkDocs.
     #
     def  toc_enter( self ):
         print( self.html_toc_header )
@@ -440,20 +454,27 @@ class  HtmlFormatter( Formatter ):
     def  toc_chapter_enter( self, chapter ):
         print( chapter_header + " ".join( chapter.title ) + md_newline )
         print( '<table class="toc">' )
+        # add a chapter
+        self.config.start_chapter( " ".join( chapter.title ) )
 
     def  toc_section_enter( self, section ):
         print( '<tr><td class="link">'
-               + '<a href="' + self.make_section_url( section, code = True ) + '">'
+               + '<a href="'
+               + self.make_section_url( section, code = True ) + '">'
                + section.title + '</a></td><td class="desc">' )
         print( self.make_html_para( section.abstract, in_html = True ) )
+        # add section to chapter
+        self.config.add_chapter_page( section.title,
+                                      self.make_section_url( section ) )
 
     def  toc_section_exit( self, section ):
         print( "</td></tr>" )
 
     def  toc_chapter_exit( self, chapter ):
         print( "</table>" )
-        # NOTE Not required
         #print( chapter_footer )
+        # End the chapter
+        self.config.end_chapter()
 
     def  toc_index( self, index_filename ):
         print( chapter_header
@@ -461,12 +482,9 @@ class  HtmlFormatter( Formatter ):
             )
 
     def  toc_exit( self ):
-        # NOTE not required
-        # print( toc_footer_start
-        #        + self.file_prefix + "index.html"
-        #        + toc_footer_end )
-
-        print( self.html_footer )
+        print( self.time_footer )
+        # Build and flush MkDocs config
+        self.config.build_config()
 
     def  toc_dump( self, toc_filename = None, index_filename = None ):
         if toc_filename == None:
@@ -483,64 +501,17 @@ class  HtmlFormatter( Formatter ):
     def  section_enter( self, section ):
         if section.chapter:
             print( md_header_1 +  self.make_chapter_url( section.chapter.title )
-               +  md_nav_separator + section.title 
+               +  md_crumbs_separator + section.title
                + md_line_sep )
         else:
             sys.stderr.write("WARNING: No chapter name for Section '" + section.title + "'\n")
 
+        # Print section title
         print( md_h1 + section.title )
 
-        maxwidth = 0
-        for b in section.blocks.values():
-            if len( b.name ) > maxwidth:
-                maxwidth = len( b.name )
-
-        width = 70  # XXX magic number
-        if maxwidth > 0:
-            # print section synopsis
-            print( section_synopsis_header )
-            # NOTE Not needed as TOC is automatic
-            # print( '<table class="synopsis">' )
-
-            # columns = width // maxwidth
-            # if columns < 1:
-            #     columns = 1
-
-            # count = len( section.block_names )
-            # # don't handle last entry if it is empty
-            # if section.block_names[-1] == "/empty/":
-            #     count -= 1
-            # rows  = ( count + columns - 1 ) // columns
-
-            # for r in range( rows ):
-            #     line = "<tr>"
-            #     for c in range( columns ):
-            #         i = r + c * rows
-            #         line = line + '<td>'
-            #         if i < count:
-            #             name = section.block_names[i]
-            #             if name == "/empty/":
-            #                 # it can happen that a complete row is empty, and
-            #                 # without a proper `filler' the browser might
-            #                 # collapse the row to a much smaller height (or
-            #                 # even omit it completely)
-            #                 line = line + "&nbsp;"
-            #             else:
-            #                 url = name
-            #                 # display `foo[bar]' as `foo'
-            #                 name = re.sub( r'\[.*\]', '', name )
-            #                 # normalize url, following RFC 3986
-            #                 url = string.replace( url, "[", "(" )
-            #                 url = string.replace( url, "]", ")" )
-            #                 line = ( line + '<a href="#' + url + '">'
-            #                          + name + '</a>' )
-
-            #         line = line + '</td>'
-            #     line = line + "</tr>"
-            #     print( line )
-
-            # print( "</table>" )
-            #print( section_synopsis_footer )
+        # print section synopsis
+        print( section_synopsis_header )
+        #print( section_synopsis_footer )
 
         #print( description_header )
         print( self.make_html_items( section.description ) )
@@ -553,11 +524,9 @@ class  HtmlFormatter( Formatter ):
             url = block.name
             # display `foo[bar]' as `foo'
             name = re.sub( r'\[.*\]', '', block.name )
-            # normalize url, following RFC 3986
-            url = url.replace( "[", "(" )
-            url = url.replace( "]", ")" )
-            # print( '<h3 id="' + url + '">' + name + '</h3>' )
-            print( '## ' + name + md_newline )
+            # normalize url
+            url = self.normalize_url( url )
+            print( md_h2 + name + md_newline )
 
         # dump the block C source lines now
         if block.code:
@@ -568,17 +537,18 @@ class  HtmlFormatter( Formatter ):
                     header = self.headers[f] + ' (' + f + ')'
                     break
 
-#           if not header:
-#               sys.stderr.write(
-#                 "WARNING: No header macro for"
-#                 + " '" + block.source.filename + "'.\n" )
+            # Warn if header macro not found
+            # if not header:
+            #     sys.stderr.write(
+            #     "WARNING: No header macro for"
+            #     + " '" + block.source.filename + "'.\n" )
 
             if header:
                 print( 'Defined in ' + header + '.' )
 
             print( source_header )
             for l in block.code:
-                print( self.html_source_quote( l, block.name ) )
+                print( self.source_quote( l, block.name ) )
             print( source_footer )
 
     def  markup_enter( self, markup, block ):
@@ -596,16 +566,9 @@ class  HtmlFormatter( Formatter ):
             print( "" )
 
     def  block_exit( self, block ):
-        # NOTE not required
-        # print( block_footer_start + self.file_prefix + "index.html"
-        #        + block_footer_middle + self.file_prefix + "toc.html"
-        #        + block_footer_end )
-        pass
-        print("<hr />\n")
+        print( md_hr )
 
     def  section_exit( self, section ):
-        # NOTE not required
-        # print( html_footer )
         pass
 
     def  section_dump_all( self ):
