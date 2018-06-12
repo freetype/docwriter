@@ -41,9 +41,8 @@ import string, re
 # brace must be exactly the same.  The code sequence itself should have a
 # larger indentation than the surrounding braces.
 #
-re_code_start = re.compile( r"(\s*)```\s*$" )
-re_code_end   = re.compile( r"(\s*)```\s*$" )
-
+re_code_start   = re.compile( r"(\s*)```([\w\+\#\-]+)?\s*$" )
+re_code_end     = re.compile( r"(\s*)```\s*$" )
 
 #
 # A regular expression to isolate identifiers from other text.  Two syntax
@@ -96,9 +95,10 @@ re_header_macro = re.compile( r'^#define\s{1,}(\w{1,}_H)\s{1,}<(.*)>' )
 ##
 class  DocCode:
 
-    def  __init__( self, margin, lines ):
+    def  __init__( self, margin, lines, lang = None ):
         self.lines = []
         self.words = None
+        self.lang = lang
 
         # remove margin spaces
         for l in lines:
@@ -187,6 +187,7 @@ class  DocField:
 
         margin     = -1    # current code sequence indentation
         cur_lines  = []
+        lang       = None
 
         # analyze the markup lines to check whether they contain paragraphs,
         # code sequences, or fields definitions
@@ -200,7 +201,7 @@ class  DocField:
                 m = re_code_end.match( l )
                 if m and len( m.group( 1 ) ) <= margin:
                     # that's it, we finished the code sequence
-                    code = DocCode( 0, cur_lines )
+                    code = DocCode( 0, cur_lines, lang )
                     self.items.append( code )
                     margin    = -1
                     cur_lines = []
@@ -220,6 +221,7 @@ class  DocField:
 
                     # switch to code extraction mode
                     margin = len( m.group( 1 ) )
+                    lang   = m.group( 2 )
                     mode   = mode_code
                 else:
                     if not l.split( ) and cur_lines:
@@ -235,17 +237,13 @@ class  DocField:
 
         if mode == mode_code:
             # unexpected end of code sequence
-            code = DocCode( margin, cur_lines )
+            code = DocCode( margin, cur_lines, lang )
             self.items.append( code )
         elif cur_lines:
             para = DocPara( cur_lines )
             self.items.append( para )
 
     def  dump( self, prefix = "" ):
-        if self.field:
-            print( prefix + self.field + " ::" )
-            prefix = prefix + "----"
-
         first = 1
         for p in self.items:
             if not first:
