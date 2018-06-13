@@ -113,9 +113,12 @@ def  html_quote( line ):
     Characters changed:
     `&`, `<` and `>`.
     '''
-    result = line.replace( "&", "&amp;" )
-    result = result.replace( "<", "&lt;"  )
-    result = result.replace( ">", "&gt;"  )
+    result = line
+    if "`" not in result:
+        result = line.replace( "&", "&amp;" )
+        result = result.replace( "<", "&lt;"  )
+        result = result.replace( ">", "&gt;"  )
+        result = result.replace( "*", "&#42;" )
     return result
 
 ################################################################
@@ -263,11 +266,12 @@ class  HtmlFormatter( Formatter ):
             # handle hyperlinks
             line = re_url.sub( r'<\1>', line )
             # convert `...' quotations into real left and right single quotes
-            line = re.sub( r"(^|\W)`(.*?)'(\W|$)",
+            line = re.sub( r"(^|\W)'(.*?)'(\W|$)",
                            r'\1&lsquo;\2&rsquo;\3',
                            line )
             # convert tilde into non-breaking space
             line = line.replace( "~", "&nbsp;" )
+
         # Return
         if in_html:
             # Parse markdown in HTML blocks
