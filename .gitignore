@@ -110,3 +110,6 @@ venv.bak/
 /include
 /include_mod
 /include_mark
+
+# Movefiles personal script
+movefiles.py
