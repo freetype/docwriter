@@ -99,9 +99,9 @@ def  main( argv ):
     # process sections
     content_processor.finish()
 
-    formatter = tomarkdown.HtmlFormatter( content_processor,
-                                      project_title,
-                                      project_prefix )
+    formatter = tomarkdown.MdFormatter( content_processor,
+                                        project_title,
+                                        project_prefix )
 
     formatter.toc_dump()
     formatter.index_dump()

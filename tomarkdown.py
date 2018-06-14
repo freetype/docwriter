@@ -124,7 +124,7 @@ def  html_quote( line ):
 ##
 ##  MARKDOWN FORMATTER CLASS
 ##
-class  HtmlFormatter( Formatter ):
+class  MdFormatter( Formatter ):
 
     def  __init__( self, processor, project_title, file_prefix ):
         Formatter.__init__( self, processor )
@@ -142,18 +142,13 @@ class  HtmlFormatter( Formatter ):
         self.markdown       = mistune.Markdown()
         self.config         = siteconfig.SiteConfig()
 
-        self.html_header = (
-            md_header_1 + "Global Index"
-            + md_line_sep + md_h1
-            + project_title + md_api_ref
-        )
         self.md_index_header = (
             md_header_1 + "Global Index"
             + md_line_sep + md_h1
             + project_title + md_api_ref
         )
 
-        self.html_toc_header = (
+        self.md_toc_header = (
             md_header_1 + "Table of Contents"
             + md_line_sep + md_h1
             + project_title + md_api_ref
@@ -221,7 +216,7 @@ class  HtmlFormatter( Formatter ):
         )
         return chapter_url
 
-    def  make_html_word( self, word ):
+    def  make_md_word( self, word ):
         """Analyze a simple word to detect cross-references and markup."""
         # handle cross-references
         m = re_crossref.match( word )
@@ -254,14 +249,14 @@ class  HtmlFormatter( Formatter ):
 
         return html_quote( word )
 
-    def  make_html_para( self, words, in_html = False ):
+    def  make_md_para( self, words, in_html = False ):
         """Convert words of a paragraph into tagged Markdown text.  Also handle
            cross references."""
         line = ""
         if words:
-            line = self.make_html_word( words[0] )
+            line = self.make_md_word( words[0] )
             for word in words[1:]:
-                line = line + " " + self.make_html_word( word )
+                line = line + " " + self.make_md_word( word )
             # handle hyperlinks
             line = re_url.sub( r'<\1>', line )
             # convert `...' quotations into real left and right single quotes
@@ -277,34 +272,33 @@ class  HtmlFormatter( Formatter ):
             # separately using Mistune, a
             # Python markdown parser
             line = self.markdown(line).rstrip()
-            # If we are in an HTML tag, return with HTML tags
+            # If we are in an HTML tag, return HTML
             return line
         # Otherwise return a Markdown paragraph
         return md_newline + line
 
-    def  make_html_code( self, lines ):
-        """Convert a code sequence to HTML."""
+    def  make_md_code( self, lines ):
+        """Convert a code sequence to markdown."""
         line = code_header + '\n'
         for l in lines:
-            # NOTE Markdown REQUIRES HTML special chars in code blocks
-            # line = line + html_quote( l ).rstrip() + '\n'
+            # NOTE Markdown REQUIRES all special chars in code blocks
             line = line + l.rstrip() + '\n'
 
         return line + code_footer
 
-    def  make_html_items( self, items, in_html = False ):
-        """Convert a field's content into HTML."""
+    def  make_md_items( self, items, in_html = False ):
+        """Convert a field's content into markdown."""
         lines = []
         for item in items:
             if item.lines:
-                lines.append( self.make_html_code( item.lines ) )
+                lines.append( self.make_md_code( item.lines ) )
             else:
-                lines.append( self.make_html_para( item.words, in_html ) )
+                lines.append( self.make_md_para( item.words, in_html ) )
 
         return '\n'.join( lines )
 
-    def  print_html_items( self, items, in_html = False ):
-        print( self.make_html_items( items, in_html ) )
+    def  print_md_items( self, items, in_html = False ):
+        print( self.make_md_items( items, in_html ) )
 
     def  print_html_field( self, field ):
         if field.name:
@@ -312,7 +306,7 @@ class  HtmlFormatter( Formatter ):
                    + field.name
                    + "</b></td><td>" )
 
-        print( self.make_html_items( field.items ) )
+        print( self.make_md_items( field.items ) )
 
         if field.name:
             print( "</td></tr></table>" )
@@ -369,17 +363,17 @@ class  HtmlFormatter( Formatter ):
 
         return result
 
-    def  print_html_field_list( self, fields ):
+    def  print_md_field_list( self, fields ):
         print( '<table class="fields">' )
         for field in fields:
             print( '<tr><td class="val" id="' + self.sluggify(field.name) + '">'
                    + field.name
                    + '</td><td class="desc">' )
-            self.print_html_items( field.items, in_html = True )
+            self.print_md_items( field.items, in_html = True )
             print( "</td></tr>" )
         print( "</table>" )
 
-    def  print_html_markup( self, markup ):
+    def  print_md_markup( self, markup ):
         table_fields = []
         for field in markup.fields:
             if field.name:
@@ -389,13 +383,13 @@ class  HtmlFormatter( Formatter ):
                 table_fields.append( field )
             else:
                 if table_fields:
-                    self.print_html_field_list( table_fields )
+                    self.print_md_field_list( table_fields )
                     table_fields = []
 
-                self.print_html_items( field.items )
+                self.print_md_items( field.items )
 
         if table_fields:
-            self.print_html_field_list( table_fields )
+            self.print_md_field_list( table_fields )
 
     #
     # formatting the index
@@ -451,7 +445,7 @@ class  HtmlFormatter( Formatter ):
     # config file for MkDocs.
     #
     def  toc_enter( self ):
-        print( self.html_toc_header )
+        print( self.md_toc_header )
         print( "# Table of Contents" )
 
     def  toc_chapter_enter( self, chapter ):
@@ -465,7 +459,7 @@ class  HtmlFormatter( Formatter ):
                + '<a href="'
                + self.make_section_url( section, code = True ) + '">'
                + section.title + '</a></td><td class="desc">' )
-        print( self.make_html_para( section.abstract, in_html = True ) )
+        print( self.make_md_para( section.abstract, in_html = True ) )
         # add section to chapter
         self.config.add_chapter_page( section.title,
                                       self.make_section_url( section ) )
@@ -517,12 +511,12 @@ class  HtmlFormatter( Formatter ):
         #print( section_synopsis_footer )
 
         #print( description_header )
-        print( self.make_html_items( section.description ) )
+        print( self.make_md_items( section.description ) )
         print( description_footer )
 
     def  block_enter( self, block ):
         
-        # place html anchor if needed
+        # place anchor if needed
         if block.name:
             url = block.name
             # display `foo[bar]' as `foo'
@@ -560,7 +554,7 @@ class  HtmlFormatter( Formatter ):
         else:
             print( md_h4 + markup.tag + md_h4_inter )
 
-        self.print_html_markup( markup )
+        self.print_md_markup( markup )
 
     def  markup_exit( self, markup, block ):
         if markup.tag == "description":
