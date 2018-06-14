@@ -118,7 +118,6 @@ def  html_quote( line ):
         result = line.replace( "&", "&amp;" )
         result = result.replace( "<", "&lt;"  )
         result = result.replace( ">", "&gt;"  )
-        result = result.replace( "*", "&#42;" )
     return result
 
 ################################################################
