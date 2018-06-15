@@ -80,7 +80,6 @@ source_footer = """\
 """
 
 code_header   = "```"
-code_header_c = "```c"
 code_footer   = "```"
 
 # Source language keyword coloration and styling.
@@ -277,9 +276,11 @@ class  MdFormatter( Formatter ):
         # Otherwise return a Markdown paragraph
         return md_newline + line
 
-    def  make_md_code( self, lines ):
+    def  make_md_code( self, lines, lang ):
         """Convert a code sequence to markdown."""
-        line = code_header + '\n'
+        if not lang:
+            lang = ''
+        line = code_header + lang + '\n'
         for l in lines:
             # NOTE Markdown REQUIRES all special chars in code blocks
             line = line + l.rstrip() + '\n'
@@ -291,7 +292,7 @@ class  MdFormatter( Formatter ):
         lines = []
         for item in items:
             if item.lines:
-                lines.append( self.make_md_code( item.lines ) )
+                lines.append( self.make_md_code( item.lines, item.lang ) )
             else:
                 lines.append( self.make_md_para( item.words, in_html ) )
 
