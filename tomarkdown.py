@@ -267,11 +267,7 @@ class  MdFormatter( Formatter ):
 
         # Return
         if in_html:
-            # Parse markdown in HTML blocks
-            # separately using Mistune, a
-            # Python markdown parser
-            line = self.markdown(line).rstrip()
-            # If we are in an HTML tag, return HTML
+            # If we are in an HTML tag, return without newline
             return line
         # Otherwise return a Markdown paragraph
         return md_newline + line
@@ -299,7 +295,18 @@ class  MdFormatter( Formatter ):
         return '\n'.join( lines )
 
     def  print_md_items( self, items, in_html = False ):
-        print( self.make_md_items( items, in_html ) )
+        content = self.make_md_items( items, in_html )
+        if in_html:
+            # Parse markdown in content
+            content = self.markdown( content ).rstrip()
+        print(content)
+
+    def print_md_para( self, words, in_html = False ):
+        content = self.make_md_para( words, in_html )
+        if in_html:
+            # Parse markdown in content
+            content = self.markdown( content ).rstrip()
+        return content
 
     def  print_html_field( self, field ):
         if field.name:
@@ -460,7 +467,7 @@ class  MdFormatter( Formatter ):
                + '<a href="'
                + self.make_section_url( section, code = True ) + '">'
                + section.title + '</a></td><td class="desc">' )
-        print( self.make_md_para( section.abstract, in_html = True ) )
+        print( self.print_md_para( section.abstract, in_html = True ) )
         # add section to chapter
         self.config.add_chapter_page( section.title,
                                       self.make_section_url( section ) )
