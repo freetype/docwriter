@@ -47,7 +47,12 @@ markdown_extensions:
       permalink: true
   - pymdownx.superfences:
       disable_indented_code_blocks: true
-      preserve_tabs: true
+  - codehilite:
+      guess_lang: false
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
 '''
 
 # Extra scripts
