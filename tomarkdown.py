@@ -258,7 +258,7 @@ class  MdFormatter( Formatter ):
                 line = line + " " + self.make_md_word( word )
             # handle hyperlinks
             line = re_url.sub( r'<\1>', line )
-            # convert `...' quotations into real left and right single quotes
+            # convert '...' quotations into real left and right single quotes
             line = re.sub( r"(^|\W)'(.*?)'(\W|$)",
                            r'\1&lsquo;\2&rsquo;\3',
                            line )
