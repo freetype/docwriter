@@ -30,15 +30,15 @@ docs_dir = "markdown"
 site_dir = "site"
 
 # Basic site configuration default values
-site_name = "FreeType API Reference"
+site_name        = "FreeType API Reference"
 site_description = "API Reference documentation for FreeType"
-site_author = "FreeType Contributors"
-use_dir_url = "false"
+site_author      = "FreeType Contributors"
+use_dir_url      = "false"
 
 # Theme configuration default values
-theme_conf = {}
-theme_conf['name'] = "material"
-theme_conf['logo'] = "images/favico.ico"
+theme_conf             = {}
+theme_conf['name']     = "material"
+theme_conf['logo']     = "images/favico.ico"
 theme_conf['language'] = "en"
 
 # Markdown extensions
