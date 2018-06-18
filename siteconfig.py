@@ -33,6 +33,7 @@ site_dir = "site"
 site_name = "FreeType API Reference"
 site_description = "API Reference documentation for FreeType"
 site_author = "FreeType Contributors"
+use_dir_url = "false"
 
 # Theme configuration default values
 theme_conf = {}
@@ -125,6 +126,7 @@ class SiteConfig:
         self.docs_dir    = docs_dir
         self.site_dir    = site_dir
         self.theme_conf  = theme_conf
+        self.use_dir_url = use_dir_url
 
     def set_site_info( self, name, description = None, author = None ):
         '''Set the basic site information'''
@@ -185,6 +187,8 @@ class SiteConfig:
             self.site_config['docs_dir'] = self.docs_dir
         if site_dir:
             self.site_config['site_dir'] = self.site_dir
+        if use_dir_url:
+            self.site_config['use_directory_urls'] = self.use_dir_url
 
     def build_theme_config( self ):
         # internal: build theme config
@@ -217,6 +221,11 @@ class SiteConfig:
                     temp_config = {}
                     temp_config[key] = self.site_config[key]
                     print( yaml.dump( temp_config, default_flow_style=False ).rstrip() )
+                    self.site_config.pop( key, None )
+
+            if self.site_config != {}:
+                # Print remaining values
+                print( yaml.dump( self.site_config, default_flow_style=False ).rstrip() )
 
             # print an empty line
             print()

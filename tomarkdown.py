@@ -189,7 +189,7 @@ class  MdFormatter( Formatter ):
 
     def  make_section_url( self, section, code = False ):
         if code:
-            return "../" + self.file_prefix + section.name + "/"
+            return "../" + self.file_prefix + section.name + "/index.html"
         return self.file_prefix + section.name + ".md"
 
     def  make_block_url( self, block, name = None, code = False ):
