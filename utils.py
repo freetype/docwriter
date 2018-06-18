@@ -19,7 +19,7 @@ import string, sys, os, glob, itertools
 # current output directory
 #
 output_dir = None
-
+markdown_dir = "markdown"
 
 # A function that generates a sorting key.  We want lexicographical order
 # (primary key) except that capital letters are sorted before lowercase
@@ -50,11 +50,14 @@ def  sort_order_list( input_list, order_list ):
 # `output_dir' to determine the filename location if necessary and save the
 # old stdout handle in a tuple that is returned by this function.
 #
-def  open_output( filename ):
+def  open_output( filename, config = False ):
     global output_dir
 
     if output_dir and output_dir != "":
-        filename = output_dir + os.sep + filename
+        if not config:
+            filename = output_dir + os.sep + markdown_dir + os.sep + filename
+        else:
+            filename = output_dir + os.sep + filename
 
     old_stdout = sys.stdout
     new_file   = open( filename, "w" )
