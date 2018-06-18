@@ -61,7 +61,6 @@ extra_css:
   - 'stylesheets/extra.css'
 
 extra_javascript:
-  - 'javascripts/jquery-3.3.1.min.js'
   - 'javascripts/extra.js'
 '''
 
@@ -229,7 +228,7 @@ class SiteConfig:
         self.end_chapter()
 
         # Open yml file
-        output = utils.open_output( config_filename )
+        output = utils.open_output( config_filename, config = True )
 
         # Build basic site info
         self.build_site_config()
