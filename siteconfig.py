@@ -33,7 +33,7 @@ site_dir = "site"
 site_name        = "FreeType API Reference"
 site_description = "API Reference documentation for FreeType"
 site_author      = "FreeType Contributors"
-use_dir_url      = "false"
+use_dir_url      = False
 
 # Theme configuration default values
 theme_conf             = {}
