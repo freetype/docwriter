@@ -148,11 +148,11 @@ class SiteConfig:
         cur_page[section_title] = filename
         self.pages.append( cur_page )
 
-    def add_chapter_page(self, section_title, filename):
+    def add_chapter_page( self, section_title, filename ):
         '''Add a page to a chapter.
 
         Chapter must be set first using `start_chapter()`
-        If not set, `add_single_page()` will be called internally
+        If not set, `add_single_page()` will be called internally.
         '''
         if self.chapter:
             self.chapter.add_page( section_title, filename )
