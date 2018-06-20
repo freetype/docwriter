@@ -283,7 +283,7 @@ class  SourceBlock:
 
         # now, look for a markup tag
         for l in lines:
-            l = l.strip( )
+            l = l.strip()
             if len( l ) > 0:
                 for tag in re_markup_tags:
                     if tag.match( l ):

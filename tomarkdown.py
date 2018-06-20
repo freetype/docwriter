@@ -24,8 +24,8 @@ import time, sys
 try:
     import mistune
 except ImportError:
-    sys.stderr.write("Error: Could not find module 'mistune'. Please run"
-                     + "'pip install -r requirements.txt' to install.")
+    sys.stderr.write( "Error: Could not find module 'mistune'. Please run"
+                      + "'pip install -r requirements.txt' to install." )
 
 #---------------------------------------------------------------
 # Begin initial configuration
@@ -210,9 +210,9 @@ class  MdFormatter( Formatter ):
     def make_chapter_url( self, chapter ):
         chapter = ' '.join( chapter )
         slug_chapter = self.sluggify( chapter )
-        chapter_url = ("[" + chapter + "]("
-        + self.toc_filename + "#" + slug_chapter + ")"
-        )
+        chapter_url = ( "[" + chapter + "]("
+                        + self.toc_filename + "#" + slug_chapter + ")"
+                      )
         return chapter_url
 
     def  make_md_word( self, word ):
@@ -374,7 +374,7 @@ class  MdFormatter( Formatter ):
     def  print_md_field_list( self, fields ):
         print( '<table class="fields">' )
         for field in fields:
-            print( '<tr><td class="val" id="' + self.sluggify(field.name) + '">'
+            print( '<tr><td class="val" id="' + self.sluggify( field.name ) + '">'
                    + field.name
                    + '</td><td class="desc">' )
             self.print_md_items( field.items, in_html = True )
@@ -509,7 +509,7 @@ class  MdFormatter( Formatter ):
                +  md_crumbs_separator + section.title
                + md_line_sep )
         else:
-            sys.stderr.write("WARNING: No chapter name for Section '" + section.title + "'\n")
+            sys.stderr.write( "WARNING: No chapter name for Section '" + section.title + "'\n" )
 
         # Print section title
         print( md_h1 + section.title )
@@ -537,7 +537,7 @@ class  MdFormatter( Formatter ):
         if block.code:
             header = ''
             for f in self.headers.keys():
-                header_filename = os.path.normpath(block.source.filename)
+                header_filename = os.path.normpath( block.source.filename )
                 if header_filename.find( os.path.normpath( f ) ) >= 0:
                     header = self.headers[f] + ' (' + f + ')'
                     break

@@ -19,8 +19,8 @@ import utils
 try:
     import yaml
 except ImportError:
-    sys.stderr.write("Error: Could not find module 'pyyaml'. Please run"
-                     + "'pip install -r requirements.txt' to install.")
+    sys.stderr.write( "Error: Could not find module 'pyyaml'. Please run"
+                      + "'pip install -r requirements.txt' to install." )
 
 # Config file name
 config_filename = "mkdocs.yml"
@@ -77,7 +77,7 @@ def add_config( yml_string, config_name ):
     try:
         config = yaml.safe_load( yml_string )
     except:
-        sys.stderr.write("WARNING: Malformed '"+ config_name +"' config, ignoring.\n")
+        sys.stderr.write( "WARNING: Malformed '"+ config_name +"' config, ignoring.\n" )
     return config
 
 # Parse all configurations and save as Python objects
@@ -134,8 +134,8 @@ class SiteConfig:
             self.site_name = name
         else:
             # Site name is required, throw warning and revert to default
-            sys.stderr.write("WARNING: Site name not specified,"
-                             + " reverting to default.\n")
+            sys.stderr.write( "WARNING: Site name not specified,"
+                              + " reverting to default.\n" )
 
         if description:
             self.site_desc = description
@@ -157,8 +157,8 @@ class SiteConfig:
         if self.chapter:
             self.chapter.add_page( section_title, filename )
         else:
-            sys.stderr.write("WARNING: Section '"+ section_title
-                             + "' added without starting chapter.\n")
+            sys.stderr.write( "WARNING: Section '"+ section_title
+                              + "' added without starting chapter.\n" )
             self.add_single_page( section_title, filename )
 
     def start_chapter( self, chap ):
@@ -228,7 +228,7 @@ class SiteConfig:
                 print( yaml.dump( self.site_config, default_flow_style=False ).rstrip() )
 
             # print an empty line
-            print( )
+            print()
             self.site_config.clear()
 
     def build_config( self ):

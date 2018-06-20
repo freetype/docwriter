@@ -133,8 +133,8 @@ class  DocPara:
         self.lines = None
         self.words = []
         for l in lines:
-            l = l.strip( )
-            self.words.extend( l.split( ) )
+            l = l.strip()
+            self.words.extend( l.split() )
 
     def  dump( self, prefix = "", width = 60 ):
         lines = self.dump_lines( 0, width )
@@ -224,7 +224,7 @@ class  DocField:
                     lang   = m.group( 2 )
                     mode   = mode_code
                 else:
-                    if not l.split( ) and cur_lines:
+                    if not l.split() and cur_lines:
                         # if the line is empty, we end the current paragraph,
                         # if any
                         para = DocPara( cur_lines )
@@ -291,7 +291,7 @@ re_field = re.compile( r"""
 class  DocMarkup:
 
     def  __init__( self, tag, lines ):
-        self.tag    = tag.lower( )
+        self.tag    = tag.lower()
         self.fields = []
 
         cur_lines = []
@@ -349,7 +349,7 @@ class  DocChapter:
             self.order = block.get_markup_words( "sections" )
         else:
             self.name  = "Other"
-            self.title = "Miscellaneous".split( )
+            self.title = "Miscellaneous".split()
             self.order = []
 
 
@@ -434,7 +434,7 @@ class  ContentProcessor:
 
             # get rid of last line of markup if it's empty
             marks = self.markup_lines
-            if len( marks ) > 0 and not marks[-1].strip( ):
+            if len( marks ) > 0 and not marks[-1].strip():
                 self.markup_lines = marks[:-1]
 
             m = DocMarkup( self.markup, self.markup_lines )
@@ -472,7 +472,7 @@ class  ContentProcessor:
                 for t in re_markup_tags:
                     m = t.match( line )
                     if m:
-                        found  = m.group( 1 ).lower( )
+                        found  = m.group( 1 ).lower()
                         prefix = len( m.group( 0 ) )
                         # remove markup from line
                         line   = " " * prefix + line[prefix:]
@@ -483,7 +483,7 @@ class  ContentProcessor:
                 first = 0
                 self.add_markup()  # add current markup content
                 self.markup = found
-                if len( line.strip( ) ) > 0:
+                if len( line.strip() ) > 0:
                     self.markup_lines.append( line )
             elif first == 0:
                 self.markup_lines.append( line )
@@ -616,13 +616,13 @@ class  DocBlock:
         start = 0
         end   = len( source ) - 1
 
-        while start < end and not source[start].strip( ):
+        while start < end and not source[start].strip():
             start = start + 1
 
-        while start < end and not source[end].strip( ):
+        while start < end and not source[end].strip():
             end = end - 1
 
-        if start == end and not source[start].strip( ):
+        if start == end and not source[start].strip():
             self.code = []
         else:
             self.code = source[start:end + 1]
@@ -633,7 +633,7 @@ class  DocBlock:
     def  get_markup( self, tag_name ):
         """Return the DocMarkup corresponding to a given tag in a block."""
         for m in self.markups:
-            if m.tag == tag_name.lower( ):
+            if m.tag == tag_name.lower():
                 return m
         return None
 

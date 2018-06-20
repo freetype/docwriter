@@ -27,7 +27,7 @@ import sys
 #
 import_list = ["mistune", "yaml"]
 
-def check( ):
+def check():
     '''Check if all required modules are present.
     
     Return 0 on success, non-zero on error.'''
