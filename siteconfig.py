@@ -187,7 +187,7 @@ class SiteConfig:
             self.site_config['docs_dir'] = self.docs_dir
         if site_dir:
             self.site_config['site_dir'] = self.site_dir
-        if use_dir_url:
+        if use_dir_url is not None:
             self.site_config['use_directory_urls'] = self.use_dir_url
 
     def build_theme_config( self ):
