@@ -299,7 +299,7 @@ class  MdFormatter( Formatter ):
         if in_html:
             # Parse markdown in content
             content = self.markdown( content ).rstrip()
-        print(content)
+        print( content )
 
     def print_md_para( self, words, in_html = False ):
         content = self.make_md_para( words, in_html )

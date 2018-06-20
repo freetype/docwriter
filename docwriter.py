@@ -37,7 +37,7 @@ import sys, glob, getopt
 def  usage():
     print( "\nDocWriter Usage information\n" )
     print( "  docwriter [options] file1 [file2 ...]\n" )
-    print("Note: Wildcard names are supported\n")
+    print( "Note: Wildcard names are supported\n" )
     print( "using the following options:\n" )
     print( "  -h : print this page" )
     print( "  -t : set project title, as in '-t \"My Project\"'" )

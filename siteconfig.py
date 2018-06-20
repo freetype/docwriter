@@ -228,7 +228,7 @@ class SiteConfig:
                 print( yaml.dump( self.site_config, default_flow_style=False ).rstrip() )
 
             # print an empty line
-            print()
+            print( )
             self.site_config.clear()
 
     def build_config( self ):
