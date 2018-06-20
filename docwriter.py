@@ -27,6 +27,7 @@ import sources
 import content
 import formatter
 import tomarkdown
+import check
 
 import utils
 
@@ -64,6 +65,11 @@ def  main( argv ):
     if args == []:
         usage()
         sys.exit( 1 )
+
+    # check all packages
+    status = check.check()
+    if status != 0:
+        sys.exit( 3 )
 
     # process options
     project_title  = "Project"
