@@ -267,7 +267,7 @@ class  MdFormatter( Formatter ):
 
         # Return
         if in_html:
-            # If we are in an HTML tag, return without newline
+            # If we are in an HTML tag, return with newline after para
             return line + md_newline
         # Otherwise return a Markdown paragraph
         return md_newline + line
