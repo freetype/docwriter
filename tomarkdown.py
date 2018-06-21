@@ -268,7 +268,7 @@ class  MdFormatter( Formatter ):
         # Return
         if in_html:
             # If we are in an HTML tag, return without newline
-            return line
+            return line + md_newline
         # Otherwise return a Markdown paragraph
         return md_newline + line
 
@@ -372,7 +372,14 @@ class  MdFormatter( Formatter ):
         return result
 
     def  print_md_field_list( self, fields ):
-        print( '<table class="fields">' )
+        is_long = False
+        for field in fields:
+            if len( field.name ) > 30:
+                is_long = True
+        if is_long:
+            print( '<table class="fields long">' )
+        else:
+            print( '<table class="fields">' )
         for field in fields:
             print( '<tr><td class="val" id="' + self.sluggify( field.name ) + '">'
                    + field.name
