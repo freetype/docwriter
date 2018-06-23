@@ -262,6 +262,8 @@ class  MdFormatter( Formatter ):
             line = re.sub( r"(^|\W)'(.*?)'(\W|$)",
                            r'\1&lsquo;\2&rsquo;\3',
                            line )
+            # convert tilde at beginning of line to four spaces
+            line = re.sub( re_start_tilde, ' ' * 4, line )
             # convert tilde into non-breaking space
             line = line.replace( "~", "&nbsp;" )
 

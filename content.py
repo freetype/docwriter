@@ -80,6 +80,11 @@ re_identifier = re.compile( r"""
 #
 re_header_macro = re.compile( r'^#define\s{1,}(\w{1,}_H)\s{1,}<(.*)>' )
 
+#
+# Match a tilde (~) in the beginning of a line to indicate continuation
+# of an ordered/unordered list.
+#
+re_start_tilde = re.compile( r'^~' )
 
 ################################################################
 ##
