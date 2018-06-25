@@ -139,14 +139,15 @@ class  DocPara:
         self.words  = []
         self.indent = len( lines[0] ) - len( lines[0].lstrip() )
         first_line  = lines[0].strip()
-        indent_list = ['', '', '', '']
+        indent_diff = self.indent - margin
 
-        if margin > 0 and self.indent > margin + 2:
-            # if the first line has a greater indentation,
-            # add 4 spaces to it.
+        if margin > 0 and indent_diff >= 4:
+            # if the first line has an indentation >= 4,
+            # add those spaces to it.
+            indent_list = [''] * indent_diff
             self.words.extend( indent_list )
-            # This para is indented, next may also be relative
-            # to the previous, unindented para
+            # This para is indented, the next may also be relative
+            # to the parent, so set indent to margin
             self.indent = margin
             sys.stderr.write( "Indented!\n" )
             sys.stderr.write( "  " + first_line + "\n" )
