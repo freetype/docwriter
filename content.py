@@ -134,10 +134,26 @@ class  DocCode:
 ##
 class  DocPara:
 
-    def  __init__( self, lines ):
-        self.lines = None
-        self.words = []
-        for l in lines:
+    def  __init__( self, lines, margin = -1 ):
+        self.lines  = None
+        self.words  = []
+        self.indent = len( lines[0] ) - len( lines[0].lstrip() )
+        first_line  = lines[0].strip()
+        indent_list = ['', '', '', '']
+
+        if margin > 0 and self.indent > margin + 2:
+            # if the first line has a greater indentation,
+            # add 4 spaces to it.
+            self.words.extend( indent_list )
+            # This para is indented, next may also be relative
+            # to the previous, unindented para
+            self.indent = margin
+            sys.stderr.write( "Indented!\n" )
+            sys.stderr.write( "  " + first_line + "\n" )
+
+        self.words.extend( first_line.split() )
+
+        for l in lines[1:]:
             l = l.strip()
             self.words.extend( l.split() )
 
@@ -192,6 +208,7 @@ class  DocField:
 
         margin     = -1    # current code sequence indentation
         cur_lines  = []
+        indent     = -1
         lang       = None
 
         # analyze the markup lines to check whether they contain paragraphs,
@@ -232,8 +249,10 @@ class  DocField:
                     if not l.split() and cur_lines:
                         # if the line is empty, we end the current paragraph,
                         # if any
-                        para = DocPara( cur_lines )
+                        para = DocPara( cur_lines, indent )
                         self.items.append( para )
+                        # store indent value of current para
+                        indent = para.indent
                         cur_lines = []
                     else:
                         # otherwise, simply add the line to the current
@@ -245,7 +264,7 @@ class  DocField:
             code = DocCode( margin, cur_lines, lang )
             self.items.append( code )
         elif cur_lines:
-            para = DocPara( cur_lines )
+            para = DocPara( cur_lines, indent )
             self.items.append( para )
 
     def  dump( self, prefix = "" ):
