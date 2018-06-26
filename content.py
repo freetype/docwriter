@@ -149,8 +149,6 @@ class  DocPara:
             # This para is indented, the next may also be relative
             # to the parent, so set indent to margin
             self.indent = margin
-            sys.stderr.write( "Indented!\n" )
-            sys.stderr.write( "  " + first_line + "\n" )
 
         self.words.extend( first_line.split() )
 
