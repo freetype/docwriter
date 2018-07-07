@@ -29,3 +29,20 @@ for(var i = 0; i < links.length; i++) {
         }
     }
 }
+
+// Slugify supplied text
+function slugify(text){
+    text = text.toLowerCase();
+    text = text.replace(" ", "-");
+    return text;
+}
+
+// If there is a hash in the url, slugify it
+// and replace
+if(window.location.hash) {
+    // Fragment exists
+    slug = slugify(window.location.hash);
+    history.replaceState(undefined, undefined, slug)
+    //window.location.hash = slug;
+    document.location.replace(window.location.href);
+}
