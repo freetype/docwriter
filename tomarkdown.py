@@ -21,11 +21,15 @@ from formatter import *
 import siteconfig
 
 import time, sys
+import logging
+
+log = logging.getLogger('docwriter.' + __name__)
+
 try:
     import mistune
 except ImportError:
-    sys.stderr.write( "Error: Could not find module 'mistune'. Please run"
-                      + "'pip install -r requirements.txt' to install." )
+    log.error( "Error: Could not find module 'mistune'. Please run"
+               "'pip install -r requirements.txt' to install." )
 
 #---------------------------------------------------------------
 # Begin initial configuration
@@ -242,8 +246,7 @@ class  MdFormatter( Formatter ):
                 return url
             except:
                 # we detected a cross-reference to an unknown item
-                sys.stderr.write( "WARNING: undefined cross reference"
-                                  + " '" + name + "'.\n" )
+                log.warn( "Undefined cross reference '%s'.", name )
                 return '?' + name + '?' + rest
 
         return html_quote( word )
@@ -512,11 +515,13 @@ class  MdFormatter( Formatter ):
     #
     def  section_enter( self, section ):
         if section.chapter:
-            print( md_header_1 +  self.make_chapter_url( section.chapter.title )
-               +  md_crumbs_separator + section.title
-               + md_line_sep )
+            print( md_header_1
+                   +  self.make_chapter_url( section.chapter.title )
+                   +  md_crumbs_separator + section.title
+                   + md_line_sep )
         else:
-            sys.stderr.write( "WARNING: No chapter name for Section '" + section.title + "'\n" )
+            # this should never happen!
+            log.warn( "No chapter name for Section '%s'.", section.title )
 
         # Print section title
         print( md_h1 + section.title )
@@ -551,9 +556,9 @@ class  MdFormatter( Formatter ):
 
             # Warn if header macro not found
             # if not header:
-            #     sys.stderr.write(
-            #     "WARNING: No header macro for"
-            #     + " '" + block.source.filename + "'.\n" )
+            #     log.warn(
+            #     "No header macro for"
+            #     " '%s'.", block.source.filename )
 
             if header:
                 print( 'Defined in ' + header + '.' )

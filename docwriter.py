@@ -23,15 +23,15 @@
 # matching and substitution to speed up operation significantly.
 #
 from __future__ import print_function
+import sys, glob, getopt
+import logging
+
 import sources
 import content
 import formatter
 import tomarkdown
 import check
-
 import utils
-
-import sys, glob, getopt
 
 
 def  usage():
@@ -48,6 +48,16 @@ def  usage():
     print( "  --output : same as -o, as in '--output=mydir'" )
     print( "  --prefix : same as -p, as in '--prefix=ft2'" )
 
+def  setup_logger( log_name='docwriter', level=logging.INFO ):
+    """Setup the logger."""
+    logger = logging.getLogger(log_name)
+    logger.propagate = False
+    stream = logging.StreamHandler()
+    formatter = logging.Formatter("%(levelname)-7s -  %(message)s")
+    stream.setFormatter(formatter)
+    logger.addHandler(stream)
+
+    logger.setLevel(level)
 
 def  main( argv ):
     """Main program loop."""
@@ -65,11 +75,6 @@ def  main( argv ):
     if args == []:
         usage()
         sys.exit( 1 )
-
-    # check all packages
-    status = check.check()
-    if status != 0:
-        sys.exit( 3 )
 
     # process options
     project_title  = "Project"
@@ -89,6 +94,14 @@ def  main( argv ):
 
         if opt[0] in ( "-p", "--prefix" ):
             project_prefix = opt[1]
+
+    # set up the logger
+    setup_logger()
+
+    # check all packages
+    status = check.check()
+    if status != 0:
+        sys.exit( 3 )
 
     utils.check_output()
 

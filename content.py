@@ -22,6 +22,9 @@ from sources import *
 from utils   import *
 
 import string, re
+import logging
+
+log = logging.getLogger('docwriter.' + __name__)
 
 
 #
@@ -545,9 +548,9 @@ class  ContentProcessor:
                     section.reorder()
                     chap.sections.append( section )
                 else:
-                    sys.stderr.write( "WARNING: chapter '" +          \
-                        chap.name + "' in " + chap.block.location() + \
-                        " lists unknown section '" + sec + "'\n" )
+                    log.warn( "Chapter '%s' in %s"
+                        " lists unknown section '%s'",
+                        chap.name, chap.block.location(), sec )
 
         # check that all sections are in a chapter
         #

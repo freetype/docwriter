@@ -20,6 +20,9 @@ from content import *
 from formatter import *
 
 import time
+import logging
+
+log = logging.getLogger('docwriter.' + __name__)
 
 
 # The following strings define the HTML header used by all generated pages.
@@ -348,8 +351,8 @@ class  HtmlFormatter( Formatter ):
                 return url
             except:
                 # we detected a cross-reference to an unknown item
-                sys.stderr.write( "WARNING: undefined cross reference"
-                                  + " '" + name + "'.\n" )
+                log.warn( "Undefined cross reference"
+                          " '%s'", name )
                 return '?' + name + '?' + rest
 
         # handle markup for italic and bold

@@ -14,7 +14,9 @@
 
 
 import string, sys, os, glob, itertools
+import logging
 
+log = logging.getLogger('docwriter.' + __name__)
 
 # current output directory
 #
@@ -81,9 +83,9 @@ def  check_output():
     if output_dir:
         if output_dir != "":
             if not os.path.isdir( output_dir ):
-                sys.stderr.write( "argument"
-                                  + " '" + output_dir + "' "
-                                  + "is not a valid directory\n" )
+                log.error( "Argument"
+                           " '%s' is not a valid directory.",
+                           output_dir )
                 sys.exit( 2 )
         else:
             output_dir = None
@@ -97,10 +99,9 @@ def  file_exists( pathname ):
         file.close()
     except:
         result = None
-        sys.stderr.write( pathname + " couldn't be accessed\n" )
+        log.error( "%s couldn't be accessed.", pathname )
 
     return result
-
 
 def  make_file_list( args = None ):
     """Build a list of input files from command-line arguments."""

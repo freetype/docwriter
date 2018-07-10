@@ -26,6 +26,9 @@
 from sources import *
 from content import *
 from utils   import *
+import logging
+
+log = logging.getLogger('docwriter.' + __name__)
 
 
 ################################################################
@@ -64,12 +67,12 @@ class  Formatter:
     def  add_identifier( self, name, block ):
         if name in self.identifiers:
             # duplicate name!
-            sys.stderr.write( "WARNING: duplicate definition for"
-                              + " '" + name + "' "
-                              + "in " + block.location() + ", "
-                              + "previous definition in "
-                              + self.identifiers[name].location()
-                              + "\n" )
+            log.warn( "Duplicate definition for"
+                      " '%s' in %s, "
+                      "previous definition in %s",
+                      name,
+                      block.location(),
+                      self.identifiers[name].location() )
         else:
             self.identifiers[name] = block
 

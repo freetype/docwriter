@@ -19,6 +19,9 @@ Usage:
     status = check.check()
 '''
 import sys
+import logging
+
+log = logging.getLogger('docwriter.' + __name__)
 
 #
 # Required imports
@@ -36,7 +39,7 @@ def check():
         try:
             exec( "import " + package )
         except:
-            sys.stderr.write( "[ERROR] Missing module: " + package )
+            log.error( "Missing module: %s", package )
             flag = True
     if flag:
         return 1

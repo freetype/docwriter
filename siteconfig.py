@@ -15,12 +15,15 @@
 from __future__ import print_function
 import sys
 import utils
+import logging
+
+log = logging.getLogger('docwriter.' + __name__)
 
 try:
     import yaml
 except ImportError:
-    sys.stderr.write( "Error: Could not find module 'pyyaml'. Please run"
-                      + "'pip install -r requirements.txt' to install." )
+    log.error( "Could not find module 'pyyaml'. Please run"
+               "'pip install -r requirements.txt' to install." )
 
 # Config file name
 config_filename = "mkdocs.yml"
@@ -77,7 +80,7 @@ def add_config( yml_string, config_name ):
     try:
         config = yaml.safe_load( yml_string )
     except:
-        sys.stderr.write( "WARNING: Malformed '"+ config_name +"' config, ignoring.\n" )
+        log.warn( "Malformed '%s' config, ignoring.", config_name )
     return config
 
 # Parse all configurations and save as Python objects
@@ -134,8 +137,7 @@ class SiteConfig:
             self.site_name = name
         else:
             # Site name is required, throw warning and revert to default
-            sys.stderr.write( "WARNING: Site name not specified,"
-                              + " reverting to default.\n" )
+            log.warn( "Site name not specified, reverting to default." )
 
         if description:
             self.site_desc = description
@@ -157,8 +159,8 @@ class SiteConfig:
         if self.chapter:
             self.chapter.add_page( section_title, filename )
         else:
-            sys.stderr.write( "WARNING: Section '"+ section_title
-                              + "' added without starting chapter.\n" )
+            log.warn( "Section '%s' added without starting chapter.",
+                      section_title )
             self.add_single_page( section_title, filename )
 
     def start_chapter( self, chap ):
