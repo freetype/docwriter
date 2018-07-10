@@ -33,6 +33,7 @@ import tomarkdown
 import check
 import utils
 
+logger = logging.getLogger()
 
 def  usage():
     print( "\nDocWriter Usage information\n" )
@@ -50,14 +51,14 @@ def  usage():
 
 def  setup_logger( log_name='docwriter', level=logging.INFO ):
     """Setup the logger."""
-    logger = logging.getLogger(log_name)
+    global logger
     logger.propagate = False
     stream = logging.StreamHandler()
-    formatter = logging.Formatter("%(levelname)-7s -  %(message)s")
-    stream.setFormatter(formatter)
-    logger.addHandler(stream)
+    formatter = logging.Formatter( "%(levelname)-7s -  %(message)s" )
+    stream.setFormatter( formatter )
+    logger.addHandler( stream )
 
-    logger.setLevel(level)
+    logger.setLevel( level )
 
 def  main( argv ):
     """Main program loop."""
@@ -97,6 +98,7 @@ def  main( argv ):
 
     # set up the logger
     setup_logger()
+    log = logging.getLogger('docwriter')
 
     # check all packages
     status = check.check()
@@ -118,9 +120,16 @@ def  main( argv ):
     # process sections
     content_processor.finish()
 
+    # clean up directory
+    log.info( "Cleaning output directory" )
+    utils.clean_markdown_dir()
+
     formatter = tomarkdown.MdFormatter( content_processor,
                                         project_title,
                                         project_prefix )
+
+    # build the docs
+    utils.build_message()
 
     formatter.toc_dump()
     formatter.index_dump()

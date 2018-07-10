@@ -15,21 +15,17 @@
 # The parent class is contained in file `formatter.py'.
 
 
+import time, sys
+import logging
+
+log = logging.getLogger(__name__)
+
 from sources import *
 from content import *
 from formatter import *
 import siteconfig
 
-import time, sys
-import logging
-
-log = logging.getLogger('docwriter.' + __name__)
-
-try:
-    import mistune
-except ImportError:
-    log.error( "Error: Could not find module 'mistune'. Please run"
-               "'pip install -r requirements.txt' to install." )
+import mistune
 
 #---------------------------------------------------------------
 # Begin initial configuration

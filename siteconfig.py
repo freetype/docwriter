@@ -14,16 +14,13 @@
 
 from __future__ import print_function
 import sys
-import utils
 import logging
 
-log = logging.getLogger('docwriter.' + __name__)
+log = logging.getLogger(__name__)
 
-try:
-    import yaml
-except ImportError:
-    log.error( "Could not find module 'pyyaml'. Please run"
-               "'pip install -r requirements.txt' to install." )
+import yaml
+
+import utils
 
 # Config file name
 config_filename = "mkdocs.yml"
@@ -83,10 +80,12 @@ def add_config( yml_string, config_name ):
         log.warn( "Malformed '%s' config, ignoring.", config_name )
     return config
 
-# Parse all configurations and save as Python objects
-md_extensions = add_config( md_extensions, "markdown_extensions" )
-yml_extra     = add_config( extra_scripts, "extra scripts" )
-yml_other     = add_config( other_config, "other" )
+def build_extras():
+    # Parse all configurations and save as Python objects
+    global md_extensions, yml_extra, yml_other
+    md_extensions = add_config( md_extensions, "markdown_extensions" )
+    yml_extra     = add_config( extra_scripts, "extra scripts" )
+    yml_other     = add_config( other_config, "other" )
 
 
 class Chapter:
@@ -253,6 +252,9 @@ class SiteConfig:
         # Build pages
         self.build_pages()
         self.write_config( "Pages" )
+
+        # Build extra scripts
+        build_extras()
 
         # Add extra CSS and Javascript
         self.populate_config( yml_extra )

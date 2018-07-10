@@ -28,7 +28,7 @@ from content import *
 from utils   import *
 import logging
 
-log = logging.getLogger('docwriter.' + __name__)
+log = logging.getLogger( __name__ )
 
 
 ################################################################

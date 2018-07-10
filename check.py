@@ -21,7 +21,7 @@ Usage:
 import sys
 import logging
 
-log = logging.getLogger('docwriter.' + __name__)
+log = logging.getLogger( __name__ )
 
 #
 # Required imports

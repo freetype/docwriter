@@ -22,7 +22,7 @@ from formatter import *
 import time
 import logging
 
-log = logging.getLogger('docwriter.' + __name__)
+log = logging.getLogger( __name__ )
 
 
 # The following strings define the HTML header used by all generated pages.

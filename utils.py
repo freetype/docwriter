@@ -16,12 +16,17 @@
 import string, sys, os, glob, itertools
 import logging
 
-log = logging.getLogger('docwriter.' + __name__)
+log = logging.getLogger(__name__)
 
 # current output directory
 #
 output_dir = None
 markdown_dir = "markdown"
+
+def build_message():
+    path = os.path.join( output_dir, markdown_dir )
+    path = os.path.normpath(path)
+    log.info("Building markdown documentation to directory: %s", path)
 
 # A function that generates a sorting key.  We want lexicographical order
 # (primary key) except that capital letters are sorted before lowercase
@@ -102,6 +107,26 @@ def  file_exists( pathname ):
         log.error( "%s couldn't be accessed.", pathname )
 
     return result
+
+def clean_markdown_dir( ):
+    """
+    Remove markdown and yml files from a directory.
+    """
+    directory = output_dir + os.sep + markdown_dir
+    if not os.path.exists(directory):
+        return
+
+    for entry in os.listdir(directory):
+
+        # Don't remove hidden files from the directory.
+        if entry.startswith('.'):
+            continue
+        path = os.path.join(directory, entry)
+        if os.path.isdir(path):
+                continue
+
+        if entry.endswith('.md') or entry.endswith('.yml'):
+            os.unlink(path)
 
 def  make_file_list( args = None ):
     """Build a list of input files from command-line arguments."""

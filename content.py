@@ -24,7 +24,7 @@ from utils   import *
 import string, re
 import logging
 
-log = logging.getLogger('docwriter.' + __name__)
+log = logging.getLogger( __name__ )
 
 
 #
