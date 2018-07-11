@@ -18,10 +18,20 @@
 # index, and individual API reference indices).
 #
 # You need to sub-class it to output anything sensible.  For example, the
-# file `tohtml.py' contains the definition of the `HtmlFormatter' sub-class
-# to output HTML.
+# module `tomarkdown` contains the definition of the `MdFormatter' sub-class
+# to output Markdown.
 #
 
+"""Base formatter class.
+
+The purpose of this module is to convert a content processor's data into
+specific documents (i.e., table of contents, global index, and individual
+API reference indices).
+
+You need to sub-class it to output anything sensible.  For example, the
+module `tomarkdown` contains the definition of the `MdFormatter' sub-class
+to output Markdown.
+"""
 
 from sources import *
 from content import *

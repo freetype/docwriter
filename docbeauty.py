@@ -10,7 +10,7 @@ from sources import *
 from content import *
 from utils   import *
 
-import sys, os, string, getopt
+import sys, os, getopt
 
 
 content_processor = ContentProcessor()

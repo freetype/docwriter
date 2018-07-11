@@ -12,11 +12,22 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
+"""Module to generate Mkdocs config.
+
+This module contains routines to generate the configuration file
+`mkdocs.yml` required by Mkdocs to build static HTML documentation
+from markdown.
+
+More information can be found at:
+
+<https://www.mkdocs.org/user-guide/configuration/>
+"""
+
 from __future__ import print_function
 import sys
 import logging
 
-log = logging.getLogger(__name__)
+log = logging.getLogger( __name__ )
 
 import yaml
 

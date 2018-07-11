@@ -11,13 +11,15 @@
 #  license, LICENSE.TXT.  By continuing to use, modify, or distribute
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
-'''
+
+"""
 Module to check if all required modules are available.
 
 Usage:
     import check
     status = check.check()
-'''
+"""
+
 import sys
 import logging
 

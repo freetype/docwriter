@@ -17,11 +17,15 @@
 # building more structured objects out of them.
 #
 
+"""
+This module contains routines to parse documentation comment blocks,
+building more structured objects out of them.
+"""
 
 from sources import *
 from utils   import *
 
-import string, re
+import re
 import logging
 
 log = logging.getLogger( __name__ )

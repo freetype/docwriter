@@ -14,11 +14,16 @@
 
 # The parent class is contained in file `formatter.py'.
 
+"""Subclass of `formatter` to generate Markdown.
 
-import time, sys
+This module subclasses `formatter` and implements syntax-specific
+routines to build markdown output.
+"""
+
+import time
 import logging
 
-log = logging.getLogger(__name__)
+log = logging.getLogger( __name__ )
 
 from sources import *
 from content import *

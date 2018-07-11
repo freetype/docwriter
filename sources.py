@@ -28,11 +28,16 @@
 # text parsing and basic documentation block extraction.
 #
 
+"""Utility for parsing source files.
+
+This library file contains definitions of classes needed to decompose C
+source code files into a series of multi-line 'blocks'.
+"""
 
 import fileinput, re
 import logging
 
-log = logging.getLogger(__name__)
+log = logging.getLogger( __name__ )
 
 
 ################################################################

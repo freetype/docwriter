@@ -12,11 +12,15 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
+"""Utility functions for Docwriter
 
-import string, sys, os, glob, itertools
+This module provides various utility functions for Docwriter.
+"""
+
+import sys, os, glob, itertools
 import logging
 
-log = logging.getLogger(__name__)
+log = logging.getLogger( __name__ )
 
 # current output directory
 #
