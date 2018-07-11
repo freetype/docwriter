@@ -585,6 +585,7 @@ class  MdFormatter( Formatter ):
         pass
 
     def  section_dump_all( self ):
+        log.debug( "Building markdown pages for sections." )
         for section in self.sections:
             self.section_dump( section,
                                self.file_prefix + section.name + '.md' )

@@ -105,6 +105,7 @@ class  Formatter:
         if toc_filename:
             output = open_output( toc_filename )
 
+        log.debug( "Building table of contents in %s.", toc_filename )
         self.toc_enter()
 
         for chap in self.processor.chapters:
@@ -144,6 +145,7 @@ class  Formatter:
         if index_filename:
             output = open_output( index_filename )
 
+        log.debug("Building index in %s.", index_filename )
         self.index_enter()
 
         for name in self.block_index:
@@ -184,6 +186,7 @@ class  Formatter:
 
     def  section_dump( self, section, section_filename = None ):
         output = None
+        log.debug( "Building page %s.", section_filename )
         if section_filename:
             output = open_output( section_filename )
 
@@ -225,6 +228,7 @@ class  Formatter:
             close_output( output )
 
     def  section_dump_all( self ):
+        log.debug( "Building markdown pages for sections." )
         for section in self.sections:
             self.section_dump( section )
 

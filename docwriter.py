@@ -33,7 +33,8 @@ import tomarkdown
 import check
 import utils
 
-logger = logging.getLogger()
+logger    = logging.getLogger()
+log_level = logging.INFO
 
 def  usage():
     print( "\nDocWriter Usage information\n" )
@@ -44,10 +45,14 @@ def  usage():
     print( "  -t : set project title, as in '-t \"My Project\"'" )
     print( "  -o : set output directory, as in '-o mydir'" )
     print( "  -p : set documentation prefix, as in '-p ft2'" )
+    print( "  -q : run quietly, show only errors" )
+    print( "  -v : verbose" )
     print( "" )
     print( "  --title  : same as -t, as in '--title=\"My Project\"'" )
     print( "  --output : same as -o, as in '--output=mydir'" )
     print( "  --prefix : same as -p, as in '--prefix=ft2'" )
+    print( "  --quiet  : same as -q" )
+    print( "  --verbose: same as -v" )
 
 def  setup_logger( log_name='docwriter', level=logging.INFO ):
     """Setup the logger."""
@@ -64,11 +69,13 @@ def  main( argv ):
     """Main program loop."""
 
     global output_dir
+    global log_level
 
     try:
         opts, args = getopt.getopt( sys.argv[1:],
-                                    "ht:o:p:",
-                                    ["help", "title=", "output=", "prefix="] )
+                                    "hqvt:o:p:",
+                                    ["help", "quiet", "verbose",
+                                     "title=", "output=", "prefix="] )
     except getopt.GetoptError:
         usage()
         sys.exit( 2 )
@@ -96,8 +103,14 @@ def  main( argv ):
         if opt[0] in ( "-p", "--prefix" ):
             project_prefix = opt[1]
 
+        if opt[0] in ( "-q", "--quiet" ):
+            log_level = logging.ERROR
+
+        if opt[0] in ( "-v", "--verbose" ):
+            log_level = logging.DEBUG
+
     # set up the logger
-    setup_logger()
+    setup_logger( level = log_level )
     log = logging.getLogger('docwriter')
 
     # check all packages

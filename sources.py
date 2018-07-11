@@ -30,6 +30,9 @@
 
 
 import fileinput, re
+import logging
+
+log = logging.getLogger(__name__)
 
 
 ################################################################
@@ -345,6 +348,7 @@ class  SourceProcessor:
         self.reset()
 
         self.filename = filename
+        log.debug( "Parsing file %s.", filename )
 
         fileinput.close()
         self.format = None
