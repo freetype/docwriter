@@ -29,19 +29,20 @@ log = logging.getLogger( __name__ )
 
 #
 # Regular expressions to detect code sequences.  `Code sequences' are simply
-# code fragments embedded in '{' and '}', as demonstrated in the following
-# example.
+# code fragments embedded in '```' and '```', as demonstrated in the following
+# example. The language can optionally be specified on the first line after the
+# backticks, and is used for syntax highlighting.
 #
-#   {
+#   ```c
 #     x = y + z;
 #     if ( zookoo == 2 )
 #     {
 #       foobar();
 #     }
-#   }
+#   ```
 #
-# Note that the indentation of the first opening brace and the last closing
-# brace must be exactly the same.  The code sequence itself should have a
+# Note that the indentation of the first opening backticks and the last closing
+# backticks must be exactly the same.  The code sequence itself should have a
 # larger indentation than the surrounding braces.
 #
 re_code_start   = re.compile( r"(\s*)```([\w\+\#\-]+)?\s*$" )
