@@ -55,10 +55,10 @@ log = logging.getLogger( __name__ )
 ##
 class  SourceBlockFormat:
 
-    def  __init__( self, id, start, column, end ):
+    def  __init__( self, iden, start, column, end ):
         """Create a block pattern, used to recognize special documentation
            blocks."""
-        self.id     = id
+        self.id     = iden
         self.start  = re.compile( start, re.VERBOSE )
         self.column = re.compile( column, re.VERBOSE )
         self.end    = re.compile( end, re.VERBOSE )
@@ -187,7 +187,7 @@ urls = r'(?:https?|telnet|gopher|file|wais|ftp)'
 ltrs = r'\w'
 gunk = r'/#~:.?+=&%@!\-'
 punc = r'.:?\-'
-any  = "%(ltrs)s%(gunk)s%(punc)s" % { 'ltrs' : ltrs,
+any_sym  = "%(ltrs)s%(gunk)s%(punc)s" % { 'ltrs' : ltrs,
                                       'gunk' : gunk,
                                       'punc' : punc }
 url  = r"""
@@ -206,7 +206,7 @@ url  = r"""
            )
          )
         """ % {'urls' : urls,
-               'any'  : any,
+               'any'  : any_sym,
                'punc' : punc }
 
 re_url = re.compile( url, re.VERBOSE | re.MULTILINE )
@@ -279,8 +279,6 @@ class  SourceBlock:
         if self.format == None:
             return
 
-        words = []
-
         # extract comment lines
         lines = []
 
@@ -309,10 +307,6 @@ class  SourceBlock:
                 print( l )
             print( "---content end}}}" )
             return
-
-        fmt = ""
-        if self.format:
-            fmt = repr( self.format.id ) + " "
 
         for line in self.lines:
             print( line )

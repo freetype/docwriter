@@ -176,7 +176,7 @@ class  Formatter:
     def  block_enter( self, block ):
         pass
 
-    def  markup_enter( self, markup, block = None ):
+    def  markup_enter( self, markup, block ):
         pass
 
     def  field_enter( self, field, markup = None, block = None ):
@@ -185,7 +185,7 @@ class  Formatter:
     def  field_exit( self, field, markup = None, block = None ):
         pass
 
-    def  markup_exit( self, markup, block = None ):
+    def  markup_exit( self, markup, block ):
         pass
 
     def  block_exit( self, block ):
@@ -213,11 +213,11 @@ class  Formatter:
                         for field in markup.fields:
                             if field.name == name:
                                 skip_entry = 1
-            except:
+            except Exception:
                 skip_entry = 1   # this happens e.g. for `/empty/' entries
 
             if skip_entry:
-              continue
+                continue
 
             self.block_enter( block )
 

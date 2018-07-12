@@ -24,7 +24,6 @@ More information can be found at:
 """
 
 from __future__ import print_function
-import sys
 import logging
 
 log = logging.getLogger( __name__ )
@@ -87,7 +86,7 @@ def add_config( yml_string, config_name ):
     config = None
     try:
         config = yaml.safe_load( yml_string )
-    except:
+    except yaml.scanner.ScannerError:
         log.warn( "Malformed '%s' config, ignoring.", config_name )
     return config
 
@@ -127,10 +126,6 @@ class SiteConfig:
         self.chapter       = None
         self.sections      = []
         self.md_extensions = []
-
-        global site_name, site_description, site_author
-        global docs_dir, site_dir
-        global theme_conf
 
         # Set configurations
         self.site_name   = site_name

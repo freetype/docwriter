@@ -206,7 +206,7 @@ class  MdFormatter( Formatter ):
         try:
             # if it is a field def, link to its parent section
             section_url = self.make_section_url( block.section, code )
-        except:
+        except Exception:
             # we already have a section
             section_url = self.make_section_url( block, code )
 
@@ -239,13 +239,13 @@ class  MdFormatter( Formatter ):
                     url = ( '&lsquo;<a href="' + url + '">'
                             + block.title + '</a>&rsquo;'
                             + rest )
-                except:
+                except Exception:
                     url = ( '<a href="' + url + '">'
                             + name + '</a>'
                             + rest )
 
                 return url
-            except:
+            except Exception:
                 # we detected a cross-reference to an unknown item
                 log.warn( "Undefined cross reference '%s'.", name )
                 return '?' + name + '?' + rest
@@ -346,24 +346,24 @@ class  MdFormatter( Formatter ):
                 elif name in self.identifiers:
                     # this is a known identifier
                     block = self.identifiers[name]
-                    id = block.name
+                    iden  = block.name
 
                     # link to a field ID if possible
                     try:
-                      for markup in block.markups:
-                          if markup.tag == 'values':
-                              for field in markup.fields:
-                                  if field.name:
-                                      id = name
+                        for markup in block.markups:
+                            if markup.tag == 'values':
+                                for field in markup.fields:
+                                    if field.name:
+                                        iden = name
 
-                      result = ( result + prefix
-                                 + '<a href="'
-                                 + self.make_block_url( block, id, code = True )
-                                 + '">' + name + '</a>' )
-                    except:
-                      # sections don't have `markups'; however, we don't
-                      # want references to sections here anyway
-                      result = result + html_quote( line[:length] )
+                        result = ( result + prefix
+                                    + '<a href="'
+                                    + self.make_block_url( block, iden, code = True )
+                                    + '">' + name + '</a>' )
+                    except Exception:
+                        # sections don't have `markups'; however, we don't
+                        # want references to sections here anyway
+                        result = result + html_quote( line[:length] )
 
                 else:
                     result = result + html_quote( line[:length] )

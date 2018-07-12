@@ -23,12 +23,11 @@
 # matching and substitution to speed up operation significantly.
 #
 from __future__ import print_function
-import sys, glob, getopt
+import sys, getopt
 import logging
 
 import sources
 import content
-import formatter
 import tomarkdown
 import check
 import utils
@@ -54,13 +53,12 @@ def  usage():
     print( "  --quiet  : same as -q" )
     print( "  --verbose: same as -v" )
 
-def  setup_logger( log_name='docwriter', level=logging.INFO ):
+def  setup_logger( level=logging.INFO ):
     """Setup the logger."""
-    global logger
     logger.propagate = False
     stream = logging.StreamHandler()
-    formatter = logging.Formatter( "%(levelname)-7s -  %(message)s" )
-    stream.setFormatter( formatter )
+    log_format = logging.Formatter( "%(levelname)-7s -  %(message)s" )
+    stream.setFormatter( log_format )
     logger.addHandler( stream )
 
     logger.setLevel( level )
@@ -72,7 +70,7 @@ def  main( argv ):
     global log_level
 
     try:
-        opts, args = getopt.getopt( sys.argv[1:],
+        opts, args = getopt.getopt( argv[1:],
                                     "hqvt:o:p:",
                                     ["help", "quiet", "verbose",
                                      "title=", "output=", "prefix="] )

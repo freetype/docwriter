@@ -159,8 +159,8 @@ class  DocPara:
             l = l.strip()
             self.words.extend( l.split() )
 
-    def  dump( self, prefix = "", width = 60 ):
-        lines = self.dump_lines( 0, width )
+    def  dump( self, prefix = "" ):
+        lines = self.dump_lines( 0 )
         for l in lines:
             print( prefix + l )
 
@@ -206,7 +206,6 @@ class  DocField:
 
         mode_none  = 0     # start parsing mode
         mode_code  = 1     # parsing code sequences
-        mode_para  = 3     # parsing normal paragraph
 
         margin     = -1    # current code sequence indentation
         cur_lines  = []
@@ -216,7 +215,6 @@ class  DocField:
         # analyze the markup lines to check whether they contain paragraphs,
         # code sequences, or fields definitions
         #
-        start = 0
         mode  = mode_none
 
         for l in lines:
@@ -322,7 +320,6 @@ class  DocMarkup:
 
         cur_lines = []
         field     = None
-        mode      = 0
 
         for l in lines:
             m = re_field.match( l )
@@ -350,7 +347,7 @@ class  DocMarkup:
     def  get_name( self ):
         try:
             return self.fields[0].items[0].words[0]
-        except:
+        except Exception:
             return None
 
     def  dump( self, margin ):
@@ -473,8 +470,6 @@ class  ContentProcessor:
     def  process_content( self, content ):
         """Process a block content and return a list of DocMarkup objects
            corresponding to it."""
-        markup       = None
-        markup_lines = []
         first        = 1
 
         margin  = -1
@@ -534,7 +529,7 @@ class  ContentProcessor:
                     follow.append( blocks[m] )
                     m = m + 1
 
-                doc_block = DocBlock( source, follow, self )
+                DocBlock( source, follow, self )
 
     def  finish( self ):
         # process all sections to extract their abstract, description
@@ -596,7 +591,7 @@ class  DocBlock:
         # compute block type from first markup tag
         try:
             self.type = self.markups[0].tag
-        except:
+        except Exception:
             pass
 
         # compute block name from first markup paragraph
@@ -608,7 +603,7 @@ class  DocBlock:
             if m:
                 name = m.group( 1 )
             self.name = name
-        except:
+        except Exception:
             pass
 
         if self.type == "section":
@@ -667,7 +662,7 @@ class  DocBlock:
         try:
             m = self.get_markup( tag_name )
             return m.fields[0].items[0].words
-        except:
+        except Exception:
             return []
 
     def  get_markup_words_all( self, tag_name ):
@@ -682,7 +677,7 @@ class  DocBlock:
                 words += item.words
                 words.append( "/empty/" )
             return words
-        except:
+        except Exception:
             return []
 
     def  get_markup_text( self, tag_name ):
@@ -693,7 +688,7 @@ class  DocBlock:
         try:
             m = self.get_markup( tag_name )
             return m.fields[0].items
-        except:
+        except Exception:
             return None
 
 # eof

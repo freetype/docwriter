@@ -20,7 +20,6 @@ Usage:
     status = check.check()
 """
 
-import sys
 import logging
 
 log = logging.getLogger( __name__ )
@@ -40,7 +39,7 @@ def check():
     for package in import_list:
         try:
             exec( "import " + package )
-        except:
+        except Exception:
             log.error( "Missing module: %s", package )
             flag = True
     if flag:

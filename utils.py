@@ -51,9 +51,9 @@ def  index_key( s ):
 #
 def  sort_order_list( input_list, order_list ):
     new_list = order_list[:]
-    for id in input_list:
-        if not id in order_list:
-            new_list.append( id )
+    for name in input_list:
+        if not name in order_list:
+            new_list.append( name )
     return new_list
 
 
@@ -62,8 +62,6 @@ def  sort_order_list( input_list, order_list ):
 # old stdout handle in a tuple that is returned by this function.
 #
 def  open_output( filename, config = False ):
-    global output_dir
-
     if output_dir and output_dir != "":
         if not config:
             filename = output_dir + os.sep + markdown_dir + os.sep + filename
@@ -104,9 +102,9 @@ def  file_exists( pathname ):
     """Check that a given file exists."""
     result = 1
     try:
-        file = open( pathname, "r" )
-        file.close()
-    except:
+        file_handle = open( pathname, "r" )
+        file_handle.close()
+    except Exception:
         result = None
         log.error( "%s couldn't be accessed.", pathname )
 
@@ -127,7 +125,7 @@ def clean_markdown_dir( ):
             continue
         path = os.path.join(directory, entry)
         if os.path.isdir(path):
-                continue
+            continue
 
         if entry.endswith('.md') or entry.endswith('.yml'):
             os.unlink(path)
