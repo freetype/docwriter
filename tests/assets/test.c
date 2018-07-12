@@ -48,7 +48,17 @@ FT_BEGIN_HEADER
    * @section:
    *   outline_processing
    *
-   */
+   * @title:
+   *   Outline Processing
+   *
+   * @abstract:
+   *   Functions to create, transform, and render vectorial glyph images.
+   *
+   * @description:
+   *   This section contains routines used to create and destroy scalable
+   *   glyph images known as 'outlines'.  These can also be measured,
+   *   transformed, and converted into bitmaps and pixmaps.
+   *
 
 
   /**************************************************************************
@@ -79,7 +89,7 @@ FT_BEGIN_HEADER
    *
    * @note:
    *   If the foo is tricky and the bar has been loaded with
-   *   @FT_BAR_NO_SCALE, the resulting bar is meaningless.  To get
+   *   @FT_FOO, the resulting bar is meaningless.  To get
    *   reasonable values for the bar it is necessary to load the foo
    *   at a large baz value (so that the hinting instructions can
    *   properly shift and scale the subfoos), then extracting the bar,
@@ -121,6 +131,7 @@ FT_END_HEADER
    */
 #define FT_BBOX_H  <freetype/ftbbox.h>
 
+/* */
 
 /* END */
 
