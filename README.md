@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/nikramakrishnan/freetype-docwriter.svg?branch=master)](https://travis-ci.com/nikramakrishnan/freetype-docwriter)
+[![Code Health](https://landscape.io/github/nikramakrishnan/freetype-docwriter/master/landscape.svg?style=flat)](https://landscape.io/github/nikramakrishnan/freetype-docwriter/master)
 
 # FreeType Docwriter
 
