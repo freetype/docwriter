@@ -7,9 +7,6 @@ python:
 # command to install dependencies
 install:
   - "pip install -r requirements.txt"
-  - "pip install codecov"
+  - "pip install pytest"
 # command to run tests
 script: "python -m pytest -v"
-
-after_success:
-  - codecov
