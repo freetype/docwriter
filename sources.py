@@ -53,7 +53,7 @@ log = logging.getLogger( __name__ )
 ##  Later on, paragraphs are converted to long lines, which simplifies the
 ##  regular expressions that act upon the text.
 ##
-class  SourceBlockFormat:
+class  SourceBlockFormat( object ):
 
     def  __init__( self, iden, start, column, end ):
         """Create a block pattern, used to recognize special documentation
@@ -266,7 +266,7 @@ re_source_keywords = re.compile( '''\\b ( typedef   |
 ##      other blocks (i.e., sources or ordinary comments with no starting
 ##      markup tag)
 ##
-class  SourceBlock:
+class  SourceBlock( object ):
 
     def  __init__( self, processor, filename, lineno, lines ):
         self.processor = processor
@@ -327,7 +327,7 @@ class  SourceBlock:
 ##    - Normal sources lines, including comments.
 ##
 ##
-class  SourceProcessor:
+class  SourceProcessor( object ):
 
     def  __init__( self ):
         """Initialize a source processor."""

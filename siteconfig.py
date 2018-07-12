@@ -98,7 +98,7 @@ def build_extras():
     yml_other     = add_config( other_config, "other" )
 
 
-class Chapter:
+class  Chapter( object ):
     def __init__( self, title ):
         self.title = title
         self.pages = []
@@ -114,7 +114,7 @@ class Chapter:
         return conf
 
 
-class SiteConfig:
+class  SiteConfig( object ):
     '''Site configuration generator class
 
     This class is used to generate site configuration based on

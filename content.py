@@ -101,7 +101,7 @@ re_header_macro = re.compile( r'^#define\s{1,}(\w{1,}_H)\s{1,}<(.*)>' )
 ##  The object is filled line by line by the parser; it strips the leading
 ##  `margin' space from each input line before storing it in `self.lines'.
 ##
-class  DocCode:
+class  DocCode( object ):
 
     def  __init__( self, margin, lines, lang = None ):
         self.lines = []
@@ -114,12 +114,12 @@ class  DocCode:
                 l = l[margin:]
             self.lines.append( l )
 
-    def  dump( self, prefix = "", width = 60 ):
-        lines = self.dump_lines( 0, width )
+    def  dump( self, prefix = "" ):
+        lines = self.dump_lines( 0 )
         for l in lines:
             print( prefix + l )
 
-    def  dump_lines( self, margin = 0, width = 60 ):
+    def  dump_lines( self, margin = 0 ):
         result = []
         for l in self.lines:
             result.append( " " * margin + l )
@@ -135,7 +135,7 @@ class  DocCode:
 ##
 ##  `self.words' contains the list of words that make up the paragraph.
 ##
-class  DocPara:
+class  DocPara( object ):
 
     def  __init__( self, lines, margin = -1 ):
         self.lines  = None
@@ -198,7 +198,7 @@ class  DocPara:
 ##  `DocCode' objects.  Each DocField object also has an optional `name'
 ##  that is used when the object corresponds to a field or value definition.
 ##
-class  DocField:
+class  DocField( object ):
 
     def  __init__( self, name, lines ):
         self.name  = name  # can be `None' for normal paragraphs/sources
@@ -312,7 +312,7 @@ re_field = re.compile( r"""
 ##
 ##  DOC MARKUP CLASS
 ##
-class  DocMarkup:
+class  DocMarkup( object ):
 
     def  __init__( self, tag, lines ):
         self.tag    = tag.lower()
@@ -361,7 +361,7 @@ class  DocMarkup:
 ##
 ##  DOC CHAPTER CLASS
 ##
-class  DocChapter:
+class  DocChapter( object ):
 
     def  __init__( self, block ):
         self.block    = block
@@ -380,7 +380,7 @@ class  DocChapter:
 ##
 ##  DOC SECTION CLASS
 ##
-class  DocSection:
+class  DocSection( object ):
 
     def  __init__( self, name = "Other" ):
         self.name        = name
@@ -419,7 +419,7 @@ class  DocSection:
 ##
 ##  CONTENT PROCESSOR CLASS
 ##
-class  ContentProcessor:
+class  ContentProcessor( object ):
 
     def  __init__( self ):
         """Initialize a block content processor."""
@@ -576,7 +576,7 @@ class  ContentProcessor:
 ##
 ##  DOC BLOCK CLASS
 ##
-class  DocBlock:
+class  DocBlock( object ):
 
     def  __init__( self, source, follow, processor ):
         processor.reset()

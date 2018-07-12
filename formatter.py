@@ -45,7 +45,7 @@ log = logging.getLogger( __name__ )
 ##
 ##  FORMATTER CLASS
 ##
-class  Formatter:
+class  Formatter( object ):
 
     def  __init__( self, processor ):
         self.processor   = processor
