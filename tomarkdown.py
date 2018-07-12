@@ -182,8 +182,8 @@ class  MdFormatter( Formatter ):
         url = url.replace( "]", ")" )
         return url
 
-    def sluggify( self, name ):
-        '''Sluggify a cross-reference
+    def slugify( self, name ):
+        '''Slugify a cross-reference
         
         Python markdown uses a similar approach to process links
         so we need to do this in order to have valid cross-references
@@ -201,7 +201,7 @@ class  MdFormatter( Formatter ):
         if name == None:
             name = block.name
 
-        name = self.sluggify( name )
+        name = self.slugify( name )
 
         try:
             # if it is a field def, link to its parent section
@@ -214,7 +214,7 @@ class  MdFormatter( Formatter ):
 
     def make_chapter_url( self, chapter ):
         chapter = ' '.join( chapter )
-        slug_chapter = self.sluggify( chapter )
+        slug_chapter = self.slugify( chapter )
         chapter_url = ( "[" + chapter + "]("
                         + self.toc_filename + "#" + slug_chapter + ")"
                       )
@@ -385,7 +385,7 @@ class  MdFormatter( Formatter ):
         else:
             print( '<table class="fields">' )
         for field in fields:
-            print( '<tr><td class="val" id="' + self.sluggify( field.name ) + '">'
+            print( '<tr><td class="val" id="' + self.slugify( field.name ) + '">'
                    + field.name
                    + '</td><td class="desc">' )
             self.print_md_items( field.items, in_html = True )
