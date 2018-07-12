@@ -41,3 +41,17 @@ using the following options:
   --quiet  : same as -q
   --verbose: same as -v
 ```
+
+## Running Tests
+
+To run all tests locally:
+
+1.  Make sure `pytest` is installed:
+    ```bash
+    pip install pytest
+    ```
+    
+2.  Run tests:
+    ```bash
+    python -m pytest
+    ```
