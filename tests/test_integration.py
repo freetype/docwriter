@@ -1,3 +1,17 @@
+#
+#  test_integration.py
+#
+#    Integration test for docwriter.
+#
+#  Copyright 2018 by
+#  Nikhil Ramakrishnan.
+#
+#  This file is part of the FreeType project, and may only be used,
+#  modified, and distributed under the terms of the FreeType project
+#  license, LICENSE.TXT.  By continuing to use, modify, or distribute
+#  this file you indicate that you have read the license and
+#  understand and accept it fully.
+
 """
 # Docwriter Integration tests
 
@@ -39,3 +53,5 @@ def test_integration( capfd ):
     print( err )
     # fail if there are warnings
     assert not "WARNING" in err
+
+# eof

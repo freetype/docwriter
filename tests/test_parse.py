@@ -1,3 +1,17 @@
+#
+#  test_parse.py
+#
+#    Tests for docwriter parsing (sources.py and content.py).
+#
+#  Copyright 2018 by
+#  Nikhil Ramakrishnan.
+#
+#  This file is part of the FreeType project, and may only be used,
+#  modified, and distributed under the terms of the FreeType project
+#  license, LICENSE.TXT.  By continuing to use, modify, or distribute
+#  this file you indicate that you have read the license and
+#  understand and accept it fully.
+
 import sources
 import content
 import utils
@@ -33,3 +47,5 @@ def test_parse_source():
     expected_val = 'FT_BBOX_H'
 
     assert headers[expected_key] == expected_val
+
+# eof

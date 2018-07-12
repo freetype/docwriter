@@ -1,3 +1,17 @@
+#
+#  test_tomarkdown.py
+#
+#    Tests for markdown formatter (tomarkdown.py).
+#
+#  Copyright 2018 by
+#  Nikhil Ramakrishnan.
+#
+#  This file is part of the FreeType project, and may only be used,
+#  modified, and distributed under the terms of the FreeType project
+#  license, LICENSE.TXT.  By continuing to use, modify, or distribute
+#  this file you indicate that you have read the license and
+#  understand and accept it fully.
+
 import sources
 import content
 import tomarkdown
@@ -67,3 +81,5 @@ def test_make_chapter_url():
     out_text = formatter.make_chapter_url( section.chapter.title )
 
     assert out_text == expected_text
+
+# eof

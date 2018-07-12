@@ -1,3 +1,17 @@
+#
+#  test_utils.py
+#
+#    Tests for utility functions (utils.py).
+#
+#  Copyright 2018 by
+#  Nikhil Ramakrishnan.
+#
+#  This file is part of the FreeType project, and may only be used,
+#  modified, and distributed under the terms of the FreeType project
+#  license, LICENSE.TXT.  By continuing to use, modify, or distribute
+#  this file you indicate that you have read the license and
+#  understand and accept it fully.
+
 import utils
 import os
 import sys
@@ -45,3 +59,5 @@ def test_make_file_list( tmpdir ):
     out_list = [f for f in out_list]
     for i in range( len( expected ) ):
         assert expected[i] in out_list[i]
+
+# eof
