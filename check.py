@@ -46,3 +46,5 @@ def check():
     if flag:
         return 1
     return 0
+
+# eof
