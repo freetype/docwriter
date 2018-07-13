@@ -24,13 +24,14 @@ More information can be found at:
 """
 
 from __future__ import print_function
-import logging
 
-log = logging.getLogger( __name__ )
+import logging
 
 import yaml
 
 import utils
+
+log = logging.getLogger( __name__ )
 
 # Config file name
 config_filename = "mkdocs.yml"

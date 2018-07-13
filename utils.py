@@ -17,8 +17,11 @@
 This module provides various utility functions for Docwriter.
 """
 
-import sys, os, glob, itertools
+import glob
+import itertools
 import logging
+import os
+import sys
 
 log = logging.getLogger( __name__ )
 

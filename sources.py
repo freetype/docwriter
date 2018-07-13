@@ -29,11 +29,13 @@ in file `content.py'; the classes and methods found here only deal with
 text parsing and basic documentation block extraction.
 """
 
-import fileinput, re
+from __future__ import print_function
+
+import fileinput
 import logging
+import re
 
 log = logging.getLogger( __name__ )
-
 
 ################################################################
 ##

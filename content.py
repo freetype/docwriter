@@ -17,14 +17,15 @@ This module contains routines to parse documentation comment blocks,
 building more structured objects out of them.
 """
 
+from __future__ import print_function
+
+import logging
+import re
+
 import sources
 import utils
 
-import re
-import logging
-
 log = logging.getLogger( __name__ )
-
 
 #
 # Regular expressions to detect code sequences.  `Code sequences' are simply

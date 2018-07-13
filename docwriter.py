@@ -29,13 +29,15 @@ documentation.
 """
 
 from __future__ import print_function
-import sys, getopt
-import logging
 
-import sources
-import content
-import tomarkdown
+import getopt
+import logging
+import sys
+
 import check
+import content
+import sources
+import tomarkdown
 import utils
 
 logger    = logging.getLogger()

@@ -20,17 +20,18 @@ This module subclasses `formatter` and implements syntax-specific
 routines to build markdown output.
 """
 
-import os, time, re
 import logging
-
-log = logging.getLogger( __name__ )
-
-import sources
-import content
-from formatter import Formatter
-import siteconfig
+import os
+import re
+import time
 
 import mistune
+
+from formatter import Formatter
+import siteconfig
+import sources
+
+log = logging.getLogger( __name__ )
 
 #---------------------------------------------------------------
 # Begin initial configuration

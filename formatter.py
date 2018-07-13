@@ -23,13 +23,11 @@ module `tomarkdown` contains the definition of the `MdFormatter' sub-class
 to output Markdown.
 """
 
-import sources
-import content
-import utils
 import logging
 
-log = logging.getLogger( __name__ )
+import utils
 
+log = logging.getLogger( __name__ )
 
 ################################################################
 ##
