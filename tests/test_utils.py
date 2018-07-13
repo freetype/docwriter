@@ -12,6 +12,11 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
+"""Unit tests for `utils`.
+
+This module contains tests for functions in `utils.py`.
+"""
+
 import utils
 import os
 import sys

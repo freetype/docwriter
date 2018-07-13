@@ -12,6 +12,11 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
+"""Unit tests for `tomarkdown`.
+
+This module contains tests for functions in `tomarkdown.py`.
+"""
+
 import sources
 import content
 import tomarkdown

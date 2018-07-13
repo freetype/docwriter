@@ -13,7 +13,8 @@
 #  understand and accept it fully.
 
 """
-Module to check if all required modules are available.
+Utility to check if all required modules are available.
+The list of required modules can be modified in this file.
 
 Usage:
     import check
@@ -34,7 +35,7 @@ import_list = ["mistune", "yaml"]
 def check():
     '''Check if all required modules are present.
     
-    Return 0 on success, non-zero on error.'''
+    Returns 0 on success, non-zero on error.'''
     flag = 0
     for package in import_list:
         try:

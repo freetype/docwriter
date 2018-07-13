@@ -12,8 +12,7 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
-"""
-# Docwriter Integration tests
+"""Docwriter Integration tests.
 
 This is a simple integration test that builds Docwriter
 documentation against a test file.

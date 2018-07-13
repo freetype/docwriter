@@ -12,11 +12,6 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
-#
-# This file contains routines to parse documentation comment blocks,
-# building more structured objects out of them.
-#
-
 """
 This module contains routines to parse documentation comment blocks,
 building more structured objects out of them.

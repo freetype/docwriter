@@ -12,16 +12,6 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
-#
-# This is the base Formatter class.  Its purpose is to convert a content
-# processor's data into specific documents (i.e., table of contents, global
-# index, and individual API reference indices).
-#
-# You need to sub-class it to output anything sensible.  For example, the
-# module `tomarkdown` contains the definition of the `MdFormatter' sub-class
-# to output Markdown.
-#
-
 """Base formatter class.
 
 The purpose of this module is to convert a content processor's data into

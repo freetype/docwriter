@@ -12,26 +12,21 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
-#
-# This library file contains definitions of classes needed to decompose C
-# source code files into a series of multi-line `blocks'.  There are two
-# kinds of blocks.
-#
-#   - Normal blocks, which contain source code or ordinary comments.
-#
-#   - Documentation blocks, which have restricted formatting, and whose text
-#     always start with a documentation markup tag like `<Function>',
-#     `<Type>', etc.
-#
-# The routines to process the content of documentation blocks are contained
-# in file `content.py'; the classes and methods found here only deal with
-# text parsing and basic documentation block extraction.
-#
-
 """Utility for parsing source files.
 
 This library file contains definitions of classes needed to decompose C
-source code files into a series of multi-line 'blocks'.
+source code files into a series of multi-line 'blocks'.  There are two
+kinds of blocks.
+
+  * Normal blocks, which contain source code or ordinary comments.
+
+  * Documentation blocks, which have restricted formatting, and whose text
+    always start with a documentation markup tag like `<Function>',
+    `<Type>', etc.
+
+The routines to process the content of documentation blocks are contained
+in file `content.py'; the classes and methods found here only deal with
+text parsing and basic documentation block extraction.
 """
 
 import fileinput, re
