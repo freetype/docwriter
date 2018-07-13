@@ -23,9 +23,9 @@ module `tomarkdown` contains the definition of the `MdFormatter' sub-class
 to output Markdown.
 """
 
-from sources import *
-from content import *
-from utils   import *
+import sources
+import content
+import utils
 import logging
 
 log = logging.getLogger( __name__ )
@@ -57,7 +57,7 @@ class  Formatter( object ):
                             self.add_identifier( field.name, block )
 
         self.block_index = self.identifiers.keys()
-        self.block_index = sorted( self.block_index, key = index_key )
+        self.block_index = sorted( self.block_index, key = utils.index_key )
 
         # also add section names to dictionary (without making them appear
         # in the index)
@@ -103,7 +103,7 @@ class  Formatter( object ):
     def  toc_dump( self, toc_filename = None, index_filename = None ):
         output = None
         if toc_filename:
-            output = open_output( toc_filename )
+            output = utils.open_output( toc_filename )
 
         log.debug( "Building table of contents in %s.", toc_filename )
         self.toc_enter()
@@ -123,7 +123,7 @@ class  Formatter( object ):
         self.toc_exit()
 
         if output:
-            close_output( output )
+            utils.close_output( output )
 
     #
     # formatting the index
@@ -143,7 +143,7 @@ class  Formatter( object ):
     def  index_dump( self, index_filename = None ):
         output = None
         if index_filename:
-            output = open_output( index_filename )
+            output = utils.open_output( index_filename )
 
         log.debug("Building index in %s.", index_filename )
         self.index_enter()
@@ -155,7 +155,7 @@ class  Formatter( object ):
         self.index_exit()
 
         if output:
-            close_output( output )
+            utils.close_output( output )
 
     #
     # formatting a section
@@ -188,7 +188,7 @@ class  Formatter( object ):
         output = None
         log.debug( "Building page %s.", section_filename )
         if section_filename:
-            output = open_output( section_filename )
+            output = utils.open_output( section_filename )
 
         self.section_enter( section )
 
@@ -225,7 +225,7 @@ class  Formatter( object ):
         self.section_exit( section )
 
         if output:
-            close_output( output )
+            utils.close_output( output )
 
     def  section_dump_all( self ):
         log.debug( "Building markdown pages for sections." )

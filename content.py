@@ -17,8 +17,8 @@ This module contains routines to parse documentation comment blocks,
 building more structured objects out of them.
 """
 
-from sources import *
-from utils   import *
+import sources
+import utils
 
 import re
 import logging
@@ -407,7 +407,8 @@ class  DocSection( object ):
                 return
 
     def  reorder( self ):
-        self.block_names = sort_order_list( self.block_names, self.order )
+        self.block_names = utils.sort_order_list( self.block_names,
+                                                  self.order )
 
 
 ################################################################
@@ -485,7 +486,7 @@ class  ContentProcessor( object ):
             found = None
 
             if not in_code:
-                for t in re_markup_tags:
+                for t in sources.re_markup_tags:
                     m = t.match( line )
                     if m:
                         found  = m.group( 1 ).lower()
@@ -624,7 +625,7 @@ class  DocBlock( object ):
                     processor.headers[m.group( 2 )] = m.group( 1 )
 
                 # we use "/* */" as a separator
-                if re_source_sep.match( l ):
+                if sources.re_source_sep.match( l ):
                     break
                 source.append( l )
 

@@ -20,14 +20,14 @@ This module subclasses `formatter` and implements syntax-specific
 routines to build markdown output.
 """
 
-import time
+import os, time, re
 import logging
 
 log = logging.getLogger( __name__ )
 
-from sources import *
-from content import *
-from formatter import *
+import sources
+import content
+from formatter import Formatter
 import siteconfig
 
 import mistune
@@ -223,7 +223,7 @@ class  MdFormatter( Formatter ):
     def  make_md_word( self, word ):
         """Analyze a simple word to detect cross-references and markup."""
         # handle cross-references
-        m = re_crossref.match( word )
+        m = sources.re_crossref.match( word )
         if m:
             try:
                 name = m.group( 'name' )
@@ -261,7 +261,7 @@ class  MdFormatter( Formatter ):
             for word in words[1:]:
                 line = line + " " + self.make_md_word( word )
             # handle hyperlinks
-            line = re_url.sub( r'<\1>', line )
+            line = sources.re_url.sub( r'<\1>', line )
             # convert '...' quotations into real left and right single quotes
             line = re.sub( r"(^|\W)'(.*?)'(\W|$)",
                            r'\1&lsquo;\2&rsquo;\3',
@@ -326,7 +326,7 @@ class  MdFormatter( Formatter ):
     def  source_quote( self, line, block_name = None ):
         result = ""
         while line:
-            m = re_source_crossref.match( line )
+            m = sources.re_source_crossref.match( line )
             if m:
                 name   = m.group( 2 )
                 prefix = html_quote( m.group( 1 ) )
@@ -338,7 +338,7 @@ class  MdFormatter( Formatter ):
                     # result = result + prefix + name
                 
                 # Keyword highlighting
-                elif re_source_keywords.match( name ):
+                elif sources.re_source_keywords.match( name ):
                     # this is a C keyword
                     result = ( result + prefix
                                + keyword_prefix + name + keyword_suffix )
