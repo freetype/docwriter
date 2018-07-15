@@ -45,7 +45,7 @@ log_level = logging.INFO
 
 
 def setup_logger(level=logging.INFO):
-    """Setup the logger."""
+    """Set up the logger."""
     logger.propagate = False
     stream = logging.StreamHandler()
     log_format = logging.Formatter("%(levelname)-7s -  %(message)s")
