@@ -55,7 +55,7 @@ def setup_logger(level=logging.INFO):
     logger.setLevel(level)
 
 
-def main(argv):
+def main():
     """Main program loop."""
 
     global output_dir
@@ -160,6 +160,6 @@ def main(argv):
 
 # if called from the command line
 if __name__ == "__main__":
-    main(sys.argv)
+    main()
 
 # eof
