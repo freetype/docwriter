@@ -22,24 +22,20 @@ Markdown documentation generator for the FreeType library.
 ## Usage Information
 
 ```
-docwriter [options] file1 [file2 ...]
+docwriter [-h] [-t T] -o DIR [-p PRE] [-q | -v] files [files ...]
 
-Note: Wildcard names are supported
+DocWriter Usage information
 
-using the following options:
+positional arguments:
+  files                 list of source files to parse, wildcards are allowed
 
-  -h : print this page
-  -t : set project title, as in '-t "My Project"'
-  -o : set output directory, as in '-o mydir'
-  -p : set documentation prefix, as in '-p ft2'
-  -q : run quietly, show only errors
-  -v : verbose
-
-  --title  : same as -t, as in '--title="My Project"'
-  --output : same as -o, as in '--output=mydir'
-  --prefix : same as -p, as in '--prefix=ft2'
-  --quiet  : same as -q
-  --verbose: same as -v
+optional arguments:
+  -h, --help            show this help message and exit
+  -t T, --title T       set project title, as in '-t "My Project"'
+  -o DIR, --output DIR  set output directory, as in '-o mydir'
+  -p PRE, --prefix PRE  set documentation prefix, as in '-p ft2'
+  -q, --quiet           run quietly, show only errors
+  -v, --verbose         increase output verbosity
 ```
 
 ## Running Tests
