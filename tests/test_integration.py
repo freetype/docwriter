@@ -25,7 +25,7 @@ import logging
 import os
 import subprocess
 
-log = logging.getLogger('mkdocs')
+log = logging.getLogger('docwriter')
 
 def test_integration( capfd ):
 
