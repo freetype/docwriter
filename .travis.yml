@@ -7,5 +7,9 @@ python:
 install:
   - "pip install -r requirements.txt"
   - "pip install pytest"
+  - "pip install docformatter"
 # command to run tests
 script: "python -m pytest -v"
+# check docstring formatting
+after_success:
+  - 'docformatter -r --wrap-summaries 78'
