@@ -12,10 +12,8 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
-"""
-This module contains routines to parse documentation comment blocks,
-building more structured objects out of them.
-"""
+"""This module contains routines to parse documentation comment blocks,
+building more structured objects out of them."""
 
 from __future__ import print_function
 
@@ -466,7 +464,7 @@ class  ContentProcessor( object ):
 
     def  process_content( self, content ):
         """Process a block content and return a list of DocMarkup objects
-           corresponding to it."""
+        corresponding to it."""
         first        = 1
 
         margin  = -1

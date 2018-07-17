@@ -12,7 +12,7 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
-"""Utility functions for Docwriter
+"""Utility functions for Docwriter.
 
 This module provides various utility functions for Docwriter.
 """
@@ -88,7 +88,7 @@ def  close_output( output ):
 # Check output directory.
 #
 def  check_output():
-    '''Check if output directory is valid'''
+    """Check if output directory is valid."""
     global output_dir
     if output_dir:
         if output_dir != "":
@@ -114,9 +114,7 @@ def  file_exists( pathname ):
     return result
 
 def clean_markdown_dir( ):
-    """
-    Remove markdown and yml files from a directory.
-    """
+    """Remove markdown and yml files from a directory."""
     directory = output_dir + os.sep + markdown_dir
     if not os.path.exists(directory):
         return

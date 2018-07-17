@@ -112,12 +112,10 @@ md_hr = """\
 #---------------------------------------------------------------
 
 def  html_quote( line ):
-    '''Change HTML special characters to their codes
+    """Change HTML special characters to their codes.
 
-    Follows ISO 8859-1  
-    Characters changed:
-    `&`, `<` and `>`.
-    '''
+    Follows ISO 8859-1 Characters changed: `&`, `<` and `>`.
+    """
     result = line
     if "`" not in result:
         result = line.replace( "&", "&amp;" )
@@ -184,11 +182,11 @@ class  MdFormatter( Formatter ):
         return url
 
     def slugify( self, name ):
-        '''Slugify a cross-reference
-        
-        Python markdown uses a similar approach to process links
-        so we need to do this in order to have valid cross-references
-        '''
+        """Slugify a cross-reference.
+
+        Python markdown uses a similar approach to process links so we
+        need to do this in order to have valid cross-references.
+        """
         name = name.lower().strip()
         name = name.replace( " ",  "-")
         return name
@@ -254,8 +252,10 @@ class  MdFormatter( Formatter ):
         return html_quote( word )
 
     def  make_md_para( self, words, in_html = False ):
-        """Convert words of a paragraph into tagged Markdown text.  Also handle
-           cross references."""
+        """Convert words of a paragraph into tagged Markdown text.
+
+        Also handle cross references.
+        """
         line = ""
         if words:
             line = self.make_md_word( words[0] )

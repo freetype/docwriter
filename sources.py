@@ -54,7 +54,7 @@ class  SourceBlockFormat( object ):
 
     def  __init__( self, iden, start, column, end ):
         """Create a block pattern, used to recognize special documentation
-           blocks."""
+        blocks."""
         self.id     = iden
         self.start  = re.compile( start, re.VERBOSE )
         self.column = re.compile( column, re.VERBOSE )
@@ -340,7 +340,7 @@ class  SourceProcessor( object ):
 
     def  parse_file( self, filename ):
         """Parse a C source file and add its blocks to the processor's
-           list."""
+        list."""
         self.reset()
 
         self.filename = filename
@@ -380,7 +380,7 @@ class  SourceProcessor( object ):
 
     def  process_normal_line( self, line ):
         """Process a normal line and check whether it is the start of a new
-           block."""
+        block."""
         for f in re_source_block_formats:
             if f.start.match( line ):
                 self.add_block_lines()

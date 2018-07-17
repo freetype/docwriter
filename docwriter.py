@@ -23,10 +23,8 @@
 # matching and substitution to speed up operation significantly.
 #
 
-"""
-This libaray is used to Convert source code markup to Markdown
-documentation.
-"""
+"""This libaray is used to Convert source code markup to Markdown
+documentation."""
 
 from __future__ import print_function
 

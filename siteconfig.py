@@ -116,11 +116,11 @@ class  Chapter( object ):
 
 
 class  SiteConfig( object ):
-    '''Site configuration generator class
+    """Site configuration generator class.
 
-    This class is used to generate site configuration based on
-    supplied and default values.
-    '''
+    This class is used to generate site configuration based on supplied
+    and default values.
+    """
     def __init__( self ):
         self.site_config   = {}
         self.pages         = []
@@ -138,7 +138,7 @@ class  SiteConfig( object ):
         self.use_dir_url = use_dir_url
 
     def set_site_info( self, name, description = None, author = None ):
-        '''Set the basic site information'''
+        """Set the basic site information."""
         if name:
             self.site_name = name
         else:
@@ -151,17 +151,17 @@ class  SiteConfig( object ):
             self.site_author = author
 
     def add_single_page( self, section_title, filename ):
-        '''Add a single page to the list of pages'''
+        """Add a single page to the list of pages."""
         cur_page = {}
         cur_page[section_title] = filename
         self.pages.append( cur_page )
 
     def add_chapter_page( self, section_title, filename ):
-        '''Add a page to a chapter.
+        """Add a page to a chapter.
 
-        Chapter must be set first using `start_chapter()`
-        If not set, `add_single_page()` will be called internally.
-        '''
+        Chapter must be set first using `start_chapter()` If not set,
+        `add_single_page()` will be called internally.
+        """
         if self.chapter:
             self.chapter.add_page( section_title, filename )
         else:
@@ -170,7 +170,7 @@ class  SiteConfig( object ):
             self.add_single_page( section_title, filename )
 
     def start_chapter( self, chap ):
-        '''Start a chapter'''
+        """Start a chapter."""
         if self.chapter:
             chap_pages = self.chapter.get_pages()
             self.pages.append( chap_pages )
@@ -178,14 +178,14 @@ class  SiteConfig( object ):
         self.chapter = Chapter( chap )
 
     def end_chapter( self ):
-        '''Explicitly end a chapter'''
+        """Explicitly end a chapter."""
         if self.chapter:
             chap_pages = self.chapter.get_pages()
             self.pages.append( chap_pages )
             self.chapter = None
 
     def build_site_config( self ):
-        '''Add basic Project information to config'''
+        """Add basic Project information to config."""
         self.site_config['site_name'] = self.site_name
         if site_description:
             self.site_config['site_description'] = self.site_desc
@@ -214,14 +214,14 @@ class  SiteConfig( object ):
             self.site_config.update( data )
 
     def write_config( self, name ):
-        '''Write all values in site_config to output stream'''
+        """Write all values in site_config to output stream."""
         if self.site_config != {}:
             print( "# " + name )
             print( yaml.dump( self.site_config, default_flow_style=False ) )
             self.site_config.clear()
 
     def write_config_order( self, name, order ):
-        '''Write all values in site_config to output stream in order'''
+        """Write all values in site_config to output stream in order."""
         if self.site_config != {}:
             print( "# " + name )
             for key in order:
@@ -240,7 +240,7 @@ class  SiteConfig( object ):
             self.site_config.clear()
 
     def build_config( self ):
-        '''Build the YAML configuration'''
+        """Build the YAML configuration."""
         # End chapter if started
         self.end_chapter()
 

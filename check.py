@@ -12,8 +12,8 @@
 #  this file you indicate that you have read the license and
 #  understand and accept it fully.
 
-"""
-Utility to check if all required modules are available.
+"""Utility to check if all required modules are available.
+
 The list of required modules can be modified in this file.
 
 Usage:
@@ -33,9 +33,10 @@ log = logging.getLogger( __name__ )
 import_list = ["mistune", "yaml"]
 
 def check():
-    '''Check if all required modules are present.
-    
-    Returns 0 on success, non-zero on error.'''
+    """Check if all required modules are present.
+
+    Returns 0 on success, non-zero on error.
+    """
     flag = 0
     for package in import_list:
         try:
