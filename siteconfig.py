@@ -25,6 +25,7 @@ More information can be found at:
 
 from __future__ import print_function
 
+import datetime
 import logging
 
 import yaml
@@ -51,6 +52,17 @@ theme_conf             = {}
 theme_conf['name']     = "material"
 theme_conf['logo']     = "images/favico.ico"
 theme_conf['language'] = "en"
+theme_conf['favicon']  = "images/favico.ico"
+theme_conf['palette']  = {}
+theme_conf['font']     = {}
+
+# Theme palette
+theme_conf['palette']['primary'] = "green"
+theme_conf['palette']['accent']  = "green"
+
+# Theme fonts
+theme_conf['font']['text'] = "Noto Serif"
+theme_conf['font']['code'] = "Roboto Mono"
 
 # Markdown extensions
 md_extensions = '''\
@@ -77,11 +89,14 @@ extra_javascript:
 '''
 
 # Other config
+year = datetime.datetime.utcnow().year
+vars = { 'year': year }
 other_config = '''\
-copyright: Copyright 2018 \
-<a href = "http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/LICENSE.TXT">\
+copyright: Copyright {year} \
+<a href = "https://www.freetype.org/license.html">\
 The FreeType Project</a>.
 '''
+other_config = other_config.format( **vars )
 
 def add_config( yml_string, config_name ):
     config = None
