@@ -31,28 +31,29 @@ output_dir = None
 markdown_dir = "markdown"
 
 def build_message():
+    """Print build message to console."""
     path = os.path.join( output_dir, markdown_dir )
     path = os.path.normpath(path)
     log.info("Building markdown documentation to directory: %s", path)
 
-# A function that generates a sorting key.  We want lexicographical order
-# (primary key) except that capital letters are sorted before lowercase
-# ones (secondary key).
-#
-# The primary key is implemented by lowercasing the input.  The secondary
-# key is simply the original data appended, character by character.  For
-# example, the sort key for `FT_x' is `fFtT__xx', while the sort key for
-# `ft_X' is `fftt__xX'.  Since ASCII codes of uppercase letters are
-# numerically smaller than the codes of lowercase letters, `fFtT__xx' gets
-# sorted before `fftt__xX'.
-#
 def  index_key( s ):
+    """Generate a sorting key.
+
+    We want lexicographical order (primary key) except that capital
+    letters are sorted before lowercase ones(secondary key).
+
+    The primary key is implemented by lowercasing the input.  The
+    secondary key is simply the original data appended, character by
+    character.  For example, the sort key for `FT_x` is `fFtT__xx`,
+    while the sort key for `ft_X` is `fftt__xX`.  Since ASCII codes of
+    uppercase letters are numerically smaller than the codes of
+    lowercase letters, `fFtT__xx` gets sorted before `fftt__xX`.
+    """
     return " ".join( itertools.chain( *zip( s.lower(), s ) ) )
 
 
-# Sort `input_list', placing the elements of `order_list' in front.
-#
 def  sort_order_list( input_list, order_list ):
+    """Sort `input_list`, placing the elements of `order_list' in front."""
     new_list = order_list[:]
     for name in input_list:
         if not name in order_list:
@@ -60,11 +61,16 @@ def  sort_order_list( input_list, order_list ):
     return new_list
 
 
-# Divert standard output to a given project documentation file.  Use
-# `output_dir' to determine the filename location if necessary and save the
-# old stdout handle in a tuple that is returned by this function.
-#
 def  open_output( filename, config = False ):
+    '''Divert standard output to a given project documentation file.
+
+    Use `output_dir` to determine the filename location if necessary and
+    save the old stdout handle in a tuple that is returned by this function.
+
+    If `config` is set to True, file is written to the parent directory.
+    This is because MkDocs (and other generators) require configuration
+    files to be in the parent directory.
+    '''
     if output_dir and output_dir != "":
         if not config:
             filename = output_dir + os.sep + markdown_dir + os.sep + filename
@@ -78,15 +84,12 @@ def  open_output( filename, config = False ):
     return ( new_file, old_stdout )
 
 
-# Close the output that was returned by `open_output'.
-#
 def  close_output( output ):
+    """Close the output that was returned by `open_output`."""
     output[0].close()
     sys.stdout = output[1]
 
 
-# Check output directory.
-#
 def  check_output():
     """Check if output directory is valid."""
     global output_dir
@@ -132,9 +135,8 @@ def clean_markdown_dir( ):
             os.unlink(path)
 
 def  make_file_list( args = None ):
-    """Build a list of input files from command-line arguments."""
+    """Build a list of input files from a list or command-line arguments."""
     file_list = []
-    # sys.stderr.write( repr( sys.argv[1 :] ) + '\n' )
 
     if not args:
         args = sys.argv[1:]
