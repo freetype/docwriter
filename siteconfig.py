@@ -120,11 +120,13 @@ class  Chapter( object ):
         self.pages = []
 
     def add_page( self, section_title, filename ):
+        """Add a page to the chapter."""
         cur_page = {}
         cur_page[section_title] = filename
         self.pages.append( cur_page )
 
     def get_pages( self ):
+        """Get dict of pages in the chapter."""
         conf = {}
         conf[self.title] = self.pages
         return conf
