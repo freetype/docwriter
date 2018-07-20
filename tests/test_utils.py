@@ -42,7 +42,7 @@ def test_sort_order_list():
 def test_output( tmpdir ):
     # check if sys.stdout is diverting to file
     # this tests both open_output and close_output
-    utils.output_dir = str(tmpdir)
+    utils.output_dir = str( tmpdir )
     old_std = sys.stdout
     out = utils.open_output("test.txt", config=True)
     assert sys.stdout != old_std

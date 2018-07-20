@@ -189,8 +189,7 @@ class  SiteConfig( object ):
     def start_chapter( self, chap ):
         """Start a chapter."""
         if self.chapter:
-            chap_pages = self.chapter.get_pages()
-            self.pages.append( chap_pages )
+            self.end_chapter()
 
         self.chapter = Chapter( chap )
 
