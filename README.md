@@ -51,3 +51,14 @@ To run all tests locally:
     ```bash
     python -m pytest
     ```
+    
+## License
+
+This library is licensed under the [FreeType License](https://www.freetype.org/license.html).
+
+## History
+
+This library was originally written by David Turner as `docmaker` which collected and presented
+documentation in HTML. It has since been modified multiple times, including a major refactor
+to allow multiple output formats. The current `docwriter` is the biggest rewrite, with lots of
+changes, additions etc. that allow it to be more flexible, readable, maintainable and usable.
