@@ -62,7 +62,7 @@ def  sort_order_list( input_list, order_list ):
 
 
 def  open_output( filename, config = False ):
-    '''Divert standard output to a given project documentation file.
+    """Divert standard output to a given project documentation file.
 
     Use `output_dir` to determine the filename location if necessary and
     save the old stdout handle in a tuple that is returned by this function.
@@ -70,7 +70,7 @@ def  open_output( filename, config = False ):
     If `config` is set to True, file is written to the parent directory.
     This is because MkDocs (and other generators) require configuration
     files to be in the parent directory.
-    '''
+    """
     if output_dir and output_dir != "":
         if not config:
             filename = output_dir + os.sep + markdown_dir + os.sep + filename
