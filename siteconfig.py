@@ -89,14 +89,14 @@ extra_javascript:
 '''
 
 # Other config
-year = datetime.datetime.utcnow().year
-vars = { 'year': year }
+year     = datetime.datetime.utcnow().year
+var_dict = { 'year': year }
 other_config = '''\
 copyright: Copyright {year} \
 <a href = "https://www.freetype.org/license.html">\
 The FreeType Project</a>.
 '''
-other_config = other_config.format( **vars )
+other_config = other_config.format( **var_dict )
 
 def add_config( yml_string, config_name ):
     config = None
