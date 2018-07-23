@@ -379,8 +379,17 @@ class  MdFormatter( Formatter ):
     def  print_md_field_list( self, fields ):
         is_long = False
         for field in fields:
-            if len( field.name ) > 30:
+            # if any field name is longer than
+            # 25 chars change to long table
+            if len( field.name ) > 25:
                 is_long = True
+                break
+            # if any line has a code sequence
+            # change to long table
+            for item in field.items:
+                if item.lines:
+                    is_long = True
+                    break
         if is_long:
             print( '<table class="fields long">' )
         else:
