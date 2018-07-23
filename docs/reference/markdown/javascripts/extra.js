@@ -16,16 +16,22 @@ function offsetY(elem) {
     return y;
 }
 
+// If a link on the same page is clicked, calculate the
+// correct offset and scroll to that part of the page.
+//
 var links = document.getElementsByTagName('a');
 for(var i = 0; i < links.length; i++) {
     links[i].onclick = function (event) {
-        var o = document.getElementById(this.hash.substr(1));
-        if(this.href.indexOf(window.location.pathname) > -1) {
-            event.preventDefault();
-            var sT = offsetY(o) - document.getElementsByClassName('md-header')[0].clientHeight;
-            window.location.hash = this.hash;
-            window.scrollTo(0, sT);
-            console.log(offsetY(o))
+        if (this.pathname == window.location.pathname &&
+            this.protocol == window.location.protocol &&
+            this.host == window.location.host) {
+                event.preventDefault();
+                if(this.hash.substr(1)){
+                    var o = document.getElementById(this.hash.substr(1));
+                    var sT = offsetY(o) - document.getElementsByClassName('md-header')[0].clientHeight;
+                    window.location.hash = this.hash;
+                    window.scrollTo(0, sT);
+                }
         }
     }
 }
