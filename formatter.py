@@ -55,7 +55,7 @@ class  Formatter( object ):
                             self.add_identifier( field.name, block )
 
         self.block_index = self.identifiers.keys()
-        self.block_index = sorted( self.block_index, key = utils.index_key )
+        self.block_index = sorted( self.block_index, key = str.lower )
 
         # also add section names to dictionary (without making them appear
         # in the index)
