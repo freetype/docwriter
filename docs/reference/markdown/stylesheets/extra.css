@@ -172,6 +172,9 @@ table.toc td.desc p {
     margin: 1.5ex 0 0 0;
     text-align: left;
 }
+div.timestamp {
+    font-size: small;
+}
 /* Max width before this PARTICULAR table gets nasty This query will take effect for any screen smaller than 760px and also iPads specifically. */
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
    /* Force table to not be like tables anymore */
