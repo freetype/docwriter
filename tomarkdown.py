@@ -434,31 +434,48 @@ class  MdFormatter( Formatter ):
 
     def  index_exit( self ):
         # `block_index' already contains the sorted list of index names
-        count = len( self.block_index )
-        rows  = ( count + self.columns - 1 ) // self.columns
-
-        print( '<table class="index">' )
-        for r in range( rows ):
-            line = "<tr>"
-            for c in range( self.columns ):
-                i = r + c * rows
-                if i < count:
-                    bname = self.block_index[r + c * rows]
-                    url   = self.index_items[bname]
-                    # display `foo[bar]' as `foo (bar)'
-                    bname = bname.replace( "[", " (" )
-                    bname = bname.replace( "]", ")"  )
-                    # normalize url
-                    url = self.normalize_url( url )
-                    line  = ( line + '<td><a href="' + url + '">'
-                              + bname + '</a></td>' )
-                else:
-                    line = line + '<td></td>'
-            line = line + "</tr>"
+        letter  = ''
+        for bname in self.block_index:
+            if letter != bname[0].upper():
+                # print letter heading
+                letter = bname[0].upper()
+                print( '\n' + md_h3 + letter + '\n' )
+            url   = self.index_items[bname]
+            # display `foo[bar]' as `foo (bar)'
+            bname = bname.replace( "[", " (" )
+            bname = bname.replace( "]", ")"  )
+            # normalize url
+            url   = self.normalize_url( url )
+            line  = ( '[' + bname + ']' + '(' + url + ')' + '  ' )
             print( line )
 
-        print( "</table>" )
+        # TODO Remove commented code once the above is ready
+        # count   = len( self.block_index )
+        # rows  = ( count + self.columns - 1 ) // self.columns
 
+        # print( '<table class="index">' )
+        # for r in range( rows ):
+        #     line = "<tr>"
+        #     for c in range( self.columns ):
+        #         i = r + c * rows
+        #         if i < count:
+        #             bname = self.block_index[r + c * rows]
+        #             url   = self.index_items[bname]
+        #             # display `foo[bar]' as `foo (bar)'
+        #             bname = bname.replace( "[", " (" )
+        #             bname = bname.replace( "]", ")"  )
+        #             # normalize url
+        #             url = self.normalize_url( url )
+        #             line  = ( line + '<td><a href="' + url + '">'
+        #                       + bname + '</a></td>' )
+        #         else:
+        #             line = line + '<td></td>'
+        #     line = line + "</tr>"
+        #     print( line )
+
+        # print( "</table>" )
+
+        print( md_line_sep )
         print( self.time_footer )
 
         self.index_items = {}
@@ -508,6 +525,7 @@ class  MdFormatter( Formatter ):
             )
 
     def  toc_exit( self ):
+        print( md_line_sep )
         print( self.time_footer )
         # Build and flush MkDocs config
         self.config.build_config()
