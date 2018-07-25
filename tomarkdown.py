@@ -41,10 +41,14 @@ api_ref_text = "API Reference"
 docs_author  = "FreeType Contributors"
 
 # Breadcrumbs Navigation config.
-md_crumbs_separator = " &raquo; "
+md_crumbs_sep = " &raquo; "
 
 md_header_1 = """\
-[Docs](ft2-index.md) &raquo; \
+[FreeType](//www.freetype.org) &raquo; \
+"""
+
+md_header_2 = """\
+[Docs](../) &raquo; \
 """
 
 md_line_sep = """
@@ -146,13 +150,15 @@ class  MdFormatter( Formatter ):
         self.config         = siteconfig.SiteConfig()
 
         self.md_index_header = (
-            md_header_1 + "Global Index"
+            md_header_1 + md_header_2
+            + "Global Index"
             + md_line_sep + md_h1
             + project_title + md_api_ref
         )
 
         self.md_toc_header = (
-            md_header_1 + "Table of Contents"
+            md_header_1 + md_header_2
+            + "Table of Contents"
             + md_line_sep + md_h1
             + project_title + md_api_ref
         )
@@ -544,9 +550,9 @@ class  MdFormatter( Formatter ):
     #
     def  section_enter( self, section ):
         if section.chapter:
-            print( md_header_1
+            print( md_header_1 + md_header_2
                    +  self.make_chapter_url( section.chapter.title )
-                   +  md_crumbs_separator + section.title
+                   +  md_crumbs_sep + section.title
                    + md_line_sep )
         else:
             # this should never happen!
