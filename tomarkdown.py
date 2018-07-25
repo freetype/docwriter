@@ -429,7 +429,7 @@ class  MdFormatter( Formatter ):
 
     def  index_name_enter( self, name ):
         block = self.identifiers[name]
-        url   = self.make_block_url( block, code = True )
+        url   = self.make_block_url( block )
         self.index_items[name] = url
 
     def  index_exit( self ):
