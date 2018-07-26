@@ -40,18 +40,43 @@ optional arguments:
 
 ## Running Tests
 
-To run all tests locally:
+There are two possible test scenarios:
+
+1. Running tests on both py27 and py36 (using tox - requires both python versions installed).
+2. Running tests on the currently installed Python version.
+
+They are detailed below.
+
+### Test using Tox
+
+To test on both py27 and py36:
+
+1.  Make sure `tox` is installed:
+    ```bash
+    pip install tox
+    ```
+
+2.  Ensure both py27 and py36 are installed.
+
+3.  Run tests:
+    ```bash
+    tox
+    ```
+
+### Test on single python version
+
+To test on current python version using pytest:
 
 1.  Make sure `pytest` is installed:
     ```bash
     pip install pytest
     ```
-    
+
 2.  Run tests:
     ```bash
     python -m pytest
     ```
-    
+
 ## License
 
 This library is licensed under the [FreeType License](https://www.freetype.org/license.html).
