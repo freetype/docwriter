@@ -18,14 +18,13 @@ This module contains tests for functions in `utils.py`.
 """
 
 import utils
-import os
 import sys
 
 def test_index_key():
     test_dict = {"hello": "world", "foo": "bar", "FOO": "BAZ",
                  "HELLO": "WORLD", "zzz": "sleep"}
     # expected output
-    out_list  = ["FOO", "foo", "HELLO", "hello", "zzz"] 
+    out_list  = ["FOO", "foo", "HELLO", "hello", "zzz"]
     block_index = test_dict.keys()
     block_index = sorted( block_index, key = utils.index_key )
     assert block_index == out_list

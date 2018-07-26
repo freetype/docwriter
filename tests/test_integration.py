@@ -22,7 +22,6 @@ From the root of the Docwriter git repo, use:
 """
 
 import logging
-import os
 import subprocess
 
 log = logging.getLogger('docwriter')
@@ -47,10 +46,10 @@ def test_integration( capfd ):
     # run the command
     subprocess.check_call( command )
     # capture output to check for warnings
-    out, err = capfd.readouterr()
+    captured = capfd.readouterr()
     # print the logs on failure
-    print( err )
+    print( captured.err )
     # fail if there are warnings
-    assert not "WARNING" in err
+    assert not "WARNING" in captured.err
 
 # eof

@@ -18,8 +18,8 @@ The tests in this module use the `SourceProcessor` and
 `ContentProcessor` classes to test file and content parsing.
 """
 
-import sources
 import content
+import sources
 import utils
 
 # create context and processor

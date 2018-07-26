@@ -17,8 +17,8 @@
 This module contains tests for functions in `tomarkdown.py`.
 """
 
-import sources
 import content
+import sources
 import tomarkdown
 import utils
 
@@ -73,7 +73,7 @@ def test_slugify3():
 def test_make_section_url():
     global formatter
     expected_url = '../test-outline_processing/index.html'
-    
+
     section = list(formatter.sections)[0]
     out_url = formatter.make_section_url( section, code = True )
     assert out_url == expected_url

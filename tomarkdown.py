@@ -162,7 +162,7 @@ class  MdFormatter( Formatter ):
             + md_line_sep + md_h1
             + project_title + md_api_ref
         )
-          
+
         self.time_footer = (
             '<div class="timestamp">generated on '
             + time.asctime( time.gmtime() ) + " UTC"
