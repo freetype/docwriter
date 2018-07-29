@@ -17,8 +17,10 @@
 This module contains tests for functions in `utils.py`.
 """
 
-import utils
 import sys
+
+from docwriter import utils
+
 
 def test_index_key():
     test_dict = {"hello": "world", "foo": "bar", "FOO": "BAZ",

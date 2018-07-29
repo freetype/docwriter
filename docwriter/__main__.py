@@ -32,11 +32,11 @@ import argparse
 import logging
 import sys
 
-import check
-import content
-import sources
-import tomarkdown
-import utils
+from docwriter import check
+from docwriter import content
+from docwriter import sources
+from docwriter import tomarkdown
+from docwriter import utils
 
 logger = logging.getLogger()
 log_level = logging.INFO

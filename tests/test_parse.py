@@ -18,9 +18,9 @@ The tests in this module use the `SourceProcessor` and
 `ContentProcessor` classes to test file and content parsing.
 """
 
-import content
-import sources
-import utils
+from docwriter import content
+from docwriter import sources
+from docwriter import utils
 
 # create context and processor
 source_processor  = sources.SourceProcessor()

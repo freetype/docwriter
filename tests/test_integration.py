@@ -36,7 +36,7 @@ def test_integration( capfd ):
     log.addHandler(stream)
     log.setLevel(logging.DEBUG)
 
-    base_cmd = ['python', 'docwriter.py', '--prefix=test',
+    base_cmd = ['python', '-m', 'docwriter', '--prefix=test',
                 '--title=Docwriter Test', '--output=./tests/output',
                 '--verbose' ]
     folders  = ['./tests/assets/*.c']

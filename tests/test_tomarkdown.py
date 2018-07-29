@@ -17,10 +17,10 @@
 This module contains tests for functions in `tomarkdown.py`.
 """
 
-import content
-import sources
-import tomarkdown
-import utils
+from docwriter import content
+from docwriter import sources
+from docwriter import tomarkdown
+from docwriter import utils
 
 # Create test objects
 # create context and processor

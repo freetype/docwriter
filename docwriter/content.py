@@ -20,8 +20,8 @@ from __future__ import print_function
 import logging
 import re
 
-import sources
-import utils
+from docwriter import sources
+from docwriter import utils
 
 log = logging.getLogger( __name__ )
 

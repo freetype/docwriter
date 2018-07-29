@@ -30,7 +30,7 @@ import logging
 
 import yaml
 
-import utils
+from docwriter import utils
 
 log = logging.getLogger( __name__ )
 
