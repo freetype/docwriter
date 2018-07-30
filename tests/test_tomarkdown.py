@@ -30,7 +30,7 @@ content_processor = content.ContentProcessor()
 project_title  = 'Test Docs'
 project_prefix = 'test'
 # retrieve the list of files to process
-file_list = utils.make_file_list( ['./tests/assets/*.c'] )
+file_list = utils.make_file_list( ['./assets/*.c'] )
 for filename in file_list:
     source_processor.parse_file( filename )
     content_processor.parse_sources( source_processor )

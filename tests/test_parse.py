@@ -28,7 +28,7 @@ content_processor = content.ContentProcessor()
 
 def test_parse_file():
     # retrieve the list of files to process
-    file_list = utils.make_file_list( ['./tests/assets/*.c'] )
+    file_list = utils.make_file_list( ['./assets/*.c'] )
     for filename in file_list:
         source_processor.parse_file( filename )
     # get blocks
@@ -40,7 +40,7 @@ def test_parse_file():
 
 def test_parse_source():
     # retrieve the list of files to process
-    file_list = utils.make_file_list( ['./tests/assets/*.c'] )
+    file_list = utils.make_file_list( ['./assets/*.c'] )
     for filename in file_list:
         source_processor.parse_file( filename )
         content_processor.parse_sources( source_processor )
