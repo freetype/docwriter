@@ -14,6 +14,11 @@
 
 from setuptools import setup, find_packages
 
+long_description = (
+    "Docwriter is an API documentation generator for FreeeType that "
+    "extracts and builds Markdown docs from the FreeType header files."
+)
+
 # Load list of dependencies
 with open("requirements.txt") as data:
     install_requires = [
@@ -23,15 +28,25 @@ with open("requirements.txt") as data:
 
 # Package description
 setup(
-    name = 'docwritertest',
+    name = 'docwriter',
     version = '0.1',
-    url = 'https://github.com/nikramakrishnan/freetype-docwriter',
+    url = 'https://github.com/freetype/docwriter',
     license = 'FreeType License',
-    description = 'Generate API reference documentation for FreeType.',
+    description = 'API reference documentation generator for FreeType.',
+    long_description = long_description,
     author = 'Nikhil Ramakrishnan',
-    author_email = 'ramakrishnan.nikhil@gmail.com',
-    keywords = 'freetype, docwriter',
+    author_email = 'freetype-devel@nongnu.org',
+    keywords = 'freetype docwriter',
     packages = find_packages(),
     include_package_data = True,
     install_requires = install_requires,
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Topic :: Documentation',
+        'Topic :: Text Processing',
+    ],
 )
