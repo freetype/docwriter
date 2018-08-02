@@ -27,7 +27,8 @@ with open("requirements.txt") as data:
 # Package description
 setup(
     name = 'docwriter',
-    version = '0.1',
+    use_scm_version=True,
+    setup_requires=['setuptools_scm'],
     url = 'https://github.com/freetype/docwriter',
     license = 'FreeType License',
     description = 'API reference documentation generator for FreeType.',
