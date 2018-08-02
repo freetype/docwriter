@@ -44,7 +44,7 @@ docs_author  = "FreeType Contributors"
 md_crumbs_sep = " &raquo; "
 
 md_header_1 = """\
-[FreeType](//www.freetype.org) &raquo; \
+[FreeType](https://www.freetype.org) &raquo; \
 """
 
 md_header_2 = """\
