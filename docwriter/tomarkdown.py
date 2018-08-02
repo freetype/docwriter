@@ -144,7 +144,7 @@ class  MdFormatter( Formatter ):
         self.headers        = processor.headers
         self.project_title  = project_title
         self.file_prefix    = file_prefix
-        self.toc_filename   = self.file_prefix + "toc.md"
+        self.toc_filename   = "index.md"
         self.index_filename = self.file_prefix + "index.md"
         self.markdown       = mistune.Markdown()
         self.config         = siteconfig.SiteConfig()
@@ -538,7 +538,7 @@ class  MdFormatter( Formatter ):
 
     def  toc_dump( self, toc_filename = None, index_filename = None ):
         if toc_filename == None:
-            toc_filename = self.file_prefix + "toc.md"
+            toc_filename = "index.md"
 
         if index_filename == None:
             index_filename = self.file_prefix + "index.md"

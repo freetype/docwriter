@@ -80,7 +80,7 @@ def test_make_section_url():
 
 def test_make_chapter_url():
     global formatter
-    expected_text = '[Support API](test-toc.md#support-api)'
+    expected_text = '[Support API](index.md#support-api)'
 
     section = list(formatter.sections)[0]
     out_text = formatter.make_chapter_url( section.chapter.title )
