@@ -3,7 +3,7 @@
 
 # FreeType Docwriter
 
-Markdown documentation generator for the FreeType library.
+Docwriter is an API documentation generator for the FreeeType Library that extracts and builds Markdown docs from the FreeType header files.
 
 ## Installation
 
