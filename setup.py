@@ -33,6 +33,7 @@ setup(
     license = 'FreeType License',
     description = 'API reference documentation generator for FreeType.',
     long_description = long_description,
+    long_description_content_type='text/markdown',
     author = 'Nikhil Ramakrishnan',
     author_email = 'freetype-devel@nongnu.org',
     keywords = 'freetype docwriter',
