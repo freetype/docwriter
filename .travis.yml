@@ -13,3 +13,13 @@ install:
 # command to run tests
 script:
   - tox
+
+deploy:
+  provider: pypi
+  user: "docwriter-deploy"
+  distributions: "sdist bdist_wheel"
+  password:
+    secure: "tNCnC+AbuVfxzaKcyWODPXB0p+/QnYCe0BMdYOTgr44w4tTHLmV2xN7gAsDqEZyARUi9g/XlJdBNLn/nIgo4XRttk8zE0ago2bHpXNkuMwxoOWtENidlUm7a0jd82+lpS3x0T7afJhPyOL9LwnikUej+izvg9GfJM0rKFF4ND8daksOesOoyJD2W+B4Az2puNUrId7SO21K8ocZ9b3hRJTUbmmO2GSaZ4SUTtbnwGghVkzYZ7045Ut64Zzion+8vgpDz6nkbsZH89cjoR5upVGCsDrad4CA/kO/x1wbVAb118mYhWLg3/Nxls9x5QGDOYamdZyPzliNqaqzrHTJHEzvClR6cLMpzICcge969J9mz8g2uXI0RUWJso1MSVYBh31tBfMRKk8+WtLFm2cGq/nrCct7++35Hlpvd242YRxJyV062k4ay2PZdtX66HA1lDk5PCujLBpES9H8bTIc4KeX0naK8UWr5NnV7r2NKvogZouUvd03nD73cripnub/9Tbv2KkXoe55QVOuC51p+mECMzfPsTWXp4PhRfv3hQLHyR0IPOL//spq4gkT+10CYuMwii7tNm8ppuNc/2n+W9imYbg7SHdUUNeIqy1F+fOB1rfKNR5GcGj5tXrHN7qydsMZzl3BYQ8F02Ti79wibs8QlocCOwh4SwT4ZEKMFua0="
+  on:
+    tags: true
+    repo: freetype/docwriter
