@@ -14,10 +14,8 @@
 
 from setuptools import setup, find_packages
 
-long_description = (
-    "Docwriter is an API documentation generator for FreeeType that "
-    "extracts and builds Markdown docs from the FreeType header files."
-)
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 # Load list of dependencies
 with open("requirements.txt") as data:
