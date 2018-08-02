@@ -5,8 +5,11 @@
 
 Markdown documentation generator for the FreeType library.
 
-## Setup Instructions
+## Installation
 
+Run `pip install docwriter`. It requires Python 2.7+ or 3.4+ to run.
+
+### From repository
 1.  Clone this repository.
 2.  Clone the freetype2 repository from [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/).
 3.  Convert the `include/` folder to markdown using the 
@@ -15,7 +18,7 @@ Markdown documentation generator for the FreeType library.
 6.  Run:
 
     ```bash
-    python -B docwriter.py --prefix=ft2 --title=FreeType-2.9.1 --output=./docs/reference \
+    python -m docwriter --prefix=ft2 --title=FreeType-2.9.1 --output=./docs/reference \
     ./include_mark/freetype/*.h ./include_mark/freetype/config/*.h ./include_mark/freetype/cache/*.h
     ```
 
@@ -74,6 +77,7 @@ To test on current python version using pytest:
 
 2.  Run tests:
     ```bash
+    cd tests/
     python -m pytest
     ```
 
