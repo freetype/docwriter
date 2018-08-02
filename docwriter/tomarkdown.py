@@ -27,9 +27,9 @@ import time
 
 import mistune
 
-from formatter import Formatter
-import siteconfig
-import sources
+from docwriter.formatter import Formatter
+from docwriter import siteconfig
+from docwriter import sources
 
 log = logging.getLogger( __name__ )
 

@@ -21,8 +21,8 @@ import os
 
 import yaml
 
-import siteconfig
-import utils
+from docwriter import siteconfig
+from docwriter import utils
 
 config = siteconfig.SiteConfig()
 

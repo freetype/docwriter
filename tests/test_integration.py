@@ -36,10 +36,10 @@ def test_integration( capfd ):
     log.addHandler(stream)
     log.setLevel(logging.DEBUG)
 
-    base_cmd = ['python', 'docwriter.py', '--prefix=test',
-                '--title=Docwriter Test', '--output=./tests/output',
+    base_cmd = ['python', '-m', 'docwriter', '--prefix=test',
+                '--title=Docwriter Test', '--output=./output',
                 '--verbose' ]
-    folders  = ['./tests/assets/*.c']
+    folders  = ['./assets/*.c']
 
     log.debug("Building markdown docs.")
     command = base_cmd + folders

@@ -17,10 +17,10 @@
 This module contains tests for functions in `tomarkdown.py`.
 """
 
-import content
-import sources
-import tomarkdown
-import utils
+from docwriter import content
+from docwriter import sources
+from docwriter import tomarkdown
+from docwriter import utils
 
 # Create test objects
 # create context and processor
@@ -30,7 +30,7 @@ content_processor = content.ContentProcessor()
 project_title  = 'Test Docs'
 project_prefix = 'test'
 # retrieve the list of files to process
-file_list = utils.make_file_list( ['./tests/assets/*.c'] )
+file_list = utils.make_file_list( ['./assets/*.c'] )
 for filename in file_list:
     source_processor.parse_file( filename )
     content_processor.parse_sources( source_processor )
