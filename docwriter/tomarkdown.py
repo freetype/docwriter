@@ -203,7 +203,7 @@ class  MdFormatter( Formatter ):
         return self.file_prefix + section.name + ".md"
 
     def  make_block_url( self, block, name = None, code = False ):
-        if name == None:
+        if name is None:
             name = block.name
 
         name = self.slugify( name )
@@ -487,7 +487,7 @@ class  MdFormatter( Formatter ):
         self.index_items = {}
 
     def  index_dump( self, index_filename = None ):
-        if index_filename == None:
+        if index_filename is None:
             index_filename = self.file_prefix + "index.md"
 
         Formatter.index_dump( self, index_filename )
@@ -537,10 +537,10 @@ class  MdFormatter( Formatter ):
         self.config.build_config()
 
     def  toc_dump( self, toc_filename = None, index_filename = None ):
-        if toc_filename == None:
+        if toc_filename is None:
             toc_filename = "index.md"
 
-        if index_filename == None:
+        if index_filename is None:
             index_filename = self.file_prefix + "index.md"
 
         Formatter.toc_dump( self, toc_filename, index_filename )

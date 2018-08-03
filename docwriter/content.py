@@ -429,7 +429,7 @@ class  ContentProcessor( object ):
 
     def  set_section( self, section_name ):
         """Set current section during parsing."""
-        if not section_name in self.sections:
+        if section_name not in self.sections:
             section = DocSection( section_name )
             self.sections[section_name] = section
             self.section                = section

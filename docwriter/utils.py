@@ -56,7 +56,7 @@ def  sort_order_list( input_list, order_list ):
     """Sort `input_list`, placing the elements of `order_list' in front."""
     new_list = order_list[:]
     for name in input_list:
-        if not name in order_list:
+        if name not in order_list:
             new_list.append( name )
     return new_list
 
