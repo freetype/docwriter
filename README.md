@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/freetype/docwriter.svg?branch=master)](https://travis-ci.org/freetype/docwriter)
 [![Code Health](https://landscape.io/github/freetype/docwriter/master/landscape.svg?style=flat)](https://landscape.io/github/freetype/docwriter/master)
+[![PyPI version](https://badge.fury.io/py/docwriter.svg)](https://badge.fury.io/py/docwriter)
 
 # FreeType Docwriter
 
