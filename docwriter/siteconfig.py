@@ -222,7 +222,7 @@ class  SiteConfig( object ):
     def build_pages( self ):
         # internal: build pages config
         if self.pages != []:
-            self.site_config['pages'] = self.pages
+            self.site_config['nav'] = self.pages
 
     def populate_config( self, data ):
         # internal: Add a given not None object to site_config

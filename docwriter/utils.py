@@ -113,6 +113,7 @@ def  file_exists( pathname ):
     except Exception:
         result = None
         log.error( "%s couldn't be accessed.", pathname )
+        sys.exit(1)
 
     return result
 
