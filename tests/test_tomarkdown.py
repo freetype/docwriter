@@ -72,7 +72,7 @@ def test_slugify3():
 
 def test_make_section_url():
     global formatter
-    expected_url = '../test-outline_processing/index.html'
+    expected_url = 'test-outline_processing.html'
 
     section = list(formatter.sections)[0]
     out_url = formatter.make_section_url( section, code = True )
