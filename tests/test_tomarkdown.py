@@ -78,6 +78,14 @@ def test_make_section_url():
     out_url = formatter.make_section_url( section, code = True )
     assert out_url == expected_url
 
+def test_make_section_url_2():
+    global formatter
+    expected_url = 'test-outline_processing.md'
+
+    section = list(formatter.sections)[0]
+    out_url = formatter.make_section_url( section )
+    assert out_url == expected_url
+
 def test_make_chapter_url():
     global formatter
     expected_text = '[Support API](index.md#support-api)'
