@@ -48,7 +48,7 @@ md_header_1 = """\
 """
 
 md_header_2 = """\
-[Docs](../../) &raquo; \
+[Docs](../) &raquo; \
 """
 
 md_line_sep = """
