@@ -112,8 +112,7 @@ def  file_exists( pathname ):
         file_handle.close()
     except Exception:
         result = None
-        log.error( "%s couldn't be accessed.", pathname )
-        sys.exit(1)
+        log.warn( "%s couldn't be accessed.", pathname )
 
     return result
 
