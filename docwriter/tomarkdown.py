@@ -245,8 +245,8 @@ class  MdFormatter( Formatter ):
                             + block.title + '</a>&rsquo;'
                             + rest )
                 except Exception:
-                    url = ( '<a href="' + url + '">'
-                            + name + '</a>'
+                    url = ( '<code><a href="' + url + '">'
+                            + name + '</a></code>'
                             + rest )
 
                 return url
