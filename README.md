@@ -4,7 +4,7 @@
 
 # FreeType Docwriter
 
-Docwriter is an API documentation generator for the FreeeType Library that extracts and builds Markdown docs from the FreeType header files.
+Docwriter is an API documentation generator for the FreeType Library that extracts and builds Markdown docs from the FreeType header files.
 
 ## Installation
 
@@ -13,7 +13,7 @@ Run `pip install docwriter`. It requires Python 2.7+ or 3.4+ to run.
 ### From repository
 1.  Clone this repository.
 2.  Clone the freetype2 repository from [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/).
-3.  Convert the `include/` folder to markdown using the 
+3.  Convert the `include/` folder to markdown using the
     [freetype-docs](https://github.com/nikramakrishnan/freetype-docs/tree/markdown) repository.
 5.  Copy files from `include_mark/`.
 6.  Run:
