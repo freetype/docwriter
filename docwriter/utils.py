@@ -144,8 +144,8 @@ def  make_file_list( args = None ):
     for pathname in args:
         if pathname.find( '*' ) >= 0:
             newpath = glob.glob( pathname )
-            newpath.sort()  # sort files -- this is important because
-                            # of the order of files
+            # sort files -- this is important because of the order of files
+            newpath.sort()
         else:
             newpath = [pathname]
 
