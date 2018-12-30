@@ -13,14 +13,16 @@ Run `pip install docwriter`. It requires Python 2.7+ or 3.4+ to run.
 ### From repository
 1.  Clone this repository.
 2.  Clone the freetype2 repository from [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/).
-3.  Convert the `include/` folder to markdown using the
-    [freetype-docs](https://github.com/nikramakrishnan/freetype-docs/tree/markdown) repository.
-5.  Copy files from `include_mark/`.
-6.  Run:
+3.  Run:
 
     ```bash
-    python -m docwriter --prefix=ft2 --title=FreeType-2.9.1 --output=./docs/reference \
-    ./include_mark/freetype/*.h ./include_mark/freetype/config/*.h ./include_mark/freetype/cache/*.h
+		python -m docwriter                      \
+			--prefix=ft2                     \
+			--title=FreeType-2.9.1           \
+			--output=$./docs/reference       \
+			./include/freetype/*.h           \
+			./include/freetype/config/*.h    \
+			./include/freetype/cache/*.h
     ```
 
 ## Usage Information
@@ -60,7 +62,7 @@ To test on both py27 and py36:
     pip install tox
     ```
 
-2.  Ensure both py27 and py36 are installed.
+2.  Ensure both py27 and py36 are available.
 
 3.  Run tests:
     ```bash
