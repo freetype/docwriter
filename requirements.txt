@@ -1,5 +1,5 @@
 # Direct project dependencies
-mistune==0.8.3
+mistune==0.8.4
 mkdocs>=1
 mkdocs-material>=3.0.1
 PyYAML>=3.13
