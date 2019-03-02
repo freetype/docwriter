@@ -3,7 +3,7 @@
 #
 #    A sub-class container of the `Formatter' class to produce Markdown.
 #
-#  Copyright 2018 by
+#  Copyright (C) 2018-2019 by
 #  Nikhil Ramakrishnan.
 #
 #  This file is part of the FreeType project, and may only be used,

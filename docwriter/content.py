@@ -3,7 +3,7 @@
 #
 #    Parse comment blocks to build content blocks (library file).
 #
-#  Copyright 2002-2018 by
+#  Copyright (C) 2002-2019 by
 #  David Turner.
 #
 #  This file is part of the FreeType project, and may only be used,

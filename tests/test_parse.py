@@ -3,7 +3,7 @@
 #
 #    Tests for docwriter parsing (sources.py and content.py).
 #
-#  Copyright 2018 by
+#  Copyright (C) 2018-2019 by
 #  Nikhil Ramakrishnan.
 #
 #  This file is part of the FreeType project, and may only be used,
