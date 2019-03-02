@@ -1,7 +1,7 @@
 #
 #  setup.py
 #
-#    Package setup rules for docwriter
+#    Package setup rules for docwriter.
 #
 #  Copyright 2018 by
 #  Nikhil Ramakrishnan.

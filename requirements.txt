@@ -1,3 +1,17 @@
+#
+#  requirements.txt
+#
+#    List of dependencies for the package.
+#
+#  Copyright 2018 by
+#  Nikhil Ramakrishnan.
+#
+#  This file is part of the FreeType project, and may only be used,
+#  modified, and distributed under the terms of the FreeType project
+#  license, LICENSE.TXT.  By continuing to use, modify, or distribute
+#  this file you indicate that you have read the license and
+#  understand and accept it fully.
+
 # Direct project dependencies
 mistune==0.8.4
 mkdocs==1.0.4
