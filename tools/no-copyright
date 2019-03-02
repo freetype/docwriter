@@ -1,0 +1,14 @@
+# Files that don't get a copyright, or which are taken from elsewhere.
+#
+# All lines in this file are patterns, including the comment lines; this
+# means that e.g. `FTL.TXT' matches all files that have this string in
+# the file name (including the path relative to the current directory,
+# always starting with `./').
+#
+# Don't put empty lines into this file!
+#
+README.md
+CONTRIBUTING.md
+tox.ini
+#
+# EOF
