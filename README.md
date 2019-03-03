@@ -11,7 +11,7 @@ Run `pip install docwriter` (see (4) below for an automated `virtualenv` usage).
 
 ## Steps to Generate Docs
 1.  Ensure `docwriter` is installed using `pip`.
-2.  Clone the freetype2 repository from [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/reference/README).
+2.  Clone the freetype2 repository from [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/).
 3.  The FreeType build system can be used to generate the docs:
 
     ```
@@ -23,7 +23,7 @@ Run `pip install docwriter` (see (4) below for an automated `virtualenv` usage).
 
 ## Development Usage
 1.  Clone this repository.
-2.  Clone the freetype2 repository from [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/reference/README).
+2.  Clone the freetype2 repository from [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/).
 3.  Run `pip install -r requirements.txt` in your environment (`virtualenv` recommended).
 4.  Copy the `include/` directory from `freetype2` to `docwriter`.
 5.  Run in the `docwriter` directory:
