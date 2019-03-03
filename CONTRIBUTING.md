@@ -19,7 +19,7 @@ Issues to submit include:
 ## How to submit changes
 
 1. **Notify others by commenting on the issue.** By commenting on the issue, you will initiate a discussion around possible solutions and also communicate to other contributors that you started working on it. This will avoid having multiple people  work on the same thing.
-2. **Fork this repository and submit a pull request.** A tutorial for forking, branching, and submitting a pull request can be found [here](!https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github)
+2. **Fork this repository and submit a pull request.** A tutorial for forking, branching, and submitting a pull request can be found [here](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github).
 
 ## Further Reading
 
