@@ -7,22 +7,37 @@ Docwriter is an API documentation generator for the FreeType Library that extrac
 
 ## Installation
 
-Run `pip install docwriter`. It requires Python 2.7+ or 3.4+ to run.
+Run `pip install docwriter` (see (3) below for an automated `virtualenv` usage). It requires Python 2.7+ or 3.4+ to run.
 
-### From repository
+## Steps to Generate Docs
+1.  Ensure `docwriter` is installed using `pip`.
+2.  Clone the freetype2 repository from [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/reference/README).
+3.  The FreeType build system can be used to generate the docs:
+
+    ```
+    sh autogen.sh
+    ./configure
+    make refdoc
+    ```
+4. Alternatively, the make target can be replace with `make refdoc-venv`. This installs all requirements automatically in a separate virtual environment. More information on `virtualenv` usage can be found [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/reference/README).
+
+## Development Usage
 1.  Clone this repository.
-2.  Clone the freetype2 repository from [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/).
-3.  Run:
+2.  Clone the freetype2 repository from [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/reference/README).
+3.  Run `pip install -r requirements.txt` in your environment (`virtualenv` recommended).
+4.  Copy the `include/` directory from `freetype2` to `docwriter`.
+5.  Run in the `docwriter` directory:
 
     ```bash
 		python -m docwriter                      \
 			--prefix=ft2                     \
 			--title=FreeType-2.9.1           \
-			--output=$./docs/reference       \
+			--output=./docs/reference        \
 			./include/freetype/*.h           \
 			./include/freetype/config/*.h    \
 			./include/freetype/cache/*.h
     ```
+6.  The markdown files should be generated in `docs/reference/markdown/`. Static site can be rendered by running `mkdocs build` in `docs/reference`. Read more about Mkdocs [here](https://www.mkdocs.org/#building-the-site).
 
 ## Usage Information
 
