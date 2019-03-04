@@ -19,7 +19,7 @@ Run `pip install docwriter` (see (4) below for an automated `virtualenv` usage).
     ./configure
     make refdoc
     ```
-4. Alternatively, step 1 and the make target can be replace with `make refdoc-venv`. This installs all requirements automatically in a separate virtual environment. More information on `virtualenv` usage can be found [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/reference/README).
+4. Alternatively, step 1 and the make target can be replaced with `make refdoc-venv`. This installs all requirements automatically in a separate virtual environment. More information on `virtualenv` usage can be found [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/reference/README).
 
 ## Development Usage
 1.  Clone this repository.
