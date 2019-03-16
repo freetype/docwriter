@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/freetype/docwriter.svg?branch=master)](https://travis-ci.org/freetype/docwriter)
+[![Build Status](https://travis-ci.com/freetype/docwriter.svg?branch=master)](https://travis-ci.com/freetype/docwriter)
 [![PyPI version](https://badge.fury.io/py/docwriter.svg)](https://pypi.org/project/docwriter/)
 
 # FreeType Docwriter
