@@ -126,6 +126,7 @@ def main():
         sys.exit(3)
 
     utils.check_output()
+    utils.create_markdown_dir()
 
     # create context and processor
     source_processor = sources.SourceProcessor()

@@ -104,6 +104,13 @@ def  check_output():
             output_dir = None
 
 
+def  create_markdown_dir():
+    """Create 'markdown' directory if it does not exist."""
+    path = output_dir + os.sep + markdown_dir
+    if not os.path.exists( path ):
+        os.makedirs( path )
+
+
 def  file_exists( pathname ):
     """Check that a given file exists."""
     result = 1
