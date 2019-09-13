@@ -29,6 +29,7 @@ log = logging.getLogger( __name__ )
 #
 output_dir = None
 markdown_dir = "markdown"
+site_dir = "site"
 
 def build_message():
     """Print build message to console."""

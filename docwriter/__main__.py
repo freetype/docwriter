@@ -84,6 +84,12 @@ def main():
         metavar="PRE",
         help="set documentation prefix, as in '-p ft2'",
     )
+    parser.add_argument(
+        "-s",
+        "--site",
+        metavar="DIR",
+        help="set 'site_dir' in mkdocs.yml [default=site]",
+    )
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
         "-q",
@@ -109,6 +115,9 @@ def main():
 
     if args.prefix:
         project_prefix = args.prefix
+
+    if args.site:
+        utils.site_dir = args.site
 
     if args.quiet:
         log_level = logging.ERROR
