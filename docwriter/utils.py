@@ -29,6 +29,7 @@ log = logging.getLogger( __name__ )
 #
 output_dir = None
 markdown_dir = "markdown"
+site_dir = "site"
 
 def build_message():
     """Print build message to console."""
@@ -102,6 +103,13 @@ def  check_output():
                 sys.exit( 2 )
         else:
             output_dir = None
+
+
+def  create_markdown_dir():
+    """Create 'markdown' directory if it does not exist."""
+    path = output_dir + os.sep + markdown_dir
+    if not os.path.exists( path ):
+        os.makedirs( path )
 
 
 def  file_exists( pathname ):

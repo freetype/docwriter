@@ -17,6 +17,7 @@
 This module contains tests for functions in `utils.py`.
 """
 
+import os
 import sys
 
 from docwriter import utils
@@ -65,5 +66,12 @@ def test_make_file_list( tmpdir ):
     out_list = [f for f in out_list]
     for i in range( len( expected ) ):
         assert expected[i] in out_list[i]
+
+def test_create_markdown_dir( tmpdir ):
+    utils.output_dir = str( tmpdir )
+    utils.markdown_dir = "markdown_test"
+    expected_path = str( tmpdir ) + os.sep + "markdown_test"
+    utils.create_markdown_dir()
+    assert os.path.exists( expected_path )
 
 # eof

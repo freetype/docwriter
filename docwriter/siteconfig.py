@@ -37,9 +37,8 @@ log = logging.getLogger( __name__ )
 # Config file name
 config_filename = "mkdocs.yml"
 
-# Docs directory and site directory
+# Docs directory
 docs_dir = "markdown"
-site_dir = "site"
 
 # Basic site configuration default values
 site_name        = "FreeType API Reference"
@@ -150,7 +149,7 @@ class  SiteConfig( object ):
         self.site_desc   = site_description
         self.site_author = site_author
         self.docs_dir    = docs_dir
-        self.site_dir    = site_dir
+        self.site_dir    = utils.site_dir
         self.theme_conf  = theme_conf
         self.use_dir_url = use_dir_url
 
@@ -209,8 +208,7 @@ class  SiteConfig( object ):
             self.site_config['site_author'] = self.site_author
         if docs_dir:
             self.site_config['docs_dir'] = self.docs_dir
-        if site_dir:
-            self.site_config['site_dir'] = self.site_dir
+        self.site_config['site_dir'] = self.site_dir
         if use_dir_url is not None:
             self.site_config['use_directory_urls'] = self.use_dir_url
 
