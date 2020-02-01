@@ -3,7 +3,7 @@
 #
 #    Build site configuration and write to mkdocs.yml.
 #
-#  Copyright (C) 2018-2019 by
+#  Copyright (C) 2018-2020 by
 #  Nikhil Ramakrishnan.
 #
 #  This file is part of the FreeType project, and may only be used,

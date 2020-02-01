@@ -7,8 +7,9 @@
 #
 # Don't put empty lines into this file!
 #
-README.md
+CHANGELOG
 CONTRIBUTING.md
+README.md
 tox.ini
 #
 # EOF
