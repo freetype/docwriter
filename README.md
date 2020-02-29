@@ -19,7 +19,7 @@ Run `pip install docwriter` (see (4) below for an automated `virtualenv` usage).
     ./configure
     make refdoc
     ```
-4. Alternatively, step 1 and the make target can be replaced with `make refdoc-venv`. This installs all requirements automatically in a separate virtual environment. More information on `virtualenv` usage can be found [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/reference/README).
+4. Alternatively, step 1 and the make target can be replaced with `make refdoc-venv`. This installs all requirements automatically in a separate virtual environment. More information on `virtualenv` usage can be found [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/README).
 
 ## Development Usage
 1.  Clone this repository.
@@ -32,12 +32,13 @@ Run `pip install docwriter` (see (4) below for an automated `virtualenv` usage).
 		python -m docwriter                      \
 			--prefix=ft2                     \
 			--title=FreeType-2.9.1           \
-			--output=./docs/reference        \
+			--site=reference                 \
+			--output=./docs                  \
 			./include/freetype/*.h           \
 			./include/freetype/config/*.h    \
 			./include/freetype/cache/*.h
     ```
-6.  The markdown files should be generated in `docs/reference/markdown/`. Static site can be rendered by running `mkdocs build` in `docs/reference`. Read more about Mkdocs [here](https://www.mkdocs.org/#building-the-site).
+6.  The markdown files are generated in `docs/markdown/`. Static site can be built by running `mkdocs build` in `docs/`. Read more about Mkdocs [here](https://www.mkdocs.org/#building-the-site).
 
 ## Usage Information
 
