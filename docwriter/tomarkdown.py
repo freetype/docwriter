@@ -20,6 +20,8 @@ This module subclasses `formatter` and implements syntax-specific
 routines to build markdown output.
 """
 
+from __future__ import print_function
+
 import logging
 import os
 import re
@@ -81,11 +83,13 @@ description_footer = ""
 
 # Source code extracts header/footer.
 source_header = """
-<div class = "codehilite">
+<div class = "codehilite">\
 <pre>\
+<code>\
 """
 source_footer = """\
-</pre>
+</code>\
+</pre>\
 </div>\
 """
 
@@ -598,7 +602,7 @@ class  MdFormatter( Formatter ):
             if header:
                 print( 'Defined in ' + header + '.' )
 
-            print( source_header )
+            print( source_header, end='' )
             for l in block.code:
                 print( self.source_quote( l, block.name ) )
             print( source_footer )
