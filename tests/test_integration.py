@@ -38,7 +38,7 @@ def test_integration( capfd ):
 
     base_cmd = ['python', '-m', 'docwriter', '--prefix=test',
                 '--title=Docwriter Test', '--output=./output',
-                '--verbose' ]
+                '--site=reference', '--verbose' ]
     folders  = ['./assets/*.c']
 
     log.debug("Building markdown docs.")
