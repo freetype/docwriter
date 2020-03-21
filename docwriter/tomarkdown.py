@@ -20,8 +20,6 @@ This module subclasses `formatter` and implements syntax-specific
 routines to build markdown output.
 """
 
-from __future__ import print_function
-
 import logging
 import os
 import re

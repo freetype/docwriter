@@ -23,8 +23,6 @@ More information can be found at:
 <https://www.mkdocs.org/user-guide/configuration/>
 """
 
-from __future__ import print_function
-
 import datetime
 import logging
 
@@ -113,7 +111,7 @@ def build_extras():
     yml_other     = add_config( other_config, "other" )
 
 
-class  Chapter( object ):
+class  Chapter:
     def __init__( self, title ):
         self.title = title
         self.pages = []
@@ -131,7 +129,7 @@ class  Chapter( object ):
         return conf
 
 
-class  SiteConfig( object ):
+class  SiteConfig:
     """Site configuration generator class.
 
     This class is used to generate site configuration based on supplied
