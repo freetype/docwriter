@@ -15,13 +15,10 @@
 """This module contains routines to parse documentation comment blocks,
 building more structured objects out of them."""
 
-from __future__ import print_function
-
 import logging
 import re
 
-from docwriter import sources
-from docwriter import utils
+from docwriter import sources, utils
 
 log = logging.getLogger( __name__ )
 
@@ -95,7 +92,7 @@ re_header_macro = re.compile( r'^#define\s{1,}(\w{1,}_H)\s{1,}<(.*)>' )
 ##  The object is filled line by line by the parser; it strips the leading
 ##  `margin' space from each input line before storing it in `self.lines'.
 ##
-class  DocCode( object ):
+class  DocCode:
 
     def  __init__( self, margin, lines, lang = None ):
         self.lines = []
@@ -129,7 +126,7 @@ class  DocCode( object ):
 ##
 ##  `self.words' contains the list of words that make up the paragraph.
 ##
-class  DocPara( object ):
+class  DocPara:
 
     def  __init__( self, lines, margin = -1 ):
         self.lines  = None
@@ -192,7 +189,7 @@ class  DocPara( object ):
 ##  `DocCode' objects.  Each DocField object also has an optional `name'
 ##  that is used when the object corresponds to a field or value definition.
 ##
-class  DocField( object ):
+class  DocField:
 
     def  __init__( self, name, lines ):
         self.name  = name  # can be `None' for normal paragraphs/sources
@@ -306,7 +303,7 @@ re_field = re.compile( r"""
 ##
 ##  DOC MARKUP CLASS
 ##
-class  DocMarkup( object ):
+class  DocMarkup:
 
     def  __init__( self, tag, lines ):
         self.tag    = tag.lower()
@@ -355,7 +352,7 @@ class  DocMarkup( object ):
 ##
 ##  DOC CHAPTER CLASS
 ##
-class  DocChapter( object ):
+class  DocChapter:
 
     def  __init__( self, block ):
         self.block    = block
@@ -374,7 +371,7 @@ class  DocChapter( object ):
 ##
 ##  DOC SECTION CLASS
 ##
-class  DocSection( object ):
+class  DocSection:
 
     def  __init__( self, name = "Other" ):
         self.name        = name
@@ -414,7 +411,7 @@ class  DocSection( object ):
 ##
 ##  CONTENT PROCESSOR CLASS
 ##
-class  ContentProcessor( object ):
+class  ContentProcessor:
 
     def  __init__( self ):
         """Initialize a block content processor."""
@@ -571,7 +568,7 @@ class  ContentProcessor( object ):
 ##
 ##  DOC BLOCK CLASS
 ##
-class  DocBlock( object ):
+class  DocBlock:
 
     def  __init__( self, source, follow, processor ):
         processor.reset()

@@ -116,7 +116,7 @@ def  file_exists( pathname ):
     """Check that a given file exists."""
     result = 1
     try:
-        file_handle = open( pathname, "r" )
+        file_handle = open( pathname )
         file_handle.close()
     except Exception:
         result = None

@@ -33,7 +33,7 @@ log = logging.getLogger( __name__ )
 ##
 ##  FORMATTER CLASS
 ##
-class  Formatter( object ):
+class  Formatter:
 
     def  __init__( self, processor ):
         self.processor   = processor

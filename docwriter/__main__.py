@@ -5,7 +5,7 @@
 #    Convert source code markup to Markdown documentation.
 #
 #  Copyright (C) 2002-2020 by
-#  David Turner.
+#  David Turner, Nikhil Ramakrishnan.
 #
 #  This file is part of the FreeType project, and may only be used,
 #  modified, and distributed under the terms of the FreeType project
@@ -26,17 +26,15 @@
 """This libaray is used to Convert source code markup to Markdown
 documentation."""
 
-from __future__ import print_function
-
 import argparse
 import logging
 import sys
 
-from docwriter import check
-from docwriter import content
-from docwriter import sources
-from docwriter import tomarkdown
-from docwriter import utils
+# TODO: Remove this check at some point in the future.
+if sys.version_info[0] < 3:
+    raise ImportError('Python >= 3.5 is required.')
+
+from docwriter import check, content, sources, tomarkdown, utils
 
 logger = logging.getLogger()
 log_level = logging.INFO

@@ -29,8 +29,6 @@ in file `content.py'; the classes and methods found here only deal with
 text parsing and basic documentation block extraction.
 """
 
-from __future__ import print_function
-
 import fileinput
 import logging
 import re
@@ -50,7 +48,7 @@ log = logging.getLogger( __name__ )
 ##  Later on, paragraphs are converted to long lines, which simplifies the
 ##  regular expressions that act upon the text.
 ##
-class  SourceBlockFormat( object ):
+class  SourceBlockFormat:
 
     def  __init__( self, iden, start, column, end ):
         """Create a block pattern, used to recognize special documentation
@@ -263,7 +261,7 @@ re_source_keywords = re.compile( '''\\b ( typedef   |
 ##      other blocks (i.e., sources or ordinary comments with no starting
 ##      markup tag)
 ##
-class  SourceBlock( object ):
+class  SourceBlock:
 
     def  __init__( self, processor, filename, lineno, lines ):
         self.processor = processor
@@ -324,7 +322,7 @@ class  SourceBlock( object ):
 ##    - Normal sources lines, including comments.
 ##
 ##
-class  SourceProcessor( object ):
+class  SourceProcessor:
 
     def  __init__( self ):
         """Initialize a source processor."""

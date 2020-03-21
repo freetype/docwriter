@@ -15,10 +15,14 @@
 language: python
 matrix:
   include:
-    - python: 2.7
-      env: TOXENV=py27
+    - python: 3.5
+      env: TOXENV=py35
     - python: 3.6
       env: TOXENV=py36
+    - python: 3.7
+      env: TOXENV=py37
+    - python: 3.8
+      env: TOXENV=py38
 
 # command to install dependencies
 install:
@@ -37,4 +41,4 @@ deploy:
   on:
     tags: true
     repo: freetype/docwriter
-    condition: "$TOXENV = py36"
+    condition: "$TOXENV = py37"

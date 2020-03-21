@@ -7,7 +7,7 @@ Docwriter is an API documentation generator for the FreeType Library that extrac
 
 ## Installation
 
-Run `pip install docwriter` (see (4) below for an automated `virtualenv` usage). It requires Python 2.7+ or 3.4+ to run.
+Run `pip install docwriter` (see (4) below for an automated `virtualenv` usage). It requires Python >= 3.5 to run.
 
 ## Steps to Generate Docs
 1.  Ensure `docwriter` is installed using `pip`.
