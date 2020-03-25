@@ -23,8 +23,21 @@ matrix:
       env: TOXENV=py37
     - python: 3.8
       env: TOXENV=py38
+    - os: linux
+      language: python
+      sudo: required
+      python: 3.7
+      env: TOXENV=regression
+
+  allow_failures:
+    - env: TOXENV=regression
+
+  fast_finish: true
 
 # command to install dependencies
+before-install:
+  - if [ "$TOXENV" = "regression" ]; then sudo apt-get -qq update && sudo apt-get install -y clang autoconf cmake libtool; fi
+
 install:
   - pip install tox
 
