@@ -15,7 +15,7 @@ Python >= 3.5 to run.
 1.  Ensure `docwriter` is installed using `pip`.
 
 2.  Clone the freetype2 repository from
-    [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/).
+    [here](https://gitlab.freedesktop.org/freetype/freetype.git).
 
 3.  The FreeType build system can be used to generate the docs:
 
@@ -28,12 +28,12 @@ Python >= 3.5 to run.
 4. Alternatively, step 1 and the make target can be replaced with `make refdoc-venv`. This installs
    all requirements automatically in a separate virtual environment. More information on
    `virtualenv` usage can be found
-   [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/README).
+   [here](https://gitlab.freedesktop.org/freetype/freetype/-/blob/master/docs/README).
 
 ## Development Usage
 1.  Clone this repository.
 2.  Clone the freetype2 repository from
-    [here](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/).
+    [here](https://gitlab.freedesktop.org/freetype/freetype.git).
 3.  Run `pip install -r requirements.txt` in your environment (`virtualenv` recommended).
 4.  Copy the `include/` directory from `freetype2` to `docwriter`.
 5.  Run in the `docwriter` directory:
@@ -103,7 +103,7 @@ More information on running specific tox environments can be found
 ### Regression Tests
 
 Regression tests require internet access, `git`, and other FreeType [build
-dependencies](http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/README.git), and are
+dependencies](https://gitlab.freedesktop.org/freetype/freetype/-/blob/master/README.git), and are
 time-consuming. These tests are largely meant to run on Travis CI, but can also be run locally:
 
 ```bash
