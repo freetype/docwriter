@@ -3,7 +3,7 @@
 #
 #    Check if all external modules are present.
 #
-#  Copyright (C) 2018-2020 by
+#  Copyright (C) 2018-2021 by
 #  Nikhil Ramakrishnan.
 #
 #  This file is part of the FreeType project, and may only be used,

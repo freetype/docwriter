@@ -4,7 +4,7 @@
 #
 #    Convert source code markup to Markdown documentation.
 #
-#  Copyright (C) 2002-2020 by
+#  Copyright (C) 2002-2021 by
 #  David Turner, Nikhil Ramakrishnan.
 #
 #  This file is part of the FreeType project, and may only be used,

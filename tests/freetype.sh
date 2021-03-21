@@ -6,7 +6,7 @@ set -exo pipefail
 #
 #    Clone freetype2 and make targets `refdoc' and `refdoc-venv`.
 #
-#  Copyright (C) 2020 by
+#  Copyright (C) 2020-2021 by
 #  Nikhil Ramakrishnan.
 #
 #  This file is part of the FreeType project, and may only be used,
