@@ -13,19 +13,18 @@
 #  understand and accept it fully.
 
 language: python
-matrix:
+jobs:
   include:
-    - python: 3.5
-      env: TOXENV=py35
     - python: 3.6
       env: TOXENV=py36
     - python: 3.7
       env: TOXENV=py37
     - python: 3.8
       env: TOXENV=py38
+    - python: 3.9
+      env: TOXENV=py39
     - os: linux
       language: python
-      sudo: required
       python: 3.7
       env: TOXENV=regression
 
@@ -35,7 +34,7 @@ matrix:
   fast_finish: true
 
 # command to install dependencies
-before-install:
+before_install:
   - if [ "$TOXENV" = "regression" ]; then sudo apt-get -qq update && sudo apt-get install -y clang autoconf cmake libtool; fi
 
 install:
@@ -47,7 +46,7 @@ script:
 
 deploy:
   provider: pypi
-  user: "docwriter-deploy"
+  username: "docwriter-deploy"
   distributions: "sdist bdist_wheel"
   password:
     secure: "tNCnC+AbuVfxzaKcyWODPXB0p+/QnYCe0BMdYOTgr44w4tTHLmV2xN7gAsDqEZyARUi9g/XlJdBNLn/nIgo4XRttk8zE0ago2bHpXNkuMwxoOWtENidlUm7a0jd82+lpS3x0T7afJhPyOL9LwnikUej+izvg9GfJM0rKFF4ND8daksOesOoyJD2W+B4Az2puNUrId7SO21K8ocZ9b3hRJTUbmmO2GSaZ4SUTtbnwGghVkzYZ7045Ut64Zzion+8vgpDz6nkbsZH89cjoR5upVGCsDrad4CA/kO/x1wbVAb118mYhWLg3/Nxls9x5QGDOYamdZyPzliNqaqzrHTJHEzvClR6cLMpzICcge969J9mz8g2uXI0RUWJso1MSVYBh31tBfMRKk8+WtLFm2cGq/nrCct7++35Hlpvd242YRxJyV062k4ay2PZdtX66HA1lDk5PCujLBpES9H8bTIc4KeX0naK8UWr5NnV7r2NKvogZouUvd03nD73cripnub/9Tbv2KkXoe55QVOuC51p+mECMzfPsTWXp4PhRfv3hQLHyR0IPOL//spq4gkT+10CYuMwii7tNm8ppuNc/2n+W9imYbg7SHdUUNeIqy1F+fOB1rfKNR5GcGj5tXrHN7qydsMZzl3BYQ8F02Ti79wibs8QlocCOwh4SwT4ZEKMFua0="

@@ -41,8 +41,8 @@ build_dir="freetype2.compile"
 
 cd "$output_dir" # go to `tests/output'
 
-# Clone the latest version of FreeType
-git clone https://git.savannah.gnu.org/git/freetype/freetype2.git $freetype_dir
+# Clone FreeType from master
+git clone --depth=50 --branch=master https://gitlab.freedesktop.org/freetype/freetype.git $freetype_dir
 
 cd "$freetype_dir"
 
