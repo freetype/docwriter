@@ -15,5 +15,5 @@
 # Direct project dependencies
 mistune==0.8.4
 mkdocs==1.1
-mkdocs-material==4.6.3
+mkdocs-material==7.1.6
 PyYAML==5.3.1
